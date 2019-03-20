@@ -1,4 +1,5 @@
 WEBAPPURL="http://agrold.southgreen.fr/agrold";
+WEBAPPURL="http://localhost:8080/agrold-dev";
 //WEBAPPURL="http://localhost:8080/agrold";
 
 // still constant in :

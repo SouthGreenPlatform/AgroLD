@@ -117,9 +117,9 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
                 //var tableClass = type;
                 $(tables[tables.length - 1]).addClass(type);           
                 $("tr.odd").ready(function () {
-                    // pageBtnsId = "" + "PageBtns";
-                    tthis.displayInformation(data, page, resultId, pageBtnsId, "searchPublications:");
-                    processHtmlResult(type);
+                    //tthis.displayInformation(data, page, resultId, pageBtnsId, "searchPublications:");
+                    //processHtmlResult(type);
+                    simpleDataDisplay(data.obj, "type");
                 });
             });
         },

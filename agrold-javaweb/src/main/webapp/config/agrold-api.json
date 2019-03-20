@@ -10,10 +10,10 @@
         },
         "license": {
             "name": "IBC Montpellier",
-            "url": "http://agrold.southgreen.fr/about.jsp"
+            "url": "http://agrold.southgreen.fr/agrold/about.jsp"
         }
     },
-    "host": "agrold.southgreen.fr/agrold",
+    "host": "localhost:8080/agrold-dev",
     "basePath": "/api",
     "tags": [
         {

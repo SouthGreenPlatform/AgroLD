@@ -187,12 +187,18 @@ public class GeneDAO {
                 + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                 + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
                 + "PREFIX graph:<rapdb>\n"
+                + "PREFIX vocab:<vocabulary/>\n"
+                + "PREFIX res:<resource/>\n"
+                + "\n"
                 + "SELECT DISTINCT ?publication\n"
                 + "WHERE {\n"
                 + "graph graph: {\n"
-                + "	?gene <http://purl.org/dc/terms/references> ?publication\n"
+                + "    ?mRNA vocab:develops_from|res:SIO_010081 ?gene;\n"
+                + "	<http://purl.org/dc/terms/references> ?publication.\n"
+                + "  ?gene rdf:type|rdfs:subClassOf ?type.\n"
+                + "  FILTER(?type IN (<" + GENE_TYPE_URI + ">,<" + GENE_TYPE_URI2 + ">))\n"
                 + "    BIND(REPLACE(str(?gene), '^.*(#|/)', \"\") AS ?geneId) .\n"
-                + "    FILTER regex(str(?geneId), '" + geneId + "') .\n"
+                + "    FILTER regex(str(?geneId), '"+geneId+"') .\n"
                 + "}\n"
                 + "}";
         return Utils.executeSparqlQuery(query, Utils.sparqlEndpointURL, resultFormat);
@@ -200,6 +206,6 @@ public class GeneDAO {
 
     public static void main(String[] args) throws IOException {
         //System.out.println(getGenesByLocus("01", "10000", "30000", 0, 10, ".json"));
-        System.out.println("Result: " + getPublicationsOfGeneById("Os05t0125000-01", 10, 0, ".json"));
+        System.out.println("Result: " + getPublicationsOfGeneById("Os05g0125000", 10, 0, ".json"));
     }
 }

@@ -12,11 +12,11 @@
     <li>QTL: name 'BNL6.32' or keyword 'trait'</li>
     </ul-->
 Some examples:<br/>
-ontological concepts: 'plant height' or 'regulation of gene expression'<br/>
-    Gene: keyword 'stachyose' or name 'TCP2'.<br/>
-    Pathway:  keywords 'fermentation' or 'acetate' or 'cytokinins'<br/>
-    protein:  name 'TBP1', keyword 'qtl'<br/>
-    QTL: name 'BNL6.32' or keyword 'trait'<br/>
+ontological concepts: 'plant height' or 'regulation of gene expression'.<br/>
+    Gene: keywords 'stachyose', 'protein_coding', 'qtl', 'irgsp1_locus', 'tbp', 'irgsp1_rep'; or name 'TCP2'.<br/>
+    Pathway:  keywords 'fermentation' or 'acetate' or 'cytokinins'.<br/>
+    protein:  name 'TBP1', keyword 'qtl'.<br/>
+    QTL: name 'BNL6.32' or keyword 'trait'.<br/>
 </div>
 
 <!--<center>
