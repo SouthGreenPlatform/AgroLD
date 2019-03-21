@@ -45,8 +45,8 @@
         <link href="styles/menu.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" type="text/css" href="styles/advSearch.css">
         <link rel="stylesheet" type="text/css" href="styles/css-loader.css">
-        <link href='//cdn.jsdelivr.net/yasr/2.10.8/yasr.min.css' rel='stylesheet' type='text/css'/>
-        <script src='//cdn.jsdelivr.net/yasr/2.10.8/yasr.bundled.min.js'></script>
+        <link href="sparqleditor/yasr.min.css" rel="stylesheet" type="text/css"/>
+        <script src='sparqleditor/yasr.bundled.min.js'></script>
 
         <!--link href="styles/menu1.css" rel="stylesheet" type="text/css"/-->
         <link rel="stylesheet" type="text/css" href="styles/bootstrap/css/bootstrap-grid.min.css">
@@ -61,6 +61,17 @@
         <!--include jQuery.DataTables plug-in-->
         <link href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">        
         <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" type="text/javascript"></script>
+        <script src="scripts/cytoscape.min.js"></script>
+        <script src="scripts/URI.js"></script>
+        <style>
+            #graphViewResult {
+                width: inherit;
+                height: 800px;
+                position: relative;
+                top: 0px;
+                left: 0px;
+            }
+        </style>
     </head>
     <body>
         <div class="debug">

@@ -640,7 +640,7 @@
                 "summary": "Retrieve complete description of a resource from AgroLD in JSON format",
                 "description": "",
                 "operationId": "getDescription",
-                "produces": ["text/html", "application/sparql-results+json", "application/sparql-results+xml", "text/tab-separated-values", "text/csv", "rdf/xml", "text/turtle", "text/plain"],
+                "produces": ["text/html", "application/sparql-results+json", "application/json", "application/sparql-results+xml", "text/tab-separated-values", "text/csv", "rdf/xml", "text/turtle", "text/plain"],
                 "parameters": [
                     {
                         "name": "uri",

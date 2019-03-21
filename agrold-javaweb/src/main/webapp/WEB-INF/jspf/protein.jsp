@@ -3,8 +3,8 @@
     Created on : Sep 7, 2015, 3:04:42 PM
     Author     : tagny
 --%>
-                <!--div id="header"></div-->
-                <script>
+<!--div id="header"></div-->
+<script type="text/javascript">
 var protein = {
     currentGenePage : 0,
     currentNeighborPage : 0,
@@ -20,6 +20,9 @@ var protein = {
                 <div id="ontologyContainer">\
                     <span id="ontologyPageBtns" class="pageNavBtns"><a class="flex-sm-fill text-sm-center nav-link active o-ontologyResult" href="javascript:void(0)" id="ontology"> Ontology </a></span>\
                 </div>\
+                <div id="graphViewContainer">\
+                       <span id="graphViewPageBtns"><a class="flex-sm-fill text-sm-center nav-link o-graphViewResult" href="javascript:void(0)" id="graphView"> View as graph </a></span>\
+                   </div>\
                 <!--div id="publicationContainer">\
                     <span id="publicationPageBtns" class="pageNavBtns"><a class="flex-sm-fill text-sm-center nav-link active o-publicationResult" href="javascript:void(0)" id="publication"> Publications </a></span>\
                 </div-->\
@@ -27,9 +30,11 @@ var protein = {
         <div id="geneResult" class="o-panel o-active"></div>\
         <div id="qtlResult" class="o-panel"></div>\
         <div id="ontologyResult" class="o-panel"></div>\
+        <div class="o-panel" id="graphViewResult"></div>\
         <!--div id="publicationResult" class="o-panel"></div-->',
-
+uri: "",
         getDescription: function(uri){
+            this.uri = uri;
             var sparql = 'PREFIX agrold:<http://www.southgreen.fr/agrold/vocabulary/> \
 PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> \
 SELECT distinct  ?Id ?Name ?Description (?entity AS ?Uri) \
@@ -59,13 +64,16 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', \"\") AS ?Id) \
             $('#result-modal #gene').click();
         });
     },
-
     addEvents :function() {
         $("#gene").attr("onclick", "invoke('searchGenesEncodingProtein'," + this.currentGenePage + ")");
         $("#qtl").attr("onclick", "invoke('searchQtlsAssociatedWithProtein'," + this.currentQtlPage + ")");
         $("#ontology").attr("onclick", "invoke('searchOntologyTermsAssociatedWithProtein'," + this.currentOntologyPage + ")");
         $("#publication").attr("onclick", "invoke('searchPublications'," + null + ")");
+        $("#graphView").attr("onclick", "invoke('callViewAsGraph')");
     },
+        callViewAsGraph: function () {
+            viewAsGraph(this.uri, "graphViewResult");
+        },
     searchGenesEncodingProtein:function(page) {
         this.currentGenePage = page;
         var type = "gene";

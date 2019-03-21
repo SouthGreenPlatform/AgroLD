@@ -1,4 +1,4 @@
-WEBAPPURL="http://agrold.southgreen.fr/agrold";
+//WEBAPPURL="http://agrold.southgreen.fr/agrold";
 WEBAPPURL="http://localhost:8080/agrold-dev";
 //WEBAPPURL="http://localhost:8080/agrold";
 
@@ -12,11 +12,10 @@ SPARQLENDPOINTURL="http://sparql.southgreen.fr";
 //  WEB-INF/Account/General/AJAX/Admin/_USER_FULL_DATA_LOADER.jsp
 // WEB-INF/Account/General/AJAX/History/QuickSearchList.jsp 
 // /src/main/webapp/quicksearch.jsp
-FACETEDURL="http://volvestre.cirad.fr:8890/fct/"; 
+FACETEDURL="http://agrold.southgreen.fr/fct"; 
 
 AGROLDAPIJSONURL=WEBAPPURL + "/config/agrold-api.json";
-//AGROLDAPIJSONURL="http://localhost/agrold/config/agrold.json";
 
 
-// Advanced search default service web query format
+// Advanced search default format to query the web services
 DEFAULTAPIFORMAT = ".jsonld";

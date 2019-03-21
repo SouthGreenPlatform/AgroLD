@@ -48,9 +48,7 @@
                                 </div>
                                 <div id="sform">
                                     <center>
-                                    <form id="search" action="http://volvestre.cirad.fr:8890/fct/" method="post" target="_blank">                   
-                                        <!--Enter the entire/part of the name/code of a gene, QTL, protein, ... -->
-                                        <!--input class="yasrbtn" type="submit" value="Search" data-step="2" data-intro="launch the search engine!"/-->
+                                    <form id="search" action="http://agrold.southgreen.fr/fct" method="post" target="_blank">                                                               
                                         <div class="col-lg-6">
                                             <div class="input-group">
                                                 <!--input type="text" class="form-control" placeholder="Search for..."-->

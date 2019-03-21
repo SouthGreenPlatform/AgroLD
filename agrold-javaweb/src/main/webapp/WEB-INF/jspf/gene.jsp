@@ -9,7 +9,9 @@
         currentProteinPage: 0,
         currentPathwayPage: 0,
         currentPublicationPage: 0,
-        getDescription: function (uri) {           
+        uri: "",
+        getDescription: function (uri) {
+            this.uri = uri;
             var sparql = 'PREFIX agrold:<http://www.southgreen.fr/agrold/vocabulary/> \
 PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> \
 SELECT distinct  ?Id ?Name ?Description (?entity AS ?Uri) \
@@ -41,10 +43,11 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
             $("#pathway").attr("onclick", "invoke('searchPathwayInWhichParticipatesGene'," + this.currentPathwayPage + ")");
             $("#publication").attr("onclick", "invoke('searchPublications'," + this.currentPublicationPage + ")");
             $("#ontology").attr("onclick", "invoke('searchOntologicalTerms'," + this.currentPublicationPage + ")");
+            $("#graphView").attr("onclick", "invoke('callViewAsGraph')");
             $("#moreInfos").attr("onclick", "invoke('searchMoreInformations')");
         },
         searchProteinsEncodedByGene: function (page) {
-            this.currentProteinPage = page; 
+            this.currentProteinPage = page;
             var type = "protein";
             displayHoldMessage("#" + type + "Result");
             var tthis = this;
@@ -62,7 +65,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
             });
         },
         searchPathwayInWhichParticipatesGene: function (page) {
-            this.currentPathwayPage = page; 
+            this.currentPathwayPage = page;
             var type = "pathway";
             displayHoldMessage("#" + type + "Result");
             var tthis = this;
@@ -74,7 +77,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
                 displayResult(resultId, sparqljson);
                 tables = $("table.resultsTable");
                 //var tableClass = type;
-                $(tables[tables.length - 1]).addClass(type); 
+                $(tables[tables.length - 1]).addClass(type);
                 $("tr.odd").ready(function () {
                     tthis.displayInformation(data, page, resultId, pageBtnsId, "searchPathwayInWhichParticipatesGene");
                     processHtmlResult(type);
@@ -82,28 +85,28 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
             });
         },
         /*searchPublications: function () {
-            displayHoldMessage("#publicationResult");
-            // get PubMed Id from G-link web service
-            swagger.apis.gene.getPublicationsOfGeneById({
-                geneId: ModalContext.id
-            }, {
-                responseContentType: 'application/json'
-            }, function (data) {
-                //var json = data.obj;
-                //displayPublications(json, "publicationResult");
-                sparqljson = data.data;
-                var resultId = type + "Result";
-                displayResult(resultId, data.data);
-                $("tr.odd").ready(function () {
-                    pageBtnsId = type + "PageBtns";
-                    tthis.displayInformation(data, page, resultId, pageBtnsId, "getPublicationsOfGeneById");
-                    // processHtmlResult(resultId);
-                    processHtmlResult(type);
-                });
-            });
-        },*/
+         displayHoldMessage("#publicationResult");
+         // get PubMed Id from G-link web service
+         swagger.apis.gene.getPublicationsOfGeneById({
+         geneId: ModalContext.id
+         }, {
+         responseContentType: 'application/json'
+         }, function (data) {
+         //var json = data.obj;
+         //displayPublications(json, "publicationResult");
+         sparqljson = data.data;
+         var resultId = type + "Result";
+         displayResult(resultId, data.data);
+         $("tr.odd").ready(function () {
+         pageBtnsId = type + "PageBtns";
+         tthis.displayInformation(data, page, resultId, pageBtnsId, "getPublicationsOfGeneById");
+         // processHtmlResult(resultId);
+         processHtmlResult(type);
+         });
+         });
+         },*/
         searchPublications: function (page) {
-            this.currentPathwayPage = page; 
+            this.currentPathwayPage = page;
             var type = "publication";
             displayHoldMessage("#" + type + "Result");
             var tthis = this;
@@ -115,11 +118,11 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
                 displayResult(resultId, sparqljson);
                 tables = $("table.resultsTable");
                 //var tableClass = type;
-                $(tables[tables.length - 1]).addClass(type);           
+                $(tables[tables.length - 1]).addClass(type);
                 $("tr.odd").ready(function () {
-                    //tthis.displayInformation(data, page, resultId, pageBtnsId, "searchPublications:");
-                    //processHtmlResult(type);
-                    simpleDataDisplay(data.obj, "type");
+                    // pageBtnsId = "" + "PageBtns";
+                    tthis.displayInformation(data, page, resultId, pageBtnsId, "searchPublications:");
+                    processHtmlResult(type);
                 });
             });
         },
@@ -131,8 +134,8 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
             swagger.apis.ontologies.getOntoTermsAssociatedWithGene(
                     {format: ".json", geneId: ModalContext.id},
             {responseContentType: 'application/json'},
-            function (data) {                
-                if(data.obj.length<2){
+            function (data) {
+                if (data.obj.length < 2) {
                     $("#ontologyResult").html('No associated Terms have been found.');
                     return;
                 }
@@ -143,6 +146,9 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
                 simpleDataDisplay(data.obj, "ontoResultTable");
             }
             );
+        },
+        callViewAsGraph: function () {
+            viewAsGraph(this.uri, "graphViewResult");
         },
         searchMoreInformations: function () {
             var uri = ModalContext.uri;
@@ -169,6 +175,9 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
                    <div id="ontologyContainer">\
                        <span id="ontologyPageBtns"><a class="flex-sm-fill text-sm-center nav-link o-ontologyResult" href="javascript:void(0)" id="ontology"> Terms associated </a></span>\
                    </div>\
+                   <div id="graphViewContainer">\
+                       <span id="graphViewPageBtns"><a class="flex-sm-fill text-sm-center nav-link o-graphViewResult" href="javascript:void(0)" id="graphView"> View as graph </a></span>\
+                   </div>\
                    <div id="moreInfosContainer">\
                        <span id="moreInfosPageBtns"><a class="flex-sm-fill text-sm-center nav-link o-moreInfosResult" href="javascript:void(0)" id="moreInfos"> See also </a></span>\
                    </div>\
@@ -177,6 +186,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
                <div class="o-panel" id="pathwayResult"></div>\
                <div class="o-panel" id="publicationResult"></div>\
                <div class="o-panel" id="ontologyResult"></div>\
+               <div class="o-panel" id="graphViewResult"></div>\
                <div class="o-panel" id="moreInfosResult"></div>'
     };
 </script>
