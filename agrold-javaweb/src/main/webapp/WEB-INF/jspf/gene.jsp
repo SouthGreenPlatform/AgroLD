@@ -155,7 +155,17 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
             $("#moreInfosResult").html('<ul>\
     <li><a href="https://www.ebi.ac.uk/gxa/genes/' + uri.substring(uri.lastIndexOf('/') + 1) + '" target="_blank">Expression Atlas</a></li>\n\
 </ul>');
-        },
+        //$("#moreInfosResult ul").append('<li><a href="https://www.ebi.ac.uk/gxa/genes/' + uri.substring(uri.lastIndexOf('/') + 1) + '" target="_blank">Expression Atlas</a></li>');
+    swagger.apis.gene.getSeeAlsoByURI(
+                    {format: ".json", geneUri: this.uri},
+            {responseContentType: 'application/json'},
+            function (data) {   
+                var uris = data.obj;
+                console.log("searchMoreInformations: " + JSON.stringify(uris));
+                for (i = 0; i < uris.length; i++) {
+          $("#moreInfosResult ul").append('<li><a href="' + uris[i].link + '" target="_blank">' + uris[i].link + '</a></li>');      
+                }});
+    },
         displayInformation: function (data, page, where, pageBtnsId, functionName) {
             nbResults = data.obj["results"]["bindings"].length;
             previousBtnId = "previousPage";

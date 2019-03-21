@@ -451,7 +451,7 @@ public class API {
         return buildResponse(content, contentType);
     }
 
-    // External services : publications
+    // publications
     @GET
     @Path("/genes/publications/byId" + formatInPath)
     //@Produces({MediaType.APPLICATION_JSON})
@@ -464,6 +464,22 @@ public class API {
             return Response.serverError().entity("[AgroLD Web Services] - Format Error: The requested resource is not available in the format \"" + format + "\"").build();
         }
         String content = GeneDAO.getPublicationsOfGeneById(geneId, page, pageSize, format);
+        return buildResponse(content, contentType);
+    }
+    
+    // seeAlso
+    @GET
+    @Path("/genes/seeAlso" + formatInPath)
+    //@Produces({MediaType.APPLICATION_JSON})
+    public Response getSeeAlso(@PathParam(formatVar) String format,
+            @DefaultValue(DEFAULT_PAGE) @QueryParam(pageNumVar) int page,
+            @DefaultValue(DEFAULT_PAGE_SIZE) @QueryParam(pageSizeVar) int pageSize,
+            @QueryParam("geneUri") String geneUri) throws IOException {
+        String contentType = Utils.getFormatFullName(format);
+        if (contentType == null) {
+            return Response.serverError().entity("[AgroLD Web Services] - Format Error: The requested resource is not available in the format \"" + format + "\"").build();
+        }
+        String content = GeneDAO.getSeeAlsoByURI(geneUri, page, pageSize, format);
         return buildResponse(content, contentType);
     }
 

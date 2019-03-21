@@ -198,9 +198,22 @@ public class GeneDAO {
                 + "  ?gene rdf:type|rdfs:subClassOf ?type.\n"
                 + "  FILTER(?type IN (<" + GENE_TYPE_URI + ">,<" + GENE_TYPE_URI2 + ">))\n"
                 + "    BIND(REPLACE(str(?gene), '^.*(#|/)', \"\") AS ?geneId) .\n"
-                + "    FILTER regex(str(?geneId), '"+geneId+"') .\n"
+                + "    FILTER regex(str(?geneId), '" + geneId + "') .\n"
                 + "}\n"
                 + "}";
+        return Utils.executeSparqlQuery(query, Utils.sparqlEndpointURL, resultFormat);
+    }
+
+    public static String getSeeAlsoByURI(String geneUri, int page, int pageSize, String resultFormat) throws IOException {
+        String query = "BASE <http://www.southgreen.fr/agrold/>\n"
+                + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
+                + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
+                + "SELECT distinct ?link\n"
+                + "WHERE { \n"
+                + "  <"+geneUri+"> rdfs:seeAlso|<vocabulary/has_dbxref> ?link ;\n"
+                + "           rdf:type|rdfs:subClassOf ?type.\n"
+                + "  FILTER(?type IN (<" + GENE_TYPE_URI + ">,<" + GENE_TYPE_URI2 + ">))\n"
+                + "} ";
         return Utils.executeSparqlQuery(query, Utils.sparqlEndpointURL, resultFormat);
     }
 
