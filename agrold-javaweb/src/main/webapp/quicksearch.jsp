@@ -48,7 +48,7 @@
                                 </div>
                                 <div id="sform">
                                     <center>
-                                    <form id="search" action="http://agrold.southgreen.fr/fct" method="post" target="_blank">                                                               
+                                    <form id="search" action="http://agrold.southgreen.fr/fct/facet.vsp?cmd=text&sid=231"" method="post" target="_blank">                                                               
                                         <div class="col-lg-6">
                                             <div class="input-group">
                                                 <!--input type="text" class="form-control" placeholder="Search for..."-->
