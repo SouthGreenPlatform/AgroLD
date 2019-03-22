@@ -15,8 +15,11 @@ import java.util.Set;
  */
 public class GeneDAO {
 
-    public static String GENE_TYPE_URI = "http://www.southgreen.fr/agrold/resource/Gene";
-    public static String GENE_TYPE_URI2 = "http://www.southgreen.fr/agrold/vocabulary/Gene";
+    public static final String GENE_TYPE_URI = "http://www.southgreen.fr/agrold/resource/Gene";
+    public static final String GENE_TYPE_URI2 = "http://www.southgreen.fr/agrold/vocabulary/Gene";
+    public static final String[] TYPEURIs = new String[]{GeneDAO.GENE_TYPE_URI, GeneDAO.GENE_TYPE_URI2};
+    //public static final String[] TYPEURIs = new String[]{GeneDAO.GENE_TYPE_URI2};
+    
 
     // return URIs and agrold_vocabulary:description of all genes in Agrold
     public static String getGenes(int page, int pageSize, String resultFormat) throws IOException {
@@ -28,8 +31,7 @@ public class GeneDAO {
                 + "WHERE {\n"
                 + "  ?gene rdfs:label ?geneName.\n"
                 + "  ?gene agrold:description ?geneDescription.          \n"
-                + "  ?gene rdf:type|rdfs:subClassOf ?type.\n"
-                + "  FILTER(?type IN (<" + GENE_TYPE_URI + ">,<" + GENE_TYPE_URI2 + ">))\n"
+                + Utils.getTypesOptionsAsSparql("?gene", TYPEURIs)
                 + "  BIND(REPLACE(str(?gene), '^.*(#|/)', \"\") AS ?geneId) .\n"
                 + "}";
         sparqlQuery = Utils.addLimitAndOffset(sparqlQuery, pageSize, page);
@@ -38,12 +40,12 @@ public class GeneDAO {
     }
 
     public static String getGenesByKeyword(String keyword, int page, int pageSize, String resultFormat) throws IOException {
-        return Utils.getEntitiesByKeyWord(keyword, new String[]{GeneDAO.GENE_TYPE_URI, GeneDAO.GENE_TYPE_URI2}, page, pageSize, resultFormat);
+        return Utils.getEntitiesByKeyWord(keyword, TYPEURIs, page, pageSize, resultFormat);
     }
 
     // return genes participating in a pathway given its local name (Id)
     public static String getGenesByPathwaysID(String pathwayId, int page, int pageSize, String resultFormat) throws IOException {
-        String sparqlQuery = "BASE <http://www.southgreen.fr/agrold/>\n"
+        /*String sparqlQuery = "BASE <http://www.southgreen.fr/agrold/>\n"
                 + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                 + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
                 + "PREFIX vocab:<vocabulary/>\n"
@@ -61,6 +63,23 @@ public class GeneDAO {
                 + "  GRAPH taxonGraph:{\n"
                 + "    ?taxon rdfs:label ?taxon_name.\n"
                 + "  }\n"
+                + "}";*/
+        String sparqlQuery = "BASE <http://www.southgreen.fr/agrold/>\n"
+                + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
+                + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
+                + "PREFIX vocab:<vocabulary/>\n"
+                + "PREFIX graph:<gramene.cyc>\n"
+                + "PREFIX taxonGraph:<ncbitaxon>\n"
+                + "SELECT DISTINCT ?geneId ?gene_name ?taxon (str(?taxon_name) AS ?taxon_name) (?gene AS ?URI)\n"
+                + "WHERE {\n"
+                + "    ?gene vocab:is_agent_in ?pathway.\n"
+                + "    BIND(REPLACE(str(?pathway), '^.*(#|/)', \"\") AS ?pathwayId) .\n"
+                + "    FILTER REGEX(STR(?pathwayId), \""+pathwayId+"\")"
+                + "    ?gene rdfs:label ?gene_name.\n"
+                + "    ?gene vocab:taxon ?taxon.\n"
+                + "    BIND(REPLACE(str(?gene), '^.*(#|/)', \"\") AS ?geneId) .\n"            
+                + "    ?taxon rdfs:label ?taxon_name.\n"
+                + Utils.getTypesOptionsAsSparql("?gene", TYPEURIs)
                 + "}";
         sparqlQuery = Utils.addLimitAndOffset(sparqlQuery, pageSize, page);
 
@@ -79,6 +98,7 @@ public class GeneDAO {
                 + "  OPTIONAL{?gene rdfs:label ?Name.}\n"
                 + "  OPTIONAL{?gene vocab:description ?d}\n"
                 + "  BIND(REPLACE(str(?gene), '^.*(#|/)', \"\") AS ?Id) .\n"
+                + Utils.getTypesOptionsAsSparql("?gene", TYPEURIs)
                 + "}";
 
         sparqlQuery = Utils.addLimitAndOffset(sparqlQuery, pageSize, page);
@@ -136,6 +156,7 @@ public class GeneDAO {
                 + "?genes vocab:has_start_position ?start_position .\n"
                 + "bind(xsd:int(?start_position) as ?start)\n"
                 + "FILTER(?start >= " + chromosomeStart + " && ?start <= " + chromosomeEnd + ")\n"
+                + Utils.getTypesOptionsAsSparql("?gene", TYPEURIs)
                 + "}";
 
         sparqlQuery = Utils.addLimitAndOffset(sparqlQuery, pageSize, page);
@@ -150,11 +171,7 @@ public class GeneDAO {
                 + "SELECT distinct ?label\n"
                 + "WHERE {\n"
                 + "    ?gene rdfs:label ?label.\n"
-                + "    {\n"
-                + "      ?gene rdf:type <" + GENE_TYPE_URI + ">.\n"
-                + "    } UNION {\n"
-                + "      ?gene rdf:type <" + GENE_TYPE_URI2 + ">.\n"
-                + "    }\n"
+                + Utils.getTypesOptionsAsSparql("?gene", TYPEURIs)
                 + "    BIND(REPLACE(str(?gene), '^.*(#|/)', \"\") AS ?id) .\n"
                 + "    FILTER REGEX(STR(?id), CONCAT(\"" + geneId + "\"))\n"
                 + "}";
@@ -195,8 +212,7 @@ public class GeneDAO {
                 + "graph graph: {\n"
                 + "    ?mRNA vocab:develops_from|res:SIO_010081 ?gene;\n"
                 + "	<http://purl.org/dc/terms/references> ?publication.\n"
-                + "  ?gene rdf:type|rdfs:subClassOf ?type.\n"
-                + "  FILTER(?type IN (<" + GENE_TYPE_URI + ">,<" + GENE_TYPE_URI2 + ">))\n"
+                + Utils.getTypesOptionsAsSparql("?gene", TYPEURIs)
                 + "    BIND(REPLACE(str(?gene), '^.*(#|/)', \"\") AS ?geneId) .\n"
                 + "    FILTER regex(str(?geneId), '" + geneId + "') .\n"
                 + "}\n"
@@ -210,9 +226,8 @@ public class GeneDAO {
                 + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
                 + "SELECT distinct ?link\n"
                 + "WHERE { \n"
-                + "  <"+geneUri+"> rdfs:seeAlso|<vocabulary/has_dbxref> ?link ;\n"
-                + "           rdf:type|rdfs:subClassOf ?type.\n"
-                + "  FILTER(?type IN (<" + GENE_TYPE_URI + ">,<" + GENE_TYPE_URI2 + ">))\n"
+                + "  <"+geneUri+"> rdfs:seeAlso|<vocabulary/has_dbxref> ?link .\n"
+                + Utils.getTypesOptionsAsSparql("<"+geneUri+">", TYPEURIs)
                 + "} ";
         return Utils.executeSparqlQuery(query, Utils.sparqlEndpointURL, resultFormat);
     }

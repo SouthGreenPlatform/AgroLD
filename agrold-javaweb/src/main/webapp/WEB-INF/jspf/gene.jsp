@@ -122,7 +122,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
                 $("tr.odd").ready(function () {
                     // pageBtnsId = "" + "PageBtns";
                     tthis.displayInformation(data, page, resultId, pageBtnsId, "searchPublications:");
-                    processHtmlResult(type);
+                    //processHtmlResult(type);
                 });
             });
         },

@@ -237,23 +237,31 @@ public class Utils {
         }
         return sparqlQuery;
     }
+    
+    public static String getTypesOptionsAsSparql(String subject, String[] typeUris){
+        String typesStr = "";       
+        for (int i = 0; i < typeUris.length; i++) {
+            typesStr += (i == 0 ? "" : "union\n") 
+                    + "{"+subject+" a <" + typeUris[i] + ">}\n";                   
+        }  
+        /*for (int i = 0; i < typeUris.length; i++) {
+            typesStr += "union\n{"+subject+" rdfs:subClassOf <" + typeUris[i] + ">}\n";
+        }*/
+        return typesStr;
+    }
 
-    public static String getEntitiesByKeyWord(String keyword, String[] typesUri, int page, int pageSize, String resultFormat) throws IOException {
+    public static String getEntitiesByKeyWord(String keyword, String[] typeUris, int page, int pageSize, String resultFormat) throws IOException {
         // format keyword
         String tokens[] = keyword.split("\\s+");
         String keywordsQuery = "'(\"" + String.join("\" AND \"", tokens).toUpperCase() + "\")'";
         String keywordsListStr = "('" + String.join("', '", tokens).toUpperCase() + "')";
-        System.out.println("keywordsQuery: " + keywordsQuery);
-        System.out.println("keywordsListStr: " + keywordsListStr);
-        String typesStr = "";
-        for (String typeUri : typesUri) {
-            typesStr += "<" + typeUri + ">,";
-        }
-        typesStr = typesStr.substring(0, typesStr.length() - 1);
+             
 
         String sparqlQuery = "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                 + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
-                + "select distinct ?Id ,?s1 as ?URI, ?g as ?graph, (bif:search_excerpt (bif:vector " + keywordsListStr + ", group_concat(distinct ?o1;separator=\" ; \"))) as ?keyword_reference \n"
+                + "select distinct ?Id ,?s1 as ?URI, ?g as ?graph, "
+                + "(bif:search_excerpt (bif:vector " + keywordsListStr + ", group_concat(distinct ?o1;separator=\" ; \"))) as ?keyword_reference \n"
+                //+ "(bif:search_excerpt (bif:vector " + keywordsListStr + ", ?o1)) as ?keyword_reference \n"
                 + "where {{{ \n"
                 + "select ?Id, ?s1, ?t, (?sc * 3e-1) as ?sc, ?o1, (sql:rnk_scale (<LONG::IRI_RANK> (?s1))) as ?rank, ?g \n"
                 + "where  \n"
@@ -266,8 +274,7 @@ public class Utils {
                 + "        ?o1 bif:contains  " + keywordsQuery + "  option (score ?sc)  .\n"
                 + "      }\n"
                 + "     }\n"
-                + "   ?s1 a|rdfs:subClassOf ?t .\n"
-                + "	FILTER(?t IN (" + typesStr + "))\n"
+                + getTypesOptionsAsSparql("?s1", typeUris)               
                 + "	BIND(REPLACE(str(?s1), '^.*(#|/)', \"\") AS ?Id)\n"
                 + "  }\n"
                 + " order by desc (?sc * 3e-1 + sql:rnk_scale (<LONG::IRI_RANK> (?s1)))  ";
@@ -357,6 +364,7 @@ public class Utils {
     }
 
     public static void main(String[] args) throws IOException {
+        //System.out.println(getEntitiesByKeyWord("coding", GeneDAO.TYPEURIs, 0, 30, TSV));
         System.out.println(getEntitiesByKeyWord("ethanol degradation", new String[] {METABOLIC_PATHWAY, PATHWAY_IDENTIFIER, PATHWAY_TYPE1}, 0, 30, TSV));
         //System.out.println(getEntitiesByKeyWord("plant height", new String[]{"http://www.w3.org/2002/07/owl#Class"}, 0, 10, TSV));
 //System.out.println(executeSparqlQuery("select distinct ?Concept where {[] a ?Concept} LIMIT 5", sparqlEndpointURL, "text/html"));

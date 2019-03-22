@@ -11,8 +11,9 @@ import java.io.IOException;
  */
 public class QtlDAO {
 
-    public static String QTL_TYPE_URI2 = "http://purl.obolibrary.org/obo/SO_0000771";
-    public static String QTL_TYPE_URI = "http://www.southgreen.fr/agrold/resource/QTL";
+    public static final String QTL_TYPE_URI2 = "http://purl.obolibrary.org/obo/SO_0000771";
+    public static final String QTL_TYPE_URI = "http://www.southgreen.fr/agrold/resource/QTL";
+    public static final String[] TYPEURIs = new String[]{QTL_TYPE_URI, QTL_TYPE_URI2};
 
     // return URIs and agrold_vocabulary:description of all genes in Agrold
     public static String getQtls(int page, int pageSize, String resultFormat) throws IOException {
@@ -35,7 +36,7 @@ public class QtlDAO {
     }
     
     public static String getQtlsByKeyword(String keyword, int page, int pageSize, String resultFormat) throws IOException {
-        return Utils.getEntitiesByKeyWord(keyword, new String[]{QTL_TYPE_URI, QTL_TYPE_URI2}, page, pageSize, resultFormat);
+        return Utils.getEntitiesByKeyWord(keyword, TYPEURIs, page, pageSize, resultFormat);
     }
 
     public static String getQtlIdAssociatedWithOntoId(String ontoId, int page, int pageSize, String resultFormat) throws IOException {

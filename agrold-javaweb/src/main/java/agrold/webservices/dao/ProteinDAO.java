@@ -16,9 +16,10 @@ import org.json.JSONArray;
  */
 public class ProteinDAO {
 
-    static public String PROTEIN_TYPE_URI = "http://purl.obolibrary.org/obo/SO_0000104";
-    //static public String PROTEIN_TYPE_URI = "http://www.southgreen.fr/agrold/resource/Protein";
-    static public String PROTEIN_TYPE_URI2 = "http://www.southgreen.fr/agrold/vocabulary/Protein";
+    static public final String PROTEIN_TYPE_URI = "http://purl.obolibrary.org/obo/SO_0000104";
+    //static public final String PROTEIN_TYPE_URI = "http://www.southgreen.fr/agrold/resource/Protein";
+    static public final String PROTEIN_TYPE_URI2 = "http://www.southgreen.fr/agrold/vocabulary/Protein";
+    public static final String[] TYPEURIs = new String[]{PROTEIN_TYPE_URI, PROTEIN_TYPE_URI2};
 
     // return URIs and agrold_vocabulary:description of all genes in Agrold
     public static String getProteins(int page, int pageSize, String resultFormat) throws IOException {
@@ -39,7 +40,7 @@ public class ProteinDAO {
     }
     
     public static String getProteinsByKeyword(String keyword, int page, int pageSize, String resultFormat) throws IOException {
-        return Utils.getEntitiesByKeyWord(keyword, new String[]{PROTEIN_TYPE_URI, PROTEIN_TYPE_URI2}, page, pageSize, resultFormat);
+        return Utils.getEntitiesByKeyWord(keyword, TYPEURIs, page, pageSize, resultFormat);
     }
 
     public static String getProteinsIdAssociatedWithOntoId(String ontoId, int page, int pageSize, String resultFormat) throws IOException {
