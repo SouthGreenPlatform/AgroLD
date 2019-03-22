@@ -46,12 +46,13 @@ function getPrefixedFormOfURI(uriStr) {
             "http://www.southgreen.fr/agrold": "agrold",
             // "http://www.southgreen.fr/agrold/vocabulary": "agrold_vocabulary",
             // "http://www.southgreen.fr/agrold/resource": "agrold_resource",
+            "http://purl.org/dc/terms": "dc",
             "http://purl.obolibrary.org/obo": "obo",
             "http://purl.uniprot.org/uniprot": "uniprot",
             "http://identifiers.org/ensembl.plant": "ensembl.plant"
 
         };
-        console.log("getPrefixedFormOfURI uri: " + uriStr);
+        //console.log("getPrefixedFormOfURI uri: " + uriStr);
         var uri = new URI(uriStr);
         var dirUriStr = "";
         var localname = "";
@@ -63,8 +64,8 @@ function getPrefixedFormOfURI(uriStr) {
             dirUriStr = uri.filename("").toString();
             dirUriStr = dirUriStr.slice(0, -1);
         }
-        console.log("getPrefixedFormOfURI dirUri: " + dirUriStr);
-        console.log("getPrefixedFormOfURI localname: " + localname);
+        //console.log("getPrefixedFormOfURI dirUri: " + dirUriStr);
+        //console.log("getPrefixedFormOfURI localname: " + localname);
         var prefix = "";
         if (dirUriStr.includes("agrold") && !dirUriStr.endsWith("agrold")) {
             var dirUri = new URI(dirUriStr);
@@ -76,9 +77,7 @@ function getPrefixedFormOfURI(uriStr) {
             }
         }
         prefixedUri = (prefix !== undefined ? prefix + localname : uriStr);
-        console.log("getPrefixedFormOfURI prefixedUri: " + prefixedUri);
-        //return "\'"+prefixedUri+"\'";
-        //return "\""+prefixedUri+"\"";
+        //console.log("getPrefixedFormOfURI prefixedUri: " + prefixedUri);        
     }
     return String(prefixedUri);
 }
@@ -88,10 +87,7 @@ function descriptionAsGraph(entityIRI, data, divId) {
     // Here we use Cytoscape.js to display relations in data with the entityIRI
     //document.addEventListener("DOMContentLoaded", function() {
     entityIRI = getPrefixedFormOfURI(entityIRI);
-    console.log("descriptionAsGraph entityIRI: " + entityIRI);
-    // 0. change the size of the container: modal-result
-    //$(".modal-result").width(800);
-    //$(".modal-result").height(800);
+    //console.log("descriptionAsGraph entityIRI: " + entityIRI);
     // 1. build the JSON of the elements of the graph (nodes and edges)
 
     var graphElements = {nodes: [{data: {id: entityIRI}}], edges: []};
@@ -122,7 +118,7 @@ function descriptionAsGraph(entityIRI, data, divId) {
             graphElements["edges"].push({data: {id: idBase + i, relation: property, source: isValueOf, target: entityIRI}});
         }
     }
-    console.log("descriptionAsGraph: " + JSON.stringify(graphElements));
+    //console.log("descriptionAsGraph: " + JSON.stringify(graphElements));
     var cy = cytoscape({
         container: document.getElementById(divId),
         elements: graphElements,
@@ -305,7 +301,7 @@ function addNavButtonsADVS(nbResults, currentPage, divId, previousBtnId, nextBtn
     if (currentPage > 0) {
         nav = '<button class="btn btn-secondary o-secondary" id="' + previousBtnId + '"><i class="fa fa-angle-left"></i>&nbsp;&nbsp; Previous page</button>';
     }
-    if (pageSize == nbResults) {
+    if (pageSize === nbResults) {
         nav += ('<button class="btn btn-secondary o-secondary" id="' + nextBtnId + '" style="position: relative;right: 0px;">Next page &nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>');
     }
     $("body" + " .yasr_header").prepend(nav);
