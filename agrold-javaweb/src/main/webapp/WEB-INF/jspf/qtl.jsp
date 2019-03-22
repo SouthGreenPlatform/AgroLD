@@ -69,7 +69,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
             var containerId = type + "Container";
             displayHoldMessage("#" + type + "Result");
             var tthis = this;
-            swagger.apis.protein.getProteinsAssociatedWithQtl({format: DEFAULTAPIFORMAT, qtlId: ModalContext.id, pageSize: pageSize, page: page},
+            swagger.apis.protein.getProteinsAssociatedWithQtl({format: DEFAULTAPIFORMAT, qtlId: ModalContext.id, pageSize: DEFAULT_PAGE_SIZE, page: page},
                     {responseContentType: 'application/json'}, function (data) {
                 var sparqljson = data.data;
                 var resultId = type + "Result";
@@ -87,19 +87,19 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
             var containerId = type + "Container";
             displayHoldMessage("#" + type + "Result");
             var tthis = this;
-            swagger.apis.ontologies.getOntoTermsAssociatedWithQtl({format: DEFAULTAPIFORMAT, qtlId: ModalContext.id, pageSize: pageSize, page: page},
+            swagger.apis.ontologies.getOntoTermsAssociatedWithQtl({format: DEFAULTAPIFORMAT, qtlId: ModalContext.id, pageSize: DEFAULT_PAGE_SIZE, page: page},
                     {responseContentType: 'application/json'}, function (data) {
                 var sparqljson = data.data;
                 var resultId = type + "Result";
                 displayResult(resultId, sparqljson);
                 $("tr.odd").ready(function () {
                     var pageBtnsId = type + "PageBtns";
-                    tthis.displayInformation(data, page, containerId, pageBtnsId, "searchOntologyTermsAssociatedWithQtl");
+                    tthis.displayInformation(data, page, containerId, "searchOntologyTermsAssociatedWithQtl");
                     processHtmlResult(type);
                 });
             });
         },
-        displayInformation: function (data, page, where, pageBtnsId, functionName) {
+        displayInformation: function (data, page, where, functionName) {
             var nbResults = data.obj["results"]["bindings"].length;
             var previousBtnId = "previousPage";
             var nextBtnId = "nextPage";

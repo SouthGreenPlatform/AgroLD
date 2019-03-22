@@ -13,7 +13,7 @@
             "url": "http://agrold.southgreen.fr/agrold/about.jsp"
         }
     },
-    "host": "localhost:8080/agrold",
+    "host": "agrold.southgreen.fr/agrold",
     "basePath": "/api",
     "tags": [
         {

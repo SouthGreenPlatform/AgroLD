@@ -51,7 +51,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
             var type = "protein";
             displayHoldMessage("#" + type + "Result");
             var tthis = this;
-            swagger.apis.protein.getProteinsEncodedByGene({format: DEFAULTAPIFORMAT, geneId: ModalContext.id, pageSize: pageSize, page: page}, {
+            swagger.apis.protein.getProteinsEncodedByGene({format: DEFAULTAPIFORMAT, geneId: ModalContext.id, pageSize: DEFAULT_PAGE_SIZE, page: page}, {
                 responseContentType: 'application/json'
             }, function (data) {
                 sparqljson = data.data;
@@ -59,7 +59,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
                 displayResult(resultId, data.data);
                 $("tr.odd").ready(function () {
                     pageBtnsId = type + "PageBtns";
-                    tthis.displayInformation(data, page, resultId, pageBtnsId, "searchProteinsEncodedByGene");
+                    tthis.displayInformation(data, page, resultId, "searchProteinsEncodedByGene");
                     processHtmlResult(type);
                 });
             });
@@ -70,7 +70,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
             displayHoldMessage("#" + type + "Result");
             var tthis = this;
             swagger.apis.pathway.getPathwaysInWhichParticipatesGene(
-                    {format: DEFAULTAPIFORMAT, geneId: ModalContext.id, pageSize: pageSize, page: page}, {responseContentType: 'application/json'},
+                    {format: DEFAULTAPIFORMAT, geneId: ModalContext.id, pageSize: DEFAULT_PAGE_SIZE, page: page}, {responseContentType: 'application/json'},
             function (data) {
                 sparqljson = data.data;
                 var resultId = type + "Result";
@@ -79,7 +79,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
                 //var tableClass = type;
                 $(tables[tables.length - 1]).addClass(type);
                 $("tr.odd").ready(function () {
-                    tthis.displayInformation(data, page, resultId, pageBtnsId, "searchPathwayInWhichParticipatesGene");
+                    tthis.displayInformation(data, page, resultId, "searchPathwayInWhichParticipatesGene");
                     processHtmlResult(type);
                 });
             });
@@ -99,7 +99,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
          displayResult(resultId, data.data);
          $("tr.odd").ready(function () {
          pageBtnsId = type + "PageBtns";
-         tthis.displayInformation(data, page, resultId, pageBtnsId, "getPublicationsOfGeneById");
+         tthis.displayInformation(data, page, resultId, "getPublicationsOfGeneById");
          // processHtmlResult(resultId);
          processHtmlResult(type);
          });
@@ -111,7 +111,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
             displayHoldMessage("#" + type + "Result");
             var tthis = this;
             swagger.apis.gene.getPublicationsOfGeneById(
-                    {format: DEFAULTAPIFORMAT, geneId: ModalContext.id, pageSize: pageSize, page: page}, {responseContentType: 'application/json'},
+                    {format: DEFAULTAPIFORMAT, geneId: ModalContext.id, pageSize: DEFAULT_PAGE_SIZE, page: page}, {responseContentType: 'application/json'},
             function (data) {
                 sparqljson = data.data;
                 var resultId = type + "Result";
@@ -121,7 +121,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
                 $(tables[tables.length - 1]).addClass(type);
                 $("tr.odd").ready(function () {
                     // pageBtnsId = "" + "PageBtns";
-                    tthis.displayInformation(data, page, resultId, pageBtnsId, "searchPublications:");
+                    tthis.displayInformation(data, page, resultId, "searchPublications:");
                     //processHtmlResult(type);
                 });
             });
@@ -166,7 +166,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
           $("#moreInfosResult ul").append('<li><a href="' + uris[i].link + '" target="_blank">' + uris[i].link + '</a></li>');      
                 }});
     },
-        displayInformation: function (data, page, where, pageBtnsId, functionName) {
+        displayInformation: function (data, page, where, functionName) {
             nbResults = data.obj["results"]["bindings"].length;
             previousBtnId = "previousPage";
             nextBtnId = "nextPage";

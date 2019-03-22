@@ -3,7 +3,7 @@
  */
 var url = AGROLDAPIJSONURL;
 var maxAuthorsLength = 100;
-var pageSize = 30; // limit number of results per page
+var DEFAULT_PAGE_SIZE = 30; // limit number of results per page
 var sparqlEndpoint = SPARQLENDPOINTURL;
 var holdMessage = '<center id="holdMessage"><img src="images/wait_animated.gif" alt="Please Wait!"/></center>';
 
@@ -313,21 +313,20 @@ function processHtmlResult(entitiesType) {
 /**
  * Gestion de la pagination au niveau de l'outil de recherche.
  * @param {type} nbResults
- * @param {type} currentPage
- * @param {type} divId
+ * @param {type} currentPageo
  * @param {type} previousBtnId
  * @param {type} nextBtnId
  * @returns {undefined}
  */
-function addNavButtonsADVS(nbResults, currentPage, divId, previousBtnId, nextBtnId) {
+function addNavButtonsADVS(nbResults, currentPageo, previousBtnId, nextBtnId) {
     var nav = "";
-    if (currentPage > 0) {
+    if (currentPageo > 0) {
         nav = '<button class="btn btn-secondary o-secondary" id="' + previousBtnId + '"><i class="fa fa-angle-left"></i>&nbsp;&nbsp; Previous page</button>';
     }
-    if (pageSize === nbResults) {
+    if (DEFAULT_PAGE_SIZE === nbResults) {
         nav += ('<button class="btn btn-secondary o-secondary" id="' + nextBtnId + '" style="position: relative;right: 0px;">Next page &nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>');
     }
-    $("body" + " .yasr_header").prepend(nav);
+    $("body" + " .yasr_header").prepend(nav);   
 }
 /**
  * Gestion de la génération des boutons de pagination à l'intérieur du modal.
@@ -345,7 +344,7 @@ function addNavButtons(nbResults, currentPageo, divIdo, previousBtnId, nextBtnId
         pager.prepend('<button class="btn btn-secondary o-secondary" onclick="invoke(\'' + functionName + '\',' + (currentPageo - 1) + ')" id="' + previousBtnId + '-top"><i class="fa fa-angle-left"></i>&nbsp;&nbsp; Previous page</button>');
         pager.append('<button class="btn btn-secondary o-secondary" onclick="invoke(\'' + functionName + '\',' + (currentPageo - 1) + ')" id="' + previousBtnId + '-top' + '"><i class="fa fa-angle-left"></i>&nbsp;&nbsp; Previous page</button>');
     }
-    if (pageSize == nbResults) {
+    if (DEFAULT_PAGE_SIZE === nbResults) {
         pager.prepend('<button class="btn btn-secondary o-secondary" onclick="invoke(\'' + functionName + '\',' + (currentPageo + 1) + ')" id="' + nextBtnId + '-bottom' + '" style="position: relative;right: 0px;">Next page &nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>');
         pager.append('<button class="btn btn-secondary o-secondary" onclick="invoke(\'' + functionName + '\',' + (currentPageo + 1) + ')" id="' + nextBtnId + '-bottom' + '" style="position: relative;right: 0px;">Next page &nbsp;&nbsp;<i class="fa fa-angle-right"></i></button>');
     }

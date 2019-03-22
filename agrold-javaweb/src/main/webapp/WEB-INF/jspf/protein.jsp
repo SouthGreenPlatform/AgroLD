@@ -80,7 +80,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', \"\") AS ?Id) \
         var containerId = type + "Container";
         displayHoldMessage("#" + "Protein" + "Result");
         var tthis=this;
-        swagger.apis.gene.getGenesEncodingProteins({format: DEFAULTAPIFORMAT, proteinId: ModalContext.id, pageSize: pageSize, page: page},
+        swagger.apis.gene.getGenesEncodingProteins({format: DEFAULTAPIFORMAT, proteinId: ModalContext.id, pageSize: DEFAULT_PAGE_SIZE, page: page},
         {responseContentType: 'application/json'}, function (data) {
             var sparqljson = data.data;
             var resultId = type + "Result";
@@ -98,7 +98,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', \"\") AS ?Id) \
         var containerId = type + "Container";
         displayHoldMessage("#" + type + "Result");
         var tthis=this;
-        swagger.apis.qtl.getQtlsAssociatedWithProteinId({format: DEFAULTAPIFORMAT, proteinId: ModalContext.id, pageSize: pageSize, page: page},
+        swagger.apis.qtl.getQtlsAssociatedWithProteinId({format: DEFAULTAPIFORMAT, proteinId: ModalContext.id, pageSize: DEFAULT_PAGE_SIZE, page: page},
         {responseContentType: 'application/json'}, function (data) {
             var sparqljson = data.data;
             var resultId = type + "Result";
@@ -116,7 +116,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', \"\") AS ?Id) \
         containerId = "ontologyContainer";
         displayHoldMessage("#" + type + "Result");
         var tthis=this;
-        swagger.apis.ontologies.getOntoTermsAssociatedWithProtein({format: DEFAULTAPIFORMAT, proteinId: ModalContext.id, pageSize: pageSize, page: page},
+        swagger.apis.ontologies.getOntoTermsAssociatedWithProtein({format: DEFAULTAPIFORMAT, proteinId: ModalContext.id, pageSize: DEFAULT_PAGE_SIZE, page: page},
         {responseContentType: 'application/json'}, function (data) {
             sparqljson = data.data;
             resultId = type + "Result";
@@ -153,7 +153,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', \"\") AS ?Id) \
             }*/
         });
     },
-    displayInformation: function(data, page, where, pageBtnsId, functionName) {
+    displayInformation: function(data, page, where, functionName) {
         nbResults = data.obj["results"]["bindings"].length;
         previousBtnId = "previousPage";
         nextBtnId = "nextPage";

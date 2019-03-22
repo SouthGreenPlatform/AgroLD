@@ -129,10 +129,10 @@
     </div>          
 <jsp:include page="footer.html"></jsp:include>
 <script>
-        size1 = Math.round(pageSize / 3);
-        size2 = Math.round(pageSize * 2 / 3);
-        YASR.plugins.table.defaults.datatable["pageLength"] = pageSize;
-        YASR.plugins.table.defaults.datatable["lengthMenu"] = [[size1, size2, pageSize, -1], [size1, size2, pageSize, "All"]];
+        size1 = Math.round(DEFAULT_PAGE_SIZE / 3);
+        size2 = Math.round(DEFAULT_PAGE_SIZE * 2 / 3);
+        YASR.plugins.table.defaults.datatable["pageLength"] = DEFAULT_PAGE_SIZE;
+        YASR.plugins.table.defaults.datatable["lengthMenu"] = [[size1, size2, DEFAULT_PAGE_SIZE, -1], [size1, size2, DEFAULT_PAGE_SIZE, "All"]];
         YASR.plugins.table.defaults.fetchTitlesFromPreflabel = false;
 </script>
 </body>

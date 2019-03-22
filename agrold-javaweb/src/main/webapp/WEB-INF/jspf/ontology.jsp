@@ -87,14 +87,14 @@ BIND(REPLACE(?localname, \"_\", \":\") as ?Id).}';
         displayHoldMessage("#" + type + "Result");        
         var idt = ModalContext.uri;
         var tthis = this;
-        swagger.apis.ontologies.getParentById({format: DEFAULTAPIFORMAT, id:ModalContext.id , pageSize: pageSize, page: page},
+        swagger.apis.ontologies.getParentById({format: DEFAULTAPIFORMAT, id:ModalContext.id , pageSize: DEFAULT_PAGE_SIZE, page: page},
         {responseContentType: 'application/json'}, function (data) {
             var sparqljson = data.data;
             var resultId = type + "Result";
             displayResult(resultId, sparqljson);
             $("tr.odd").ready(function () {
                 pageBtnsId = "zbtn"/*type + "PageBtns"*/;
-                tthis.displayInformation(data, page, resultId, pageBtnsId, "searchParentById");
+                tthis.displayInformation(data, page, resultId, "searchParentById");
                 processHtmlResult("ontology");
             });
         });
@@ -105,14 +105,14 @@ BIND(REPLACE(?localname, \"_\", \":\") as ?Id).}';
         containerId = type+"Container";
         displayHoldMessage("#" + type + "Result");  
         var tthis = this;
-        swagger.apis.ontologies.getChildrenById({format: DEFAULTAPIFORMAT, id: ModalContext.id , pageSize: pageSize, page: page},
+        swagger.apis.ontologies.getChildrenById({format: DEFAULTAPIFORMAT, id: ModalContext.id , pageSize: DEFAULT_PAGE_SIZE, page: page},
         {responseContentType: 'application/json'}, function (data) {
             sparqljson = data.data;
             resultId = type + "Result";
             displayResult(resultId, sparqljson);
             $("tr.odd").ready(function () {
                 pageBtnsId = type + "PageBtns";
-                tthis.displayInformation(data, page, resultId, pageBtnsId, "searchChildrenById");
+                tthis.displayInformation(data, page, resultId, "searchChildrenById");
                 processHtmlResult("ontology");
             });
         });
@@ -123,14 +123,14 @@ BIND(REPLACE(?localname, \"_\", \":\") as ?Id).}';
         containerId = type+"Container";
         displayHoldMessage("#" + type + "Result");
         var tthis = this;
-        swagger.apis.qtl.getQtlsIdAssociatedWithOntoId({format: DEFAULTAPIFORMAT, ontoId: ModalContext.id , pageSize: pageSize, page: page},
+        swagger.apis.qtl.getQtlsIdAssociatedWithOntoId({format: DEFAULTAPIFORMAT, ontoId: ModalContext.id , pageSize: DEFAULT_PAGE_SIZE, page: page},
         {responseContentType: 'application/json'}, function (data) {
             sparqljson = data.data;
             resultId = type + "Result";
             displayResult(resultId, sparqljson);
             $("tr.odd").ready(function () {
                 pageBtnsId = type + "PageBtns";
-                tthis.displayInformation(data, page, resultId, pageBtnsId, "searchQtlsIdAssociatedWithOntoId");
+                tthis.displayInformation(data, page, resultId, "searchQtlsIdAssociatedWithOntoId");
                 processHtmlResult(type);
             });
         });
@@ -141,19 +141,19 @@ BIND(REPLACE(?localname, \"_\", \":\") as ?Id).}';
         containerId = type+"Container";
         displayHoldMessage("#" + type + "Result");  
         var tthis = this;
-        swagger.apis.protein.getProteinIdAssociatedWithOntoId({format: DEFAULTAPIFORMAT, ontoId: ModalContext.id , pageSize: pageSize, page: page},
+        swagger.apis.protein.getProteinIdAssociatedWithOntoId({format: DEFAULTAPIFORMAT, ontoId: ModalContext.id , pageSize: DEFAULT_PAGE_SIZE, page: page},
         {responseContentType: 'application/json'}, function (data) {
             sparqljson = data.data;
             resultId = type + "Result";
             displayResult(resultId, sparqljson);
             $("tr.odd").ready(function () {
                 pageBtnsId = type + "PageBtns";
-                tthis.displayInformation(data, page, resultId, pageBtnsId, "searchProteinIdAssociatedWithOntoId");
+                tthis.displayInformation(data, page, resultId, "searchProteinIdAssociatedWithOntoId");
                 processHtmlResult(type);
             });
         });
     }, 
-    displayInformation: function(data, page, where, pageBtnsId, functionName) {
+    displayInformation: function(data, page, where, functionName) {
         nbResults = data.obj["results"]["bindings"].length;
         previousBtnId = "previousPage";
         nextBtnId = "nextPage";
