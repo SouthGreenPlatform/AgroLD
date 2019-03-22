@@ -2,7 +2,7 @@
 *  préferer Tomcat 7/8 à d'autres serveurs web
 *  remplacer l'url de l'apli web dans `config/config.js`
 *  remplacer l'url de l'appli dans `agrold.ogust.servlet.Logout.java`
-*  remplacer l'url de base de l'api dans le fichier à l'emplacement `AGROLDAPIJSONURL` définis dans `config/config.js` (`config/agrold.json`): `"host": "localhost:8080/agrold"` ou `"host": "agrold.southgreen.fr"`
+*  remplacer l'url de base de l'api dans le fichier à l'emplacement `AGROLDAPIJSONURL` définis dans `config/config.js` (`config/agrold.json`): `"host": "localhost:8080/agrold"` ou `"host": "agrold.southgreen.fr/agrold"`
 *  remplacer le chemin de configuration de la connexion au serveur MySQL pour la gestion de l'historique utilisateur dans le fichier `agrold.ogust.config.MySQLProperties`: (variable `configFilePath`)
 
 Le format du fichier de configuration pour mysql est (**sans ce fichier, l'application web ne peut pas démarrer)**):
@@ -15,7 +15,7 @@ Le format du fichier de configuration pour mysql est (**sans ce fichier, l'appli
 
 *  sauvegarder le fichier `agrold.war` déployé sur le serveur au cas où on voudrait la redéployer : `scp -r virtuoso@volvestre.cirad.fr:/opt/apache-tomcat-8.0.23/webapps/agrold.war /Users/zadmin/agrold/virtuoso-webapps-dir-save/`
 *  supprimer les dossier `agrold` des sous-repertoires `webapps` et `work/Catalina/localhost` (ou redémarrer tomcat) de Tomcat
-*  choisir le bon context path dans `META_INF/context.xml` (sans `agrold` en ligne et avec en local)
+*  choisir le bon context path dans `META_INF/context.xml`
 
 
 ### Sauvegarde des activités
@@ -49,12 +49,15 @@ delete from h_advanced_search where mail="tagny@ymail.com";
 #### Advanced Search
 *  Laisser l'utilisateur spécifier les paramètres `page`et `pageSize`?
 *  *Les tables YASR apparaissent souvent aminçis dans les fenêtres de description d'entités*
-*  **x La navigation entre page ne marche pas ("Next page")**
+*  *La navigation entre page ne marche pas ("Next page")*: quand on fait un *display* puis on revient aux résultats de la recherche
 *  *les requêtes sur les QTL retournent peu de résultats*
 *  advancedsearch.jsp incompatible avec includes.html?
 *  gérer les erreur HTTP (eg. 204, 404, 500, etc.) de l'API dans l'advancedSearch (màj de Swagger-client dans tous les appel aux web services)
 *  Recherche des QTL: la seul description fournie est le label et has_trait (très souvent une URI TO_... dans le graphe gramene.qtl, mais texte dans qtaro.qtl). Donc il est difficile de les retrouver par mot-clé
 *  **Corriger la requête de recherche pour trouver plus de QTL y compris ceux de qtaro.qtl (voir sparql query du web service getQTLs i.e. `rdf:type|rdfs:subclassOf)**
+*  Corriger la recherche des QTL par mot clé (la requête BNL6.32 ne retourne rien)
+*  Permettre de pouvoir passer les paramètres par GET (url)
+*  View as Graph: en faire un point à partir duquel la KB peut être explorée
 
 #### Exemple
 *  Elliminer les exemples qui ne marchent pas
@@ -110,3 +113,32 @@ WHERE {
   { uri: ?property ?hasValue }
 }
 ```
+
+
+#### Quick search
+*  le *describe* des URI ne fonctionne pas à cause de la redirection des URL de l'appli
+
+
+PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+select distinct ?Id, (bif:search_excerpt (bif:vector ('ethanol'), group_concat(distinct ?o1;separator=" ; "))) as ?keyword_reference,?s1 as ?URI, ?g as ?graph 
+where {{{ 
+select ?Id, group_concat(distinct ?Name;separator="; ") as ?Names, ?s1, ?t, (?sc * 3e-1) as ?sc, ?o1, (sql:rnk_scale (<LONG::IRI_RANK> (?s1))) as ?rank, ?g 
+where  
+  { 
+    quad map virtrdf:DefaultQuadMap 
+    { 
+      graph ?g { 
+	?s1 a|rdfs:subClassOf ?t.
+	FILTER(?t IN (<http://www.southgreen.fr/agrold/vocabulary/Metabolic_Pathway>,<http://www.southgreen.fr/agrold/resource/Pathway_Identifier>,<http://semanticscience.org/resource/SIO_010532>))
+     BIND(REPLACE(str(?s1), '^.*(#|/)', "") AS ?Id)   
+     OPTIONAL {?s1 rdfs:label ?Name .}
+         ?s1 ?s1textp ?o1 .
+        ?o1 bif:contains  '"ethanol"'  option (score ?sc)  .
+        
+      }
+      filter(REGEX(?g, "^http://www.southgreen.fr/agrold/"))
+     }
+    
+  }
+ order by desc (?sc * 3e-1 + sql:rnk_scale (<LONG::IRI_RANK> (?s1))) 

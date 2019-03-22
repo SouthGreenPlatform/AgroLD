@@ -17,6 +17,7 @@ public class PathwayDAO {
     //public static String PATHWAY_IDENTIFIER = "http://semanticscience.org/resource/SIO_010532";
     //public static String METABOLIC_PATHWAY = "http://www.southgreen.fr/agrold/resource/Pathway_Identifier";
     //public static String PATHWAY_IDENTIFIER = "http://www.southgreen.fr/agrold/resource/Metabolic_Pathway";
+    public static String PATHWAY_TYPE1 = "http://semanticscience.org/resource/SIO_010532";
     public static String PATHWAY_IDENTIFIER = "http://www.southgreen.fr/agrold/resource/Pathway_Identifier";
     public static String METABOLIC_PATHWAY = "http://www.southgreen.fr/agrold/vocabulary/Metabolic_Pathway";
     public static String GRAMECYC_GRAPH = "http://www.southgreen.fr/agrold/gramene.cyc";
@@ -40,7 +41,7 @@ public class PathwayDAO {
         sparqlQuery = Utils.addLimitAndOffset(sparqlQuery, pageSize, page);
 
         return Utils.executeSparqlQuery(sparqlQuery, Utils.sparqlEndpointURL, resultFormat);*/
-        return Utils.getEntitiesByKeyWord(keyword, new String[] {METABOLIC_PATHWAY, PATHWAY_IDENTIFIER}, page, pageSize, resultFormat);
+        return Utils.getEntitiesByKeyWord(keyword, new String[] {METABOLIC_PATHWAY, PATHWAY_IDENTIFIER, PATHWAY_TYPE1}, page, pageSize, resultFormat);
     }
 
     // return  IRI and name of pathways in which an id-given gene participates
@@ -66,7 +67,7 @@ public class PathwayDAO {
     }
 
     public static void main(String[] args) throws IOException {
-        System.out.println(getPathwaysByKeyWord("pathway", 0, 10, ".tsv"));
+        System.out.println(getPathwaysByKeyWord("ethanol degradation", 0, 10, ".tsv"));
     }
 
 }

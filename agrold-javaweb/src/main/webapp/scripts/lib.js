@@ -72,8 +72,8 @@ function getPrefixedFormOfURI(uriStr) {
             prefix = "agrold:" + dirUri.filename().toString() + "/";
         } else {
             prefix = registeredPrefixes[dirUriStr];
-            if(prefix !== undefined) {
-                 prefix += ":";
+            if (prefix !== undefined) {
+                prefix += ":";
             }
         }
         prefixedUri = (prefix !== undefined ? prefix + localname : uriStr);
@@ -85,12 +85,17 @@ function getPrefixedFormOfURI(uriStr) {
 function descriptionAsGraph(entityIRI, data, divId) {
     // each line give the value (hasValue, or isValueOf) of a relation (property) involving the entityIRI
     // Here we use Cytoscape.js to display relations in data with the entityIRI
+
     //document.addEventListener("DOMContentLoaded", function() {
     entityIRI = getPrefixedFormOfURI(entityIRI);
     //console.log("descriptionAsGraph entityIRI: " + entityIRI);
     // 1. build the JSON of the elements of the graph (nodes and edges)
-
-    var graphElements = {nodes: [{data: {id: entityIRI}}], edges: []};
+    // color to use:    
+    var centerNodeColor = 'blue'; // entityIRI node (center of the graph)
+    var otherNodesColor = '#ddd'; // other nodes
+    var ingoingEdgesColor = '#61bffc'; // ingoing edges
+    var outgoingEdgesColor = '#ddd'; // outgoing edges
+    var graphElements = {nodes: [{data: {id: entityIRI, color: centerNodeColor}}], edges: []};
     var property = "";
     var hasValue = "";
     var isValueOf = "";
@@ -100,23 +105,27 @@ function descriptionAsGraph(entityIRI, data, divId) {
         property = getPrefixedFormOfURI(data[i]["property"]);
         hasValue = getPrefixedFormOfURI(data[i]["hasValue"]);
         isValueOf = getPrefixedFormOfURI(data[i]["isValueOf"]);
+        var newNodeLabel;
+        var edgeSource;
+        var edgeTarget;
+        var edgeColor;
 
         if (hasValue !== "") {
-            if (!(addedNodes.filter(value => value === hasValue).length > 0)) {
-                graphElements["nodes"].push({data: {id: hasValue}});
-                addedNodes.push(hasValue);
-            }
-            graphElements["edges"].push({data: {id: idBase + i, relation: property, source: entityIRI, target: hasValue}});
-
+            newNodeLabel = hasValue;
+            edgeSource = entityIRI;
+            edgeTarget = hasValue;
+            edgeColor = outgoingEdgesColor;
+        } else { // if (isValueOf !== "")
+            newNodeLabel = isValueOf;
+            edgeSource = isValueOf;
+            edgeTarget = entityIRI;
+            edgeColor = ingoingEdgesColor;
         }
-        if (isValueOf !== "") {
-            if (!(addedNodes.filter(value => value === isValueOf).length > 0)) {
-                graphElements["nodes"].push({data: {id: isValueOf}});
-                addedNodes.push(isValueOf);
-            }
-
-            graphElements["edges"].push({data: {id: idBase + i, relation: property, source: isValueOf, target: entityIRI}});
+        if (!(addedNodes.filter(value => value === newNodeLabel).length > 0)) {
+            graphElements["nodes"].push({data: {id: newNodeLabel, color: otherNodesColor}});
+            addedNodes.push(newNodeLabel);
         }
+        graphElements["edges"].push({data: {id: idBase + i, relation: property, source: edgeSource, target: edgeTarget, color: edgeColor}});
     }
     //console.log("descriptionAsGraph: " + JSON.stringify(graphElements));
     var cy = cytoscape({
@@ -128,20 +137,34 @@ function descriptionAsGraph(entityIRI, data, divId) {
                 style: {
                     'label': 'data(id)',
                     'color': 'blue',
+                    'background-color': 'data(color)',
                     'font-size': '16px',
                     'text-halign': 'center',
-                    'text-valign': 'center',
+                    'text-valign': 'bottom',
+                    'text-background-color': 'white'
                 }
             }, {
                 selector: 'edge',
                 style: {
                     'curve-style': 'bezier',
                     'label': 'data(relation)',
+                    'line-color': 'data(color)',
+                    'target-arrow-color': 'data(color)',
                     'text-background-color': 'yellow',
                     'text-background-opacity': 0.4,
-                    'width': '6px',
+                    'width': '5px',
                     'target-arrow-shape': 'triangle',
                     'control-point-step-size': '140px'
+                }
+            },
+            {
+                selector: ':selected',
+                style: {
+                    'line-color': 'blue',
+                    'target-arrow-color': 'blue',
+                    'border-width': 5,
+                    'border-style': 'solid',
+                    'border-color': 'black'
                 }
             }
         ],
