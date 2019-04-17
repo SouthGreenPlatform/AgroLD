@@ -71,6 +71,11 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
     <jsp-config>
+        <!--jsp-property-group>
+            <description>KnetMaps.js Graphe Visualisation tool</description>
+            <display-name>knetmaps</display-name>
+            <url-pattern>/knetmaps</url-pattern>
+        </jsp-property-group-->
         <jsp-property-group>
             <description>RelFinder Visualisation tool</description>
             <display-name>relfinder</display-name>

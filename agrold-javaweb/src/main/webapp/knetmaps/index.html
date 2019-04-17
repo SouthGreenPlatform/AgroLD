@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <link href="css_demo/index-style.css" rel="stylesheet" /> <!-- demo page css -->
+        <link href="dist/css/knetmaps.css" rel="stylesheet" /> <!-- KnetMaps css -->
+		
+        <link href="https://fonts.googleapis.com/css?family=Kanit|Play" rel="stylesheet">
+        <link rel="shortcut icon" href="image/favicon.ico" > <!-- favicon added -->
+
+        <meta charset=utf-8 />
+        <script src="dist/js/knetmaps-lib.min.js"></script> <!-- KnetMaps libs (with jQuery) -->
+		
+        <script src="dist/js/knetmaps.min.js"></script> <!-- KnetMaps -->
+
+        <script src="js_demo/launchNetwork.js"></script> <!-- demo page js -->
+
+        <title>KnetMaps.js demo</title>
+    </head>
+ 
+    <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">	  
+    	<a href="#"><img class="logo-top" src="image/knetmaps.jpg" height="48" alt="Logo"></a>   
+       <ul class="nav navbar-nav" id="top">
+          <li><a target="_blank" href="https://github.com/Rothamsted/knetmaps.js">GitHub</a>
+          <a target="_blank" href="http://ondex.rothamsted.ac.uk/QTLNetMiner/releasenotes/guides/QTLNetMiner_UserGuide.pdf">User Guide</a></li>
+    </ul>
+ 	</nav>  <!-- end navbar -->
+ 
+ <div id="content">
+            <div>Select dataset: <select id="dataset_dropdown" onChange="launchNetwork($('#dataset_dropdown').val());">
+                    <option value="wheat_network_seedSize" selected="selected" title="Wheat (seed size)">Wheat (seed size)</option>
+                    <option value="wheat_network_pollen" title="Wheat (pollen)">Wheat (pollen)</option>
+                    <option value="human_neuroDisease_network_alzheimer" title="Human (alzheimer)">Human (alzheimer)</option>
+                    <option value="arabidopsis_network_flowering" title="Arabidopsis (flowering time)">Arabidopsis (flowering time)</option>
+                    <option value="arabidopsis_network_seedDormancy" title="Arabidopsis (seed dormancy)">Arabidopsis (seed dormancy)</option>
+                </select>
+            </div><br/>
+            <div id="dataset-description"></div><br/>
+            <!-- KnetMaps -->
+            <div id="knet-maps">
+                <!-- KnetMaps Menubar -->
+                <div id="knetmaps-menu"></div>
+			    <div id="itemInfo" class="infoDiv" style="display:none;"><!-- Item Info pane -->
+                    <table id="itemInfo_Table" class="infoTable" cellspacing=1>
+                        <thead><th>Info box:</th>
+                            <!-- <th><button id="btnCloseItemInfoPane" onclick="closeItemInfoPane();">Close</button></th> -->
+                            <th><input type="image" id="btnCloseItemInfoPane" src="image/close-icon.png" onClick="closeItemInfoPane();"></th>
+                        </thead><tbody></tbody></table>
+                </div>
+                <!-- The core cytoscapeJS container -->
+                <div id="cy"></div>
+                <!-- interactive, dynamic Legend to show all concept of a particular type -->
+				<div id="knetLegend" title="Hover over icons to see corresponding Concept type & click an icon to show all such Concepts connected to visible Concepts in this network"><span>Concepts:</span></div>
+                <!-- dynamically updated Legend to show number of shown/ hidden concepts -->
+				<div id="statsLegend" style="width: 350px; margin: auto;"><span>KnetMaps</span></div>
+                <!-- popup dialog -->
+                <div id="infoDialog"></div>
+            </div>
+            </div>  <!-- content -->
+           
+       <div class="contact-footer"> 
+      	<img class="knetminer-logo" src="image/knetmaps.jpg" alt="Logo" with="201.5" height="66.3">
+        <p id="text-logo">Supported by BBSRC SABR and TRDF awards BB/F006039/1 and BB/I023860/1</p> 
+       </div> 
+    </body>
+</html>
+
