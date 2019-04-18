@@ -38,15 +38,28 @@ function GraphData(_graphName, _version) {
     };
 }
 
+function ConceptType(name){
+    this.name = name;
+    
+    this.getName = function(){
+        return this.name;
+    };
+}
 
-function Concept(id, annotation, elementOf, description, pid, value, ofType, evidences, context) {
+
+function RelationType(sourceConceptType, targetConceptType){
+    this.sourceConceptType = sourceConceptType;
+    this.targetConceptType = targetConceptType;    
+}
+
+function Concept(id, annotation, elementOf, description, pid, value, conceptType, evidences, context) {
     this.id = id;
     this.annotation = annotation;
     this.elementOf = elementOf;
     this.description = description;
     this.pid = pid;
     this.value = value;
-    this.ofType = ofType;
+    this.ofType = conceptType.getName();
     this.evidences = evidences;
     this.context = context;
     this.conames = [];
