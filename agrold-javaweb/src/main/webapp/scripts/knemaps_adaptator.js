@@ -140,4 +140,8 @@ function Edge(group, edgeData){
     this.data = edgeData;
 }
 
+function EdgeStyle(relationType){
+    
+}
+
 //function EdgeData(Concept) // ??? separate style that identifies relations
