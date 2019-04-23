@@ -1,0 +1,20 @@
+{
+    "author": "tagnyngompé <gildas.tagny_ngompe at cirad.fr>",
+    "conceptTypeStyle" : {
+        "Gene": {"conceptBorderColor": "navy", "conceptType": "Gene", "conceptSize": "26px", "conceptTextBGopacity": "0", "conceptColor": "lightBlue", "conceptBorderStyle": "double", "conceptBorderWidth": "3px", "conceptShape": "triangle", "conceptTextBGcolor": "black"},
+        "Protein": {"conceptBorderColor": "navy", "conceptType": "Gene", "conceptSize": "26px", "conceptTextBGopacity": "0", "conceptColor": "lightBlue", "conceptBorderStyle": "double", "conceptBorderWidth": "3px", "conceptShape": "triangle", "conceptTextBGcolor": "black"},
+        "QTL": {"conceptBorderColor": "navy", "conceptType": "Gene", "conceptSize": "26px", "conceptTextBGopacity": "0", "conceptColor": "lightBlue", "conceptBorderStyle": "double", "conceptBorderWidth": "3px", "conceptShape": "triangle", "conceptTextBGcolor": "black"},
+        "Chromosome": {"conceptBorderColor": "navy", "conceptType": "Gene", "conceptSize": "26px", "conceptTextBGopacity": "0", "conceptColor": "lightBlue", "conceptBorderStyle": "double", "conceptBorderWidth": "3px", "conceptShape": "triangle", "conceptTextBGcolor": "black"},
+        "Metabolic_Pathway": {"conceptBorderColor": "navy", "conceptType": "Gene", "conceptSize": "26px", "conceptTextBGopacity": "0", "conceptColor": "lightBlue", "conceptBorderStyle": "double", "conceptBorderWidth": "3px", "conceptShape": "triangle", "conceptTextBGcolor": "black"},
+        "Reaction": {"conceptBorderColor": "navy", "conceptType": "Gene", "conceptSize": "26px", "conceptTextBGopacity": "0", "conceptColor": "lightBlue", "conceptBorderStyle": "double", "conceptBorderWidth": "3px", "conceptShape": "triangle", "conceptTextBGcolor": "black"},
+        "CDS": {"conceptBorderColor": "navy", "conceptType": "Gene", "conceptSize": "26px", "conceptTextBGopacity": "0", "conceptColor": "lightBlue", "conceptBorderStyle": "double", "conceptBorderWidth": "3px", "conceptShape": "triangle", "conceptTextBGcolor": "black"},
+        "Exon": {"conceptBorderColor": "navy", "conceptType": "Gene", "conceptSize": "26px", "conceptTextBGopacity": "0", "conceptColor": "lightBlue", "conceptBorderStyle": "double", "conceptBorderWidth": "3px", "conceptShape": "triangle", "conceptTextBGcolor": "black"},
+        "five_prime_UTR": {"conceptBorderColor": "navy", "conceptType": "Gene", "conceptSize": "26px", "conceptTextBGopacity": "0", "conceptColor": "lightBlue", "conceptBorderStyle": "double", "conceptBorderWidth": "3px", "conceptShape": "triangle", "conceptTextBGcolor": "black"},
+        "mRNA": {"conceptBorderColor": "navy", "conceptType": "Gene", "conceptSize": "26px", "conceptTextBGopacity": "0", "conceptColor": "lightBlue", "conceptBorderStyle": "double", "conceptBorderWidth": "3px", "conceptShape": "triangle", "conceptTextBGcolor": "black"},
+        "three_prime_UTR": {"conceptBorderColor": "navy", "conceptType": "Gene", "conceptSize": "26px", "conceptTextBGopacity": "0", "conceptColor": "lightBlue", "conceptBorderStyle": "double", "conceptBorderWidth": "3px", "conceptShape": "triangle", "conceptTextBGcolor": "black"}
+    },
+    "relationTypeStyle" : {
+        
+    }
+}
+
