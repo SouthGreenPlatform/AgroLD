@@ -26,7 +26,17 @@
 
     </script>
     <head>
-        <title>AgroLD: Form-based search</title>
+        <title>AgroLD: Form-based search</title>        
+                
+        <!--Graphic Visualization-->
+        <!--script src="scripts/cytoscape.min.js"></script-->
+        <link href="knetmaps/css_demo/index-style.css" rel="stylesheet" /> <!-- demo page css -->
+        <link href="knetmaps/dist/css/knetmaps.css" rel="stylesheet" /> <!-- KnetMaps css -->		
+        <link href="https://fonts.googleapis.com/css?family=Kanit|Play" rel="stylesheet">
+        <link rel="shortcut icon" href="image/favicon.ico" > <!-- favicon added -->
+        <script src="knetmaps/dist/js/knetmaps-lib.min.js"></script> <!-- KnetMaps libs (with jQuery) -->		
+        <script src="knetmaps/dist/js/knetmaps.js"></script> <!-- KnetMaps -->
+        
         <link rel="icon" href="images/logo_min.png" />
         <link rel="icon" type="image/png" href="images/logo_min.png" />
         <script type="text/javascript" src="config/config.js"></script>
@@ -36,7 +46,7 @@
         <!-- Tether -->
         <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
         <!-- Jquery baby -->
-        <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
+        <!--script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script-->
         <!-- Bootstrap REBOOT -->
         <link rel="stylesheet" type="text/css" href="styles/bootstrap/css/bootstrap-reboot.min.css">
 
@@ -61,8 +71,8 @@
         <!--include jQuery.DataTables plug-in-->
         <link href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">        
         <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" type="text/javascript"></script>
-        <script src="scripts/cytoscape.min.js"></script>
         <script src="scripts/URI.js"></script>
+        
         <style>
             #graphViewResult {
                 width: inherit;

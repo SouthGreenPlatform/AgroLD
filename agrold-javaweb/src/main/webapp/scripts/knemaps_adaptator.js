@@ -270,4 +270,7 @@ for(var i = 0; i < graph.edges.length; i++) {
     //}
 }
 
-console.log(configStyle);
+//console.log(configStyle);
+
+var s = "cray";
+console.log(s.graph);

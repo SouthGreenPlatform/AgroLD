@@ -453,7 +453,6 @@ KNETMAPS.Generator = function() {
 	// initialize and generate the network from default global vars
  my.generateNetworkGraph=function() {
    //console.log("Dataset file path: "+ json_File);
-
      // Initialize the cytoscapeJS container for Network View.
 	 // NB graphJSON and allGraphData should be declared outside this script
 	   my.initializeNetworkView(graphJSON, allGraphData);
@@ -1678,7 +1677,7 @@ KNETMAPS.KnetMaps = function() {
 
 	// Exposed API
 
-	my.drawRaw = function(target, graph) {
+	my.drawRaw = function(target, graph) {                
 		drawDiv(target);
 		showDiv(target);
 		maskloader.showNetworkLoader(target);
