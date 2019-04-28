@@ -3,9 +3,8 @@
  * This script solves two limits of knetmaps
  */
 
-function Dataset(_name, _summary, _allGraphData, _graph) {    
+function Dataset(_name, _allGraphData, _graph) {    
     this.name = _name;
-    this.summary = _summary;
     this.allGraphData = _allGraphData;
     this.graph = _graph;
 }
@@ -269,8 +268,3 @@ for(var i = 0; i < graph.edges.length; i++) {
     };
     //}
 }
-
-//console.log(configStyle);
-
-var s = "cray";
-console.log(s.graph);
