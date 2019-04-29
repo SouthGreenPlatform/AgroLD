@@ -58,6 +58,7 @@ delete from h_advanced_search where mail="tagny@ymail.com";
 *  Corriger la recherche des QTL par mot clé (la requête BNL6.32 ne retourne rien)
 *  Permettre de pouvoir passer les paramètres par GET (url)
 *  View as Graph: en faire un point à partir duquel la KB peut être explorée
+*  View as Graph with kenetmaps.js: ajouter des types spécifiques à AgroLD comme chromosome, CDS, ou mRNA (le css décrit le style des types d'entités supportés) 
 
 #### Exemple
 *  Elliminer les exemples qui ne marchent pas
