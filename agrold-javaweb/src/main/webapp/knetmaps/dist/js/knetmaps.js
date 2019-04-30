@@ -476,7 +476,7 @@ KNETMAPS.Generator = function() {
   }
 
 // initialize the network
- my.initializeNetworkView=function(networkJSON, metadataJSON) {
+ my.initializeNetworkView=function(networkJSON, metadataJSON) {;
 	graphJSON = networkJSON;
 	allGraphData = metadataJSON;
    // modify for networkJSON to read JSON object from file and retain contents from "elements" section for nodes and edges info.

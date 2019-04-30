@@ -19,12 +19,12 @@ public class GeneralServicesDAO {
                 + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                 + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
                 + "PREFIX uniprot:<http://purl.uniprot.org/uniprot/>\n"
-                + "SELECT ?property ?hasValue ?isValueOf ?type\n"
+                + "SELECT ?graph ?property ?hasValue ?isValueOf ?type\n"
                 + "WHERE {\n"
                 + "values (?q){(<"+IRI+">)}\n"
-                + "  { ?q ?property ?hasValue. ?hasValue a ?type. }\n"
+                + "  { GRAPH ?graph { ?q ?property ?hasValue. OPTIONAL{?hasValue a ?type} }}\n"
                 + "  UNION\n"
-                + "  { ?isValueOf ?property ?q. ?isValueOf a ?type. }\n"
+                + "  { GRAPH ?graph { ?isValueOf ?property ?q. OPTIONAL{?isValueOf a ?type} }}\n"
                 + "}";
         
         //String sparqlQuery = "DESCRIBE <" + IRI + ">";
