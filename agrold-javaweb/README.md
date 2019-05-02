@@ -1,8 +1,10 @@
 ### Cloner l'appli
-
+*  `git clone --branch dev `
+*   
 
 
 ### Deployer l'appli web
+*  choose the <default profile> to build the maven project (to avoid errors with java-doc generation) 
 *  préferer Tomcat 7/8 à d'autres serveurs web
 *  remplacer l'url de l'apli web dans `config/config.js`
 *  remplacer l'url de l'appli dans `agrold.ogust.servlet.Logout.java`

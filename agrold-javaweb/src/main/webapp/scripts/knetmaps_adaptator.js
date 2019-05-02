@@ -251,3 +251,105 @@ for(var i = 0; i < graph.nodes.length; i++) {
 }*/
 
 //console.log("KNETMAPS_STYLE: " + JSON.stringify(KNETMAPS_STYLE));
+
+/////////////////////// Interaction with the knowledge base (webservice)
+
+function getIRILocalname(uriStr) {
+        var uri = new URI(uriStr);
+        var localname;
+        if (uriStr.includes("#")) { // fragment
+            localname = uri.fragment().toString();
+        } else { // filename
+            localname = uri.filename().toString();
+        }
+        return localname;
+    }                
+    
+    var _graphJSON = new Graph();
+    var _allGraphData = new GraphData("FilteredGraphUnconnected", "1.0");
+    var nextId = 0;
+    var entitiesUnprocessedLinks = {};
+ 
+    function generateConceptId(){
+        nextId++;
+        return nextId;
+    }            
+    
+    function extractConceptTypeName(typeURI){
+        var conceptTypeName = getIRILocalname(typeURI);
+        if(conceptTypeName==="Metabolic_Pathway"){conceptTypeName = "Pathway";}
+        return conceptTypeName;
+    }     
+    
+    var describeBaseURL = WEBAPPURL + "/api/describe.json?pageSize=0&uri=";
+    
+    function fetchConceptDescription(conceptURI){
+        $.getJSON(describeBaseURL+conceptURI, function() {}).then(function(entityData){
+            entitiesUnprocessedLinks[conceptURI] = [];
+            var id = generateConceptId(), annotation="", elementOf= new Set(), description="", pid="", value=getIRILocalname(conceptURI), conceptType, 
+            evidences="Imported from AgroLD", conames=[], coaccessions = [], attributes=[];
+
+            attributes.push(new Attribute("visible", "true"));
+            attributes.push(new Attribute("flagged", "true"));
+
+            for(var i=0; i<entityData.length; i++){                                   
+                var _graph = getIRILocalname(entityData[i].graph);                
+                var _property = entityData[i].property;
+                var _hasValue = entityData[i].hasValue;
+                var _isValueOf = entityData[i].isValueOf;
+                var _type = getIRILocalname(entityData[i].type);
+                var relationName = getIRILocalname(_property);             
+                switch(relationName) {
+                    case "type":
+                      conceptType = CONCEPT_TYPES[extractConceptTypeName(_hasValue)];
+                      break;
+                    case "label":
+                    case "has_synonym":
+                        conames.push(_hasValue);
+                      break;
+                    case "description": 
+                     description = _hasValue;
+                    case "comment": 
+                     annotation += _hasValue + " ";
+                    case "seeAlso": 
+                    case "has_dbsref": 
+                     coaccessions.push(new Coaccession(_graph, _hasValue));
+                    default:    
+                        if(_type in CONCEPT_TYPES){
+                            var newLink = {};
+                            newLink.property = _property;
+                            newLink.hasValue = _hasValue;
+                            newLink.isValueOf = _isValueOf;
+                            entitiesUnprocessedLinks[conceptURI].push(newLink);
+                        } else if(_isValueOf===""){
+                            attributes.push(new Attribute(getPrefixedFormOfURI(_property), getPrefixedFormOfURI(_hasValue)));
+                        }
+                  } 
+                  elementOf.add(_graph);            
+            }
+            elementOf = Array.from(elementOf).join(': ');
+            var c = new Concept(id.toString(), annotation, elementOf, description, pid, value, conceptType, evidences); // entityConcept
+            for(var j=0; j<conames.length;j++){
+                c.addConame(conames[j]);
+            }
+            for(var j=0; j<coaccessions.length;j++){
+                c.addCoaccession(coaccessions[j]);
+            }
+            for(var j=0; j<attributes.length;j++){
+                c.addAttribute(attributes[j]);
+            }
+            _allGraphData.addConcept(c);                
+
+            var nd = new NodeData(id.toString(), pid, value, "true", value, annotation, KNETMAPS_STYLE.conceptStyle[conceptType.getName()]);
+            var n = new Node("nodes", nd); // entity node
+            _graphJSON.addNode(n);                       
+        });
+    }
+    
+    function fetchConceptRelations(conceptURI){
+        // add relations
+        for(var i=0; i<entitiesUnprocessedLinks[conceptURI].length; i++){
+            var link = entitiesUnprocessedLinks[conceptURI][i];
+            fetchConceptDescription(link.hasValue==="" ? link.isValueOf: link.hasValue);
+        }
+    }
