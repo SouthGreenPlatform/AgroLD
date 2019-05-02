@@ -230,12 +230,16 @@ var graph = { "edges": [{ "data": { "id": "e1", "source": "1", "relationColor": 
 
 var KNETMAPS_STYLE = {conceptStyle: {}, relationStyle: {}};
 
+
+// conceptType, conceptBorderColor, conceptSize, 
+//conceptTextBGopacity, conceptDisplay, conceptColor, conceptBorderStyle,
+//conceptBorderWidth, conceptShape, conceptTextBGcolor
 for(var i = 0; i < graph.nodes.length; i++) {
     var d = graph.nodes[i].data;
     if(d.conceptType in CONCEPT_TYPES){        
         KNETMAPS_STYLE.conceptStyle[d.conceptType] = new ConceptTypeStyle(CONCEPT_TYPES[d.conceptType],
-        d.conceptBorderColor, d.conceptSize, d.conceptTextBGopacity, d.conceptColor, d.conceptBorderColor,
-        d.conceptBorderWidth, d.conceptShape, d.conceptTextBGcolor);
+        d.conceptBorderColor, d.conceptSize, d.conceptTextBGopacity, d.conceptDisplay, d.conceptColor,
+        d.conceptBorderStyle, d.conceptBorderWidth, d.conceptShape, d.conceptTextBGcolor);
     }
 }
 

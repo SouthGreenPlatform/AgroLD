@@ -125,12 +125,12 @@ and open the template in the editor.
         var n = new Node("nodes", nd); // entity node
         _graphJSON.addNode(n);
         
-        graphJSON = _graphJSON;
-        allGraphData = {"ondexmetadata":  _allGraphData};
-        graphJSON = {"nodes": [{"data": {"annotation": "", "conceptBorderColor": "navy", "conceptType": "Gene", "pid": "", "conceptSize": "26px", "displayValue": "APOE", "conceptTextBGopacity": "0", "conceptDisplay": "element", "conceptColor": "lightBlue", "conceptBorderStyle": "double", "conceptBorderWidth": "3px", "flagged": "true", "id": "1", "value": "APOE", "conceptShape": "triangle", "conceptTextBGcolor": "black"}, "group": "nodes"}], edge:[]};
-        allGraphData = {"ondexmetadata": {"graphName": "FilteredGraphUnconnected", "concepts": [], "relations": [], "version": "1.0"}};
+        graphJSON = JSON.parse(JSON.stringify(_graphJSON)); // since KnetMaps.js understand only the JSON format, it necessary to convert the objet into JSON
+        allGraphData = {"ondexmetadata":  JSON.parse(JSON.stringify(_allGraphData))};
         console.log("allGraphData: " + JSON.stringify(allGraphData));
         console.log("graphJSON: " + JSON.stringify(graphJSON));
+        //graphJSON = {"nodes": [{"data": {"annotation": "", "conceptBorderColor": "navy", "conceptType": "Gene", "pid": "", "conceptSize": "26px", "displayValue": "APOE", "conceptTextBGopacity": "0", "conceptDisplay": "element", "conceptColor": "lightBlue", "conceptBorderStyle": "double", "conceptBorderWidth": "3px", "flagged": "true", "id": "1", "value": "APOE", "conceptShape": "triangle", "conceptTextBGcolor": "black"}, "group": "nodes"}], "edge":[]};
+        allGraphData = {"ondexmetadata": {"graphName": "FilteredGraphUnconnected", "concepts": [], "relations": [], "version": "1.0"}};
             
         KNETMAPS.KnetMaps().draw("#knet-maps");
         

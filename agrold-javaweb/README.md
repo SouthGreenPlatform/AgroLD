@@ -1,4 +1,8 @@
-#### Deployer l'appli web
+### Cloner l'appli
+
+
+
+### Deployer l'appli web
 *  préferer Tomcat 7/8 à d'autres serveurs web
 *  remplacer l'url de l'apli web dans `config/config.js`
 *  remplacer l'url de l'appli dans `agrold.ogust.servlet.Logout.java`
@@ -118,39 +122,3 @@ WHERE {
 
 #### Quick search
 *  **le *describe* des URI ne fonctionne pas à cause de la redirection des URL de l'appli**
-
-
-
-
-//var id = generateConceptId(), annotation="", elementOf= new Set(), description="", pid="", value, conceptType, 
-        //evidences="Impported from AgroLD";        
-        for(var i=0; i<entityData.length; i++){
-            console.log("i="+i);
-            /*var conceptTypeName = getIRILocalname(entityData[i].type);
-            if(conceptTypeName==="Metabolic_Pathway"){conceptTypeName = "Pathway";}
-            if(CONCEPT_TYPES.has(conceptTypeName)){
-                
-                _objUri = entityData[i].hasValue.length === 0 ? entityData[i].isValueOf : entityData[i].hasValue;                
-                /*$.getJSON(describeBaseURL+_objUri, function() {}).then(function(objectData){
-
-                }); 
-            } else {*/
-                var relationName = getIRILocalname(entityData[i].property);
-                /*switch(relationName) {
-                    case "type":
-                      conceptType = CONCEPT_TYPES[getIRILocalname(entityData[i].hasValue)];
-                      break;
-                    case "label":
-                      value = entityData[i].hasValue;
-                      break;
-                    case "description": 
-                     description = entityData[i].hasValue;
-                    //default:
-                      
-                  } */
-                  //elementOf.add(getIRILocalname(entityData[i].graph));
-            //}            
-        }
-        //var ec = new Concept(id, annotation, elementOf, description, pid, value, conceptType, evidences); // entityConcept
-        //console.log(JSON.stringify(ec));
-        //var en = new Node(); // entityNode
