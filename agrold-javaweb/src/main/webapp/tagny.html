@@ -37,7 +37,7 @@ and open the template in the editor.
         <script type="text/javascript">
             $(window).on("load", function () {
                 //var entityUri = "http://www.southgreen.fr/agrold/ricecyc.pathway/FERMENTATION-PWY";      
-                var entityUri = "http://purl.uniprot.org/uniprot/P50158";
+                var entityUri = "http://identifiers.org/ensembl.plant/Zm00001d033472";
                 var ka = new KnetmapsAdaptator();
                 /** 
                  * description de l'entité
@@ -48,7 +48,7 @@ and open the template in the editor.
                  */
                 ka.fetchConceptDescription(entityUri)//.then(function(){return ka.updateNetwork();})
                         .then(function(xhr){return ka.fetchConceptRelations(entityUri, xhr);})//.then(function(){return ka.updateNetwork();})
-                        .then(function(xhr){for(var uri in ka.entitiesUnprocessedLinks){xhr = ka.fetchConceptRelations(uri, xhr);} return xhr;})
+                        //.then(function(xhr){for(var uri in ka.entitiesUnprocessedLinks){xhr = ka.fetchConceptRelations(uri, xhr);} return xhr;})
                         .then(function(){return ka.updateNetwork();}); // tyoujours créer une nouvelle fonction dans le then de l'objet xhr (ne pas appeler directement une fonction définie à l'extérieur)
                 //.fetchConceptRelations(entityUri)
                 //.updateNetwork();
