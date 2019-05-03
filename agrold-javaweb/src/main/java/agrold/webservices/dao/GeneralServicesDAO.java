@@ -13,23 +13,20 @@ import java.io.IOException;
 public class GeneralServicesDAO {
 
     // describe a resource
-
     public static String getIRIDescription(String IRI, int page, int pageSize, String resultFormat) throws IOException {
         String sparqlQuery = "BASE <http://www.southgreen.fr/agrold/>\n"
                 + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                 + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
-                + "PREFIX uniprot:<http://purl.uniprot.org/uniprot/>\n"
                 + "SELECT ?graph ?property ?hasValue ?isValueOf ?type\n"
                 + "WHERE {\n"
-                + "values (?q){(<"+IRI+">)}\n"
-                + "  { GRAPH ?graph { ?q ?property ?hasValue. OPTIONAL{?hasValue a ?type} }}\n"
+                + "values (?q){(<" + IRI + ">)}\n"
+                + " { GRAPH ?graph { ?q ?property ?hasValue. } OPTIONAL{?hasValue a ?type}}\n"
                 + "  UNION\n"
-                + "  { GRAPH ?graph { ?isValueOf ?property ?q. OPTIONAL{?isValueOf a ?type} }}\n"
+                + "  { GRAPH ?graph { ?isValueOf ?property ?q. } OPTIONAL{?isValueOf a ?type}}   \n"
                 + "}";
-        
+
         //String sparqlQuery = "DESCRIBE <" + IRI + ">";
         sparqlQuery = Utils.addLimitAndOffset(sparqlQuery, pageSize, page);
-        
 
         return Utils.executeSparqlQuery(sparqlQuery, Utils.sparqlEndpointURL, resultFormat);
     }
@@ -45,7 +42,6 @@ public class GeneralServicesDAO {
                 + "ORDER BY str(?graph)";
         //+ "GROUP BY ?property";
         sparqlQuery = Utils.addLimitAndOffset(sparqlQuery, pageSize, page);
-        
 
         return Utils.executeSparqlQuery(sparqlQuery, Utils.sparqlEndpointURL, resultFormat);
     }
@@ -64,20 +60,20 @@ public class GeneralServicesDAO {
         String sparqlQuery = "BASE <http://www.southgreen.fr/agrold/>\n"
                 + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                 + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
-                + (graphLocalName==null || graphLocalName.isEmpty()? "": "PREFIX graph:<"+graphLocalName+">\n")
+                + (graphLocalName == null || graphLocalName.isEmpty() ? "" : "PREFIX graph:<" + graphLocalName + ">\n")
                 + "\n"
                 + "SELECT distinct ?LocalName (?relation AS ?URI)\n"
-                + (graphLocalName==null || graphLocalName.isEmpty()? "": "FROM graph:\n")
+                + (graphLocalName == null || graphLocalName.isEmpty() ? "" : "FROM graph:\n")
                 + "WHERE { \n"
                 + "  ?subject ?relation ?object . \n"
                 + "  BIND(REPLACE(str(?relation), '^.*(#|/)', \"\") AS ?LocalName)\n"
                 + "} \n"
                 + "ORDER BY ?relation";
         sparqlQuery = Utils.addLimitAndOffset(sparqlQuery, pageSize, page);
-        
+
         return Utils.executeSparqlQuery(sparqlQuery, Utils.sparqlEndpointURL, resultFormat);
     }
-    
+
     public static void main(String[] args) throws IOException {
         System.out.println(getIRIDescription("http://www.southgreen.fr/agrold/ricecyc.pathway/FERMENTATION-PWY", 0, 0, Utils.CSV));
     }

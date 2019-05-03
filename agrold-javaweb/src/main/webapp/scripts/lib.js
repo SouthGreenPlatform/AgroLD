@@ -96,11 +96,12 @@ function getPrefixedFormOfURI(uriStr) {
 
 function getIRILocalname(iriAsString) {
     var uri = new URI(iriAsString);
-    if (uriStr.includes("#")) { // fragment
+    if (iriAsString.includes("#")) { // fragment
         localname = uri.fragment().toString();
     } else { // filename
         localname = uri.filename().toString();
     }
+    return localname;
 }
 
 function descriptionAsGraph(entityIRI, data, divId) {

@@ -6,7 +6,7 @@
 var knetmaps = KNETMAPS.KnetMaps();
 
 window.onload = function () {
-    launchNetwork($('#dataset_dropdown').val());
+    launchNetwork($('#dataset_dropdown').val(), "knet-maps");
 };
 
 function launchNetwork(jsonFileName, divId) {
