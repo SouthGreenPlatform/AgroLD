@@ -74,6 +74,7 @@ input.knetCon_Enzyme_Classification { border: none; width:22px; height:22px; bac
 input.knetCon_Enzyme { border: none; width:22px; height:22px; background:url("../img/Enzyme.png") }
 input.knetCon_Gene { border: none; width:22px; height:22px; background:url("../img/Gene.png") }
 input.knetCon_Molecular_Function { border: none; width:22px; height:22px; background:url("../img/Molecular_Function.png") }
+input.knetCon_mRNA { border: none; width:22px; height:22px; background:url("../img/mRNA.png") }
 input.knetCon_Pathway { border: none; width:22px; height:22px; background:url("../img/Pathway.png") }
 input.knetCon_Phenotype { border: none; width:22px; height:22px; background:url("../img/Phenotype.png") }
 input.knetCon_PlantOntologyTerm { border: none; width:22px; height:22px; background:url("../img/PlantOntologyTerm.png") }

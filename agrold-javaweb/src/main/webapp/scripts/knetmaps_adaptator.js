@@ -281,10 +281,10 @@ function KnetmapsAdaptator() {
             "conceptSize": "18px",
             "conceptTextBGopacity": "0",
             "conceptDisplay": "element",
-            "conceptColor": "lightGrey",
+            "conceptColor": "red",
             "conceptBorderStyle": "solid",
             "conceptBorderWidth": "1px",
-            "conceptShape": "pentagon",
+            "conceptShape": "triangle",
             "conceptTextBGcolor": "black"
         },
         "Pathway": {
@@ -292,10 +292,10 @@ function KnetmapsAdaptator() {
             "conceptSize": "18px",
             "conceptTextBGopacity": "0",
             "conceptDisplay": "element",
-            "conceptColor": "purple",
+            "conceptColor": "#06FB80",
             "conceptBorderStyle": "solid",
             "conceptBorderWidth": "1px",
-            "conceptShape": "pentagon",
+            "conceptShape": "star",
             "conceptTextBGcolor": "black"
         },
         "Reaction": {
@@ -303,10 +303,10 @@ function KnetmapsAdaptator() {
             "conceptSize": "18px",
             "conceptTextBGopacity": "0",
             "conceptDisplay": "element",
-            "conceptColor": "teal",
+            "conceptColor": "#ACFE37",
             "conceptBorderStyle": "solid",
             "conceptBorderWidth": "1px",
-            "conceptShape": "pentagon",
+            "conceptShape": "star",
             "conceptTextBGcolor": "black"
         },
         "mRNA": {
@@ -342,7 +342,7 @@ function KnetmapsAdaptator() {
         }
     }
 
-    console.log("this.KNETMAPS_STYLES: " + JSON.stringify(this.KNETMAPS_STYLES));
+    //console.log("this.KNETMAPS_STYLES: " + JSON.stringify(this.KNETMAPS_STYLES));
 
     this.generateConceptId = function () {
         this.nextId++;
@@ -493,12 +493,12 @@ function KnetmapsAdaptator() {
 
     };
 
-    this.updateNetwork = function () {
+    this.updateNetwork = function (divTarget) {
         graphJSON = JSON.parse(JSON.stringify(this._graphJSON)); // since KnetMaps.js understand only the JSON format, it necessary to convert the objet into JSON
         allGraphData = {"ondexmetadata": JSON.parse(JSON.stringify(this._allGraphData))};
         //console.log("allGraphData: " + JSON.stringify(allGraphData));
         //console.log("graphJSON: " + JSON.stringify(graphJSON));
 
-        KNETMAPS.KnetMaps().draw("#knet-maps");
+        KNETMAPS.KnetMaps().draw(divTarget);
     };
 }

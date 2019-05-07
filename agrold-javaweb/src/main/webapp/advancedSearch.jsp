@@ -65,7 +65,10 @@
         <script type="text/javascript" src="styles/bootstrap/js/bootstrap.min.js"></script>
         <!-- Les autres -->
         <link href="styles/search.css" rel="stylesheet" type="text/css">        
+        <script src="config/config.js" type="text/javascript"></script>
+        <script src="scripts/URI.js"></script>
         <script src="swagger/lib/swagger-client.js" type="text/javascript"></script>
+        <script type="text/javascript" src="scripts/knetmaps_adaptator.js"></script>
         <script src="scripts/lib.js" type="text/javascript"></script>
         <!--script src="scripts/adv_search_ogust.js" type="text/javascript"></script-->
         <!--include jQuery.DataTables plug-in-->
