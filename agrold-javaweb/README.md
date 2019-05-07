@@ -66,6 +66,21 @@ delete from h_advanced_search where mail="tagny@ymail.com";
 *  View as Graph: en faire un point à partir duquel la KB peut être explorée
 *  View as Graph with kenetmaps.js: ajouter des types spécifiques à AgroLD comme chromosome, CDS, ou mRNA (le css décrit le style des types d'entités supportés) 
 
+```
+sparql
+BASE <http://www.southgreen.fr/agrold/>
+PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT distinct ?ts ?p ?to
+WHERE { 
+    ?s ?p ?o . 
+  	?s a ?ts .
+  	?o a ?to .
+} 
+ORDER BY ?p
+```
+
 #### Exemple
 *  Elliminer les exemples qui ne marchent pas
 *  rendre les exemples cliquables pour éviter l'effort des copier-coller
