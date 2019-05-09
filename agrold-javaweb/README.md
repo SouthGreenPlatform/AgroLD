@@ -5,10 +5,13 @@
 
 ### Deployer l'appli web
 *  choose the <default profile> to build the maven project (to avoid errors with java-doc generation) 
+*  change the context name ("/aldp" for dev. version and "/agrold" for the prod.) in META-INF/context.xml
+*  rename the display name in WEB-INF/web.xml: AgroLD Web application (*development/production* instance)
+*  change the artefact id into "aldp" for dev. version and "/agrold" for the prod., to compile the war file with this name
 *  préferer Tomcat 7/8 à d'autres serveurs web
 *  remplacer l'url de l'apli web dans `config/config.js`
-*  remplacer l'url de l'appli dans `agrold.ogust.servlet.Logout.java`
 *  remplacer l'url de base de l'api dans le fichier à l'emplacement `AGROLDAPIJSONURL` définis dans `config/config.js` (`config/agrold.json`): `"host": "localhost:8080/agrold"` ou `"host": "agrold.southgreen.fr/agrold"`
+*  remplacer l'url de l'appli dans `agrold.ogust.servlet.Logout.java`
 *  remplacer le chemin de configuration de la connexion au serveur MySQL pour la gestion de l'historique utilisateur dans le fichier `agrold.ogust.config.MySQLProperties`: (variable `configFilePath`)
 
 Le format du fichier de configuration pour mysql est (**sans ce fichier, l'application web ne peut pas démarrer)**):
@@ -51,6 +54,7 @@ delete from h_advanced_search where mail="tagny@ymail.com";
 
 #### En général
 * implémenter des test unitaires pour vérifier que les màj ne crèent pas d'erreur
+* configurer le Tomcat de Volvestre dans Netbeans pour directement déployer la version dev. en ligne
 
 #### Advanced Search
 *  Laisser l'utilisateur spécifier les paramètres `page`et `pageSize`?

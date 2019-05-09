@@ -3,7 +3,7 @@
     <description>The application to query AgroLD KB on the web
         - quick search, sparql editor with patterns, relationships discovery, visual query system, advanced form-based search 
         - RESTful-like API (wrapping complexe biological questions)</description>
-    <display-name>AgroLD Web application (production instance)</display-name>
+    <display-name>AgroLD Web application (development instance)</display-name>
     <filter>
         <filter-name>RestrictionFilter</filter-name>
         <filter-class>agrold.ogust.filters.RestrictionFilter</filter-class>
