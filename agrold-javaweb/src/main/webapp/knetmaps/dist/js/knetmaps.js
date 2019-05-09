@@ -308,6 +308,10 @@ cy.elements().qtip({
          content: 'Show Links',
          select: function() {
              if(this.isNode()) {
+                 // fetch the description of the node from AgroLD
+                 console.log("my.showLinks.selectedNode: " + this.data("iri"));
+                 
+                 // show info
             	 iteminfo.showLinks(this);
                 // Refresh network legend.
                 stats.updateKnetStats();
@@ -1021,7 +1025,7 @@ KNETMAPS.ItemInfo = function() {
 
   // Show hidden, connected nodes connected to this node & also remove shadow effect from nodes, wheere needed.
    my.showLinks = function(ele) {
-    var selectedNode= ele;
+    var selectedNode= ele;            
     // Show concept neighborhood.
     selectedNode.connectedEdges().connectedNodes().removeClass('HideEle');
     selectedNode.connectedEdges().connectedNodes().addClass('ShowEle');

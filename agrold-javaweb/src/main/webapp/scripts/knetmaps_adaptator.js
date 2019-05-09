@@ -65,8 +65,9 @@ function RelationType(relationName, sourceConceptType, targetConceptType) {
     this.targetConceptType = targetConceptType;
 }
 
-function Concept(id, annotation, elementOf, description, pid, value, conceptType,
+function Concept(iri, id, annotation, elementOf, description, pid, value, conceptType,
         evidences) {
+    this.iri = iri;
     this.id = id;
     this.annotation = annotation;
     this.elementOf = elementOf;
@@ -178,14 +179,14 @@ function ConceptTypeStyle(conceptType, conceptBorderColor, conceptSize,
     this.conceptTextBGcolor = conceptTextBGcolor;
 }
 
-function NodeData(id, pid, value, flagged, displayValue, annotation,
-        conceptTypeStyle) {
-    this.id = id;
-    this.pid = pid;
-    this.value = value;
+function NodeData(concept, flagged, conceptTypeStyle) {
+    this.iri = concept.iri;
+    this.id = concept.id;
+    this.pid = concept.pid;
+    this.value = concept.value;
     this.flagged = flagged;
-    this.displayValue = displayValue;
-    this.annotation = annotation;
+    this.annotation = concept.annotation;
+    this.displayValue = concept.value;
     this.conceptBorderColor = conceptTypeStyle.conceptBorderColor;
     this.conceptType = conceptTypeStyle.conceptType.getName();
     this.conceptSize = conceptTypeStyle.conceptSize;
@@ -314,7 +315,7 @@ function KnetmapsAdaptator() {
             "conceptSize": "18px",
             "conceptTextBGopacity": "0",
             "conceptDisplay": "element",
-            "conceptColor": "orange",
+            "conceptColor": "violet",
             "conceptBorderStyle": "solid",
             "conceptBorderWidth": "1px",
             "conceptShape": "rectangle",
@@ -331,7 +332,6 @@ function KnetmapsAdaptator() {
 
     this.KNETMAPS_STYLES = {conceptStyle: {}, relationStyle: {}};
     // graph is a sample    
-    var graphMapId2type = {};
     for (var type in this._conceptStyles) {
         var n = this._conceptStyles[type];
         //if (n.conceptType in this.CONCEPT_TYPES) 
@@ -341,6 +341,19 @@ function KnetmapsAdaptator() {
                     n.conceptBorderStyle, n.conceptBorderWidth, n.conceptShape, n.conceptTextBGcolor);
         }
     }
+
+    this.addConceptAndNode = function (concept, conceptURI) {
+        if(conceptURI in this.mapConceptURI2Id && conceptURI in this.mapConceptURI2Concept)
+            return;
+        this.mapConceptURI2Id[conceptURI] = concept.id;
+        this.mapConceptURI2Concept[conceptURI] = concept;
+        // TO DO: Ajouter de nouveau ssi absent
+        this._allGraphData.addConcept(concept);
+        // concept, flagged, displayValue, conceptTypeStyle
+        var nodeData = new NodeData(concept, "true", this.KNETMAPS_STYLES.conceptStyle[concept.ofType]);
+        var node = new Node("nodes", nodeData); // entity node
+        this._graphJSON.addNode(node);
+    };
 
     //console.log("this.KNETMAPS_STYLES: " + JSON.stringify(this.KNETMAPS_STYLES));
 
@@ -362,7 +375,7 @@ function KnetmapsAdaptator() {
         var id, annotation = "", elementOf = new Set(), description = "", pid = "",
                 //value = getPrefixedFormOfURI(conceptURI),
                 value = getIRILocalname(conceptURI),
-                conceptType, evidences = "Imported from AgroLD", conames = [], coaccessions = [], attributes = [];
+                conceptType, evidences = "AgroLD", conames = [], coaccessions = [], attributes = [];
         attributes.push(new Attribute("visible", "true"));
         attributes.push(new Attribute("flagged", "true"));
 
@@ -408,14 +421,8 @@ function KnetmapsAdaptator() {
                             var oURI = _hasValue === "" ? _isValueOf : _hasValue;
                             var oid = this.generateConceptId();
                             var ovalue = getIRILocalname(oURI);
-                            var oc = new Concept(oid.toString(), "", _graph, "", "", ovalue, this.CONCEPT_TYPES[_type], "");
-                            this.mapConceptURI2Id[oURI] = oid;
-                            this.mapConceptURI2Concept[oURI] = oc;
-                            // TO DO: Ajouter de nouveau ssi absent
-                            this._allGraphData.addConcept(oc);
-                            var ond = new NodeData(oc.id, oc.pid, oc.value, "true", oc.value, oc.annotation, this.KNETMAPS_STYLES.conceptStyle[oc.ofType]);
-                            var on = new Node("nodes", ond); // entity node
-                            this._graphJSON.addNode(on);
+                            var oc = new Concept(oURI, oid.toString(), "", _graph, "", "", ovalue, this.CONCEPT_TYPES[_type], "");
+                            this.addConceptAndNode(oc, oURI);
                         }
                     } else if (_isValueOf === "") {
                         attributes.push(new Attribute(getPrefixedFormOfURI(_property), getPrefixedFormOfURI(_hasValue)));
@@ -423,9 +430,9 @@ function KnetmapsAdaptator() {
             }
             elementOf.add(_graph);
         }
-        elementOf = Array.from(elementOf).join(': ');
+        elementOf = Array.from(elementOf).join('; ');
 
-        var c = new Concept(id.toString(), annotation, elementOf, description, pid, value, conceptType, evidences); // entityConcept
+        var c = new Concept(conceptURI, id.toString(), annotation, elementOf, description, pid, value, conceptType, evidences); // entityConcept
 
         for (var j = 0; j < conames.length; j++) {
             c.addConame(conames[j]);
@@ -436,12 +443,8 @@ function KnetmapsAdaptator() {
         for (var j = 0; j < attributes.length; j++) {
             c.addAttribute(attributes[j]);
         }
-        this._allGraphData.addConcept(c);
-        this.mapConceptURI2Concept[conceptURI] = c;
-
-        var nd = new NodeData(id.toString(), pid, value, "true", value, annotation, this.KNETMAPS_STYLES.conceptStyle[conceptType.getName()]);
-        var n = new Node("nodes", nd); // entity node
-        this._graphJSON.addNode(n);
+        this.addConceptAndNode(c, conceptURI);
+        
         // add relations
         for (var j = 0; j < this.entitiesUnprocessedLinks[conceptURI].length; j++) {
             this.processLink(conceptURI, this.entitiesUnprocessedLinks[conceptURI][j]);
@@ -469,7 +472,7 @@ function KnetmapsAdaptator() {
         var rName = getIRILocalname(link.property),
                 toConcept = this.mapConceptURI2Concept[targetURI],
                 fromConcept = this.mapConceptURI2Concept[sourceURI],
-                ofType = rName, evidences = "from_AgroLD", context = "",
+                ofType = rName, evidences = "AgroLD", context = "",
                 rId = this.mapConceptURI2Concept[sourceURI].id + "-" + this.mapConceptURI2Concept[targetURI].id;
         var r = new Relation(rId, toConcept, fromConcept, ofType, evidences, context);
         this._allGraphData.addRelation(r);
@@ -477,13 +480,13 @@ function KnetmapsAdaptator() {
         var sourceType = this.mapConceptURI2Concept[sourceURI].ofType;
         var targetType = this.mapConceptURI2Concept[targetURI].ofType;
         var relationTypeId = sourceType + "-" + rName + "-" + targetType; // concat sourceTyep+relation+targetType
-        if (! (relationTypeId in this.RELATION_TYPES)) {
+        if (!(relationTypeId in this.RELATION_TYPES)) {
             this.RELATION_TYPES[relationTypeId] = new RelationType(rName, sourceType, targetType);
             // on donne à l'arrête la couleur de la source, et la même taille
             this.KNETMAPS_STYLES.relationStyle[relationTypeId] = new RelationTypeStyle(rName,
-            this.KNETMAPS_STYLES.conceptStyle[sourceType].conceptColor, this.DEFAULT_RELATION_SIZE);
+                    this.KNETMAPS_STYLES.conceptStyle[sourceType].conceptColor, this.DEFAULT_RELATION_SIZE);
         }
-         console.log("this.KNETMAPS_STYLES: " + JSON.stringify(this.KNETMAPS_STYLES));
+        console.log("this.KNETMAPS_STYLES: " + JSON.stringify(this.KNETMAPS_STYLES));
         // add edge
         var sourceNode = fromConcept.getId(), targetNode = toConcept.getId(),
                 relationDisplay = "element";

@@ -65,7 +65,9 @@ delete from h_advanced_search where mail="tagny@ymail.com";
 *  Permettre de pouvoir passer les paramètres par GET (url)
 *  View as Graph: en faire un point à partir duquel la KB peut être explorée
 *  View as Graph with kenetmaps.js: ajouter des types spécifiques à AgroLD comme chromosome, CDS, ou mRNA (le css décrit le style des types d'entités supportés) 
-*  knetmaps: ajout d'un nouveau type (concept, e.g. mRNA) = ajout du style du type, ajout du style de ses relations avec les autres concept, et ajout de l'image de son symbole dans le css et le dossier img de knetmaps
+*  **knetmaps: ajout d'un nouveau type** (concept, e.g. mRNA) = ajout du style du type, ajout du style de ses relations avec les autres concept, et ajout de l'image de son symbole dans le css et le dossier img de knetmaps
+*  Interaction AgroLD <> KnetMaps.JS: voir knetmaps.js ligne 309 (Pour accéder à un attribut de données d'un noeud : console.log("my.showLinks.selectedNode: " + this.data("iri"));)
+
 ```
 sparql
 BASE <http://www.southgreen.fr/agrold/>
