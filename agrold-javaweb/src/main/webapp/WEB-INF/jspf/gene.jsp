@@ -44,6 +44,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
             $("#publication").attr("onclick", "invoke('searchPublications'," + this.currentPublicationPage + ")");
             $("#ontology").attr("onclick", "invoke('searchOntologicalTerms'," + this.currentPublicationPage + ")");
             $("#graphView").attr("onclick", "invoke('callViewAsGraph')");
+            $("#expression").attr("onclick", "invoke('viewExpression')");
             $("#moreInfos").attr("onclick", "invoke('searchMoreInformations')");
         },
         searchProteinsEncodedByGene: function (page) {
@@ -84,27 +85,15 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
                 });
             });
         },
-        /*searchPublications: function () {
-         displayHoldMessage("#publicationResult");
-         // get PubMed Id from G-link web service
-         swagger.apis.gene.getPublicationsOfGeneById({
-         geneId: ModalContext.id
-         }, {
-         responseContentType: 'application/json'
-         }, function (data) {
-         //var json = data.obj;
-         //displayPublications(json, "publicationResult");
-         sparqljson = data.data;
-         var resultId = type + "Result";
-         displayResult(resultId, data.data);
-         $("tr.odd").ready(function () {
-         pageBtnsId = type + "PageBtns";
-         tthis.displayInformation(data, page, resultId, "getPublicationsOfGeneById");
-         // processHtmlResult(resultId);
-         processHtmlResult(type);
-         });
-         });
-         },*/
+        viewExpression: function () {
+            // URLs redirecting to remote web service displaying the expression of genes in charts
+         var gene_name = ModalContext.uri.substring(ModalContext.uri.lastIndexOf('/') + 1);
+         $("#expressionResult").html('<ul>\n\
+         <li><a href="https://www.ebi.ac.uk/gxa/genes/' + gene_name + '" target="_blank">Expression Atlas</a></li>\n\
+    <li><a href="http://expression.ic4r.org/global-search?gene=' + gene_name + '" target="_blank">IC4R Rice Expression Database</a></li>\n\
+    <li><a href="http://ic4r.org/genes/IC4R-' + gene_name + '" target="_blank">IC4R  Information Commons for Rice</a></li>\n\
+    </ul>');
+         },
         searchPublications: function (page) {
             this.currentPathwayPage = page;
             var type = "publication";
@@ -152,9 +141,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
         },
         searchMoreInformations: function () {
             var uri = ModalContext.uri;
-            $("#moreInfosResult").html('<ul>\
-    <li><a href="https://www.ebi.ac.uk/gxa/genes/' + uri.substring(uri.lastIndexOf('/') + 1) + '" target="_blank">Expression Atlas</a></li>\n\
-</ul>');
+            $("#moreInfosResult").html('<ul></ul>');
             //$("#moreInfosResult ul").append('<li><a href="https://www.ebi.ac.uk/gxa/genes/' + uri.substring(uri.lastIndexOf('/') + 1) + '" target="_blank">Expression Atlas</a></li>');
             swagger.apis.gene.getSeeAlsoByURI(
                     {format: ".json", geneUri: this.uri},
@@ -189,6 +176,9 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
                    <div id="graphViewContainer">\
                        <span id="graphViewPageBtns"><a class="flex-sm-fill text-sm-center nav-link o-graphViewResult" href="javascript:void(0)" id="graphView"> View as graph </a></span>\
                    </div>\
+                   <div id="expressionContainer">\
+                       <span id="expressionPageBtns"><a class="flex-sm-fill text-sm-center nav-link o-expressionResult" href="javascript:void(0)" id="expression"> Expression </a></span>\
+                   </div>\
                    <div id="moreInfosContainer">\
                        <span id="moreInfosPageBtns"><a class="flex-sm-fill text-sm-center nav-link o-moreInfosResult" href="javascript:void(0)" id="moreInfos"> See also </a></span>\
                    </div>\
@@ -198,6 +188,7 @@ BIND(REPLACE(str(?entity), \'^.*(#|/)\', "") AS ?Id) \
                <div class="o-panel" id="publicationResult"></div>\
                <div class="o-panel" id="ontologyResult"></div>\
                <div class="o-panel" id="graphViewResult"></div>\
+               <div class="o-panel" id="expressionResult"></div>\
                <div class="o-panel" id="moreInfosResult"></div>'
     };
 </script>

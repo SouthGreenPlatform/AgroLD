@@ -13,12 +13,12 @@ and open the template in the editor.
         <link href="knetmaps/dist/css/knetmaps.css" rel="stylesheet" /> <!-- KnetMaps css -->		
         <link href="https://fonts.googleapis.com/css?family=Kanit|Play" rel="stylesheet">
         <link rel="shortcut icon" href="image/favicon.ico" > <!-- favicon added -->
-        <script src="knetmaps/dist/js/knetmaps-lib.min.js"></script> <!-- KnetMaps libs (with jQuery) -->		
-        <script src="knetmaps/dist/js/knetmaps.js"></script> <!-- KnetMaps -->        
         <script src="config/config.js" type="text/javascript"></script>
+        <script src="knetmaps/dist/js/knetmaps-lib.min.js"></script> <!-- KnetMaps libs (with jQuery) -->		
         <script src="scripts/URI.js"></script>
         <script src="scripts/lib.js" type="text/javascript"></script>
         <script type="text/javascript" src="scripts/knetmaps_adaptator.js"></script>
+        <script src="knetmaps/dist/js/knetmaps.js"></script> <!-- KnetMaps -->        
         <title>KnetMaps.js demo</title>
         <style>
             #knet-maps {
@@ -44,7 +44,7 @@ and open the template in the editor.
                 // var entityUri = "http://identifiers.org/ensembl.plant/Os01g0580500"; // duplication de noeud, un 
                 // var entityUri = "http://identifiers.org/ensembl.plant/Os04g0578000";
                 //var entityUri = "http://identifiers.org/ensembl.plant/OS01G0197700";
-                var ka = new KnetmapsAdaptator();
+                
                 /** 
                  * description de l'entité
                  * description de tout URI d'objet dont le type est dans la liste des types de concepts
@@ -53,9 +53,9 @@ and open the template in the editor.
                  * Lors de l'action "Show links", repéter le processus
                  */
 
-                console.log("ka.fetchConceptDescription(entityUri): " + ka.fetchConceptDescription(entityUri).done(function () {
+                console.log("ka.fetchConceptDescription(entityUri): " + KNETMAPS_ADAPTATOR.fetchConceptDescription(entityUri).done(function () {
                             console.log("2");                            
-                            ka.updateNetwork("#knet-maps");
+                            KNETMAPS_ADAPTATOR.updateNetwork("#knet-maps");
                         }));
 
                 //ka.fetchConceptDescription(entityUri)

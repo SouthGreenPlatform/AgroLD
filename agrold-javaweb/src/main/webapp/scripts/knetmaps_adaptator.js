@@ -247,6 +247,7 @@ function KnetmapsAdaptator() {
     this.entitiesUnprocessedLinks = {};
     this.mapConceptURI2Id = {};
     this.mapConceptURI2Concept = {};
+    this.maprelationId2Relation = {};
 
     this._conceptStyles = {
         "Gene": {
@@ -343,7 +344,7 @@ function KnetmapsAdaptator() {
     }
 
     this.addConceptAndNode = function (concept, conceptURI) {
-        if(conceptURI in this.mapConceptURI2Id && conceptURI in this.mapConceptURI2Concept)
+        if (conceptURI in this.mapConceptURI2Id && conceptURI in this.mapConceptURI2Concept)
             return;
         this.mapConceptURI2Id[conceptURI] = concept.id;
         this.mapConceptURI2Concept[conceptURI] = concept;
@@ -444,7 +445,7 @@ function KnetmapsAdaptator() {
             c.addAttribute(attributes[j]);
         }
         this.addConceptAndNode(c, conceptURI);
-        
+
         // add relations
         for (var j = 0; j < this.entitiesUnprocessedLinks[conceptURI].length; j++) {
             this.processLink(conceptURI, this.entitiesUnprocessedLinks[conceptURI][j]);
@@ -473,8 +474,17 @@ function KnetmapsAdaptator() {
                 toConcept = this.mapConceptURI2Concept[targetURI],
                 fromConcept = this.mapConceptURI2Concept[sourceURI],
                 ofType = rName, evidences = "AgroLD", context = "",
-                rId = this.mapConceptURI2Concept[sourceURI].id + "-" + this.mapConceptURI2Concept[targetURI].id;
+                rId = this.mapConceptURI2Concept[sourceURI].id + "-" + this.mapConceptURI2Concept[targetURI].id
+                + '-' + rName;
+
+        if (rId in this.maprelationId2Relation) {
+            return;
+        }
+
         var r = new Relation(rId, toConcept, fromConcept, ofType, evidences, context);
+
+        this.maprelationId2Relation[rId] = r;
+
         this._allGraphData.addRelation(r);
         // add relation type 
         var sourceType = this.mapConceptURI2Concept[sourceURI].ofType;
@@ -496,12 +506,19 @@ function KnetmapsAdaptator() {
 
     };
 
+    this.fetchNewDataFromRemote = function (entityIRI) {
+        console.log("KNETMAPS_ADAPTATOR.fetchNewDataFromRemote: " + entityIRI);
+    };
+
     this.updateNetwork = function (divTarget) {
         graphJSON = JSON.parse(JSON.stringify(this._graphJSON)); // since KnetMaps.js understand only the JSON format, it necessary to convert the objet into JSON
         allGraphData = {"ondexmetadata": JSON.parse(JSON.stringify(this._allGraphData))};
         //console.log("allGraphData: " + JSON.stringify(allGraphData));
-        //console.log("graphJSON: " + JSON.stringify(graphJSON));
+        //console.log("graphJSON: " + JSON.stringify(graphJSON));        
 
         KNETMAPS.KnetMaps().draw(divTarget);
     };
 }
+
+
+var KNETMAPS_ADAPTATOR = new KnetmapsAdaptator();

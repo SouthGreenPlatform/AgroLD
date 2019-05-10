@@ -34,8 +34,7 @@
         <link href="knetmaps/dist/css/knetmaps.css" rel="stylesheet" /> <!-- KnetMaps css -->		
         <link href="https://fonts.googleapis.com/css?family=Kanit|Play" rel="stylesheet">
         <link rel="shortcut icon" href="image/favicon.ico" > <!-- favicon added -->
-        <script src="knetmaps/dist/js/knetmaps-lib.min.js"></script> <!-- KnetMaps libs (with jQuery) -->		
-        <script src="knetmaps/dist/js/knetmaps.js"></script> <!-- KnetMaps -->
+        <script src="knetmaps/dist/js/knetmaps-lib.min.js"></script> <!-- KnetMaps libs (with jQuery) -->
         
         <link rel="icon" href="images/logo_min.png" />
         <link rel="icon" type="image/png" href="images/logo_min.png" />
@@ -69,6 +68,7 @@
         <script src="scripts/URI.js"></script>
         <script src="swagger/lib/swagger-client.js" type="text/javascript"></script>
         <script type="text/javascript" src="scripts/knetmaps_adaptator.js"></script>
+        <script src="knetmaps/dist/js/knetmaps.js"></script> <!-- KnetMaps -->
         <script src="scripts/lib.js" type="text/javascript"></script>
         <!--script src="scripts/adv_search_ogust.js" type="text/javascript"></script-->
         <!--include jQuery.DataTables plug-in-->
