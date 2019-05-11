@@ -506,15 +506,11 @@ function KnetmapsAdaptator() {
 
     };
 
-    this.fetchNewDataFromRemote = function (entityIRI) {
-        console.log("KNETMAPS_ADAPTATOR.fetchNewDataFromRemote: " + entityIRI);
-    };
-
     this.updateNetwork = function (divTarget) {
         graphJSON = JSON.parse(JSON.stringify(this._graphJSON)); // since KnetMaps.js understand only the JSON format, it necessary to convert the objet into JSON
         allGraphData = {"ondexmetadata": JSON.parse(JSON.stringify(this._allGraphData))};
-        //console.log("allGraphData: " + JSON.stringify(allGraphData));
-        //console.log("graphJSON: " + JSON.stringify(graphJSON));        
+        console.log("allGraphData: " + JSON.stringify(allGraphData));
+        console.log("graphJSON: " + JSON.stringify(graphJSON));        
 
         KNETMAPS.KnetMaps().draw(divTarget);
     };

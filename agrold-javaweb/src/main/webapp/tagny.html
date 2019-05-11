@@ -53,10 +53,9 @@ and open the template in the editor.
                  * Lors de l'action "Show links", repéter le processus
                  */
 
-                console.log("ka.fetchConceptDescription(entityUri): " + KNETMAPS_ADAPTATOR.fetchConceptDescription(entityUri).done(function () {
-                            console.log("2");                            
+                KNETMAPS_ADAPTATOR.fetchConceptDescription(entityUri).done(function () {
                             KNETMAPS_ADAPTATOR.updateNetwork("#knet-maps");
-                        }));
+                        });
 
                 //ka.fetchConceptDescription(entityUri)
                 //.then(function(xhr){return ka.fetchConceptRelations(entityUri, xhr);})
