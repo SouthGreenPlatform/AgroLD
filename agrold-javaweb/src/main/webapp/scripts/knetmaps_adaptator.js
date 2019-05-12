@@ -65,8 +65,7 @@ function RelationType(relationName, sourceConceptType, targetConceptType) {
     this.targetConceptType = targetConceptType;
 }
 
-function Concept(iri, id, annotation, elementOf, description, pid, value, conceptType,
-        evidences) {
+function Concept(iri, id, annotation, elementOf, description, pid, value, conceptType) {
     this.iri = iri;
     this.id = id;
     this.annotation = annotation;
@@ -75,7 +74,7 @@ function Concept(iri, id, annotation, elementOf, description, pid, value, concep
     this.pid = pid;
     this.value = value;
     this.ofType = conceptType.getName();
-    this.evidences = evidences;
+    this.evidences = [];
     this.contexts = [];
     this.conames = [];
     this.attributes = [];
@@ -87,6 +86,10 @@ function Concept(iri, id, annotation, elementOf, description, pid, value, concep
 
     this.addConame = function (coname) {
         this.conames.push(coname);
+    };
+    
+    this.addEvidence = function (evidence) {
+        this.evidences.push(evidence);
     };
 
     this.addAttribute = function (attribute) {
@@ -119,12 +122,12 @@ function Attribute(attrname, value) {
     this.value = value;
 }
 
-function Relation(id, toConcept, fromConcept, ofType, evidences) {
+function Relation(id, toConcept, fromConcept, ofType) {
     this.id = id;
     this.toConcept = toConcept.getId();
     this.fromConcept = fromConcept.getId();
     this.ofType = ofType;
-    this.evidences = evidences;
+    this.evidences = [];
     this.contexts = {};
     this.attributes = [];
 
@@ -134,6 +137,10 @@ function Relation(id, toConcept, fromConcept, ofType, evidences) {
 
     this.getOfType = function () {
         return this.ofType;
+    };
+    
+    this.addEvidence = function (evidence) {
+        this.evidences.push(evidence);
     };
 
     this.addAttribute = function (attribute) {
@@ -376,7 +383,7 @@ function KnetmapsAdaptator() {
         var id, annotation = "", elementOf = new Set(), description = "", pid = "",
                 //value = getPrefixedFormOfURI(conceptURI),
                 value = getIRILocalname(conceptURI),
-                conceptType, evidences = "AgroLD", conames = [], coaccessions = [], attributes = [];
+                conceptType, conames = [], coaccessions = [], attributes = [];
         attributes.push(new Attribute("visible", "true"));
         attributes.push(new Attribute("flagged", "true"));
 
@@ -422,7 +429,8 @@ function KnetmapsAdaptator() {
                             var oURI = _hasValue === "" ? _isValueOf : _hasValue;
                             var oid = this.generateConceptId();
                             var ovalue = getIRILocalname(oURI);
-                            var oc = new Concept(oURI, oid.toString(), "", _graph, "", "", ovalue, this.CONCEPT_TYPES[_type], "");
+                            var oc = new Concept(oURI, oid.toString(), "", _graph, "", "", ovalue, this.CONCEPT_TYPES[_type]);
+                            oc.addEvidence("Imported from AgroLD");
                             this.addConceptAndNode(oc, oURI);
                         }
                     } else if (_isValueOf === "") {
@@ -433,7 +441,8 @@ function KnetmapsAdaptator() {
         }
         elementOf = Array.from(elementOf).join('; ');
 
-        var c = new Concept(conceptURI, id.toString(), annotation, elementOf, description, pid, value, conceptType, evidences); // entityConcept
+        var c = new Concept(conceptURI, id.toString(), annotation, elementOf, description, pid, value, conceptType); // entityConcept
+        c.addEvidence("Imported from AgroLD");
 
         for (var j = 0; j < conames.length; j++) {
             c.addConame(conames[j]);
@@ -455,6 +464,7 @@ function KnetmapsAdaptator() {
     this.fetchConceptDescription = function (conceptURI) {
         var tthis = this;
         return $.getJSON(tthis.describeBaseURL + conceptURI, function (conceptData) {
+            console.log("conceptData: " + JSON.stringify(conceptData));
             tthis.processDescribe(conceptURI, conceptData);
         });
     };
@@ -473,7 +483,7 @@ function KnetmapsAdaptator() {
         var rName = getIRILocalname(link.property),
                 toConcept = this.mapConceptURI2Concept[targetURI],
                 fromConcept = this.mapConceptURI2Concept[sourceURI],
-                ofType = rName, evidences = "AgroLD", context = "",
+                ofType = rName, context = "",
                 rId = this.mapConceptURI2Concept[sourceURI].id + "-" + this.mapConceptURI2Concept[targetURI].id
                 + '-' + rName;
 
@@ -481,7 +491,8 @@ function KnetmapsAdaptator() {
             return;
         }
 
-        var r = new Relation(rId, toConcept, fromConcept, ofType, evidences, context);
+        var r = new Relation(rId, toConcept, fromConcept, ofType, context);
+        r.addEvidence("Imported from AgroLD");
 
         this.maprelationId2Relation[rId] = r;
 

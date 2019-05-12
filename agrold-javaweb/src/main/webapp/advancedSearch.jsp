@@ -41,8 +41,8 @@
         <link href="styles/search.css" rel="stylesheet" type="text/css">        		
         <script src="scripts/URI.js"></script>
         <script src="scripts/lib.js" type="text/javascript"></script>
-        <script type="text/javascript" src="scripts/knetmaps_adaptator.js"></script>
         <script src="knetmaps/dist/js/knetmaps.js"></script> <!-- KnetMaps --> 
+        <script type="text/javascript" src="scripts/knetmaps_adaptator.js"></script>
         <script src="swagger/lib/swagger-client.js" type="text/javascript"></script>
         <!--script src="scripts/adv_search_ogust.js" type="text/javascript"></script-->
         
