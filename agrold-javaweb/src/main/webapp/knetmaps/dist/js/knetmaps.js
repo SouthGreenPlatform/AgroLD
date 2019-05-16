@@ -101,10 +101,11 @@ KNETMAPS.Container = function () {
 
 // tagny method
     my.fetchNewDataFromRemote = function (conceptURI) {
-        console.log("my.fetchNewDataFromRemote: " + conceptURI);
-        KNETMAPS_ADAPTATOR.fetchConceptDescription(conceptURI).done(function () {
-        KNETMAPS_ADAPTATOR.updateNetwork("#knet-maps");
-    });
+        if (conceptURI in KNETMAPS_ADAPTATOR.incompleteConceptURI) { // ! $.isEmptyObject(KNETMAPS_ADAPTATOR.incompleteConceptURI) || (
+            KNETMAPS_ADAPTATOR.fetchConceptDescription(conceptURI).done(function () {
+                KNETMAPS_ADAPTATOR.updateNetwork("#knet-maps");
+            });
+        }
     };
 
     my.load_reload_Network = function (network_json, network_style) {
@@ -154,6 +155,7 @@ KNETMAPS.Container = function () {
 
             ready: function () {
                 KNETMAPS.Menu().rerunLayout(); // reset current layout.
+                KNETMAPS.Menu().showHideLabels('Both');
                 window.cy = this;
             }
         });
@@ -232,6 +234,9 @@ KNETMAPS.Container = function () {
                 {
                     content: 'Show Info',
                     select: function () {
+                        // fetch the description of the node from AgroLD
+                        my.fetchNewDataFromRemote(this.data("iri"));
+                            
                         // Show Item Info Pane.
                         iteminfo.openItemInfoPane();
 
@@ -245,7 +250,6 @@ KNETMAPS.Container = function () {
                     select: function () {
                         if (this.isNode()) {
                             // fetch the description of the node from AgroLD
-                            console.log("my.showLinks.selectedNode: " + this.data("iri"));
                             my.fetchNewDataFromRemote(this.data("iri"));
 
                             // show info
@@ -486,7 +490,7 @@ KNETMAPS.Generator = function () {
              catch(err) { console.log(err.stack); }
              return node_borderColor;
              },*/
-            'font-size': '16px', // '8px',
+            'font-size': '8px', // '16px',
 //          'min-zoomed-font-size': '8px',
             // Set node shape, color & display (visibility) depending on settings in the JSON var.
             'shape': 'data(conceptShape)', // 'triangle'
@@ -501,7 +505,7 @@ KNETMAPS.Generator = function () {
         })
                 .selector('edge').css({
             'content': 'data(label)', // label for edges (arrows).
-            'font-size': '16px',
+            'font-size': '8px', // 16px
 //          'min-zoomed-font-size': '8px',
             'curve-style': 'unbundled-bezier', /* options: bezier (curved) (default), unbundled-bezier (curved with manual control points), haystack (straight edges) */
             'control-point-step-size': '10px', //'1px' // specifies the distance between successive bezier edges.
@@ -1567,15 +1571,15 @@ KNETMAPS.KnetMaps = function () {
                  */
                 "</select>"
                 + "<select id='changeLabelVisibility' class='knet-dropdowns' onChange='KNETMAPS.Menu().showHideLabels(this.value);' title='Select label visibility'>"
-                + "<option value='None' selected='selected'>Labels: None</option>"
+                + "<option value='None'>Labels: None</option>"
                 + "<option value='Concepts'>Labels: Concepts</option>"
                 + "<option value='Relations'>Labels: Relations</option>"
-                + "<option value='Both'>Labels: Both</option>"
+                + "<option value='Both' selected='selected'>Labels: Both</option>"
                 + "</select>"
                 + "<select id='changeLabelFont' class='knet-dropdowns' onChange='KNETMAPS.Menu().changeLabelFontSize(this.value);' title='Select label font size'>"
-                + "<option value='8'>Label size: 8px</option>"
+                + "<option value='8' selected='selected'>Label size: 8px</option>"
                 + "<option value='12'>Label size: 12px</option>"
-                + "<option value='16' selected='selected'>Label size: 16px</option>"
+                + "<option value='16'>Label size: 16px</option>"
                 + "<option value='20'>Label size: 20px</option>"
                 + "<option value='24'>Label size: 24px</option>"
                 + "<option value='28'>Label size: 28px</option>"

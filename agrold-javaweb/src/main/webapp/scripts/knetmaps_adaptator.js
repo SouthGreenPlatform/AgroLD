@@ -24,11 +24,46 @@ function GraphData(_graphName, _version) {
     };
 
     this.addConcept = function (concept) {
-        this.concepts.push(concept);
+        var foundAt = -1;
+        for (var i = 0; i < this.concepts.length; i++) {
+            if (this.concepts[i].id === concept.id) {
+                foundAt = i;
+                break;
+            }
+        }
+        console.log("concepts foundAt: " + foundAt);
+        if (foundAt > -1) {
+            this.concepts[foundAt].annotation = concept.annotation;
+            this.concepts[foundAt].elementOf = concept.elementOf;
+            this.concepts[foundAt].description = concept.description;
+            this.concepts[foundAt].pid = concept.pid;
+            this.concepts[foundAt].value = concept.value;
+            this.concepts[foundAt].ofType = concept.ofType;
+            this.concepts[foundAt].evidences = concept.evidences;
+            this.concepts[foundAt].contexts = concept.contexts;
+            this.concepts[foundAt].conames = concept.conames;
+            this.concepts[foundAt].attributes = concept.attributes;
+            this.concepts[foundAt].coaccessions = concept.coaccessions;
+        } else {
+            this.concepts.push(concept);
+        }
     };
 
     this.addRelation = function (relation) {
-        this.relations.push(relation);
+        var foundAt = -1;
+        for (var i = 0; i < this.relations.length; i++) {
+            if (this.relations[i].id === relation.id) {
+                foundAt = i;
+                break;
+            }
+        }
+        console.log("relations foundAt: " + foundAt);
+        if (foundAt > -1) {
+            this.relations[foundAt].ofType += relation.ofType;
+        } else {
+            this.relations.push(relation);
+        }
+
     };
 }
 
@@ -87,7 +122,7 @@ function Concept(iri, id, annotation, elementOf, description, pid, value, concep
     this.addConame = function (coname) {
         this.conames.push(coname);
     };
-    
+
     this.addEvidence = function (evidence) {
         this.evidences.push(evidence);
     };
@@ -138,7 +173,7 @@ function Relation(id, toConcept, fromConcept, ofType) {
     this.getOfType = function () {
         return this.ofType;
     };
-    
+
     this.addEvidence = function (evidence) {
         this.evidences.push(evidence);
     };
@@ -157,11 +192,40 @@ function Graph() {
     this.edges = [];
 
     this.addNode = function (node) {
-        this.nodes.push(node);
+        var foundAt = -1;
+        for (var i = 0; i < this.nodes.length; i++) {
+            if (this.nodes[i].id === node.data.id) {
+                foundAt = i;
+                break;
+            }
+        }
+        console.log("nodes foundAt: " + foundAt);
+        if (foundAt > -1) {
+            this.nodes[foundAt].iri = node.data.iri;
+            this.nodes[foundAt].id = node.data.id;
+            this.nodes[foundAt].pid = node.data.pid;
+            this.nodes[foundAt].value = node.data.value;
+            this.nodes[foundAt].flagged = node.dataflagged;
+            this.nodes[foundAt].annotation = node.data.annotation;
+        } else {
+            this.nodes.push(node);
+        }
     };
 
     this.addEdge = function (edge) {
-        this.edges.push(edge);
+        var foundAt = -1;
+        for (var i = 0; i < this.edges.length; i++) {
+            if (this.edges[i].id === edge.data.id) {
+                foundAt = i;
+                break;
+            }
+        }
+        console.log("edge foundAt: " + foundAt);
+        if (foundAt > -1) {
+            this.edges[foundAt].label += ";" + edge.data.label;
+        } else {
+            this.edges.push(edge);
+        }
     };
 }
 
@@ -255,6 +319,7 @@ function KnetmapsAdaptator() {
     this.mapConceptURI2Id = {};
     this.mapConceptURI2Concept = {};
     this.maprelationId2Relation = {};
+    this.incompleteConceptURI = {};
 
     this._conceptStyles = {
         "Gene": {
@@ -333,7 +398,7 @@ function KnetmapsAdaptator() {
 
     this.RELATION_TYPES = {}; //label:->{label, sourceConceptType, targetConceptType}
 
-    this.CONCEPT_TYPES = {"Gene": "", "Protein": "", "QTL": "", "Pathway": "", "Reaction": "", "mRNA": ""};
+    this.CONCEPT_TYPES = {"Gene": "", "Protein": "", "QTL": "", "Pathway": "", "Reaction": "", "mRNA": "", "Trait": ""};
     for (var type in this._conceptStyles) {
         this.CONCEPT_TYPES[type] = new ConceptType(type);
     }
@@ -351,12 +416,14 @@ function KnetmapsAdaptator() {
     }
 
     this.addConceptAndNode = function (concept, conceptURI) {
-        if (conceptURI in this.mapConceptURI2Id && conceptURI in this.mapConceptURI2Concept)
-            return;
-        this.mapConceptURI2Id[conceptURI] = concept.id;
-        this.mapConceptURI2Concept[conceptURI] = concept;
+        if (conceptURI in this.mapConceptURI2Id) {
+            concept.id = this.mapConceptURI2Id[conceptURI];
+        } else {
+            this.mapConceptURI2Id[conceptURI] = concept.id;
+        }
         // TO DO: Ajouter de nouveau ssi absent
         this._allGraphData.addConcept(concept);
+        this.mapConceptURI2Concept[conceptURI] = concept;
         // concept, flagged, displayValue, conceptTypeStyle
         var nodeData = new NodeData(concept, "true", this.KNETMAPS_STYLES.conceptStyle[concept.ofType]);
         var node = new Node("nodes", nodeData); // entity node
@@ -404,6 +471,9 @@ function KnetmapsAdaptator() {
             switch (relationName) {
                 case "type":
                     conceptType = this.CONCEPT_TYPES[this.extractConceptTypeName(_hasValue)];
+                    if (conceptType === undefined) {
+                        console.error("conceptType: " + _hasValue)
+                    }
                     break;
                 case "label":
                 case "has_synonym":
@@ -432,6 +502,7 @@ function KnetmapsAdaptator() {
                             var oc = new Concept(oURI, oid.toString(), "", _graph, "", "", ovalue, this.CONCEPT_TYPES[_type]);
                             oc.addEvidence("Imported from AgroLD");
                             this.addConceptAndNode(oc, oURI);
+                            this.incompleteConceptURI[oURI] = true;
                         }
                     } else if (_isValueOf === "") {
                         attributes.push(new Attribute(getPrefixedFormOfURI(_property), getPrefixedFormOfURI(_hasValue)));
@@ -459,12 +530,13 @@ function KnetmapsAdaptator() {
         for (var j = 0; j < this.entitiesUnprocessedLinks[conceptURI].length; j++) {
             this.processLink(conceptURI, this.entitiesUnprocessedLinks[conceptURI][j]);
         }
+
+        delete this.incompleteConceptURI[conceptURI];
     };
 
     this.fetchConceptDescription = function (conceptURI) {
         var tthis = this;
         return $.getJSON(tthis.describeBaseURL + conceptURI, function (conceptData) {
-            console.log("conceptData: " + JSON.stringify(conceptData));
             tthis.processDescribe(conceptURI, conceptData);
         });
     };
@@ -484,8 +556,8 @@ function KnetmapsAdaptator() {
                 toConcept = this.mapConceptURI2Concept[targetURI],
                 fromConcept = this.mapConceptURI2Concept[sourceURI],
                 ofType = rName, context = "",
-                rId = this.mapConceptURI2Concept[sourceURI].id + "-" + this.mapConceptURI2Concept[targetURI].id
-                + '-' + rName;
+                rId = this.mapConceptURI2Concept[sourceURI].id + "-" + this.mapConceptURI2Concept[targetURI].id;
+        //+ '-' + rName;
 
         if (rId in this.maprelationId2Relation) {
             return;
@@ -507,7 +579,6 @@ function KnetmapsAdaptator() {
             this.KNETMAPS_STYLES.relationStyle[relationTypeId] = new RelationTypeStyle(rName,
                     this.KNETMAPS_STYLES.conceptStyle[sourceType].conceptColor, this.DEFAULT_RELATION_SIZE);
         }
-        console.log("this.KNETMAPS_STYLES: " + JSON.stringify(this.KNETMAPS_STYLES));
         // add edge
         var sourceNode = fromConcept.getId(), targetNode = toConcept.getId(),
                 relationDisplay = "element";
@@ -520,10 +591,12 @@ function KnetmapsAdaptator() {
     this.updateNetwork = function (divTarget) {
         graphJSON = JSON.parse(JSON.stringify(this._graphJSON)); // since KnetMaps.js understand only the JSON format, it necessary to convert the objet into JSON
         allGraphData = {"ondexmetadata": JSON.parse(JSON.stringify(this._allGraphData))};
-        console.log("allGraphData: " + JSON.stringify(allGraphData));
-        console.log("graphJSON: " + JSON.stringify(graphJSON));        
+        //console.log("allGraphData: " + JSON.stringify(allGraphData));
+        //console.log("graphJSON: " + JSON.stringify(graphJSON));        
 
         KNETMAPS.KnetMaps().draw(divTarget);
+        //document.getElementById("changeLabelFont").options[0].selected = true;
+        //document.getElementById("changeLabelVisibility").options[3].selected = true;
     };
 }
 

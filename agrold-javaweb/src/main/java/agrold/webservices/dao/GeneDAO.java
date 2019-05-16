@@ -234,6 +234,7 @@ public class GeneDAO {
 
     public static void main(String[] args) throws IOException {
         //System.out.println(getGenesByLocus("01", "10000", "30000", 0, 10, ".json"));
-        System.out.println("Result: " + getPublicationsOfGeneById("Os05g0125000", 10, 0, ".json"));
+        //System.out.println("Result: " + getPublicationsOfGeneById("Os05g0125000", 10, 0, ".json"));
+        System.out.println("Result: " + getGenesByPathwaysID("PWY-2902", 10, 0, ".json"));
     }
 }

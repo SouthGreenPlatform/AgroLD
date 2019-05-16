@@ -57,6 +57,7 @@ delete from h_advanced_search where mail="tagny@ymail.com";
 * configurer le Tomcat de Volvestre dans Netbeans pour directement déployer la version dev. en ligne
 
 #### Advanced Search
+*  corriger la requête sparql du service describe et celle des genesByPathwayIds
 *  Laisser l'utilisateur spécifier les paramètres `page`et `pageSize`?
 *  *Les tables YASR apparaissent souvent aminçis dans les fenêtres de description d'entités*
 *  *La navigation entre page ne marche pas ("Next page")*: quand on fait un *display* puis on revient aux résultats de la recherche
@@ -71,7 +72,6 @@ delete from h_advanced_search where mail="tagny@ymail.com";
 *  View as Graph with kenetmaps.js: ajouter des types spécifiques à AgroLD comme chromosome, CDS, ou mRNA (le css décrit le style des types d'entités supportés) 
 *  **knetmaps: ajout d'un nouveau type** (concept, e.g. mRNA) = ajout du style du type, ajout du style de ses relations avec les autres concept, et ajout de l'image de son symbole dans le css et le dossier img de knetmaps
 *  Interaction AgroLD <> KnetMaps.JS: voir knetmaps.js ligne 309 (Pour accéder à un attribut de données d'un noeud : console.log("my.showLinks.selectedNode: " + this.data("iri"));)
-
 ```
 sparql
 BASE <http://www.southgreen.fr/agrold/>
