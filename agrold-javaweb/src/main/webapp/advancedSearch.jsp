@@ -33,18 +33,7 @@
         <link href="knetmaps/css_demo/index-style.css" rel="stylesheet" /> <!-- demo page css -->
         <link href="knetmaps/dist/css/knetmaps.css" rel="stylesheet" /> <!-- KnetMaps css -->		
         <link href="https://fonts.googleapis.com/css?family=Kanit|Play" rel="stylesheet">
-        <link rel="shortcut icon" href="image/favicon.ico" > <!-- favicon added -->
-        
-        <!-- Les autres -->
-        <script src="config/config.js" type="text/javascript"></script>
-        <script src="knetmaps/dist/js/knetmaps-lib.min.js"></script> <!-- KnetMaps libs (with jQuery) -->
-        <link href="styles/search.css" rel="stylesheet" type="text/css">        		
-        <script src="scripts/URI.js"></script>
-        <script src="scripts/lib.js" type="text/javascript"></script>
-        <script src="knetmaps/dist/js/knetmaps.js"></script> <!-- KnetMaps --> 
-        <script type="text/javascript" src="scripts/knetmaps_adaptator.js"></script>
-        <script src="swagger/lib/swagger-client.js" type="text/javascript"></script>
-        <!--script src="scripts/adv_search_ogust.js" type="text/javascript"></script-->
+        <link rel="shortcut icon" href="image/favicon.ico" > <!-- favicon added -->               
         
         <link rel="icon" href="images/logo_min.png" />
         <link rel="icon" type="image/png" href="images/logo_min.png" />
@@ -64,9 +53,20 @@
         <link rel="stylesheet" type="text/css" href="styles/advSearch.css">
         <link rel="stylesheet" type="text/css" href="styles/css-loader.css">
         <link href="sparqleditor/yasr.min.css" rel="stylesheet" type="text/css"/>
-        <script src='sparqleditor/yasr.bundled.min.js'></script>
+        <script src='sparqleditor/yasr.bundled.min.js'></script>               
         
-        <!--link href="styles/menu1.css" rel="stylesheet" type="text/css"/-->
+        <!-- Les autres -->
+        <script src="config/config.js" type="text/javascript"></script>
+        <script src="knetmaps/dist/js/knetmaps-lib.min.js"></script> <!-- KnetMaps libs (with jQuery) -->
+        <link href="styles/search.css" rel="stylesheet" type="text/css">        		
+        <script src="scripts/URI.js"></script>
+        <script src="scripts/lib.js" type="text/javascript"></script>
+        <script src="knetmaps/dist/js/knetmaps.js"></script> <!-- KnetMaps --> 
+        <script type="text/javascript" src="scripts/knetmaps_adaptator.js"></script>
+        <script src="swagger/lib/swagger-client.js" type="text/javascript"></script>
+        <!--script src="scripts/adv_search_ogust.js" type="text/javascript"></script-->
+        
+         <!--link href="styles/menu1.css" rel="stylesheet" type="text/css"/-->
         <link rel="stylesheet" type="text/css" href="styles/bootstrap/css/bootstrap-grid.min.css">
         <link rel="stylesheet" type="text/css" href="styles/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="styles/font-awesome/css/font-awesome.min.css">

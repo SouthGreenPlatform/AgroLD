@@ -21,8 +21,8 @@ import java.util.logging.Logger;
  */
 public class MySQLProperties {
 
-    //private static final String configFilePath = "/home/virtuoso/agrold-mysql.conf"; // en ligne i.e. sur volvestre
-    private static final String configFilePath = "C:\\Users\\Gildas\\Documents\\agrold\\doc\\agrold\\agrold-mysql.conf"; // en localhost
+    private static final String configFilePath = "/home/virtuoso/agrold-mysql.conf"; // en ligne i.e. sur volvestre
+    //private static final String configFilePath = "C:\\Users\\Gildas\\Documents\\agrold\\doc\\agrold\\agrold-mysql.conf"; // en localhost
     //private static final String configFilePath = "/home/tagny/Documents/current-work/agrold/doc/agrold/agrold-mysql.conf"; // en localhost
     private static final List<String> conf = readLoginConfigurations();
     private static final String url = "jdbc:mysql://" + conf.get(0);

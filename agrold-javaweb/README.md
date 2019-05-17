@@ -57,7 +57,8 @@ delete from h_advanced_search where mail="tagny@ymail.com";
 * configurer le Tomcat de Volvestre dans Netbeans pour directement déployer la version dev. en ligne
 
 #### Advanced Search
-*  corriger la requête sparql du service describe et celle des genesByPathwayIds
+*  le fichier `http://localhost:8080/aldp/config/agrold-api.json` est téléchargé plusieurs fois ???
+*  *corriger la requête sparql du service describe et celle des genesByPathwayIds*
 *  Laisser l'utilisateur spécifier les paramètres `page`et `pageSize`?
 *  *Les tables YASR apparaissent souvent aminçis dans les fenêtres de description d'entités*
 *  *La navigation entre page ne marche pas ("Next page")*: quand on fait un *display* puis on revient aux résultats de la recherche

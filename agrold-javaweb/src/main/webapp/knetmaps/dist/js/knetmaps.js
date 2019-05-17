@@ -101,7 +101,7 @@ KNETMAPS.Container = function () {
 
 // tagny method
     my.fetchNewDataFromRemote = function (conceptURI) {
-        if (conceptURI in KNETMAPS_ADAPTATOR.incompleteConceptURI) { // ! $.isEmptyObject(KNETMAPS_ADAPTATOR.incompleteConceptURI) || (
+        if (! (conceptURI in KNETMAPS_ADAPTATOR.completeConceptURIs)) { // ! $.isEmptyObject(KNETMAPS_ADAPTATOR.incompleteConceptURI) || (
             KNETMAPS_ADAPTATOR.fetchConceptDescription(conceptURI).done(function () {
                 KNETMAPS_ADAPTATOR.updateNetwork("#knet-maps");
             });
@@ -1620,7 +1620,7 @@ KNETMAPS.KnetMaps = function () {
     my.drawRaw = function (target, graph) {
         drawDiv(target);
         showDiv(target);
-        maskloader.showNetworkLoader(target);
+        //maskloader.showNetworkLoader(target); // Tagny: j'ai commenté pour AdvancedSearch
         generator.generateNetworkGraphRaw(graph);
         maskloader.removeNetworkLoader(target);
     };
@@ -1628,7 +1628,7 @@ KNETMAPS.KnetMaps = function () {
     my.draw = function (target) {
         drawDiv(target);
         showDiv(target);
-        maskloader.showNetworkLoader(target);
+        //maskloader.showNetworkLoader(target);
         generator.generateNetworkGraph();
         maskloader.removeNetworkLoader(target);
     };

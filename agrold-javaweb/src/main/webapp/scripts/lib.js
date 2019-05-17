@@ -9,6 +9,7 @@ var holdMessage = '<center id="holdMessage"><img src="images/wait_animated.gif" 
 
 function viewAsGraph(entityUri, divId) {
     // visualize the description as a graph 
+    $("#" + divId).html("Explore AgroLD From here!");
     KNETMAPS_ADAPTATOR = new KnetmapsAdaptator();
     KNETMAPS_ADAPTATOR.fetchConceptDescription(entityUri).done(function () {
        KNETMAPS_ADAPTATOR.updateNetwork("#" + divId);
@@ -73,6 +74,9 @@ function getPrefixedFormOfURI(uriStr) {
 }
 
 function getIRILocalname(iriAsString) {
+    if(iriAsString === undefined){
+        return iriAsString;
+    }
     var uri = new URI(iriAsString);
     if (iriAsString.includes("#")) { // fragment
         localname = uri.fragment().toString();
@@ -299,6 +303,8 @@ function processHtmlResult(entitiesType) {
             var a = $(tds[uriIdx]).find("a.uri");
             sparqlLink = 'sparqleditor.jsp?query=PREFIX uri:<' + $(a).text() + '>\nSELECT ?property ?hasValue ?isValueOf\nWHERE {\n  { uri: ?property ?hasValue }\n  UNION\n  { ?isValueOf ?property uri:}\n}';
             $(a).after('<a href="' + encodeURI(sparqlLink) + '" target="_blank" style="text-decoration: none; color:#00B5AD; font-weight:bold"> (in Sparql) </a>');
+            visualExplorerLink = 'agrold_explorer.jsp?iri=' + $(a).text();
+            $(a).after('<a href="' + encodeURI(visualExplorerLink) + '" target="_blank" style="text-decoration: none; color:#00B5AD; font-weight:bold"> (Visualize) </a>');
             $(a).attr("target", "_blank");
             $(tds[1]).append('<a id="' + encodeURIComponent($(a).text()) + '" name="' + entitiesType + '" class="mdpre" href="#advancedSearch.jsp?type=' + entitiesType + '&uri=' + encodeURIComponent($(a).text()) + '" style="text-decoration: none; color:#00B5AD; font-weight:bold"> (display) </a>');
             for (j = 0; j < trs.length; j++) {
