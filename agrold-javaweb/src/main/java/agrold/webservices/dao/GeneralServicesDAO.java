@@ -17,14 +17,14 @@ public class GeneralServicesDAO {
         String sparqlQuery = "BASE <http://www.southgreen.fr/agrold/>\n"
                 + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                 + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
-                + "SELECT ?graph ?property ?hasValue ?isValueOf (group_concat(distinct concat(?hasValueType, ?isValueOfType) ;separator=\"; \") as ?type)\n"
+                + "SELECT ?graph ?property ?hasValue ?isValueOf (group_concat(distinct concat(?hasValueType, ?isValueOfType, ?computedType) ;separator=\"; \") as ?type)\n"
                 + "WHERE {\n" + "values (?q){(<" + IRI + ">)}\n"
                 + " { \n"
                 + "    GRAPH ?graph { ?q ?property ?hasValue. } \n"
                 + "    OPTIONAL{\n"
                 + "      ?hasValue a ?hasValueType.\n"
                 + "      FILTER(?hasValueType != <http://www.w3.org/2002/07/owl#Class>)\n"
-                + "    }\n"
+                + "    }\n"                
                 + "  }\n"
                 + "  UNION\n"
                 + "  { \n"
@@ -32,8 +32,9 @@ public class GeneralServicesDAO {
                 + "    OPTIONAL{\n"
                 + "      ?isValueOf a ?isValueOfType.\n"
                 + "      FILTER(?isValueOfType != <http://www.w3.org/2002/07/owl#Class>)\n"
-                + "    }\n"
-                + "  }   \n"
+                + "    }\n"                
+                + "  }   \n"      
+                + "     Bind(if(contains(str(?property), \"taxon\"), <http://www.southgreen.fr/vocavulary/Taxon>, \"\") as ?computedType) \n"
                 + "}";
 
         //String sparqlQuery = "DESCRIBE <" + IRI + ">";

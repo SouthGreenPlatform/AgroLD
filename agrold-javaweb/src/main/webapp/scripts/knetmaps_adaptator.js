@@ -120,12 +120,12 @@ function Concept(iri, id, annotation, elementOf, description, pid, value, concep
     this.addConame = function (coname) {
         var foundAt = -1;
         for (var i = 0; i < this.conames.length; i++) {
-            if(this.conames[i].name === coname.name){
+            if (this.conames[i].name === coname.name) {
                 foundAt = i;
                 break;
             }
         }
-        if(foundAt > -1){
+        if (foundAt > -1) {
             return;
         }
         this.conames.push(coname);
@@ -201,7 +201,7 @@ function Graph() {
 
     this.addNode = function (node) {
         var foundAt = -1;
-        for (var i = 0; i < this.nodes.length; i++) {            
+        for (var i = 0; i < this.nodes.length; i++) {
             if (this.nodes[i].data.id === node.data.id) {
                 foundAt = i;
                 break;
@@ -399,12 +399,34 @@ function KnetmapsAdaptator() {
             "conceptBorderWidth": "1px",
             "conceptShape": "rectangle",
             "conceptTextBGcolor": "black"
+        },
+        "Taxon": {
+            "conceptBorderColor": "black",
+            "conceptSize": "18px",
+            "conceptTextBGopacity": "0",
+            "conceptDisplay": "element",
+            "conceptColor": "green",
+            "conceptBorderStyle": "solid",
+            "conceptBorderWidth": "1px",
+            "conceptShape": "vee",
+            "conceptTextBGcolor": "black"
+        },
+        "CDS": {
+            "conceptBorderColor": "black",
+            "conceptSize": "18px",
+            "conceptTextBGopacity": "0",
+            "conceptDisplay": "element",
+            "conceptColor": "red",
+            "conceptBorderStyle": "solid",
+            "conceptBorderWidth": "1px",
+            "conceptShape": "barrel",
+            "conceptTextBGcolor": "black"
         }
     };
 
     this.RELATION_TYPES = {}; //label:->{label, sourceConceptType, targetConceptType}
 
-    this.CONCEPT_TYPES = {"Gene": "", "Protein": "", "QTL": "", "Pathway": "", "Reaction": "", "mRNA": "", "Trait": "", "Taxon": ""};
+    this.CONCEPT_TYPES = {"Gene": "", "Protein": "", "QTL": "", "Pathway": "", "Reaction": "", "mRNA": "", "Trait": "", "Taxon": "", "CDS": ""};
     for (var type in this._conceptStyles) {
         this.CONCEPT_TYPES[type] = new ConceptType(type);
     }
@@ -463,7 +485,7 @@ function KnetmapsAdaptator() {
                 conceptType, conames = [], coaccessions = [], attributes = [];
         attributes.push(new Attribute("visible", "true"));
         attributes.push(new Attribute("flagged", "true"));
-        
+
         conames.push(new Coname(value, "false"));
 
         if (this.mapConceptURI2Id[conceptURI] === undefined) {
@@ -479,10 +501,12 @@ function KnetmapsAdaptator() {
             var _hasValue = entityData[i].hasValue;
             var _isValueOf = entityData[i].isValueOf;
             var _type = this.extractConceptTypeName(entityData[i].type);
+            
             var relationName = getIRILocalname(_property);
             switch (relationName) {
                 case "type":
-                    if(conceptType === undefined) conceptType = this.CONCEPT_TYPES[this.extractConceptTypeName(_hasValue)];                    
+                    if (conceptType === undefined)
+                        conceptType = this.CONCEPT_TYPES[this.extractConceptTypeName(_hasValue)];
                     break;
                 case "label":
                     value = _hasValue;
@@ -501,12 +525,12 @@ function KnetmapsAdaptator() {
                     coaccessions.push(new Coaccession(_graph, _hasValue === "" ? _isValueOf : _hasValue));
                 default:
                     if (_type !== null && _type !== undefined && _type !== "") {
-                        if (_type in this.KNETMAPS_STYLES.conceptStyle) {                            
+                        if (_type in this.KNETMAPS_STYLES.conceptStyle) {
                             var linkToAnotherConcept = {};
                             linkToAnotherConcept.property = _property;
                             linkToAnotherConcept.hasValue = _hasValue;
                             linkToAnotherConcept.isValueOf = _isValueOf;
-                            linkToAnotherConcept.type = _type;                            
+                            linkToAnotherConcept.type = _type;
                             this.entitiesUnprocessedLinks[conceptURI].push(linkToAnotherConcept);
                             // add the new concept
                             var oURI = _hasValue === "" ? _isValueOf : _hasValue;
@@ -514,18 +538,24 @@ function KnetmapsAdaptator() {
                             var ovalue = getIRILocalname(oURI);
                             var oc = new Concept(oURI, oid.toString(), "", _graph, "", "", ovalue, this.CONCEPT_TYPES[_type]);
                             oc.addEvidence("Imported from AgroLD");
-                            this.addConceptAndNode(oc, oURI);                            
+                            this.addConceptAndNode(oc, oURI);
                         }
-                    } 
+                    }
                     if (_isValueOf === "") {
                         attributes.push(new Attribute(getPrefixedFormOfURI(_property), getPrefixedFormOfURI(_hasValue)));
                     } else {
-                        attributes.push(new Attribute(getPrefixedFormOfURI(_property), getPrefixedFormOfURI(_isValueOf)));
+                        //attributes.push(new Attribute(getPrefixedFormOfURI(_property), getPrefixedFormOfURI(_isValueOf)));
                     }
             }
             elementOf.add(_graph);
         }
         elementOf = Array.from(elementOf).join('; ');
+
+        if (conceptType === undefined) {
+            if (getIRILocalname(conceptURI).toLowerCase().includes("taxon")) {
+                conceptType = this.CONCEPT_TYPES["Taxon"];
+            }
+        }
 
         var c = new Concept(conceptURI, id.toString(), annotation, elementOf, description, pid, value, conceptType); // entityConcept
         c.addEvidence("Imported from AgroLD");
@@ -574,7 +604,7 @@ function KnetmapsAdaptator() {
                 rId = this.mapConceptURI2Concept[sourceURI].id + "-" + this.mapConceptURI2Concept[targetURI].id;
         //+ '-' + rName;
 
-        if (rId in this.mapRelationId2Relation) {            
+        if (rId in this.mapRelationId2Relation) {
             return;
         }
 
@@ -607,7 +637,7 @@ function KnetmapsAdaptator() {
         graphJSON = JSON.parse(JSON.stringify(this._graphJSON)); // since KnetMaps.js understand only the JSON format, it necessary to convert the objet into JSON
         allGraphData = {"ondexmetadata": JSON.parse(JSON.stringify(this._allGraphData))};
         console.log("allGraphData: " + JSON.stringify(allGraphData));
-        console.log("graphJSON: " + JSON.stringify(graphJSON));        
+        console.log("graphJSON: " + JSON.stringify(graphJSON));
 
         KNETMAPS.KnetMaps().draw(divTarget);
         //document.getElementById("changeLabelFont").options[0].selected = true;
