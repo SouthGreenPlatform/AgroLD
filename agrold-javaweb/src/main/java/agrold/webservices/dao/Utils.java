@@ -46,6 +46,7 @@ public class Utils {
     public final static String DEFAULT_PAGE = "0";
 
     public static String sparqlEndpointURL = "http://sparql.southgreen.fr";
+    //public static String sparqlEndpointURL = "http://localhost:8080/aldp/api/sparql";
 
     public final static String CSV = "text/csv"; //CSV, HTML, JSON, N3, RDF, JSON_LD, TSV, TTL, XML
     public final static String HTML = "text/html"; // "text/csv", "application/json", "text/plain","text/turtle", "application/sparql-results+xml", "application/rdf+xml","text/tab-separated-values", "application/sparql-results+json", 
@@ -126,6 +127,7 @@ public class Utils {
                     URLEncoder.encode(defaultGraphURI, charset),
                     URLEncoder.encode(sparqlQuery, charset),
                     URLEncoder.encode(format, charset));
+            System.out.println("httpQuerry: " + httpQuery);
             // Firing a HTTP GET request with (optionally) query parameters
             URLConnection connection = new URL(sparqlEndpoint + "?" + httpQuery).openConnection();
             connection.setRequestProperty("Accept-Charset", charset);

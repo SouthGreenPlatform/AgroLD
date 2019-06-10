@@ -12,6 +12,7 @@
 *  remplacer l'url de l'apli web dans `config/config.js`
 *  remplacer l'url de base de l'api dans le fichier à l'emplacement `AGROLDAPIJSONURL` définis dans `config/config.js` (`config/agrold.json`): `"host": "localhost:8080/agrold"` ou `"host": "agrold.southgreen.fr/agrold"`
 *  remplacer l'url de l'appli dans `agrold.ogust.servlet.Logout.java`
+*  remplacer le sparqlendpoint dans le fichier `agrold.webservices.dao.Utils`
 *  remplacer le chemin de configuration de la connexion au serveur MySQL pour la gestion de l'historique utilisateur dans le fichier `agrold.ogust.config.MySQLProperties`: (variable `configFilePath`)
 
 Le format du fichier de configuration pour mysql est (**sans ce fichier, l'application web ne peut pas démarrer)**):
@@ -147,3 +148,9 @@ WHERE {
 
 #### Quick search
 *  **le *describe* des URI ne fonctionne pas à cause de la redirection des URL de l'appli**
+
+
+
+Accessions
+ = échantillon parenté (espèce)
+ = identifiant d'un gène (KB)

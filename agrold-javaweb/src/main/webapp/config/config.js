@@ -7,7 +7,9 @@ WEBAPPURL="http://localhost:8080/aldp";
 // /Users/zadmin/agrold/git/AgroLD/agrold/src/main/webapp/bc_sparqleditor.jsp
 // /src/main/webapp/relfinder/config/Config.xml
 // /src/main/webapp/sparqleditor.jsp
-SPARQLENDPOINTURL="http://agrold.southgreen.fr/sparql"; 
+//SPARQLENDPOINTURL="http://agrold.southgreen.fr/sparql"; 
+//SPARQLENDPOINTURL=WEBAPPURL + "/api/sparql"; 
+SPARQLENDPOINTURL="http://sparql.southgreen.fr"; 
 // 
 // stil in HTML form in :
 //  WEB-INF/Account/General/AJAX/Admin/_USER_FULL_DATA_LOADER.jsp
