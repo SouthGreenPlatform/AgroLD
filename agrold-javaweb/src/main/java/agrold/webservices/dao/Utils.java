@@ -127,7 +127,7 @@ public class Utils {
                     URLEncoder.encode(defaultGraphURI, charset),
                     URLEncoder.encode(sparqlQuery, charset),
                     URLEncoder.encode(format, charset));
-            System.out.println("httpQuerry: " + httpQuery);
+           // System.out.println("httpQuerry: " + httpQuery);
             // Firing a HTTP GET request with (optionally) query parameters
             URLConnection connection = new URL(sparqlEndpoint + "?" + httpQuery).openConnection();
             connection.setRequestProperty("Accept-Charset", charset);

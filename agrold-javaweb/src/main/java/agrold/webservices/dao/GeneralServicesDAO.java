@@ -4,6 +4,7 @@
 package agrold.webservices.dao;
 
 import java.io.IOException;
+import javax.ws.rs.core.MultivaluedMap;
 
 /**
  * API services on graphs
@@ -85,8 +86,18 @@ public class GeneralServicesDAO {
 
         return Utils.executeSparqlQuery(sparqlQuery, Utils.sparqlEndpointURL, resultFormat);
     }
+    
+    public static String queryCustomizableService(String serviceLocalName, MultivaluedMap<String, String> queryParams, int page, int pageSize, String resultFormat) throws IOException {
+        String sparqlQuery = "";
+        sparqlQuery = Utils.addLimitAndOffset(sparqlQuery, pageSize, page);
+        String currentDirectory = System.getProperty("user.dir");
+        System.out.println("The current working directory is " + currentDirectory);
+        return Utils.executeSparqlQuery(sparqlQuery, Utils.sparqlEndpointURL, resultFormat);
+    }
 
     public static void main(String[] args) throws IOException {
-        System.out.println(getIRIDescription("http://www.southgreen.fr/agrold/ricecyc.pathway/FERMENTATION-PWY", 0, 0, Utils.CSV));
+        //System.out.println(getIRIDescription("http://www.southgreen.fr/agrold/ricecyc.pathway/FERMENTATION-PWY", 0, 0, Utils.CSV));
+        String API_JSON_SPEC_PATH = "";
+        queryCustomizableService("sala", null, 0, 10, ".json");
     }
 }

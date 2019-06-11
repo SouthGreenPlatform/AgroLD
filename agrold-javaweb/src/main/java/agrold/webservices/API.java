@@ -26,8 +26,10 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 
 /**
  *
@@ -62,6 +64,22 @@ public class API {
                     .build();
         }
         return Response.ok(content, contentType).build();
+    }
+    
+    // generic web service for modifiables ones
+    @GET
+    @Path("/root/{serviceLocalName}" + formatInPath)
+    public Response genericGet(@PathParam("serviceLocalName") String serviceLocalName, @PathParam(formatVar) String format, @Context UriInfo uriInfo,
+            @DefaultValue(DEFAULT_PAGE) @QueryParam(pageNumVar) int page,
+            @DefaultValue(DEFAULT_PAGE_SIZE) @QueryParam(pageSizeVar) int pageSize) throws IOException {
+        String contentType = Utils.getFormatFullName(format);
+        if (contentType == null) {
+            return Response.serverError()
+                    .entity("[AgroLD Web Services] - Format Error: The requested resource is not available in the format \"" + format + "\"")
+                    .build();
+        }         
+        String content = GeneralServicesDAO.queryCustomizableService(serviceLocalName, uriInfo.getQueryParameters(), page, pageSize, format);
+        return buildResponse(content, contentType);
     }
 
     // Ontologies
