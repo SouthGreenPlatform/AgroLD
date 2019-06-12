@@ -3,8 +3,14 @@
  */
 package agrold.webservices.dao;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import javax.ws.rs.core.MultivaluedMap;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 
 /**
  * API services on graphs
@@ -25,7 +31,7 @@ public class GeneralServicesDAO {
                 + "    OPTIONAL{\n"
                 + "      ?hasValue a ?hasValueType.\n"
                 + "      FILTER(?hasValueType != <http://www.w3.org/2002/07/owl#Class>)\n"
-                + "    }\n"                
+                + "    }\n"
                 + "  }\n"
                 + "  UNION\n"
                 + "  { \n"
@@ -33,8 +39,8 @@ public class GeneralServicesDAO {
                 + "    OPTIONAL{\n"
                 + "      ?isValueOf a ?isValueOfType.\n"
                 + "      FILTER(?isValueOfType != <http://www.w3.org/2002/07/owl#Class>)\n"
-                + "    }\n"                
-                + "  }   \n"      
+                + "    }\n"
+                + "  }   \n"
                 + "     Bind(if(contains(str(?property), \"taxon\"), <http://www.southgreen.fr/vocavulary/Taxon>, \"\") as ?computedType) \n"
                 + "}";
 
@@ -86,18 +92,62 @@ public class GeneralServicesDAO {
 
         return Utils.executeSparqlQuery(sparqlQuery, Utils.sparqlEndpointURL, resultFormat);
     }
+
+    public static String readAPISpecification(String specPath) {
+        //JSON parser object to parse read file        
+        JSONObject jsonObj = null;
+        try (FileReader reader = new FileReader(Utils.AGROLDAPIJSONURL)) {
+            //Read JSON file
+            JSONTokener tokener = new JSONTokener(reader);
+            jsonObj = new JSONObject(tokener);
+
+            // add a new tag
+            JSONObject tagObj = new JSONObject();
+            /*tagObj.put("name", "customizable");
+            tagObj.put("description", "customizable web services");
+            tagObj.put("externalDocs", new JSONObject("{\n"
+                    + "                \"description\": \"Find out more\",\n"
+                    + "                \"url\": \"http://www.agrold.org\"\n"
+                    + "            }"));
+            ((JSONArray) jsonObj.get("tags")).put(0, tagObj);
+
+            System.out.println(jsonObj.get("tags"));*/
+            reader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return jsonObj.toString();
+    }
     
+    public static void writeAPISpecification(JSONObject apiSpecObj) {
+        // write
+        try (FileWriter writer = new FileWriter(Utils.AGROLDAPIJSONURL)) {
+            if (apiSpecObj != null) {
+                writer.write(apiSpecObj.toString());
+            }
+            writer.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static String queryCustomizableService(String serviceLocalName, MultivaluedMap<String, String> queryParams, int page, int pageSize, String resultFormat) throws IOException {
         String sparqlQuery = "";
         sparqlQuery = Utils.addLimitAndOffset(sparqlQuery, pageSize, page);
         String currentDirectory = System.getProperty("user.dir");
         System.out.println("The current working directory is " + currentDirectory);
+
         return Utils.executeSparqlQuery(sparqlQuery, Utils.sparqlEndpointURL, resultFormat);
     }
 
     public static void main(String[] args) throws IOException {
         //System.out.println(getIRIDescription("http://www.southgreen.fr/agrold/ricecyc.pathway/FERMENTATION-PWY", 0, 0, Utils.CSV));
         String API_JSON_SPEC_PATH = "";
-        queryCustomizableService("sala", null, 0, 10, ".json");
+        //queryCustomizableService("sala", null, 0, 10, ".json");
+        readAPISpecification(Utils.AGROLDAPIJSONURL);
     }
 }

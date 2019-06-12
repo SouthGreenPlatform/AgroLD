@@ -16,6 +16,8 @@ import agrold.webservices.dao.ProteinDAO;
 import agrold.webservices.dao.QtlDAO;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import javax.annotation.security.RolesAllowed;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -65,7 +67,7 @@ public class API {
         }
         return Response.ok(content, contentType).build();
     }
-    
+
     // generic web service for modifiables ones
     @GET
     @Path("/root/{serviceLocalName}" + formatInPath)
@@ -77,9 +79,26 @@ public class API {
             return Response.serverError()
                     .entity("[AgroLD Web Services] - Format Error: The requested resource is not available in the format \"" + format + "\"")
                     .build();
-        }         
+        }
         String content = GeneralServicesDAO.queryCustomizableService(serviceLocalName, uriInfo.getQueryParameters(), page, pageSize, format);
         return buildResponse(content, contentType);
+    }
+
+    // generic web service for modifiables ones
+    //@RolesAllowed("ADMIN")
+    @GET
+    @Path("/agrold-api-specification.json")
+    public Response getAPISpecification() throws IOException {
+        String content = GeneralServicesDAO.readAPISpecification(Utils.AGROLDAPIJSONURL);
+        return buildResponse(content, Utils.JSON);
+    }
+
+    // generic web service for modifiables ones
+    @DELETE
+    @Path("/delete-service")
+    public Response deleteService(@QueryParam("name") String name) throws IOException {
+        String content = "service <" + name + "> deleted";
+        return buildResponse(content, Utils.TXT);
     }
 
     // Ontologies
@@ -484,7 +503,7 @@ public class API {
         String content = GeneDAO.getPublicationsOfGeneById(geneId, page, pageSize, format);
         return buildResponse(content, contentType);
     }
-    
+
     // seeAlso
     @GET
     @Path("/genes/seeAlso" + formatInPath)

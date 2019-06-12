@@ -1874,65 +1874,6 @@
                 }
             }
         },
-        "/genes/participatingInPathway{format}": {
-            "get": {
-                "tags": [
-                    "gene"
-                ],
-                "summary": "Get URIs, ids, and name of genes participating in a pathway given its ID",
-                "description": "",
-                "operationId": "getGenesByPathways",
-                "produces": ["text/html", "application/sparql-results+json", "application/json", "application/sparql-results+xml", "text/tab-separated-values", "text/csv", "rdf/xml", "text/turtle", "text/plain"],
-                "parameters": [
-                    {
-                        "name": "pathwayId",
-                        "in": "query",
-                        "description": "The id (local name) of the pathway (e.g. PWY-5337, FERMENTATION-PWY, TRESYN-PWY, GALACTMETAB-PWY)",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "description": "number (>= 0) of the page of the result set to display (0 = the first page by default)",
-                        "required": false,
-                        "type": "integer"
-                    },
-                    {
-                        "name": "pageSize",
-                        "in": "query",
-                        "description": "size of a page of the result set. If = 0 then all results will be displayed. Default value: 10.",
-                        "required": false,
-                        "type": "integer"
-                    },
-                    {
-                        "name": "format",
-                        "in": "path",
-                        "description": "format in which the results set will be return (if empty or not supported, JSON is returned by default)",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            ".json",
-                            ".jsonld",
-                            ".xml",
-                            ".tsv",
-                            ".csv",
-                            ".rdf",
-                            ".html",
-                            ".ttl", ".n3"
-                        ]
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "successful operation"
-                    },
-                    "default": {
-                        "description": "unexpected error"
-                    }
-                }
-            }
-        },
         "/pathways/byKeyword{format}": {
             "get": {
                 "tags": [

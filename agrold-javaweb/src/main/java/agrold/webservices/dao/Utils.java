@@ -44,6 +44,7 @@ public class Utils {
 
     public final static String DEFAULT_PAGE_SIZE = "10";
     public final static String DEFAULT_PAGE = "0";
+    public final static String AGROLDAPIJSONURL = "C:\\Users\\Gildas\\Documents\\agrold\\resources\\agrold-api.json";
 
     public static String sparqlEndpointURL = "http://sparql.southgreen.fr";
     //public static String sparqlEndpointURL = "http://localhost:8080/aldp/api/sparql";
@@ -56,6 +57,7 @@ public class Utils {
     public final static String JSON_LD = "application/sparql-results+json";
     public final static String TSV = "text/tab-separated-values";
     public final static String TTL = "text/turtle";
+    public final static String TXT = "text/plain";
     public final static String XML = "application/sparql-results+xml";
 
     // HTML, JSON, JSON_LD, XML, TSV, CSV, RDF, TTL, N3
