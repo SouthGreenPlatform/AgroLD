@@ -20,6 +20,8 @@ import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -68,7 +70,7 @@ public class API {
         return Response.ok(content, contentType).build();
     }
 
-    // generic web service for modifiables ones
+    // generic web service for modifiables ones    
     @GET
     @Path("/root/{serviceLocalName}" + formatInPath)
     public Response genericGet(@PathParam("serviceLocalName") String serviceLocalName, @PathParam(formatVar) String format, @Context UriInfo uriInfo,
@@ -84,8 +86,7 @@ public class API {
         return buildResponse(content, contentType);
     }
 
-    // generic web service for modifiables ones
-    //@RolesAllowed("ADMIN")
+    // generic web service for modifiables ones    
     @GET
     @Path("/agrold-api-specification.json")
     public Response getAPISpecification() throws IOException {
@@ -94,11 +95,29 @@ public class API {
     }
 
     // generic web service for modifiables ones
-    @DELETE
+    @RolesAllowed("ADMIN")
+    @DELETE 
+    @Produces(MediaType.TEXT_PLAIN)
     @Path("/delete-service")
     public Response deleteService(@QueryParam("name") String name) throws IOException {
         String content = "service <" + name + "> deleted";
-        return buildResponse(content, Utils.TXT);
+        return buildResponse(content, MediaType.TEXT_PLAIN);
+    }
+    
+    @RolesAllowed("ADMIN")
+    @PUT
+    @Path("/add-service")
+    public Response addService(@QueryParam("name") String name) throws IOException {
+        String content = "service <" + name + "> added";
+        return buildResponse(content, MediaType.TEXT_PLAIN);
+    }
+    
+    @RolesAllowed("ADMIN")
+    @POST
+    @Path("/update-service")
+    public Response updateService(@QueryParam("name") String name) throws IOException {
+        String content = "service <" + name + "> updated";
+        return buildResponse(content, MediaType.TEXT_PLAIN);
     }
 
     // Ontologies

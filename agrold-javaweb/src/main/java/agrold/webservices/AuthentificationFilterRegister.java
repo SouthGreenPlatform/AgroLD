@@ -17,6 +17,6 @@ public class AuthentificationFilterRegister extends ResourceConfig
         register(GsonMessageBodyHandler.class);
  
         //Register Auth Filter here
-        register(AuthenticationFilter.class);
+        register(BasicAuthenticationFilter.class);
     }
 }
