@@ -57,7 +57,7 @@
                 dom_id: "swagger-ui-container",
                 supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
                 onComplete: function (swaggerApi, swaggerUi) {
-                    if (typeof initOAuth == "function") {
+                    /*if (typeof initOAuth == "function") {
                         initOAuth({
                             clientId: "your-client-id",
                             realm: "your-realms",
@@ -68,7 +68,7 @@
                         hljs.highlightBlock(e)
                     });
                     addApiKeyAuthorization();
-                    banInjector();
+                    banInjector();*/
                 },
                 onFailure: function (data) {
                     log("Unable to Load SwaggerUI");
@@ -84,18 +84,18 @@
                     log("added key " + key);
                 }
             }
-            $('#input_apiKey').change(addApiKeyAuthorization);
+            //$('#input_apiKey').change(addApiKeyAuthorization);
                 // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
                 /*
                  var apiKey = "myApiKeyXXXX123456789";
                  $('#input_apiKey').val(apiKey);
                  */
-                 window.swaggerUi.load();
-                 function log() {
-                    if ('console' in window) {
-                        console.log.apply(console, arguments);
-                    }
-                }
+            window.swaggerUi.load();
+            function log() {
+               if ('console' in window) {
+                   console.log.apply(console, arguments);
+               }
+           }
             });
 </script>
 

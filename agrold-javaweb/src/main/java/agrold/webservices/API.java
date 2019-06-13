@@ -88,7 +88,7 @@ public class API {
 
     // generic web service for modifiables ones    
     @GET
-    @Path("/agrold-api-specification.json")
+    @Path("/webservices")
     public Response getAPISpecification() throws IOException {
         String content = GeneralServicesDAO.readAPISpecification(Utils.AGROLDAPIJSONURL);
         return buildResponse(content, Utils.JSON);
@@ -98,15 +98,15 @@ public class API {
     @RolesAllowed("ADMIN")
     @DELETE 
     @Produces(MediaType.TEXT_PLAIN)
-    @Path("/delete-service")
+    @Path("/webservices")
     public Response deleteService(@QueryParam("name") String name) throws IOException {
-        String content = "service <" + name + "> deleted";
+        String content = "service </api/customizable/" + name + "> deleted";
         return buildResponse(content, MediaType.TEXT_PLAIN);
     }
     
     @RolesAllowed("ADMIN")
     @PUT
-    @Path("/add-service")
+    @Path("/webservices")
     public Response addService(@QueryParam("name") String name) throws IOException {
         String content = "service <" + name + "> added";
         return buildResponse(content, MediaType.TEXT_PLAIN);
@@ -114,7 +114,7 @@ public class API {
     
     @RolesAllowed("ADMIN")
     @POST
-    @Path("/update-service")
+    @Path("/webservices")
     public Response updateService(@QueryParam("name") String name) throws IOException {
         String content = "service <" + name + "> updated";
         return buildResponse(content, MediaType.TEXT_PLAIN);

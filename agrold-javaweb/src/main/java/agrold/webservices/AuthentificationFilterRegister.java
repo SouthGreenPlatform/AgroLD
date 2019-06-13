@@ -7,7 +7,7 @@ package agrold.webservices;
 
 import org.glassfish.jersey.logging.LoggingFeature;
 import org.glassfish.jersey.server.ResourceConfig;
- 
+//import java.xml.*; 
 public class AuthentificationFilterRegister extends ResourceConfig
 {
     public AuthentificationFilterRegister()
