@@ -329,9 +329,6 @@ function KnetmapsAdaptator() {
 
     this._conceptStyles = {
         "Gene": {
-            "conceptType": {
-                "name": "Gene"
-            },
             "conceptBorderColor": "black",
             "conceptSize": "22px",
             "conceptTextBGopacity": "0",
@@ -342,10 +339,7 @@ function KnetmapsAdaptator() {
             "conceptShape": "triangle",
             "conceptTextBGcolor": "black"
         },
-        "Protein": {
-            "conceptType": {
-                "name": "Protein"
-            },
+        "Protein": {           
             "conceptBorderColor": "black",
             "conceptSize": "18px",
             "conceptTextBGopacity": "0",
@@ -399,34 +393,13 @@ function KnetmapsAdaptator() {
             "conceptBorderWidth": "1px",
             "conceptShape": "rectangle",
             "conceptTextBGcolor": "black"
-        },
-        "Taxon": {
-            "conceptBorderColor": "black",
-            "conceptSize": "18px",
-            "conceptTextBGopacity": "0",
-            "conceptDisplay": "element",
-            "conceptColor": "green",
-            "conceptBorderStyle": "solid",
-            "conceptBorderWidth": "1px",
-            "conceptShape": "vee",
-            "conceptTextBGcolor": "black"
-        },
-        "CDS": {
-            "conceptBorderColor": "black",
-            "conceptSize": "18px",
-            "conceptTextBGopacity": "0",
-            "conceptDisplay": "element",
-            "conceptColor": "red",
-            "conceptBorderStyle": "solid",
-            "conceptBorderWidth": "1px",
-            "conceptShape": "barrel",
-            "conceptTextBGcolor": "black"
         }
     };
 
     this.RELATION_TYPES = {}; //label:->{label, sourceConceptType, targetConceptType}
 
-    this.CONCEPT_TYPES = {"Gene": "", "Protein": "", "QTL": "", "Pathway": "", "Reaction": "", "mRNA": "", "Trait": "", "Taxon": "", "CDS": ""};
+    //this.CONCEPT_TYPES = {"Gene": "", "Protein": "", "QTL": "", "Pathway": "", "Reaction": "", "mRNA": "", "Trait": "", "Taxon": "", "CDS": ""};
+    this.CONCEPT_TYPES = {"Gene": "", "Protein": "", "QTL": "", "Pathway": "", "Reaction": "", "mRNA": ""};
     for (var type in this._conceptStyles) {
         this.CONCEPT_TYPES[type] = new ConceptType(type);
     }

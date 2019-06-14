@@ -21,7 +21,7 @@ public class GeneralServicesDAO {
 
     // describe a resource
     public static String getIRIDescription(String IRI, int page, int pageSize, String resultFormat) throws IOException {
-        String sparqlQuery = "BASE <http://www.southgreen.fr/agrold/>\n"
+        /*String sparqlQuery = "BASE <http://www.southgreen.fr/agrold/>\n"
                 + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                 + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
                 + "SELECT ?graph ?property ?hasValue ?isValueOf (group_concat(distinct concat(?hasValueType, ?isValueOfType, ?computedType) ;separator=\"; \") as ?type)\n"
@@ -42,6 +42,27 @@ public class GeneralServicesDAO {
                 + "    }\n"
                 + "  }   \n"
                 + "     Bind(if(contains(str(?property), \"taxon\"), <http://www.southgreen.fr/vocavulary/Taxon>, \"\") as ?computedType) \n"
+                + "}";*/
+        String sparqlQuery = "BASE <http://www.southgreen.fr/agrold/>\n"
+                + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
+                + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
+                + "SELECT ?graph ?property ?hasValue ?isValueOf (group_concat(distinct concat(?hasValueType, ?isValueOfType, ?computedType) ;separator=\"; \") as ?type)\n"
+                + "WHERE {\n" + "values (?q){(<" + IRI + ">)}\n"
+                + " { \n"
+                + "    GRAPH ?graph { ?q ?property ?hasValue. } \n"
+                + "    OPTIONAL{\n"
+                + "      ?hasValue a ?hasValueType.\n"
+                + "      FILTER(?hasValueType != <http://www.w3.org/2002/07/owl#Class>)\n"
+                + "    }\n"
+                + "  }\n"
+                + "  UNION\n"
+                + "  { \n"
+                + "    GRAPH ?graph { ?isValueOf ?property ?q. } \n"
+                + "    OPTIONAL{\n"
+                + "      ?isValueOf a ?isValueOfType.\n"
+                + "      FILTER(?isValueOfType != <http://www.w3.org/2002/07/owl#Class>)\n"
+                + "    }\n"
+                + "  }   \n"
                 + "}";
 
         //String sparqlQuery = "DESCRIBE <" + IRI + ">";
@@ -145,9 +166,9 @@ public class GeneralServicesDAO {
     }
 
     public static void main(String[] args) throws IOException {
-        //System.out.println(getIRIDescription("http://www.southgreen.fr/agrold/ricecyc.pathway/FERMENTATION-PWY", 0, 0, Utils.CSV));
+        System.out.println(getIRIDescription("http://www.southgreen.fr/agrold/ricecyc.pathway/FERMENTATION-PWY", 0, 0, Utils.CSV));
         String API_JSON_SPEC_PATH = "";
         //queryCustomizableService("sala", null, 0, 10, ".json");
-        readAPISpecification(Utils.AGROLDAPIJSONURL);
+        //readAPISpecification(Utils.AGROLDAPIJSONURL);
     }
 }
