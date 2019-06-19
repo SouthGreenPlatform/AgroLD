@@ -20972,10 +20972,10 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
           $('.auth_main_container').append(button);
         }
 
-        if (auth.type === 'basicAuth' && $('#basic_auth_button').length === 0) {
+        if (auth.type === 'basicAuth' && $('#basic_auth_button').length === 0) {            
           button = new SwaggerUi.Views.BasicAuthButton({model: auth, router: this.router}).render().el;
           $('.auth_main_container').append(button);
-        }
+        } 
       }
     }
 

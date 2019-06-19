@@ -5,6 +5,7 @@
  */
 package agrold.webservices;
 
+import agrold.webservices.dao.CustomizableServicesManager;
 import agrold.webservices.dao.Utils;
 import static agrold.webservices.dao.Utils.DEFAULT_PAGE;
 import static agrold.webservices.dao.Utils.DEFAULT_PAGE_SIZE;
@@ -72,8 +73,12 @@ public class API {
 
     // generic web service for modifiables ones    
     @GET
-    @Path("/root/{serviceLocalName}" + formatInPath)
-    public Response genericGet(@PathParam("serviceLocalName") String serviceLocalName, @PathParam(formatVar) String format, @Context UriInfo uriInfo,
+    @Path("/customizable/{serviceLocalName}")
+    public Response genericGet(@PathParam("serviceLocalName") String serviceLocalName, @PathParam(formatVar) String format, @Context UriInfo uriInfo) throws IOException {        
+        String content = CustomizableServicesManager.queryCustomizableService(serviceLocalName, uriInfo.getQueryParameters());
+        return buildResponse(content, Utils.TXT);
+    }
+    /*public Response genericGet(@PathParam("serviceLocalName") String serviceLocalName, @PathParam(formatVar) String format, @Context UriInfo uriInfo,
             @DefaultValue(DEFAULT_PAGE) @QueryParam(pageNumVar) int page,
             @DefaultValue(DEFAULT_PAGE_SIZE) @QueryParam(pageSizeVar) int pageSize) throws IOException {
         String contentType = Utils.getFormatFullName(format);
@@ -82,15 +87,15 @@ public class API {
                     .entity("[AgroLD Web Services] - Format Error: The requested resource is not available in the format \"" + format + "\"")
                     .build();
         }
-        String content = GeneralServicesDAO.queryCustomizableService(serviceLocalName, uriInfo.getQueryParameters(), page, pageSize, format);
+        String content = CustomizableServicesManager.queryCustomizableService(serviceLocalName, uriInfo.getQueryParameters(), page, pageSize, format);
         return buildResponse(content, contentType);
-    }
+    }*/
 
     // generic web service for modifiables ones    
     @GET
     @Path("/webservices")
     public Response getAPISpecification() throws IOException {
-        String content = GeneralServicesDAO.readAPISpecification(Utils.AGROLDAPIJSONURL);
+        String content = CustomizableServicesManager.readAPISpecification(Utils.AGROLDAPIJSONURL);
         return buildResponse(content, Utils.JSON);
     }
 
@@ -100,6 +105,7 @@ public class API {
     @Produces(MediaType.TEXT_PLAIN)
     @Path("/webservices")
     public Response deleteService(@QueryParam("name") String name) throws IOException {
+        CustomizableServicesManager.deleteService(name);
         String content = "service </api/customizable/" + name + "> deleted";
         return buildResponse(content, MediaType.TEXT_PLAIN);
     }
@@ -107,7 +113,8 @@ public class API {
     @RolesAllowed("ADMIN")
     @PUT
     @Path("/webservices")
-    public Response addService(@QueryParam("name") String name) throws IOException {
+    public Response addService(@QueryParam("name") String name, @QueryParam("httpMethod") String httpMethod, @QueryParam("sparql") String sparqlPattern) throws IOException {
+        CustomizableServicesManager.addService(name, httpMethod, sparqlPattern);
         String content = "service <" + name + "> added";
         return buildResponse(content, MediaType.TEXT_PLAIN);
     }
@@ -115,7 +122,8 @@ public class API {
     @RolesAllowed("ADMIN")
     @POST
     @Path("/webservices")
-    public Response updateService(@QueryParam("name") String name) throws IOException {
+    public Response updateService(@QueryParam("name") String name, @QueryParam("sparql") String sparqlPattern) throws IOException {
+        CustomizableServicesManager.updateService(name, sparqlPattern);
         String content = "service <" + name + "> updated";
         return buildResponse(content, MediaType.TEXT_PLAIN);
     }

@@ -11,6 +11,8 @@
 *  préferer Tomcat 7/8 à d'autres serveurs web
 *  remplacer l'url de l'apli web dans `config/config.js`
 *  remplacer l'url de base de l'api dans le fichier à l'emplacement `AGROLDAPIJSONURL` définis dans `config/config.js` (`config/agrold.json`): `"host": "localhost:8080/agrold"` ou `"host": "agrold.southgreen.fr/agrold"`
+*  remplacer l'url de base de l'api dans le fichier à l'emplacement `AGROLDAPIJSONURL` définis dans la classe agrold.webservices.DAO.Utils pour la gestion des webservices
+*  recupérer le fichier à l'emplacement `AGROLDAPIJSONURL` définis dans la classe agrold.webservices.DAO.Utils pour la gestion des webservices
 *  remplacer l'url de l'appli dans `agrold.ogust.servlet.Logout.java`
 *  remplacer le sparqlendpoint dans le fichier `agrold.webservices.dao.Utils`
 *  remplacer le chemin de configuration de la connexion au serveur MySQL pour la gestion de l'historique utilisateur dans le fichier `agrold.ogust.config.MySQLProperties`: (variable `configFilePath`)
@@ -58,7 +60,7 @@ delete from h_advanced_search where mail="tagny@ymail.com";
 * configurer le Tomcat de Volvestre dans Netbeans pour directement déployer la version dev. en ligne
 
 #### Advanced Search
-*  le fichier `http://localhost:8080/aldp/config/agrold-api.json` est téléchargé plusieurs fois ???
+*  le fichier `agrold-api.json` est téléchargé plusieurs fois ???
 *  *corriger la requête sparql du service describe et celle des genesByPathwayIds*
 *  Laisser l'utilisateur spécifier les paramètres `page`et `pageSize`?
 *  *Les tables YASR apparaissent souvent aminçis dans les fenêtres de description d'entités*

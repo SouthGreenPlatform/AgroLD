@@ -26,94 +26,25 @@ Author     : tagny
 
     </script>
     <head>         
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> AgroLD : API documentation </title> 
         <jsp:include page="includes.html"></jsp:include>
-            <!-- Other -->
-
-            <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-            <link href="swagger/css/typography.css" media="screen" rel="stylesheet" type="text/css"/>
-            <link href="swagger/css/reset.css" media="screen" rel="stylesheet" type="text/css"/>
-            <link href="swagger/css/screen.css" media="screen" rel="stylesheet" type="text/css"/>
-            <link href="swagger/css/reset.css" media="print" rel="stylesheet" type="text/css"/>
-            <link href="swagger/css/print.css" media="print" rel="stylesheet" type="text/css"/>        
-            <script src="swagger/lib/jquery-1.8.0.min.js" type="text/javascript"></script>
-            <script src="swagger/lib/jquery.slideto.min.js" type="text/javascript"></script>
-            <script src="swagger/lib/jquery.wiggle.min.js" type="text/javascript"></script>
-            <script src="swagger/lib/jquery.ba-bbq.min.js" type="text/javascript"></script>
-            <script src="swagger/lib/handlebars-2.0.0.js" type="text/javascript"></script>
-            <script src="swagger/lib/underscore-min.js" type="text/javascript"></script>
-            <script src="swagger/lib/backbone-min.js" type="text/javascript"></script>
-            <script src="swagger/swagger-ui.js" type="text/javascript"></script>
-            <script src="swagger/lib/highlight.7.3.pack.js" type="text/javascript"></script>
-            <script src="swagger/lib/marked.js" type="text/javascript"></script>
-            <script src="swagger/lib/swagger-oauth.js" type="text/javascript"></script>     
-
-
-            <!--script type="text/javascript">
-            $(function () {
-                var url = window.location.search.match(/url=([^&]+)/);
-                if (url && url.length > 1) {
-                    url = decodeURIComponent(url[1]);
-                } else {
-                    url = AGROLDAPIJSONURL; //"../swagger/swagger1.json"
+            <!-- Other -->            
+            <!--link href="swagger/css/reset.css" media="screen" rel="stylesheet" type="text/css"/-->
+            <!--link href="api-js-css/css.css" rel="stylesheet"-->
+            <link rel="stylesheet" type="text/css" href="api-js-css/swagger-ui.css">
+            <style>
+                .col{
+                    width:auto;
                 }
-                window.swaggerUi = new SwaggerUi({
-                    url: url,
-                    dom_id: "swagger-ui-container",
-                    supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
-                    onComplete: function (swaggerApi, swaggerUi) {
-                        /*if (typeof initOAuth == "function") {
-                            initOAuth({
-                                clientId: "your-client-id",
-                                realm: "your-realms",
-                                appName: "your-app-name"
-                            });
-                        }
-                        $('pre code').each(function (i, e) {
-                            hljs.highlightBlock(e)
-                        });
-                        addApiKeyAuthorization();
-                        banInjector();*/
-                    },
-                    onFailure: function (data) {
-                        log("Unable to Load SwaggerUI");
-                    },
-                    docExpansion: "none",
-                    apisSorter: "alpha"
-                });
-                function addApiKeyAuthorization() {
-                    var key = encodeURIComponent($('#input_apiKey')[0].value);
-                    if (key && key.trim() != "") {
-                        var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("api_key", key, "query");
-                        window.swaggerUi.api.clientAuthorizations.add("api_key", apiKeyAuth);
-                        log("added key " + key);
-                    }
-                }
-                //$('#input_apiKey').change(addApiKeyAuthorization);
-                    // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
-                    /*
-                     var apiKey = "myApiKeyXXXX123456789";
-                     $('#input_apiKey').val(apiKey);
-                     */
-                window.swaggerUi.load();
-                function log() {
-                   if ('console' in window) {
-                       console.log.apply(console, arguments);
-                   }
-               }
-                });
-    </script-->
-
-            <title> AgroLD : API documentation </title> 
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link href="api-js-css/css.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="api-js-css/swagger-ui.css">
+            </style>
         </head>
         <body>
         <jsp:include page="header.jsp"></jsp:include>
             <div class="container-fluid arian-thread">
                 <div class="info_title">
-                    <div class="container pos-l">Help > <span class="active-p">AgroLD API 1.0</span></div>
+                    <div class="container pos-l">Help > <span class="active-p">AgroLD API</span></div>
                 </div>
             </div>
             <div class="foowrap">
@@ -131,7 +62,7 @@ Author     : tagny
                     </div>
                 </div>
                 <div class="swagger-section">
-                    
+
                     <section>
                         <!--div id="header" style="display: none">
                             <div class="swagger-ui-wrap">
@@ -153,40 +84,45 @@ Author     : tagny
         <script src="api-js-css/swagger-ui-bundle.js"></script>
         <script src="api-js-css/swagger-ui-standalone-preset.js"></script>
         <script>
-            window.onload = function () {
+        window.onload = function () {
 
 
-                // Begin Swagger UI call region
-                const ui = SwaggerUIBundle({
-                    "dom_id": "#swagger-ui",
-                    deepLinking: true,
-                    presets: [
-                        SwaggerUIBundle.presets.apis,
-                        SwaggerUIStandalonePreset
-                    ],
-                    plugins: [
-                        SwaggerUIBundle.plugins.DownloadUrl
-                    ],
-                    layout: "StandaloneLayout",
-                    validatorUrl: "https://validator.swagger.io/validator",
-                    url: AGROLDAPIJSONURL,
-                })
+            // Begin Swagger UI call region
+            const ui = SwaggerUIBundle({
+                "dom_id": "#swagger-ui",
+                deepLinking: true,
+                presets: [
+                    SwaggerUIBundle.presets.apis,
+                    SwaggerUIStandalonePreset                    
+                ],
+                plugins: [
+                    //SwaggerUIBundle.plugins.DownloadUrl
+                ],
+                layout: "BaseLayout", // StandalonLayout : display the topbar
+                validatorUrl: "https://validator.swagger.io/validator",
+                url: AGROLDAPIJSONURL,
+                onComplete: function () {
+                    banInjector();
+                },
+            })
 
 
-                // End Swagger UI call region
+            // End Swagger UI call region
 
 
-                window.ui = ui
-            }
+            window.ui = ui
+        }
         </script>
         <script type="text/javascript">
             function banInjector() {
-                var clone = $('.info').clone(); // save info api from swagger autogenerated div
+                /*var clone = $('.info').clone(); // save info api from swagger autogenerated div
                 $('.info').text('');            // cleaning the div
                 $('#pop-i').html(clone);        // inject to swagger top banner
                 $('#api_info .info_title').addClass('ban-sp-title').removeClass('info_title'); // cleaning old class info
                 $('#resources_container .footer').remove();     // removing swagger footer ( cause conflicts )
-                $('footer.footer').addClass('apiHelpFooter').removeClass('footer');     // Replace by relative positionning footer
+                $('footer.footer').addClass('apiHelpFooter').removeClass('footer');     // Replace by relative positionning footer*/
+                $('#inject-info').remove();            // remove swagger top banner
+                //$('.topbar').remove();            // remove the service specification URL form 
             }
         </script>
         <script>
