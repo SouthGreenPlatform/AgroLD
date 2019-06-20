@@ -97,6 +97,7 @@ public class CustomizableServicesManager {
         apiSpecification.getJSONObject("paths").put(servicePath, newServiceSpec);
         //System.out.println(apiSpecification.toString());
         writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL);
+        writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL+".backup");
     }
 
     public static void deleteService(String name) {
@@ -107,6 +108,7 @@ public class CustomizableServicesManager {
         }
         //System.out.println(apiSpecification.toString());
         writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL);
+        writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL+".backup");
     }
 
     public static void updateService(String name, String sparqlPattern) {
@@ -120,6 +122,7 @@ public class CustomizableServicesManager {
         }
         //System.out.println(apiSpecification.toString());
         writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL);
+        writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL+".backup");
     }
 
     public static String queryCustomizableService(String serviceLocalName, MultivaluedMap<String, String> queryParams) throws IOException {

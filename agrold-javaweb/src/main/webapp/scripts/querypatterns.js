@@ -144,7 +144,7 @@ WHERE { \n\
  BIND(REPLACE(?localname, "_", ":") as ?id).\n\
 } '] = ["homoaconitate hydratase activity"];
 qpatterns['PREFIX owl: <http://www.w3.org/2002/07/owl#>\n\n\
-SELECT ?OntoTerm\n\
+SELECT distinct ?OntoTerm\n\
 WHERE { \n\
  {\n\
   SELECT ?subject\n\
