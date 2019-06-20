@@ -12,7 +12,7 @@ SPARQLENDPOINTURL="http://agrold.southgreen.fr/sparql";
 //SPARQLENDPOINTURL="http://sparql.southgreen.fr"; 
 // 
 // stil in HTML form in :
-//  WEB-INF/Account/General/AJAX/Admin/_USER_FULL_DATA_LOADER.jsp
+// WEB-INF/Account/General/AJAX/Admin/_USER_FULL_DATA_LOADER.jsp
 // WEB-INF/Account/General/AJAX/History/QuickSearchList.jsp 
 // /src/main/webapp/quicksearch.jsp
 FACETEDURL="http://agrold.southgreen.fr/fct"; 

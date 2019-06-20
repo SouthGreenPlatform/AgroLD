@@ -17,8 +17,8 @@ import org.json.JSONObject;
  */
 public class WebService { 
     
-    enum ParameterLocation{path, query};
-    enum ParameterTypes{string, integer};
+    public enum ParameterLocation{path, query, body};
+    public enum ParameterType{string, integer};
     
     private String path;
     private String method;
@@ -29,7 +29,7 @@ public class WebService {
     private Map<String, Response> responses;    
     private List<Parameter> parameters;
     private List<String> tags;    
-    private List<Security> security;    
+    private Map<String, List> security;    
 
     public WebService() {
         responses = new TreeMap();
@@ -74,7 +74,7 @@ public class WebService {
         return tags;
     }
 
-    public List<Security> getSecurity() {
+    public Map<String, List> getSecurity() {
         return security;
     }
 
@@ -114,7 +114,7 @@ public class WebService {
         this.tags = tags;
     }
 
-    public void setSecurity(List<Security> security) {
+    public void setSecurity(Map<String, List> security) {
         this.security = security;
     }
 
@@ -219,25 +219,5 @@ public class WebService {
             return possibleValues;
         }
                 
-    }
-    
-    public class Security{
-        String type;
-
-        public Security() {
-        }
-
-        public Security(String type) {
-            this.type = type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getType() {
-            return type;
-        }
-        
-    }
+    }        
 }

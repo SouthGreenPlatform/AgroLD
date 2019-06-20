@@ -15,9 +15,11 @@ import agrold.webservices.dao.OntologyDAO;
 import agrold.webservices.dao.PathwayDAO;
 import agrold.webservices.dao.ProteinDAO;
 import agrold.webservices.dao.QtlDAO;
+import agrold.webservices.dao.UserProfile;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import javax.annotation.security.RolesAllowed;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
@@ -61,7 +63,24 @@ public class API {
         } catch (URISyntaxException e) {
         }
     }
-
+    
+    @POST
+    @Path("/users")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    public UserProfile createUserProfile(UserProfile userProfile) {
+        //we can make use of UserProfile now
+        String userName = userProfile.getUserName();
+        String firstName = userProfile.getFirstName();
+        String lastName = userProfile.getLastName();
+        
+        System.out.println("User name = " + userName);
+        System.out.println("First name = " + firstName);
+        System.out.println("Last name = " + lastName);
+       // And when we are done we can return user profile back
+        return userProfile;
+    }
+    
     Response buildResponse(String content, String contentType) {
         if (content == null) {
             return Response.serverError()
