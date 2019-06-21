@@ -64,6 +64,9 @@ public class Utils {
 
     // HTML, JSON, JSON_LD, XML, TSV, CSV, RDF, TTL, N3
     public static String getFormatFullName(String format) {
+        if(format==null){
+            return JSON;
+        }
         switch (format.toLowerCase()) {
             case ".json":
                 return JSON;
@@ -103,7 +106,7 @@ public class Utils {
             case N3:
                 return N3;
             default:
-                return JSON;
+                return null;
         }
         // return "";
     }

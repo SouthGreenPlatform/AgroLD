@@ -70,62 +70,54 @@ public class CustomizableServicesManager {
 
     /**
      *
-     * @param name
-     * @param httpMethod
-     * @param sparqlPattern : a variable pattern @var_name:type:
+     * @param name The name of the service 
+     * @param httpMethod The the HTTP protocol method
+     * @param webServiceSpecification : a JSON object with the method as key
+     * @return the confirmation message
      */
-    public static void addService(String name, String httpMethod, String sparqlPattern) {
+    public static String addService(String name, String httpMethod, String webServiceSpecification) {
         JSONObject apiSpecification = new JSONObject(readAPISpecification(Utils.AGROLDAPIJSONURL));
         JSONObject newServiceSpec = new JSONObject();
-        newServiceSpec.put(httpMethod, new JSONObject());
-        newServiceSpec.getJSONObject(httpMethod).put("description", sparqlPattern);
-        newServiceSpec.getJSONObject(httpMethod).append("tags", CUSTOMIZABLE_SERVICES_TAG);
-        newServiceSpec.getJSONObject(httpMethod).put("produces", new JSONArray());
-//        newServiceSpec.getJSONObject(httpMethod).append("produces", "application/sparql-results+json");
-//        newServiceSpec.getJSONObject(httpMethod).append("produces", "text/plain");
-        newServiceSpec.getJSONObject(httpMethod).put("parameters", new JSONArray());
-        newServiceSpec.getJSONObject(httpMethod).put("responses", new JSONObject("{\n"
-                + "\"200\": {\n"
-                + "\"description\": \"successful operation\"\n"
-                + "},\n"
-                + "\"default\": {\n"
-                + "\"description\": \"Unexpected error\"\n"
-                + "}\n"
-                + "}"));
+        String sparqlPattern = "get";
+        newServiceSpec.put(httpMethod, new JSONObject(webServiceSpecification));
         //System.out.println(newServiceSpec.toString());
         String servicePath = PATH_FIXED_PART + name.replaceAll("\\s+", "");
         apiSpecification.getJSONObject("paths").put(servicePath, newServiceSpec);
         //System.out.println(apiSpecification.toString());
         writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL);
-        writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL+".backup");
+        return "The service /api/customizable/"+ name + " has been created!";
     }
 
-    public static void deleteService(String name) {
+    public static String deleteService(String name, String httpMethod) {
         JSONObject apiSpecification = new JSONObject(readAPISpecification(Utils.AGROLDAPIJSONURL));
         String servicePath = PATH_FIXED_PART + name.replaceAll("\\s+", "");
         if (apiSpecification.getJSONObject("paths").has(servicePath)) {
             apiSpecification.getJSONObject("paths").remove(servicePath);
+            writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL);
         }
         //System.out.println(apiSpecification.toString());
-        writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL);
-        writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL+".backup");
+        return "The service /api/customizable/"+ name + " has been deleted!";
     }
 
-    public static void updateService(String name, String sparqlPattern) {
+    public static String updateService(String name, String httpMethod, String webServiceSpecification) {
         JSONObject apiSpecification = new JSONObject(readAPISpecification(Utils.AGROLDAPIJSONURL));
-        JSONObject newServiceSpec = new JSONObject();
-        newServiceSpec.put("description", sparqlPattern);
+        JSONObject serviceNewSpec = new JSONObject(webServiceSpecification);
         //System.out.println(newServiceSpec.toString());
         String servicePath = PATH_FIXED_PART + name.replaceAll("\\s+", "");
-        if (apiSpecification.getJSONObject("paths").has(servicePath)) {
-            apiSpecification.getJSONObject("paths").put(servicePath, newServiceSpec);
+        JSONObject serviceCurrentSpec = apiSpecification.getJSONObject("paths").getJSONObject(servicePath);
+        if (serviceCurrentSpec!=null) {
+            serviceNewSpec.keySet().forEach((key) -> {
+                (serviceCurrentSpec.getJSONObject(httpMethod)).put(key, serviceNewSpec.get(key));
+                apiSpecification.getJSONObject("paths").put(servicePath, serviceCurrentSpec);
+            }); 
+            writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL);
         }
         //System.out.println(apiSpecification.toString());
-        writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL);
-        writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL+".backup");
+        return "The service /api/customizable/"+ name + " has been updated!";
     }
 
-    public static String queryCustomizableService(String serviceLocalName, MultivaluedMap<String, String> queryParams) throws IOException {
+    public static String queryCustomizableService(String serviceLocalName, 
+            MultivaluedMap<String, String> queryParams) throws IOException {
         String sparqlQuery = "";
         String currentDirectory = System.getProperty("user.dir");
         System.out.println("The current working directory is " + currentDirectory);
@@ -149,7 +141,5 @@ public class CustomizableServicesManager {
                 + "} \n"
                 + "ORDER BY ?relation";
         String httpMethod = "get";
-        deleteService(name);
-        addService(name, httpMethod, sparql);
     }
 }

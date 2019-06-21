@@ -15,11 +15,12 @@ import agrold.webservices.dao.OntologyDAO;
 import agrold.webservices.dao.PathwayDAO;
 import agrold.webservices.dao.ProteinDAO;
 import agrold.webservices.dao.QtlDAO;
-import agrold.webservices.dao.UserProfile;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import javax.annotation.security.RolesAllowed;
-import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
@@ -63,24 +64,7 @@ public class API {
         } catch (URISyntaxException e) {
         }
     }
-    
-    @POST
-    @Path("/users")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public UserProfile createUserProfile(UserProfile userProfile) {
-        //we can make use of UserProfile now
-        String userName = userProfile.getUserName();
-        String firstName = userProfile.getFirstName();
-        String lastName = userProfile.getLastName();
-        
-        System.out.println("User name = " + userName);
-        System.out.println("First name = " + firstName);
-        System.out.println("Last name = " + lastName);
-       // And when we are done we can return user profile back
-        return userProfile;
-    }
-    
+
     Response buildResponse(String content, String contentType) {
         if (content == null) {
             return Response.serverError()
@@ -90,13 +74,38 @@ public class API {
         return Response.ok(content, contentType).build();
     }
 
+    String inputStream2String(InputStream incomingData){
+        StringBuilder bodyParamsBuilder = new StringBuilder();
+        try {
+            BufferedReader in = new BufferedReader(new InputStreamReader(incomingData));
+            String line = null;
+            while ((line = in.readLine()) != null) {
+                bodyParamsBuilder.append(line);
+            }
+        } catch (Exception e) {
+            System.out.println("Error Parsing: - ");
+        }
+        //System.out.println("Data Received: " + bodyParamsBuilder.toString());
+        return bodyParamsBuilder.toString();
+    }
+    
     // generic web service for modifiables ones    
     @GET
+    // @Consumes(MediaType.APPLICATION_JSON) // for "in body parameters"
     @Path("/customizable/{serviceLocalName}")
-    public Response genericGet(@PathParam("serviceLocalName") String serviceLocalName, @PathParam(formatVar) String format, @Context UriInfo uriInfo) throws IOException {        
+    public Response genericGet(@PathParam("serviceLocalName") String serviceLocalName, @Context UriInfo uriInfo) throws IOException {        
+        String[] nameTokens = serviceLocalName.split("[.]");
+        String format = nameTokens.length > 1 ? "." + nameTokens[nameTokens.length - 1] : null;
+        String contentType = Utils.getFormatFullName(format);
+        if (contentType == null) {
+            return Response.serverError()
+                    .entity("[AgroLD Web Services] - Format Error: The requested resource is not available in the format \"" + format + "\"")
+                    .build();
+        }
         String content = CustomizableServicesManager.queryCustomizableService(serviceLocalName, uriInfo.getQueryParameters());
-        return buildResponse(content, Utils.TXT);
+        return buildResponse(content, contentType);
     }
+
     /*public Response genericGet(@PathParam("serviceLocalName") String serviceLocalName, @PathParam(formatVar) String format, @Context UriInfo uriInfo,
             @DefaultValue(DEFAULT_PAGE) @QueryParam(pageNumVar) int page,
             @DefaultValue(DEFAULT_PAGE_SIZE) @QueryParam(pageSizeVar) int pageSize) throws IOException {
@@ -109,7 +118,6 @@ public class API {
         String content = CustomizableServicesManager.queryCustomizableService(serviceLocalName, uriInfo.getQueryParameters(), page, pageSize, format);
         return buildResponse(content, contentType);
     }*/
-
     // generic web service for modifiables ones    
     @GET
     @Path("/webservices")
@@ -120,30 +128,27 @@ public class API {
 
     // generic web service for modifiables ones
     @RolesAllowed("ADMIN")
-    @DELETE 
+    @DELETE
     @Produces(MediaType.TEXT_PLAIN)
     @Path("/webservices")
-    public Response deleteService(@QueryParam("name") String name) throws IOException {
-        CustomizableServicesManager.deleteService(name);
-        String content = "service </api/customizable/" + name + "> deleted";
+    public Response deleteService(@QueryParam("name") String name, @QueryParam("httpMethod") String httpMethod) throws IOException {        
+        String content = CustomizableServicesManager.deleteService(name, httpMethod); 
         return buildResponse(content, MediaType.TEXT_PLAIN);
     }
-    
+
     @RolesAllowed("ADMIN")
     @PUT
     @Path("/webservices")
-    public Response addService(@QueryParam("name") String name, @QueryParam("httpMethod") String httpMethod, @QueryParam("sparql") String sparqlPattern) throws IOException {
-        CustomizableServicesManager.addService(name, httpMethod, sparqlPattern);
-        String content = "service <" + name + "> added";
+    public Response addService(@QueryParam("name") String name, @QueryParam("httpMethod") String httpMethod, InputStream specificationDataStream) throws IOException {       
+        String content = CustomizableServicesManager.addService(name, httpMethod, inputStream2String(specificationDataStream));
         return buildResponse(content, MediaType.TEXT_PLAIN);
     }
-    
+
     @RolesAllowed("ADMIN")
     @POST
     @Path("/webservices")
-    public Response updateService(@QueryParam("name") String name, @QueryParam("sparql") String sparqlPattern) throws IOException {
-        CustomizableServicesManager.updateService(name, sparqlPattern);
-        String content = "service <" + name + "> updated";
+    public Response updateService(@QueryParam("name") String name, @QueryParam("httpMethod") String httpMethod, InputStream specificationDataStream) throws IOException {
+        String content = CustomizableServicesManager.updateService(name, httpMethod, inputStream2String(specificationDataStream));
         return buildResponse(content, MediaType.TEXT_PLAIN);
     }
 
