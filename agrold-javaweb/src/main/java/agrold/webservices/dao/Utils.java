@@ -140,10 +140,9 @@ public class Utils {
             connection.setRequestProperty("Accept-Charset", charset);
             response = connection.getInputStream();
             result = convertStreamToString(response);
-        } catch (UnsupportedEncodingException ex) {
+        }catch (Exception ex) {
             Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+            return ex.getMessage();
         } finally {
             if (response != null) {
                 try {
@@ -184,7 +183,7 @@ public class Utils {
                     Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        }
+        }        
         return result;
     }
 

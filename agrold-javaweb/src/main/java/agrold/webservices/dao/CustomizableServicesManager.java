@@ -9,6 +9,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 import javax.ws.rs.core.MultivaluedMap;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -70,7 +72,7 @@ public class CustomizableServicesManager {
 
     /**
      *
-     * @param name The name of the service 
+     * @param name The name of the service
      * @param httpMethod The the HTTP protocol method
      * @param webServiceSpecification : a JSON object with the method as key
      * @return the confirmation message
@@ -85,7 +87,7 @@ public class CustomizableServicesManager {
         apiSpecification.getJSONObject("paths").put(servicePath, newServiceSpec);
         //System.out.println(apiSpecification.toString());
         writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL);
-        return "The service /api/customizable/"+ name + " has been created!";
+        return "The service /api/customizable/" + name + " has been created!";
     }
 
     public static String deleteService(String name, String httpMethod) {
@@ -96,7 +98,7 @@ public class CustomizableServicesManager {
             writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL);
         }
         //System.out.println(apiSpecification.toString());
-        return "The service /api/customizable/"+ name + " has been deleted!";
+        return "The service /api/customizable/" + name + " has been deleted!";
     }
 
     public static String updateService(String name, String httpMethod, String webServiceSpecification) {
@@ -105,25 +107,37 @@ public class CustomizableServicesManager {
         //System.out.println(newServiceSpec.toString());
         String servicePath = PATH_FIXED_PART + name.replaceAll("\\s+", "");
         JSONObject serviceCurrentSpec = apiSpecification.getJSONObject("paths").getJSONObject(servicePath);
-        if (serviceCurrentSpec!=null) {
+        if (serviceCurrentSpec != null) {
             serviceNewSpec.keySet().forEach((key) -> {
                 (serviceCurrentSpec.getJSONObject(httpMethod)).put(key, serviceNewSpec.get(key));
                 apiSpecification.getJSONObject("paths").put(servicePath, serviceCurrentSpec);
-            }); 
+            });
             writeAPISpecification(apiSpecification, Utils.AGROLDAPIJSONURL);
+            return "The service /api/customizable/" + name + " has been updated!";
+        } else {
+            return "The service  /api/customizable/" + name + " doesn't exist yet!";
         }
         //System.out.println(apiSpecification.toString());
-        return "The service /api/customizable/"+ name + " has been updated!";
     }
 
-    public static String queryCustomizableService(String serviceLocalName, 
-            MultivaluedMap<String, String> queryParams) throws IOException {
-        String sparqlQuery = "";
-        String currentDirectory = System.getProperty("user.dir");
-        System.out.println("The current working directory is " + currentDirectory);
-
-        //return Utils.executeSparqlQuery(sparqlQuery, Utils.sparqlEndpointURL, Utils.JSON_LD);
-        return "chapi chapo";
+    public static String queryCustomizableService(String serviceLocalName, MultivaluedMap<String, String> queryParams, String httpMethod) throws IOException {
+        JSONObject apiSpecification = new JSONObject(readAPISpecification(Utils.AGROLDAPIJSONURL));
+        String servicePath = PATH_FIXED_PART + serviceLocalName.replaceAll("\\s+", "");
+        JSONObject serviceCurrentSpec = apiSpecification.getJSONObject("paths").getJSONObject(servicePath);
+        if (serviceCurrentSpec != null) {            
+            String sparqlQuery = serviceCurrentSpec.getJSONObject(httpMethod).getString("sparql");
+            for (Map.Entry<String, List<String>> entry : queryParams.entrySet()) {
+                String paramName = entry.getKey();
+                String paramValue = entry.getValue().get(0);                
+                sparqlQuery = sparqlQuery.replaceAll("[?]"+paramName+"(\\s+|[.]|$)", " \""+paramValue+"\" ");
+            }
+            System.out.println("Sparql: " + sparqlQuery);
+            System.out.println("queryParams: " +  queryParams);
+            return Utils.executeSparqlQuery(sparqlQuery, Utils.sparqlEndpointURL, Utils.JSON_LD);
+            //return "macho";
+        } else {
+            return "The service /api/customizable/" + serviceLocalName + " doesn't exist yet!";
+        }
     }
 
     public static void main(String[] args) {

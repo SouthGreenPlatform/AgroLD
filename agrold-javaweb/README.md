@@ -100,6 +100,7 @@ ORDER BY ?p
 *  Détection d'une duplication de clé à la création d'un nouvel utilisateur
 
 #### Web services
+*  gestion de web services: ajouter les nouveaux tags, ajouter automatiquement le tag customizable
 *  GUI de gestion des création,modif, suppr de services web: indexer les sparql, url, et paramètres de services dans un xml. une seule implémentation en java. L'url d'un service particulier est un paramètre dans l'adresse comme le format. la description dans le json pour swagger se fait en fixant les paramètres in URL
 *  problème d'encodage dans l'affichage des publications
 *  Certains services ne retournent que le format .json (il faut convertir la sortie pour d'autres formats)

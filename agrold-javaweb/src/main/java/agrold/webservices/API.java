@@ -102,7 +102,7 @@ public class API {
                     .entity("[AgroLD Web Services] - Format Error: The requested resource is not available in the format \"" + format + "\"")
                     .build();
         }
-        String content = CustomizableServicesManager.queryCustomizableService(serviceLocalName, uriInfo.getQueryParameters());
+        String content = CustomizableServicesManager.queryCustomizableService(serviceLocalName, uriInfo.getQueryParameters(), "get");
         return buildResponse(content, contentType);
     }
 
