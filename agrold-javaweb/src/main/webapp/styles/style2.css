@@ -91,7 +91,7 @@ nav.navbar {
   /*border : solid 1px;*/
 }
 .jumbotron.home {
-  background : url(../images/banner-img.png) 50% 0%;
+  background : url(../images/banner-img.jpg) 50% 0%;
   background-size : cover;
   margin-top : 50px;
 }
