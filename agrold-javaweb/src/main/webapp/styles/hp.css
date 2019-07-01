@@ -24,7 +24,7 @@ Responsive navbar-brand image CSS
   /*border : solid 1px;*/
 }
 .jumbotron.home {
-  background : url(../images/banner-img.png) 50% 0%;
+  background : url(../images/banner-img.jpg) 50% 0%;
   background-size : cover;
   margin-top : 59px !important;
   
@@ -68,9 +68,10 @@ display: flex;
 flex-flow: row wrap;
   height: 100%;
   width : 100%;
+  padding-bottom: 150px;
 }
 .brise .primary-a, .primary-b {
-  text-align: left ;
+  text-align: center ;
 }
 .primary-b {
   display: flex;
