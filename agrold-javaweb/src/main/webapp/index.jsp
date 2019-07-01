@@ -79,23 +79,72 @@
                             </div>
                             <% }%>
                             <div class="bug-rport-2">
-                                <div class="col-md-12 col-lg-12 brise">
-                                    <div class="primary-a col-sm-12 col-lg-6">
+                                
+                                <div class="primary-a col-md-12 col-lg-12 brise">
+                                    <center>
+                                    <!--<div class="primary-a col-sm-12 col-lg-6">-->
                                         <h1>Agronomic Linked Data</h1>
-                                        <h3>A RDF knowledge base that consists of data integrated from a variety of plant resources and ontologies.</h3>
+                                        <h3>The RDF Knowledge-based Database for plant molecular networks</h3>
+                                        <br>
+                                    </center>
+
                                     </div>
-                                    <div class="primary-b col-sm-12 col-lg-6">
+                                <div id="sform">
+                                    <center>
+                                    <form id="search" action="http://agrold.southgreen.fr/fct/facet.vsp?cmd=text&sid=231"" method="post" target="_blank">
+                                    <!--form id="search" action="http://volvestre.cirad.fr:8890/fct/facet.vsp?cmd=text&sid=231"" method="post" target="_blank"-->
+                                        <div class="col-lg-6">
+                                            <div class="input-group">
+                                                <!--input type="text" class="form-control" placeholder="Search for..."-->
+                                                <input class="keyword form-control" name="q" type="text" placeholder="examples: GRP2 or TCP12 or plant height" data-step="1" data-intro="Type your expression and then ..."/> 
+                                                <span class="input-group-btn">
+                                                    <input class="btn btn-secondary" type="submit" value="Search" data-step="2" data-intro="launch the search engine!" required/>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="error"></div>
+                                    <div class="success"></div>
+                                    <span style="margin-top:30px;color:red;display:none" class="message">Please enter a keword</span>
+                                    <script>
+                                        $('form#search').click(function(e){
+                                            var request=$(".keyword").val();
+                                            console.log('request'+request);
+                                             if(request==""){
+                                                $('.message').show();
+                                                e.stopPropagation();
+                                                e.preventDefault();
+                                            }else{
+                                                $('.message').hide();
+                                                saveRequest(request);
+                                            }
+                                        });
+                                       
+                                        function saveRequest(keyword){
+                                            $.ajax({
+                                                type:'post',
+                                                data:'p={m:"setQuickSearch",keyword:'+keyword+'}',
+                                                url:'ToolHistory',
+                                                success:function(data){
+                                                    $('.success').html(data);
+                                                }                                                
+                                            });
+                                        }
+                                    </script>
+                                </center>
+                            </div>
+<!--                                    <div class="primary-b col-sm-12 col-lg-6">
                                         <div class="pre primary-b">
                                             <p><b>Agronomic Linked Data (AgroLD)</b></br>This project was created to provide a portal for bioinformatics and domain experts to exploit the homogenized data models towards efficiently generating research hypotheses.
                                             </p>
                                         </div>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
 
                     </div>
-                    <section class="regular slider">
+<!--                    <section class="regular slider">
                         <div class="minified">
                             <div class="container">
                                 <div class="slide-1">
@@ -117,7 +166,7 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section>-->
                 </div>
             </div>
             <div id="section1" class="fp-normal-scroll section sumaryService">
@@ -195,7 +244,7 @@
                                                 <a href="http://www.ird.fr"><div class="hexagone"><img src="images/IRD.png" alt="IRD"></div></a> 
                                             </div>
                                             <div class="col-md-2">
-                                                <a href="http://www.inria.fr"><div class="hexagone"><img src="images/INRIA.png" alt="INRIA"></div></a>
+                                                <a href="https://www.umontpellier.fr"><div class="hexagone"><img src="images/UM.png" alt="Univ Montpellier"></div></a>
                                             </div>
                                             <div class="col-md-2">
                                                 <a href="https://www.france-bioinformatique.fr"><div class="hexagone"><img src="images/IFB.png" alt="INRIA"></div></a>
@@ -204,7 +253,7 @@
                                                 <a href="http://www.southgreen.fr"><div class="hexagone"><img src="images/southgreen.png" alt="southgreen"></div></a>
                                             </div>
                                         </div>
-                                        <div class="copyright">&COPY; AgroLD 2017</div>
+                                        <div class="copyright">&COPY; AgroLD 2019</div>
                                         
                                         
                                         
@@ -226,10 +275,10 @@
             
            
                             
-            <div id="section3" class="section introIndex">
+<!--            <div id="section3" class="section introIndex">
                  <div class="titled-section t-s-1 container-fluid">
                     <img class="twitter_img" src="images/twitter_PNGsmal.png" alt="southgreen">       
-                    <!--<img class="twitter_img"src="images/twitter-icon-1.png" alt="southgreen">  -->
+                    <img class="twitter_img"src="images/twitter-icon-1.png" alt="southgreen">  
                 </div>
                 <div class="container">
                     <div class="tweeter">
@@ -237,7 +286,7 @@
                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
    
 
