@@ -13,7 +13,7 @@
                             Search
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="quicksearch.jsp" title="Keyword-based Search">Quick Search</a>
+                            <!--<a class="dropdown-item" href="quicksearch.jsp" title="Keyword-based Search">Quick Search</a>-->
                             <a class="dropdown-item" href="advancedSearch.jsp" title="Multiservice Knowledge aggregator">Advanced Search</a>
                             <a class="dropdown-item" href="relfinder.jsp" title="Interactive Relationships Discovery in RDF Data">Explore Relationships</a>
                             <a class="dropdown-item" href="sparqleditor.jsp" title="SPARQL Query">SPARQL Query</a>
@@ -25,6 +25,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="documentation.jsp">Documentation</a>
+                            <a class="dropdown-item" href="quicksearch.jsp" title="Faceted Search">Faceted Search</a>
                             <a class="dropdown-item" href="api-doc.jsp" title="AgroLD API documentation">AgroLD API</a>
                         </div>
                     </li>
