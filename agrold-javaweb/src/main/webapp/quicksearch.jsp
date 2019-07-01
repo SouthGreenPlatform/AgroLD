@@ -53,7 +53,8 @@
                                         <div class="col-lg-6">
                                             <div class="input-group">
                                                 <!--input type="text" class="form-control" placeholder="Search for..."-->
-                                                <input class="keyword form-control" name="q" type="text" placeholder="Type here..." data-step="1" data-intro="Type your expression and then ..."/> 
+                                                <input class="keyword form-control" name="q" type="text" placeholder="Search examples: Gene names -
+                                            'GRP2' or 'TCP12' or Keywords 'plant height'" data-step="1" data-intro="Type your expression and then ..."/> 
                                                 <span class="input-group-btn">
                                                     <input class="btn btn-secondary" type="submit" value="Search" data-step="2" data-intro="launch the search engine!" required/>
                                                 </span>
