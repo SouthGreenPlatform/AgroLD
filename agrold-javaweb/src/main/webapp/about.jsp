@@ -120,12 +120,24 @@
                                 
                             </p>
                         </div>
-                        <h4>Photo Credits:</h4>
-                        <p>
-                        This work have been supported by Institut de Biologie Computationnelle (IBC -
-                        <a href="http://www.ibc-montpellier.fr" target="_blank">http://www.ibc-montpellier.fr</a>),
-                        The French Institute of Bioinformatics (IFB - <a href="https://www.france-bioinformatique.fr" target="_blank"> https://www.france-bioinformatique.fr</a>)
-                        and the Agropolis Foundation (<a href="http://www.agropolis-fondation.fr" target="_blank">http://www.agropolis-fondation.fr</a>)</p>
+                        <div>
+                            <h4>Photo Credits:</h4>
+                            <p><b>Stephane Jouannic </b><br>
+                                <i>Researcher, IRD</i><br>
+                                <br></p>
+                        </div>
+                        
+                        <div>
+                            <h4>Acknowledgements:</h4>
+                            <p>
+                                The project is currently supported by CGIAR Rice CRP and The French Institute of Bioinformatics (IFB - <a href="https://www.france-bioinformatique.fr" target="_blank"> https://www.france-bioinformatique.fr</a>)
+                            
+                            <br>
+                            This work have been supported by Institut de Biologie Computationnelle (IBC -
+                            <a href="http://www.ibc-montpellier.fr" target="_blank">http://www.ibc-montpellier.fr</a>),
+                            and the Agropolis Foundation (<a href="http://www.agropolis-fondation.fr" target="_blank">http://www.agropolis-fondation.fr</a>)</p>
+                            </p>
+                        </div>
                     </div>
                 </section>
             </div>
