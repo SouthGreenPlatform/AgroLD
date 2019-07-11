@@ -44,9 +44,9 @@ public class Utils {
 
     public final static String DEFAULT_PAGE_SIZE = "10";
     public final static String DEFAULT_PAGE = "0";
-    public final static String AGROLDAPIJSONURL = "/Users/plarmande/workspace2015/AgroLD_webapp/agrold-javaweb/agrold-api.json";
+    //public final static String AGROLDAPIJSONURL = "/Users/plarmande/workspace2015/AgroLD_webapp/agrold-javaweb/agrold-api.json";
     //public final static String AGROLDAPIJSONURL = "/home/tagny/Documents/agrold/resources/agrold-api.json";
-    //public static final String AGROLDAPIJSONURL = "/home/virtuoso/agrold-api.json"; // en ligne i.e. sur volvestre
+    public static final String AGROLDAPIJSONURL = "/home/virtuoso/agrold-api.json"; // en ligne i.e. sur volvestre
 
     public static String sparqlEndpointURL = "http://sparql.southgreen.fr";
     //public static String sparqlEndpointURL = "http://agrold.southgreen.fr/sparql";
