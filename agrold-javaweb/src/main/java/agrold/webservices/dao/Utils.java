@@ -44,7 +44,7 @@ public class Utils {
 
     public final static String DEFAULT_PAGE_SIZE = "10";
     public final static String DEFAULT_PAGE = "0";
-    public final static String AGROLDAPIJSONURL = "C:\\Users\\Gildas\\git\\AgroLD_webapp\\agrold-javaweb\\agrold-api.json";
+    public final static String AGROLDAPIJSONURL = "/Users/plarmande/workspace2015/AgroLD_webapp/agrold-javaweb/agrold-api.json";
     //public final static String AGROLDAPIJSONURL = "/home/tagny/Documents/agrold/resources/agrold-api.json";
     //public static final String AGROLDAPIJSONURL = "/home/virtuoso/agrold-api.json"; // en ligne i.e. sur volvestre
 

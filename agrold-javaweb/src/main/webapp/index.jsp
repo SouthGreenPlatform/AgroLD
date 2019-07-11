@@ -91,7 +91,7 @@
                                     </div>
                                 <div id="sform">
                                     <center>
-                                    <form id="search" action="http://agrold.southgreen.fr/fct/facet.vsp?cmd=text&sid=231"" method="post" target="_blank">
+                                    <form id="search" action="http://agrold.southgreen.fr/fct/facet.vsp?cmd=text&sid=231" method="post" target="_blank">
                                     <!--form id="search" action="http://volvestre.cirad.fr:8890/fct/facet.vsp?cmd=text&sid=231"" method="post" target="_blank"-->
                                         <div class="col-lg-6">
                                             <div class="input-group">
@@ -106,7 +106,7 @@
                                     <div class="error"></div>
                                     <div class="success"></div>
                                     <span style="margin-top:30px;color:red;display:none" class="message">Please enter a keword</span>
-                                    <script>
+<!--                                    <script>
                                         $('form#search').click(function(e){
                                             var request=$(".keyword").val();
                                             console.log('request'+request);
@@ -130,7 +130,7 @@
                                                 }                                                
                                             });
                                         }
-                                    </script>
+                                    </script>-->
                                 </center>
                             </div>
 <!--                                    <div class="primary-b col-sm-12 col-lg-6">

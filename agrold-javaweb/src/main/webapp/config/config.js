@@ -17,9 +17,9 @@ SPARQLENDPOINTURL="http://agrold.southgreen.fr/sparql";
 // /src/main/webapp/quicksearch.jsp
 FACETEDURL="http://agrold.southgreen.fr/fct"; 
 
-//AGROLDAPIJSONURL=WEBAPPURL + "/config/agrold-api.json";
+AGROLDAPIJSONURL=WEBAPPURL + "/config/agrold-api.json";
 //AGROLDAPIJSONURL=WEBAPPURL + "/api/agrold-api-specification.json";
-AGROLDAPIJSONURL=WEBAPPURL + "/api/webservices";
+//AGROLDAPIJSONURL=WEBAPPURL + "/api/webservices";
 
 
 // Advanced search default format to query the web services
