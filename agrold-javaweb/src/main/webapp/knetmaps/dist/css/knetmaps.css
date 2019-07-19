@@ -63,7 +63,9 @@ input#btnCloseItemInfoPane { border: none; width:22px; height:22px; background:u
 input.knetSynonym { border: none; width:22px; height:22px; background:url("../img/labelEye.png") }
 
 input.knetCon_Biological_Process { border: none; width:22px; height:22px; background:url("../img/Biological_Process.png") }
+input.knetCon_CDS { border: none; width:22px; height:22px; background:url("../img/CDS.png") }
 input.knetCon_Cellular_Component { border: none; width:22px; height:22px; background:url("../img/Cellular_Component.png") }
+input.knetCon_Chromosome { border: none; width:22px; height:22px; background:url("../img/Chromosome.png") }
 input.knetCon_CoExpCluster { border: none; width:22px; height:22px; background:url("../img/CoExpCluster.png") }
 input.knetCon_CoExpStudy { border: none; width:22px; height:22px; background:url("../img/CoExpStudy.png") }
 input.knetCon_Compound { border: none; width:22px; height:22px; background:url("../img/Compound.png") }
@@ -72,6 +74,8 @@ input.knetCon_Disease { border: none; width:22px; height:22px; background:url(".
 input.knetCon_Drug { border: none; width:22px; height:22px; background:url("../img/Drug.png") }
 input.knetCon_Enzyme_Classification { border: none; width:22px; height:22px; background:url("../img/Enzyme Classification.png") }
 input.knetCon_Enzyme { border: none; width:22px; height:22px; background:url("../img/Enzyme.png") }
+input.knetCon_Exon { border: none; width:22px; height:22px; background:url("../img/Exon.png") }
+input.knetCon_five_prime_UTR { border: none; width:22px; height:22px; background:url("../img/five_prime_UTR.png") }
 input.knetCon_Gene { border: none; width:22px; height:22px; background:url("../img/Gene.png") }
 input.knetCon_Molecular_Function { border: none; width:22px; height:22px; background:url("../img/Molecular_Function.png") }
 input.knetCon_mRNA { border: none; width:22px; height:22px; background:url("../img/mRNA.png") }
@@ -87,6 +91,8 @@ input.knetCon_Reaction { border: none; width:22px; height:22px; background:url("
 input.knetCon_Scaffold { border: none; width:22px; height:22px; background:url("../img/Scaffold.png") }
 input.knetCon_SNP { border: none; width:22px; height:22px; background:url("../img/SNP.png") }
 input.knetCon_SNPEffect { border: none; width:22px; height:22px; background:url("../img/SNPEffect.png") }
+input.knetCon_Taxon { border: none; width:22px; height:22px; background:url("../img/Taxon.png") }
+input.knetCon_three_prime_UTR { border: none; width:22px; height:22px; background:url("../img/three_prime_UTR.png") }
 input.knetCon_Trait_Ontology { border: none; width:22px; height:22px; background:url("../img/Trait Ontology.png") }
 input.knetCon_Trait { border: none; width:22px; height:22px; background:url("../img/Trait.png") }
 

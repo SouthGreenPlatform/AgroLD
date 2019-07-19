@@ -312,6 +312,7 @@ function EdgeData(sourceNode, targetNode, relationDisplay, relation, relationTyp
  * http://www.southgreen.fr/agrold/vocabulary/five_prime_UTR
  * http://www.southgreen.fr/agrold/vocabulary/mRNA
  * http://www.southgreen.fr/agrold/vocabulary/three_prime_UTR
+ * http://www.southgreen.fr/agrold/vocabulary/Taxon
  */
 /////////////////////// Interaction with the knowledge base (webservice)
 
@@ -361,6 +362,17 @@ function KnetmapsAdaptator() {
             "conceptShape": "triangle",
             "conceptTextBGcolor": "black"
         },
+        "Chromosome": {
+            "conceptBorderColor": "black",
+            "conceptSize": "18px",
+            "conceptTextBGopacity": "0",
+            "conceptDisplay": "element",
+            "conceptColor": "gray",
+            "conceptBorderStyle": "solid",
+            "conceptBorderWidth": "1px",
+            "conceptShape": "ellipse",
+            "conceptTextBGcolor": "black"
+        },
         "Pathway": {
             "conceptBorderColor": "black",
             "conceptSize": "18px",
@@ -383,6 +395,39 @@ function KnetmapsAdaptator() {
             "conceptShape": "star",
             "conceptTextBGcolor": "black"
         },
+        "CDS": {
+            "conceptBorderColor": "black",
+            "conceptSize": "18px",
+            "conceptTextBGopacity": "0",
+            "conceptDisplay": "element",
+            "conceptColor": "green",
+            "conceptBorderStyle": "solid",
+            "conceptBorderWidth": "1px",
+            "conceptShape": "ellipse",
+            "conceptTextBGcolor": "black"
+        },
+        "Exon": {
+            "conceptBorderColor": "black",
+            "conceptSize": "18px",
+            "conceptTextBGopacity": "0",
+            "conceptDisplay": "element",
+            "conceptColor": "blue",
+            "conceptBorderStyle": "solid",
+            "conceptBorderWidth": "1px",
+            "conceptShape": "rectangle",
+            "conceptTextBGcolor": "black"
+        },
+        "five_prime_UTR": {
+            "conceptBorderColor": "black",
+            "conceptSize": "18px",
+            "conceptTextBGopacity": "0",
+            "conceptDisplay": "element",
+            "conceptColor": "violet",
+            "conceptBorderStyle": "solid",
+            "conceptBorderWidth": "1px",
+            "conceptShape": "vee",
+            "conceptTextBGcolor": "black"
+        },
         "mRNA": {
             "conceptBorderColor": "black",
             "conceptSize": "18px",
@@ -393,13 +438,34 @@ function KnetmapsAdaptator() {
             "conceptBorderWidth": "1px",
             "conceptShape": "rectangle",
             "conceptTextBGcolor": "black"
+        },
+        "three_prime_UTR": {
+            "conceptBorderColor": "black",
+            "conceptSize": "18px",
+            "conceptTextBGopacity": "0",
+            "conceptDisplay": "element",
+            "conceptColor": "red",
+            "conceptBorderStyle": "solid",
+            "conceptBorderWidth": "1px",
+            "conceptShape": "vee",
+            "conceptTextBGcolor": "black"
+        },
+        "Taxon": {
+            "conceptBorderColor": "black",
+            "conceptSize": "18px",
+            "conceptTextBGopacity": "0",
+            "conceptDisplay": "element",
+            "conceptColor": "green",
+            "conceptBorderStyle": "solid",
+            "conceptBorderWidth": "1px",
+            "conceptShape": "vee",
+            "conceptTextBGcolor": "black"
         }
     };
 
     this.RELATION_TYPES = {}; //label:->{label, sourceConceptType, targetConceptType}
 
-    //this.CONCEPT_TYPES = {"Gene": "", "Protein": "", "QTL": "", "Pathway": "", "Reaction": "", "mRNA": "", "Trait": "", "Taxon": "", "CDS": ""};
-    this.CONCEPT_TYPES = {"Gene": "", "Protein": "", "QTL": "", "Pathway": "", "Reaction": "", "mRNA": ""};
+    this.CONCEPT_TYPES = {"Gene": "", "Protein": "", "QTL": "", "Chromosome": "", "Pathway": "", "Reaction": "", "CDS": "", "Exon": "", "five_prime_UTR": "", "mRNA": "", "three_prime_UTR": "", "Taxon": ""};
     for (var type in this._conceptStyles) {
         this.CONCEPT_TYPES[type] = new ConceptType(type);
     }
