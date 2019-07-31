@@ -31,16 +31,25 @@ and open the template in the editor.
         </style>
     </head>
     <body>
-        <div>
-        <%
-            String iri=request.getParameter("iri"); 
-           out.println("iri: " + iri);
-        %>
-        </div>
+            <%
+                String iri = request.getParameter("iri");
+                if(iri == null){
+                iri = "http://www.southgreen.fr/agrold/resource/Os02t0527100-01#CDS7";
+                }
+                
+            %>        
+        <center><form action="agrold_explorer.jsp" method="post"  enctype="application/x-www-form-urlencoded" accept-charset=utf-8> 
+            IRI:
+            <input type="text" name="iri" value="<%=iri%>" size="75%">
+            <input type="submit" value="Submit">
+        </form>        
+            <%out.println("iri: " + iri);%>
+        </center>
+            
+        
         <div id="knet-maps"></div>                 
 
         <script type="text/javascript">
-
             $(window).on("load", function () {
                 //var entityUri = "http://www.southgreen.fr/agrold/ricecyc.pathway/FERMENTATION-PWY";      
                 //var entityUri = "http://identifiers.org/ensembl.plant/Zm00001d033472"; // Show links of protein Q6JAD5
@@ -52,7 +61,7 @@ and open the template in the editor.
                 //var entityUri = "http://www.southgreen.fr/agrold/ricecyc.pathway/PWY-2902";
                 var entityUri = "<%=iri%>";
                 //var entityUri = "http://www.southgreen.fr/agrold/tigr.locus/LOC_Os05g08490.1";
-                        
+
                 KNETMAPS_ADAPTATOR.fetchConceptDescription("<%=iri%>").done(function () {
                     KNETMAPS_ADAPTATOR.updateNetwork("#knet-maps");
                 });

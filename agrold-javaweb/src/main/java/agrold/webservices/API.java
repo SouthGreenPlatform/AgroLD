@@ -307,6 +307,15 @@ public class API {
         String content = GeneralServicesDAO.getIRIDescription(resourceURI, page, pageSize, format);
         return buildResponse(content, contentType);
     }
+    
+    @GET
+    @Path("/describe4visualization.json")
+    public Response getDescriptionForVisualization(@QueryParam("uri") String resourceURI,
+            @DefaultValue(DEFAULT_PAGE) @QueryParam(pageNumVar) int page, @DefaultValue(DEFAULT_PAGE_SIZE) @QueryParam(pageSizeVar) int pageSize) throws IOException {        
+        String content = GeneralServicesDAO.getIRIDescription4visualization(resourceURI, page, pageSize);
+        return buildResponse(content, Utils.JSON);
+    }
+    
 
     @GET
     @Path("/predicates" + formatInPath)

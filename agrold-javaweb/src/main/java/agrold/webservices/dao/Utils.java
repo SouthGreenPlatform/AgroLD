@@ -45,8 +45,8 @@ public class Utils {
     public final static String DEFAULT_PAGE_SIZE = "10";
     public final static String DEFAULT_PAGE = "0";
     //public final static String AGROLDAPIJSONURL = "/Users/plarmande/workspace2015/AgroLD_webapp/agrold-javaweb/agrold-api.json";
-    //public final static String AGROLDAPIJSONURL = "/home/tagny/Documents/agrold/resources/agrold-api.json";
-    public static final String AGROLDAPIJSONURL = "/home/virtuoso/agrold-api.json"; // en ligne i.e. sur volvestre
+    public final static String AGROLDAPIJSONURL = "/home/tagny/GitHub/AgroLD_webapp/agrold-javaweb/src/main/webapp/config/agrold-api.json";
+    //public static final String AGROLDAPIJSONURL = "/home/virtuoso/agrold-api.json"; // en ligne i.e. sur volvestre
 
     public static String sparqlEndpointURL = "http://sparql.southgreen.fr";
     //public static String sparqlEndpointURL = "http://agrold.southgreen.fr/sparql";
@@ -64,7 +64,7 @@ public class Utils {
 
     // HTML, JSON, JSON_LD, XML, TSV, CSV, RDF, TTL, N3
     public static String getFormatFullName(String format) {
-        if(format==null){
+        if (format == null) {
             return JSON;
         }
         switch (format.toLowerCase()) {
@@ -111,6 +111,18 @@ public class Utils {
         // return "";
     }
 
+    public static JSONArray concatJONArrays(JSONArray arr1, JSONArray arr2)
+            throws JSONException {
+        JSONArray result = new JSONArray();
+        for (int i = 0; i < arr1.length(); i++) {
+            result.put(arr1.get(i));
+        }
+        for (int i = 0; i < arr2.length(); i++) {
+            result.put(arr2.get(i));
+        }
+        return result;
+    }
+
     public static String convertStreamToString(java.io.InputStream is) {
         java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
         return s.hasNext() ? s.next() : "";
@@ -134,13 +146,13 @@ public class Utils {
                     URLEncoder.encode(defaultGraphURI, charset),
                     URLEncoder.encode(sparqlQuery, charset),
                     URLEncoder.encode(format, charset));
-           // System.out.println("httpQuerry: " + httpQuery);
+            // System.out.println("httpQuerry: " + httpQuery);
             // Firing a HTTP GET request with (optionally) query parameters
             URLConnection connection = new URL(sparqlEndpoint + "?" + httpQuery).openConnection();
             connection.setRequestProperty("Accept-Charset", charset);
             response = connection.getInputStream();
             result = convertStreamToString(response);
-        }catch (Exception ex) {
+        } catch (Exception ex) {
             Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
             return ex.getMessage();
         } finally {
@@ -183,7 +195,7 @@ public class Utils {
                     Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        }        
+        }
         return result;
     }
 
@@ -209,6 +221,7 @@ public class Utils {
         json += "]";
         return json;
     }
+
     /*
      public static String csv2json(String csv) {
      String json = "[";
@@ -245,13 +258,13 @@ public class Utils {
         }
         return sparqlQuery;
     }
-    
-    public static String getTypesOptionsAsSparql(String subject, String[] typeUris){
-        String typesStr = "";       
+
+    public static String getTypesOptionsAsSparql(String subject, String[] typeUris) {
+        String typesStr = "";
         for (int i = 0; i < typeUris.length; i++) {
-            typesStr += (i == 0 ? "" : "union\n") 
-                    + "{"+subject+" a <" + typeUris[i] + ">}\n";                   
-        }  
+            typesStr += (i == 0 ? "" : "union\n")
+                    + "{" + subject + " a <" + typeUris[i] + ">}\n";
+        }
         /*for (int i = 0; i < typeUris.length; i++) {
             typesStr += "union\n{"+subject+" rdfs:subClassOf <" + typeUris[i] + ">}\n";
         }*/
@@ -263,7 +276,6 @@ public class Utils {
         String tokens[] = keyword.split("\\s+");
         String keywordsQuery = "'(\"" + String.join("\" AND \"", tokens).toUpperCase() + "\")'";
         String keywordsListStr = "('" + String.join("', '", tokens).toUpperCase() + "')";
-             
 
         String sparqlQuery = "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                 + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
@@ -282,7 +294,7 @@ public class Utils {
                 + "        ?o1 bif:contains  " + keywordsQuery + "  option (score ?sc)  .\n"
                 + "      }\n"
                 + "     }\n"
-                + getTypesOptionsAsSparql("?s1", typeUris)               
+                + getTypesOptionsAsSparql("?s1", typeUris)
                 + "	BIND(REPLACE(str(?s1), '^.*(#|/)', \"\") AS ?Id)\n"
                 + "  }\n"
                 + " order by desc (?sc * 3e-1 + sql:rnk_scale (<LONG::IRI_RANK> (?s1)))  ";
@@ -373,7 +385,7 @@ public class Utils {
 
     public static void main(String[] args) throws IOException {
         //System.out.println(getEntitiesByKeyWord("coding", GeneDAO.TYPEURIs, 0, 30, TSV));
-        System.out.println(getEntitiesByKeyWord("ethanol degradation", new String[] {METABOLIC_PATHWAY, PATHWAY_IDENTIFIER, PATHWAY_TYPE1}, 0, 30, TSV));
+        System.out.println(getEntitiesByKeyWord("ethanol degradation", new String[]{METABOLIC_PATHWAY, PATHWAY_IDENTIFIER, PATHWAY_TYPE1}, 0, 30, TSV));
         //System.out.println(getEntitiesByKeyWord("plant height", new String[]{"http://www.w3.org/2002/07/owl#Class"}, 0, 10, TSV));
 //System.out.println(executeSparqlQuery("select distinct ?Concept where {[] a ?Concept} LIMIT 5", sparqlEndpointURL, "text/html"));
     }

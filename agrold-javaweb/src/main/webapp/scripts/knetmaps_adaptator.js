@@ -318,7 +318,8 @@ function EdgeData(sourceNode, targetNode, relationDisplay, relation, relationTyp
 
 function KnetmapsAdaptator() {
     this.DEFAULT_RELATION_SIZE = "1px";
-    this.describeBaseURL = WEBAPPURL + "/api/describe.json?pageSize=0&uri=";
+    this.nbMaxDeLiens = 1000;
+    this.describeBaseURL = WEBAPPURL + "/api/describe4visualization.json?pageSize="+this.nbMaxDeLiens+"&uri=";
     this._graphJSON = new Graph();
     this._allGraphData = new GraphData("FilteredGraphUnconnected", "1.0");
     this.nextId = 0;
@@ -516,11 +517,11 @@ function KnetmapsAdaptator() {
     };
 
     this.processDescribe = function (conceptURI, entityData) {
-        //console.log("entityData: " + JSON.stringify(entityData));
+        console.log("entityData: " + JSON.stringify(entityData));
         this.entitiesUnprocessedLinks[conceptURI] = [];
         var id, annotation = "", elementOf = new Set(), description = "", pid = "",
                 //value = getPrefixedFormOfURI(conceptURI),
-                value = getIRILocalname(conceptURI),
+                value = getIRIFullLocalname(conceptURI),
                 conceptType, conames = [], coaccessions = [], attributes = [];
         attributes.push(new Attribute("visible", "true"));
         attributes.push(new Attribute("flagged", "true"));
@@ -574,7 +575,7 @@ function KnetmapsAdaptator() {
                             // add the new concept
                             var oURI = _hasValue === "" ? _isValueOf : _hasValue;
                             var oid = this.generateConceptId();
-                            var ovalue = getIRILocalname(oURI);
+                            var ovalue = getIRIFullLocalname(oURI);
                             var oc = new Concept(oURI, oid.toString(), "", _graph, "", "", ovalue, this.CONCEPT_TYPES[_type]);
                             oc.addEvidence("Imported from AgroLD");
                             this.addConceptAndNode(oc, oURI);
@@ -618,9 +619,17 @@ function KnetmapsAdaptator() {
         this.completeConceptURIs[conceptURI] = true;
     };
 
+//    this.fetchConceptDescription = function (conceptURI) {
+//        var tthis = this;
+//        return $.getJSON(tthis.describeBaseURL + conceptURI, function (conceptData) {
+//            tthis.processDescribe(conceptURI, conceptData);
+//        });
+//    };
+
     this.fetchConceptDescription = function (conceptURI) {
         var tthis = this;
-        return $.getJSON(tthis.describeBaseURL + conceptURI, function (conceptData) {
+        //console.log(encodeURIComponent(conceptURI));
+        return $.getJSON(tthis.describeBaseURL + encodeURIComponent(conceptURI), function (conceptData) {
             tthis.processDescribe(conceptURI, conceptData);
         });
     };

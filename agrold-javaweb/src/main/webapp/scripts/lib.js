@@ -73,6 +73,20 @@ function getPrefixedFormOfURI(uriStr) {
     return String(prefixedUri);
 }
 
+function getIRIFullLocalname(iriAsString) {
+    if(iriAsString === undefined){
+        return iriAsString;
+    }
+    var uri = new URI(iriAsString);
+    if (iriAsString.includes("#")) { // fragment        
+        localname = uri.filename().toString() +"#"+ uri.fragment().toString();
+        //console.log("localname: " + localname)
+    } else { // filename
+        localname = uri.filename().toString();
+    }
+    return localname;
+}
+
 function getIRILocalname(iriAsString) {
     if(iriAsString === undefined){
         return iriAsString;

@@ -3,14 +3,10 @@
  */
 package agrold.webservices.dao;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import javax.ws.rs.core.MultivaluedMap;
+import java.io.Writer;
 import org.json.JSONArray;
-import org.json.JSONObject;
-import org.json.JSONTokener;
 
 /**
  * API services on graphs
@@ -19,50 +15,83 @@ import org.json.JSONTokener;
  */
 public class GeneralServicesDAO {
 
-    // describe a resource
-    public static String getIRIDescription(String IRI, int page, int pageSize, String resultFormat) throws IOException {
-        /*String sparqlQuery = "BASE <http://www.southgreen.fr/agrold/>\n"
+    // describe a resource 4 vizualizaton
+//    public static String getIRIDescription4visualization(String IRI, int page, int pageSize, String resultFormat) throws IOException {
+//        String sparqlQuery = "BASE <http://www.southgreen.fr/agrold/>\n"
+//                + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
+//                + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
+//                + "SELECT ?graph ?property ?hasValue ?isValueOf (group_concat(distinct concat(?hasValueType, ?isValueOfType) ;separator=\"; \") as ?type)\n"
+//                + "WHERE {\n" + "values (?q){(<" + IRI + ">)}\n"
+//                + " { \n"
+//                + "    GRAPH ?graph { ?q ?property ?hasValue. FILTER(?hasValue != <http://www.w3.org/2002/07/owl#Class>)} \n"
+//                + "    OPTIONAL{\n"
+//                + "      ?hasValue a ?hasValueType.\n"
+//                + "      FILTER(?hasValueType != <http://www.w3.org/2002/07/owl#Class>)\n"
+//                + "    }\n"
+//                + "  }\n"
+//                + "  UNION\n"
+//                + "  { \n"
+//                + "    GRAPH ?graph { ?isValueOf ?property ?q. FILTER(?isValueOf != <http://www.w3.org/2002/07/owl#Class>)} \n"
+//                + "    OPTIONAL{\n"
+//                + "      ?isValueOf a ?isValueOfType.\n"
+//                + "      FILTER(?isValueOfType != <http://www.w3.org/2002/07/owl#Class>)\n"
+//                + "    }\n"
+//                + "  }      \n"
+//                + "}";
+//
+//        //String sparqlQuery = "DESCRIBE <" + IRI + ">";
+//        sparqlQuery = Utils.addLimitAndOffset(sparqlQuery, pageSize, page);
+//
+//        return Utils.executeSparqlQuery(sparqlQuery, Utils.sparqlEndpointURL, resultFormat);
+//    }
+
+    public static String getIRIDescription4visualization(String IRI, int page, int pageSize) throws IOException {
+        String sparqlQueryHasValue = "BASE <http://www.southgreen.fr/agrold/>\n"
                 + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                 + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
-                + "SELECT ?graph ?property ?hasValue ?isValueOf (group_concat(distinct concat(?hasValueType, ?isValueOfType, ?computedType) ;separator=\"; \") as ?type)\n"
-                + "WHERE {\n" + "values (?q){(<" + IRI + ">)}\n"
-                + " { \n"
-                + "    GRAPH ?graph { ?q ?property ?hasValue. } \n"
+                + "SELECT ?graph ?property ?hasValue ?isValueOf (group_concat(distinct concat(?hasValueType) ;separator=\"; \") as ?type)\n"
+                + "WHERE {\n"
+                + "values (?q){(<" + IRI + ">)}\n"
+                + "    GRAPH ?graph { ?q ?property ?hasValue. FILTER(?hasValue != <http://www.w3.org/2002/07/owl#Class>)} \n"
                 + "    OPTIONAL{\n"
                 + "      ?hasValue a ?hasValueType.\n"
                 + "      FILTER(?hasValueType != <http://www.w3.org/2002/07/owl#Class>)\n"
                 + "    }\n"
-                + "  }\n"
-                + "  UNION\n"
-                + "  { \n"
-                + "    GRAPH ?graph { ?isValueOf ?property ?q. } \n"
+                + "}";
+        sparqlQueryHasValue  = Utils.addLimitAndOffset(sparqlQueryHasValue, pageSize, page);
+        JSONArray resultsHasValue = new JSONArray(Utils.executeSparqlQuery(sparqlQueryHasValue, Utils.sparqlEndpointURL, Utils.JSON)); 
+        String sparqlQueryIsValueOf = "BASE <http://www.southgreen.fr/agrold/>\n"
+                + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
+                + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
+                + "SELECT ?graph ?property ?hasValue ?isValueOf (group_concat(distinct concat(?isValueOfType) ;separator=\"; \") as ?type)\n"
+                + "WHERE {\n"
+                + "values (?q){(<" + IRI + ">)}\n"
+                + " GRAPH ?graph { ?isValueOf ?property ?q. FILTER(?isValueOf != <http://www.w3.org/2002/07/owl#Class>)} \n"
                 + "    OPTIONAL{\n"
                 + "      ?isValueOf a ?isValueOfType.\n"
                 + "      FILTER(?isValueOfType != <http://www.w3.org/2002/07/owl#Class>)\n"
-                + "    }\n"
-                + "  }   \n"
-                + "     Bind(if(contains(str(?property), \"taxon\"), <http://www.southgreen.fr/vocavulary/Taxon>, \"\") as ?computedType) \n"
-                + "}";*/
+                + "    }  \n"
+                + "}" ;
+        sparqlQueryIsValueOf  = Utils.addLimitAndOffset(sparqlQueryIsValueOf, pageSize, page);
+        
+        JSONArray resultsIsValueOf = new JSONArray(Utils.executeSparqlQuery(sparqlQueryIsValueOf, Utils.sparqlEndpointURL, Utils.JSON));
+        JSONArray results = Utils.concatJONArrays(resultsHasValue, resultsIsValueOf);
+        Writer fw = new FileWriter("result.json");
+        fw.write(results.toString());
+        fw.close();
+        return results.toString();
+    }
+
+    public static String getIRIDescription(String IRI, int page, int pageSize, String resultFormat) throws IOException {
         String sparqlQuery = "BASE <http://www.southgreen.fr/agrold/>\n"
                 + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                 + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
-                + "SELECT ?graph ?property ?hasValue ?isValueOf (group_concat(distinct concat(?hasValueType, ?isValueOfType, ?computedType) ;separator=\"; \") as ?type)\n"
+                + "SELECT ?graph ?property ?hasValue ?isValueOf (group_concat(distinct concat(?hasValueType, ?isValueOfType) ;separator=\"; \") as ?type)\n"
                 + "WHERE {\n" + "values (?q){(<" + IRI + ">)}\n"
                 + " { \n"
-                + "    GRAPH ?graph { ?q ?property ?hasValue. } \n"
-                + "    OPTIONAL{\n"
-                + "      ?hasValue a ?hasValueType.\n"
-                + "      FILTER(?hasValueType != <http://www.w3.org/2002/07/owl#Class>)\n"
-                + "    }\n"
-                + "  }\n"
+                + "    { ?q ?property ?hasValue }\n"
                 + "  UNION\n"
-                + "  { \n"
-                + "    GRAPH ?graph { ?isValueOf ?property ?q. } \n"
-                + "    OPTIONAL{\n"
-                + "      ?isValueOf a ?isValueOfType.\n"
-                + "      FILTER(?isValueOfType != <http://www.w3.org/2002/07/owl#Class>)\n"
-                + "    }\n"
-                + "  }   \n"
+                + "  { ?isValueOf ?property ?q } \n"
                 + "}";
 
         //String sparqlQuery = "DESCRIBE <" + IRI + ">";
@@ -115,7 +144,8 @@ public class GeneralServicesDAO {
     }
 
     public static void main(String[] args) throws IOException {
-        System.out.println(getIRIDescription("http://www.southgreen.fr/agrold/ricecyc.pathway/FERMENTATION-PWY", 0, 0, Utils.CSV));
+        System.out.println(getIRIDescription4visualization
+        ("http://www.southgreen.fr/agrold/chromosome/4536:Oryza_nivara_v1.0:10:1-21549876:1", 0, 2000));
         String API_JSON_SPEC_PATH = "";
         //queryCustomizableService("sala", null, 0, 10, ".json");
         //readAPISpecification(Utils.AGROLDAPIJSONURL);
