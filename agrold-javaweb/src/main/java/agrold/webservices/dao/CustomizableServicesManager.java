@@ -11,8 +11,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
@@ -120,7 +120,7 @@ public class CustomizableServicesManager {
         //System.out.println(apiSpecification.toString());
     }
 
-    public static String queryCustomizableService(String serviceLocalName, MultivaluedMap<String, String> queryParams, String httpMethod) throws IOException {
+    public static String queryCustomizableService(String serviceLocalName, MultivaluedMap<String, String> queryParams, String httpMethod, MediaType reponseMediaType) throws IOException {
         JSONObject apiSpecification = new JSONObject(readAPISpecification(Utils.AGROLDAPIJSONURL));
         String servicePath = PATH_FIXED_PART + serviceLocalName.replaceAll("\\s+", "");
         JSONObject serviceCurrentSpec = apiSpecification.getJSONObject("paths").getJSONObject(servicePath);
@@ -129,11 +129,11 @@ public class CustomizableServicesManager {
             for (Map.Entry<String, List<String>> entry : queryParams.entrySet()) {
                 String paramName = entry.getKey();
                 String paramValue = entry.getValue().get(0);                
-                sparqlQuery = sparqlQuery.replaceAll("[?]"+paramName+"(\\s+|[.]|$)", " \""+paramValue+"\" ");
+                sparqlQuery = sparqlQuery.replaceAll("[?]"+paramName+"(\\s+|[.]|$)", " "+paramValue+" ");
             }
             System.out.println("Sparql: " + sparqlQuery);
             System.out.println("queryParams: " +  queryParams);
-            return Utils.executeSparqlQuery(sparqlQuery, Utils.sparqlEndpointURL, Utils.JSON_LD);
+            return Utils.executeSparqlQuery(sparqlQuery, Utils.sparqlEndpointURL, reponseMediaType.toString());
             //return "macho";
         } else {
             return "The service /api/customizable/" + serviceLocalName + " doesn't exist yet!";
@@ -153,7 +153,7 @@ public class CustomizableServicesManager {
                 + "  ?subject ?relation ?object . \n"
                 + " } \n"
                 + "} \n"
-                + "ORDER BY ?relation";
+                + "ORDER BY ?relation \n \nOFFSET ?page \nLIMIT ?pageSize";
         String httpMethod = "get";
     }
 }

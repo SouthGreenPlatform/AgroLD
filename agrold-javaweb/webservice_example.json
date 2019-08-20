@@ -1,0 +1,34 @@
+{
+    "name" : "graph_relations",
+    "summary": "Retrieve complete URI of all predicates used in AgroLD in JSON",
+    "produces": ["text/html", "application/sparql-results+json", "application/json", "application/sparql-results+xml", "text/tab-separated-values", "text/csv", "application/rdf+xml", "text/turtle", "text/plain", "text/x-html+tr", "application/vnd.ms-excel", "application/javascript"],
+    "description": "BASE <http://www.southgreen.fr/agrold/>\nPREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n\nSELECT distinct ?relation\nWHERE { \n GRAPH ?graph { \n  ?subject ?relation ?object . \n } \n} \nORDER BY ?relation \nOFFSET ?page \nLIMIT ?pageSize",
+    "operationId": "getGraphRelations",
+    "responses": {
+        "200": {
+            "description": "successful operation"
+        }
+    },
+    "sparql": "BASE <http://www.southgreen.fr/agrold/>\nPREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n\nSELECT distinct ?relation\nWHERE { \n GRAPH ?graph { \n  ?subject ?relation ?object . \n } \n} \nORDER BY ?relation \nOFFSET ?page \nLIMIT ?pageSize",
+    "parameters": [
+        {
+            "in": "query",
+            "name": "graph",
+            "description": "exemple: <gramene.genes>",
+            "type": "string",
+            "required": false
+        }, {
+            "in": "query",
+            "name": "page",
+            "description": "number (>= 0) of the page of the result set to display (0 = the first page by default)",
+            "type": "integer",
+            "required": false
+        }, {
+            "in": "query",
+            "name": "pageSize",
+            "description": "size of a page of the result set. If = 0 then all results will be displayed. Default value: 10.",
+            "type": "integer",
+            "required": false
+        }],
+    "tags": ["customizable", "general"]
+}

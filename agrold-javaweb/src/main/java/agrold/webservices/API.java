@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URISyntaxException;
+import java.util.List;
 import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
@@ -35,6 +36,7 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
@@ -93,17 +95,16 @@ public class API {
     @GET
     // @Consumes(MediaType.APPLICATION_JSON) // for "in body parameters"
     @Path("/customizable/{serviceLocalName}")
-    public Response genericGet(@PathParam("serviceLocalName") String serviceLocalName, @Context UriInfo uriInfo) throws IOException {        
-        String[] nameTokens = serviceLocalName.split("[.]");
-        String format = nameTokens.length > 1 ? "." + nameTokens[nameTokens.length - 1] : null;
-        String contentType = Utils.getFormatFullName(format);
-        if (contentType == null) {
+    public Response genericGet(@PathParam("serviceLocalName") String serviceLocalName, @Context UriInfo uriInfo, @Context  HttpHeaders headers) throws IOException {        
+        List<MediaType> mediaTypes = headers.getAcceptableMediaTypes();
+        MediaType reponseMediaType = mediaTypes.get(0);
+        if (reponseMediaType == null) {
             return Response.serverError()
-                    .entity("[AgroLD Web Services] - Format Error: The requested resource is not available in the format \"" + format + "\"")
+                    .entity("[AgroLD Web Services] - Format Error: The requested resource is not available in the format \"" + mediaTypes.get(0) + "\"")
                     .build();
         }
-        String content = CustomizableServicesManager.queryCustomizableService(serviceLocalName, uriInfo.getQueryParameters(), "get");
-        return buildResponse(content, contentType);
+        String content = CustomizableServicesManager.queryCustomizableService(serviceLocalName, uriInfo.getQueryParameters(), "get", reponseMediaType);
+        return buildResponse(content, reponseMediaType.toString());
     }
 
     /*public Response genericGet(@PathParam("serviceLocalName") String serviceLocalName, @PathParam(formatVar) String format, @Context UriInfo uriInfo,
