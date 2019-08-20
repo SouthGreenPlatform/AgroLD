@@ -63,7 +63,7 @@ ontological concepts: 'plant height' or 'regulation of gene expression'.<br/>
         </div>
     </div>
 </div>
-<!--<script>
+<script>
 
     var ht = '${param.ht}' ; // Set ht Value from GET request
     var hk = '${param.hk}' ; // Set hk Value from GET request
@@ -152,4 +152,4 @@ ontological concepts: 'plant height' or 'regulation of gene expression'.<br/>
         });
     }
 
-</script>-->
+</script>

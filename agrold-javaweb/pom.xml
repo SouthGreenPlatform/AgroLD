@@ -22,6 +22,12 @@
             <layout>default</layout>
         </repository-->
         <repository>
+            <id>repo1.maven.org</id>
+            <name>Central</name>
+            <url>https://repo1.maven.org/maven2/ </url>
+            <layout>default</layout>
+        </repository>        
+        <repository>
             <id>snapshot-repository.java.net</id>
             <name>Java.net Snapshot Repository for Maven</name>
             <url>https://maven.java.net/content/repositories/snapshots/</url>

@@ -1634,7 +1634,7 @@
         "contact": {
             "email": "agrolinkeddata@gmail.com"
         },
-        "description": "This page provides information about the RESTful API (version 1.0) of AgroLD.",
+        "description": "This page provides information about the RESTful API of AgroLD.",
         "termsOfService": "http://www.agrold.org",
         "title": "AgroLD API",
         "version": "2.0 beta"
