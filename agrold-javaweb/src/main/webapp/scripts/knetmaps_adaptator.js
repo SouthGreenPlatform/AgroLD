@@ -318,7 +318,7 @@ function EdgeData(sourceNode, targetNode, relationDisplay, relation, relationTyp
 
 function KnetmapsAdaptator() {
     this.DEFAULT_RELATION_SIZE = "1px";
-    this.nbMaxDeLiens = 1000;
+    this.nbMaxDeLiens = 5;
     this.describeBaseURL = WEBAPPURL + "/api/describe4visualization.json?pageSize="+this.nbMaxDeLiens+"&uri=";
     this._graphJSON = new Graph();
     this._allGraphData = new GraphData("FilteredGraphUnconnected", "1.0");
@@ -542,13 +542,14 @@ function KnetmapsAdaptator() {
             var _isValueOf = entityData[i].isValueOf;
             var _type = this.extractConceptTypeName(entityData[i].type);
             
-            var relationName = getIRILocalname(_property);
+            var relationName = getIRIFullLocalname(_property);
             switch (relationName) {
-                case "type":
+                case "22-rdf-syntax-ns#type":
+                case "ncbitaxon#has_rank":
                     if (conceptType === undefined)
                         conceptType = this.CONCEPT_TYPES[this.extractConceptTypeName(_hasValue)];
                     break;
-                case "label":
+                case "rdf-schema#label":
                     value = _hasValue;
                     conames.push(new Coname(_hasValue, "false"));
                     break;
@@ -590,12 +591,6 @@ function KnetmapsAdaptator() {
             elementOf.add(_graph);
         }
         elementOf = Array.from(elementOf).join('; ');
-
-        if (conceptType === undefined) {
-            if (getIRILocalname(conceptURI).toLowerCase().includes("taxon")) {
-                conceptType = this.CONCEPT_TYPES["Taxon"];
-            }
-        }
 
         var c = new Concept(conceptURI, id.toString(), annotation, elementOf, description, pid, value, conceptType); // entityConcept
         c.addEvidence("Imported from AgroLD");
@@ -645,7 +640,7 @@ function KnetmapsAdaptator() {
             targetURI = linkURI;
         }
         // add relation                            
-        var rName = getIRILocalname(link.property),
+        var rName = getIRIFullLocalname(link.property),
                 toConcept = this.mapConceptURI2Concept[targetURI],
                 fromConcept = this.mapConceptURI2Concept[sourceURI],
                 ofType = rName, context = "",

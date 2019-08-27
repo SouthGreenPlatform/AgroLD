@@ -49,12 +49,13 @@ public class GeneralServicesDAO {
         String sparqlQueryHasValue = "BASE <http://www.southgreen.fr/agrold/>\n"
                 + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                 + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
+                + "PREFIX typeNCBITaxon:<http://purl.obolibrary.org/obo/ncbitaxon#has_rank>\n"
                 + "SELECT ?graph ?property ?hasValue ?isValueOf (group_concat(distinct concat(?hasValueType) ;separator=\"; \") as ?type)\n"
                 + "WHERE {\n"
                 + "values (?q){(<" + IRI + ">)}\n"
                 + "    GRAPH ?graph { ?q ?property ?hasValue. FILTER(?hasValue != <http://www.w3.org/2002/07/owl#Class>)} \n"
                 + "    OPTIONAL{\n"
-                + "      ?hasValue a ?hasValueType.\n"
+                + "      ?hasValue a|typeNCBITaxon: ?hasValueType.\n"
                 + "      FILTER(?hasValueType != <http://www.w3.org/2002/07/owl#Class>)\n"
                 + "    }\n"
                 + "}";
@@ -63,12 +64,13 @@ public class GeneralServicesDAO {
         String sparqlQueryIsValueOf = "BASE <http://www.southgreen.fr/agrold/>\n"
                 + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                 + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
+                + "PREFIX typeNCBITaxon:<http://purl.obolibrary.org/obo/ncbitaxon#has_rank>\n"
                 + "SELECT ?graph ?property ?hasValue ?isValueOf (group_concat(distinct concat(?isValueOfType) ;separator=\"; \") as ?type)\n"
                 + "WHERE {\n"
                 + "values (?q){(<" + IRI + ">)}\n"
                 + " GRAPH ?graph { ?isValueOf ?property ?q. FILTER(?isValueOf != <http://www.w3.org/2002/07/owl#Class>)} \n"
                 + "    OPTIONAL{\n"
-                + "      ?isValueOf a ?isValueOfType.\n"
+                + "      ?isValueOf a|typeNCBITaxon: ?isValueOfType.\n"
                 + "      FILTER(?isValueOfType != <http://www.w3.org/2002/07/owl#Class>)\n"
                 + "    }  \n"
                 + "}" ;
@@ -87,8 +89,7 @@ public class GeneralServicesDAO {
                 + "PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
                 + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
                 + "SELECT ?graph ?property ?hasValue ?isValueOf (group_concat(distinct concat(?hasValueType, ?isValueOfType) ;separator=\"; \") as ?type)\n"
-                + "WHERE {\n" + "values (?q){(<" + IRI + ">)}\n"
-                + " { \n"
+                + "WHERE {\n" + "values (?q){(<" + IRI + ">)}\n"           
                 + "    { ?q ?property ?hasValue }\n"
                 + "  UNION\n"
                 + "  { ?isValueOf ?property ?q } \n"
@@ -145,7 +146,7 @@ public class GeneralServicesDAO {
 
     public static void main(String[] args) throws IOException {
         System.out.println(getIRIDescription4visualization
-        ("http://www.southgreen.fr/agrold/chromosome/4536:Oryza_nivara_v1.0:10:1-21549876:1", 0, 2000));
+        ("http://www.southgreen.fr/agrold/tigr.locus/LOC_Os07g42970.1", 0, 10));
         String API_JSON_SPEC_PATH = "";
         //queryCustomizableService("sala", null, 0, 10, ".json");
         //readAPISpecification(Utils.AGROLDAPIJSONURL);
