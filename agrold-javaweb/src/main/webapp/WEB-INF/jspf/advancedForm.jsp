@@ -16,7 +16,7 @@ ontological concepts: 'plant height' or 'regulation of gene expression'.<br/>
     Gene: keywords 'stachyose', 'protein_coding', 'qtl', 'Constitutive flowering repressor', 'fungal growth'; or name 'TCP2'.<br/>
     Pathway:  keywords 'fermentation' or 'acetate' or 'cytokinins'.<br/>
     protein:  name 'TBP1', keyword 'qtl'.<br/>
-    QTL: name 'BNL6.32' or keyword 'trait'.<br/>
+    QTL: name 'BNL6.32' or keyword 'dimerization'.<br/>
 </div>
 
 <!--<center>
