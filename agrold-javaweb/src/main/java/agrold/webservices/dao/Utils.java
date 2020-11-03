@@ -44,14 +44,15 @@ public class Utils {
 
     public final static String DEFAULT_PAGE_SIZE = "10";
     public final static String DEFAULT_PAGE = "0";
-    //public final static String AGROLDAPIJSONURL = "/Users/plarmande/workspace2015/AgroLD_webapp/agrold-javaweb/agrold-api.json";
+    public final static String AGROLDAPIJSONURL = "/Users/pierre/workspace2015/apache-tomcat-8.5.59/webapps/agrold-api.json";
     //public final static String AGROLDAPIJSONURL = "/home/tagny/GitHub/AgroLD_webapp/agrold-javaweb/src/main/webapp/config/agrold-api.json";
     //public final static String AGROLDAPIJSONURL = "/Users/zadmin/Documents/GitHub/AgroLD_webapp_dev/agrold-javaweb/agrold-api.json";
-    public final static String AGROLDAPIJSONURL = "C:\\Users\\Gildas\\git\\AgroLD_webapp\\agrold-javaweb\\agrold-api.json";
+//    public final static String AGROLDAPIJSONURL = "C:\\Users\\Gildas\\git\\AgroLD_webapp\\agrold-javaweb\\agrold-api.json";
     //public static final String AGROLDAPIJSONURL = "/home/virtuoso/agrold-api.json"; // en ligne i.e. sur volvestre
 
-    public static String sparqlEndpointURL = "http://sparql.southgreen.fr";
+//    public static String sparqlEndpointURL = "http://agrold.ird.fr:8890/sparql";
     //public static String sparqlEndpointURL = "http://agrold.southgreen.fr/sparql";
+    public static String sparqlEndpointURL = "http://sparql.southgreen.fr";
 
     public final static String CSV = "text/csv"; //CSV, HTML, JSON, N3, RDF, JSON_LD, TSV, TTL, XML
     public final static String HTML = "text/html"; // "text/csv", "application/json", "text/plain","text/turtle", "application/sparql-results+xml", "application/rdf+xml","text/tab-separated-values", "application/sparql-results+json", 
@@ -285,7 +286,7 @@ public class Utils {
                 + "(bif:search_excerpt (bif:vector " + keywordsListStr + ", group_concat(distinct ?o1;separator=\" ; \"))) as ?keyword_reference \n"
                 //+ "(bif:search_excerpt (bif:vector " + keywordsListStr + ", ?o1)) as ?keyword_reference \n"
                 + "where {{{ \n"
-                + "select ?Id, ?s1, ?t, (?sc * 3e-1) as ?sc, ?o1, (sql:rnk_scale (<LONG::IRI_RANK> (?s1))) as ?rank, ?g \n"
+                + "select ?Id, ?s1, (?sc * 3e-1) as ?sc, ?o1, (sql:rnk_scale (<LONG::IRI_RANK> (?s1))) as ?rank, ?g \n"
                 + "where  \n"
                 + "  { \n"
                 + "    quad map virtrdf:DefaultQuadMap \n"
