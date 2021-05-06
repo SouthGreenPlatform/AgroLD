@@ -87,9 +87,6 @@
                             <a href="#sources" class="checkMe"> <i class="fa fa-database"></i>&nbsp;&nbsp;Data sources</a>
                         </li>
                         <li>
-                            <a href="#break-down" class="checkMe"> <i class="fa fa-crosshairs"></i>&nbsp;&nbsp;Species break-down</a>
-                        </li>
-                        <li>
                             <a href="#graphs" class="checkMe"> <i class="fa fa-circle-o-notch"></i>&nbsp;&nbsp;Graphs names</a>
                         </li>
                         <li>
@@ -106,31 +103,7 @@
                     <div class="container main">
                         <p>This page provides a summary on the species, data sources and URI patterns.</p>
                         <h4 class="dib" id="species">AgroLD includes data on the following species on: </h4>
-                        <ul>
-                            <li>Arabidopsis thaliana (NCBI Taxon ID: 3702)</li>
-                            <li>Oryza species:
-                                <ul>
-                                    <li>Oryza barthii (NCBI Taxon ID: 65489)</li>
-                                    <li>Oryza brachyantha (NCBI Taxon ID: 4533)</li>
-                                    <li>Oryza glaberrima (NCBI Taxon ID: 4538)</li>
-                                    <li>Oryza meridionalis (NCBI Taxon ID: 40149)</li>
-                                    <li>Oryza sativa (NCBI Taxon ID: 4530)
-                                        <ul>
-                                            <li>Oryza sativa indica (NCBI Taxon ID: 39946)</li>
-                                            <li>Oryza sativa japonica (NCBI Taxon ID: 39947)</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>Sorghum bicolor (NCBI Taxon ID: 4558)</li>
-                            <li>Triticum species:
-                                <ul>
-                                    <li>Triticum aestivum (NCBI Taxon ID: 4565)</li>
-                                    <li>Triticum urartu (NCBI Taxon ID: 4572)</li>                                
-                                </ul>
-                            </li>
-                            <li>Zea mays (NCBI Taxon ID: 4577)</li>
-                        </ul>
+                       <img alt="SPECIES" src="images/agroLD-species.png">
                         <h4 class="dib" id="ontologies">Ontologies in AgroLD:</h4>
                         <p>The OWL versions of the ontologies have been loaded to AgroLD. The original namespaces and URIs 
                             have been retained.
@@ -224,6 +197,12 @@
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td>Ensembl plants</td>
+                                    <td>Gene, Orthologs</td>
+                                    <td><a href="http://plants.ensembl.org"  target="_blank">plants.ensembl.org</a></td>
+                                    <td>This resource host several genome of plant species and gather their annotations </td>
+                                
+                                <tr>
                                     <td>Gramene</td>
                                     <td>Gene, QTL, Pathways and ontology associations (PO, TO and EO)</td>
                                     <td><a href="http://www.gramene.org"  target="_blank">www.gramene.org</a></td>
@@ -264,122 +243,6 @@
                                     <td>Database for genomic, genetic and phenotypic information about tropical crops.</td>
                                     <td><a href="http://tropgenedb.cirad.fr" target="_blank">tropgenedb.cirad.fr</a></td>
                                     <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <h4 class="dib" id="break-down">Species specific break down of the data sources:</h4>
-
-                        <table class="tg">
-                            <thead>
-                                <tr>
-                                    <th colspan="2" rowspan="2">Data<br>Sources</th>
-                                    <th colspan="5">Crop species</th>
-                                </tr>
-                                <tr>
-                                    <td>Oryza species</td>
-                                    <td >Triticum species</td>
-                                    <td >A.thaliana</td>
-                                    <td >S.bicolor</td>
-                                    <td >Z.mays</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td rowspan="4">Ontology associations</td>
-                                    <td>GOA</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                </tr>
-                                <tr>
-                                    <td>Gramene-PO</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                </tr>
-                                <tr>
-                                    <td>Gramene-TO</td>
-                                    <td >&#10004;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&#10004;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td>Gramene-EO</td>
-                                    <td >&#10004;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Gramene-gene</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Gramene-QTL</td>
-                                    <td >&#10004;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Gramene-Cyc,pathways</td>
-                                    <td >&#10004;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">UniprotKB</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">OryGenesDB</td>
-                                    <td >&#10004;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&#10004;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Oryza Tag Line</td>
-                                    <td >&#10004;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">TropGeneDB</td>
-                                    <td >&#10004;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">GreenPhylDB</td>
-                                    <td >&#10004;</td>
-                                    <td >&nbsp;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
-                                    <td >&#10004;</td>
                                 </tr>
                             </tbody>
                         </table>
