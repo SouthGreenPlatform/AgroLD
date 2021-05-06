@@ -355,27 +355,39 @@
                         <h4 class="dib" id="graphs">Graph Names:</h4>
                         <p>The RDF graphs have a common name-space: <a href="http://www.southgreen.fr/agrold/" target="_blank">http://www.southgreen.fr/agrold/</a> </p>
                         <p>The list of graphs are follows:</p>
-                        <ul>
-                            <li>http://www.southgreen.fr/agrold/eco</li>
-                            <li>http://www.southgreen.fr/agrold/eo</li>
-                            <li>http://www.southgreen.fr/agrold/go</li>
-                            <li>http://www.southgreen.fr/agrold/gramene.cyc</li>
-                            <li>http://www.southgreen.fr/agrold/gramene.genes</li>
-                            <li>http://www.southgreen.fr/agrold/gramene.qtl</li>
-                            <li>http://www.southgreen.fr/agrold/greenphyldb</li>
-                            <li>http://www.southgreen.fr/agrold/ncbitaxon</li>
-                            <li>http://www.southgreen.fr/agrold/orygenesdb.a.thaliana</li>
-                            <li>http://www.southgreen.fr/agrold/orygenesdb.o.s.indica</li>
-                            <li>http://www.southgreen.fr/agrold/orygenesdb.o.s.japonica</li>
-                            <li>http://www.southgreen.fr/agrold/otl</li>
-                            <li>http://www.southgreen.fr/agrold/pato</li>
-                            <li>http://www.southgreen.fr/agrold/po</li>
-                            <li>http://www.southgreen.fr/agrold/protein.annotations</li>
-                            <li>http://www.southgreen.fr/agrold/qtl.annotations</li>
-                            <li>http://www.southgreen.fr/agrold/so</li>
-                            <li>http://www.southgreen.fr/agrold/to</li>
-                            <li>http://www.southgreen.fr/agrold/tropgenedb</li>
-                            <li>http://www.southgreen.fr/agrold/uniprot.plants</li>
+                    <table class="tg">
+                                                                                                                                                                                            200,33        44%
+                                <li>http://www.southgreen.fr/agrold/qtaro.qtl</li>
+                                <li>http://www.southgreen.fr/agrold/rap.msu</li>
+                                <li>http://www.southgreen.fr/agrold/greenphyldb</li>
+                                <li>http://www.southgreen.fr/agrold/uniprot.plants</li>
+                                <li>http://www.southgreen.fr/agrold/gramene.qtl</li>
+                                <li>http://www.southgreen.fr/agrold/tropgenedb</li>
+                                <li>http://www.southgreen.fr/agrold/ensembl.plants</li>
+                                <li>http://www.southgreen.fr/agrold/protein.annotations</li>
+                                <li>http://www.southgreen.fr/agrold/qtl.annotations</li>
+                                <li>http://www.southgreen.fr/agrold/msu.genes</li>
+                                <li>http://www.southgreen.fr/agrold/gramene.cyc</li>
+                                <li>http://www.southgreen.fr/agrold/sniplaydb</li>
+                                <li>http://www.southgreen.fr/agrold/oryzabase.genes</li>
+                                <li>http://www.southgreen.fr/agrold/ricenetdb</li>
+                                <li>http://www.southgreen.fr/agrold/rapdb</li>
+                                <li>http://www.southgreen.fr/agrold/genome.hub</li>
+                                <li>http://www.southgreen.fr/agrold/plantftdb</li>
+                                <li>http://www.southgreen.fr/agrold/interpro</li>
+                                <li>http://www.southgreen.fr/agrold/cegresources</li>
+                                <li>http://www.southgreen.fr/agrold/ncbitaxon</li>
+                                <li>http://www.southgreen.fr/agrold/faldo</li>
+                                <li>http://www.southgreen.fr/agrold/ino</li>
+                                <li>http://www.southgreen.fr/agrold/ro</li>
+                                <li>http://www.southgreen.fr/agrold/go</li>
+                                <li>http://www.southgreen.fr/agrold/vocabulary</li>
+                                <li>http://www.southgreen.fr/agrold/so</li>
+                                <li>http://www.southgreen.fr/agrold/sio</li>
+                                <li>http://www.southgreen.fr/agrold/eco</li>
+                                <li>http://www.southgreen.fr/agrold/pato</li>
+                                <li>http://www.southgreen.fr/agrold/po</li>
+                                <li>http://www.southgreen.fr/agrold/to</li>
                         </ul>
                         <h4 class="dib" id="uri">URIs:</h4>
                         <p>To make AgroLD Linked Data compliant, de-referenceable stable URIs provided by Identifiers.org 
