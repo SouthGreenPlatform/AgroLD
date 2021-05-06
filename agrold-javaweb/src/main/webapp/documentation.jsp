@@ -193,6 +193,8 @@
                                     <th>Information</th>
                                     <th>Website</th>
                                     <th>Note</th>
+                                    <th>Species</th>
+                                    <th>Ontologies used</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -201,48 +203,112 @@
                                     <td>Gene, Orthologs</td>
                                     <td><a href="http://plants.ensembl.org"  target="_blank">plants.ensembl.org</a></td>
                                     <td>This resource host several genome of plant species and gather their annotations </td>
+                                    <td>All</td>
+                                    <td>GO, SO, RO, SIO, FALDO</td>
                                 
                                 <tr>
                                     <td>Gramene</td>
                                     <td>Gene, QTL, Pathways and ontology associations (PO, TO and EO)</td>
                                     <td><a href="http://www.gramene.org"  target="_blank">www.gramene.org</a></td>
                                     <td>In the future versions, ontology associations will be taken from the Planteome project (<a href="http://planteome.org/" target="_blank">http://planteome.org/</a>)</td>
+                                    <td>R,A, W, S, M</td>
+                                    <td>GO, PO, TO, EO</td>
                                 </tr>
                                 <tr>
                                     <td>GOA</td>
                                     <td>Gene Ontology associations</td>
                                     <td><a href="http://www.ebi.ac.uk/GOA" target="_blank">www.ebi.ac.uk/GOA</a></td>
                                     <td></td>
+                                    <td>All</td>
+                                    <td>RO,GO,SIO</td>
                                 </tr>
                                 <tr>
                                     <td>UniprotKB</td>
                                     <td>Protein Information</td>
                                     <td><a href="http://www.uniprot.org" target="_blank">www.uniprot.org</a></td>
                                     <td></td>
+                                    <td>All</td><!-- comment -->
+                                    <td>GO,RO,SIO</td>
                                 </tr>
                                 <tr>
                                     <td>GreenPhylDB</td>
                                     <td>Web resource for phylogenetic-based approach to predict homologous relationships.</td>
                                     <td><a href="http://www.greenphyl.org" target="_blank">www.greenphyl.org</a></td>
                                     <td></td>
+                                    <td>R,A</td><!-- comment -->
+                                    <td>GO,RO,SIO,ORTH</td><!-- comment -->
                                 </tr>
                                 <tr>
                                     <td>Oryza Tag Line</td>
                                     <td>Database consists of phenotypic data resulting from the evaluation of the Génoplante rice insertion line library.</td>
                                     <td><a href="http://oryzatagline.cirad.fr" target="_blank">oryzatagline.cirad.fr</a></td>
                                     <td></td>
+                                    <td>R</td><!-- comment -->
+                                    <td>PO, TO</td>
                                 </tr>
                                 <tr>
-                                    <td>OryGenesDB</td>
-                                    <td>Database for sequence information resulting from the T-DNA and Ds flanking sequence tags FSTs. Also contains information on cDNA full length, EST and Markers</td>
-                                    <td><a href="http://orygenesdb.cirad.fr" target="_blank">orygenesdb.cirad.fr</a></td>
+                                    <td>Rice Genome Hub</td>
+                                    <td>Genes, annotations, Ontology associations</td>
+                                    <td><a href="https://rice-genome-hub.southgreen.fr" target="_blank">rice-genome-hub.southgreen.fr </a></td>
                                     <td></td>
+                                    <td>R</td> 
+                                    <td>GO,SIO,FALDO,RO,SO</td>
                                 </tr>
                                 <tr>
                                     <td>TropGeneDB</td>
                                     <td>Database for genomic, genetic and phenotypic information about tropical crops.</td>
                                     <td><a href="http://tropgenedb.cirad.fr" target="_blank">tropgenedb.cirad.fr</a></td>
                                     <td></td>
+                                    <td>R</td> 
+                                    <td>GO, TO, PO</td>
+                                </tr>
+                                <tr>
+                                    <td>Oryzabase</td>
+                                    <td>Genes, ontology associations, publications</td>
+                                    <td><a href="https://shigen.nig.ac.jp/rice/oryzabase " target="_blank">shigen.nig.ac.jp/rice/oryzabase </a></td>
+                                    <td></td>
+                                    <td>R</td> 
+                                    <td>GO,PO,TO</td>
+                                </tr>
+                                 <tr>
+                                    <td>Interpro</td>
+                                    <td>Classification of protein families</td>
+                                    <td><a href="https://www.ebi.ac.uk/interpro" target="_blank">www.ebi.ac.uk/interpro</a></td>
+                                    <td></td>
+                                    <td>All</td> 
+                                    <td>GO</td>
+                                </tr>
+                                 <tr>
+                                    <td>RAPdb</td>
+                                    <td>The Rice annotation project</td>
+                                    <td><a href="https://rapdb.dna.affrc.go.jp" target="_blank">rapdb.dna.affrc.go.jp</a></td>
+                                    <td></td>
+                                    <td>R</td> 
+                                    <td>GO,SIO,FALDO,RO,SO</td>
+                                </tr>
+                                 <tr>
+                                    <td>MSU RGAP</td>
+                                    <td>MSU Rice genome annotation project</td>
+                                    <td><a href="http://rice.plantbiology.msu.edu" target="_blank">rice.plantbiology.msu.edu</a></td>
+                                    <td></td>
+                                    <td>R</td> 
+                                    <td>GO,SIO,FALDO,RO,SO</td>
+                                 </tr>
+                                 <tr>
+                                    <td>RiceNetDB</td>
+                                    <td>Gene networks database</td>
+                                    <td><a href="http://bis.zju.edu.cn/ricenetdb" target="_blank">bis.zju.edu.cn</a></td>
+                                    <td></td>
+                                    <td>R</td> 
+                                    <td>GO</td>
+                                </tr>
+                                 <tr>
+                                    <td>StringDB</td>
+                                    <td>Protein-Protein interactions network database</td>
+                                    <td><a href="https://string-db.org" target="_blank">string-db.org</a></td>
+                                    <td></td>
+                                    <td>R,A</td> 
+                                    <td>GO</td>
                                 </tr>
                             </tbody>
                         </table>
