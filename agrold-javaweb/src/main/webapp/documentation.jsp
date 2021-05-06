@@ -169,6 +169,7 @@
                                 </tr>
                                 <tr>
                                     <td>Phenotype and Attribute Ontology (PATO)</td>
+                                    <td rowspan="4"><a href="https://github.com/pato-ontology/pato/" target="_blank"></a>https://github.com/pato-ontology/pato/</td>
                                     <td><a href="http://purl.obolibrary.org/obo/PATO_0000462" target="_blank">http://purl.obolibrary.org/obo/PATO_0000462</a></td>
                                 </tr>
                                 <tr>
@@ -178,6 +179,36 @@
                                 <tr>
                                     <td>Evidence code Ontology</td>
                                     <td><a href="http://purl.obolibrary.org/obo/ECO_0000033" target="_blank">http://purl.obolibrary.org/obo/ECO_0000033</a></td>
+                                </tr>
+                                <tr>
+                                    <td>FALDO: Feature Annotation Location Description Ontology</td>
+                                    <td rowspan="4"><a href="http://biohackathon.org/resource/faldo" target="_blank">http://biohackathon.org/resource/faldo</a></td>
+                                    <td><a href="http://biohackathon.org/resource/faldo#ExactPosition" target="_blank">http://biohackathon.org/resource/faldo#ExactPosition</a></td>
+                                </tr>
+                                <tr>
+                                    <td>The Interaction Network Ontology (INO) </td>
+                                    <td rowspan="4"><a href="https://github.com/INO-ontology/ino" target="_blank">https://github.com/INO-ontology/ino</a></td>
+                                    <td><a href="http://purl.obolibrary.org/obo/INO_0000113" target="_blank">http://purl.obolibrary.org/obo/INO_0000111</a></td>
+                                </tr>
+                                 <tr>
+                                    <td>The OBO Relations Ontology (RO) </td>
+                                    <td rowspan="4"><a href="https://github.com/oborel/obo-relations" target="_blank">https://github.com/oborel/obo-relations</a></td>
+                                    <td><a href="http://purl.obolibrary.org/obo/RO_0002408" target="_blank">http://purl.obolibrary.org/obo/RO_0002408</a></td>
+                                </tr>
+                                 <tr>
+                                    <td>The Semanticscience Integrated Ontology (SIO)</td>
+                                    <td rowspan="4"><a href="https://github.com/MaastrichtU-IDS/semanticscience" target="_blank">https://github.com/MaastrichtU-IDS/semanticscience</a></td>
+                                    <td><a href="http://semanticscience.org/resource/SIO_000061" target="_blank">http://semanticscience.org/resource/SIO_000061</a></td>
+                                </tr>
+                                  <tr>
+                                    <td>ORTH -  the orthology ontology </td>
+                                    <td rowspan="4"><a href="https://qfo.github.io/OrthologyOntology/" target="_blank">https://qfo.github.io/OrthologyOntology</a></td>
+                                    <td><a href="http://purl.org/net/orth#OrthologsCluster" target="_blank">http://purl.org/net/orth#OrthologsCluster</a></td>
+                                </tr>
+                                   <tr>
+                                    <td> VOCAB -  the AgroLD schema </td>
+                                    <td rowspan="4"><a href="https://github.com/SouthGreenPlatform/AgroLD_ETL/blob/master/model/agrold_schema.owl" target="_blank">Schema</a></td>
+                                    <td><a href="http://purl.org/net/orth#OrthologsCluster" target="_blank">http://purl.org/net/orth#OrthologsCluster</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -355,8 +386,7 @@
                         <h4 class="dib" id="graphs">Graph Names:</h4>
                         <p>The RDF graphs have a common name-space: <a href="http://www.southgreen.fr/agrold/" target="_blank">http://www.southgreen.fr/agrold/</a> </p>
                         <p>The list of graphs are follows:</p>
-                    <table class="tg">
-                                                                                                                                                                                            200,33        44%
+                    <table class="tg">                                                                                                                                                          200,33        44%
                                 <li>http://www.southgreen.fr/agrold/qtaro.qtl</li>
                                 <li>http://www.southgreen.fr/agrold/rap.msu</li>
                                 <li>http://www.southgreen.fr/agrold/greenphyldb</li>
