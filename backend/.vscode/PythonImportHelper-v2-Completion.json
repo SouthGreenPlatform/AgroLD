@@ -1,0 +1,2214 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "SpectacularAPIView",
+        "importPath": "drf_spectacular.views",
+        "description": "drf_spectacular.views",
+        "isExtraImport": true,
+        "detail": "drf_spectacular.views",
+        "documentation": {}
+    },
+    {
+        "label": "api_root",
+        "importPath": "core.views",
+        "description": "core.views",
+        "isExtraImport": true,
+        "detail": "core.views",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "exception_handler",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "SparqlQueryError",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "add_limit_offset",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "execute_select",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "keyword_search",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "types_union",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "add_limit_offset",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "execute_select",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "clamp_timeout_ms",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "execute_select_raw",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "add_limit_offset",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "execute_select",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "add_limit_offset",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "execute_select",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "keyword_search",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "types_union",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "add_limit_offset",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "execute_select",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "keyword_search",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "add_limit_offset",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "execute_select",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "keyword_search",
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "isExtraImport": true,
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "Iterable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "JSON",
+        "importPath": "SPARQLWrapper",
+        "description": "SPARQLWrapper",
+        "isExtraImport": true,
+        "detail": "SPARQLWrapper",
+        "documentation": {}
+    },
+    {
+        "label": "SPARQLWrapper",
+        "importPath": "SPARQLWrapper",
+        "description": "SPARQLWrapper",
+        "isExtraImport": true,
+        "detail": "SPARQLWrapper",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "get_publications_from_europepmc_by_label",
+        "importPath": "core.external_services",
+        "description": "core.external_services",
+        "isExtraImport": true,
+        "detail": "core.external_services",
+        "documentation": {}
+    },
+    {
+        "label": "sort_publications_by_year_desc",
+        "importPath": "core.external_services",
+        "description": "core.external_services",
+        "isExtraImport": true,
+        "detail": "core.external_services",
+        "documentation": {}
+    },
+    {
+        "label": "get_onto_terms_associated_with_gene_gramene",
+        "importPath": "core.external_services",
+        "description": "core.external_services",
+        "isExtraImport": true,
+        "detail": "core.external_services",
+        "documentation": {}
+    },
+    {
+        "label": "get_publications_from_europepmc_by_label",
+        "importPath": "core.external_services",
+        "description": "core.external_services",
+        "isExtraImport": true,
+        "detail": "core.external_services",
+        "documentation": {}
+    },
+    {
+        "label": "sort_publications_by_year_desc",
+        "importPath": "core.external_services",
+        "description": "core.external_services",
+        "isExtraImport": true,
+        "detail": "core.external_services",
+        "documentation": {}
+    },
+    {
+        "label": "get_pagination",
+        "importPath": "core.pagination",
+        "description": "core.pagination",
+        "isExtraImport": true,
+        "detail": "core.pagination",
+        "documentation": {}
+    },
+    {
+        "label": "get_pagination",
+        "importPath": "core.pagination",
+        "description": "core.pagination",
+        "isExtraImport": true,
+        "detail": "core.pagination",
+        "documentation": {}
+    },
+    {
+        "label": "get_pagination",
+        "importPath": "core.pagination",
+        "description": "core.pagination",
+        "isExtraImport": true,
+        "detail": "core.pagination",
+        "documentation": {}
+    },
+    {
+        "label": "get_pagination",
+        "importPath": "core.pagination",
+        "description": "core.pagination",
+        "isExtraImport": true,
+        "detail": "core.pagination",
+        "documentation": {}
+    },
+    {
+        "label": "get_pagination",
+        "importPath": "core.pagination",
+        "description": "core.pagination",
+        "isExtraImport": true,
+        "detail": "core.pagination",
+        "documentation": {}
+    },
+    {
+        "label": "get_pagination",
+        "importPath": "core.pagination",
+        "description": "core.pagination",
+        "isExtraImport": true,
+        "detail": "core.pagination",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_URIS",
+        "importPath": "genes.dao",
+        "description": "genes.dao",
+        "isExtraImport": true,
+        "detail": "genes.dao",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "config.asgi",
+        "description": "config.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "config.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nSECRET_KEY = os.environ.get(\"DJANGO_SECRET_KEY\", \"insecure-dev-key-change-me\")\nDEBUG = os.environ.get(\"DJANGO_DEBUG\", \"false\").lower() == \"true\"\nALLOWED_HOSTS = [\n    h.strip() for h in os.environ.get(\"DJANGO_ALLOWED_HOSTS\", \"*\").split(\",\") if h.strip()\n]\nINSTALLED_APPS = [\n    \"django.contrib.contenttypes\",\n    \"django.contrib.staticfiles\",\n    \"rest_framework\",",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "SECRET_KEY = os.environ.get(\"DJANGO_SECRET_KEY\", \"insecure-dev-key-change-me\")\nDEBUG = os.environ.get(\"DJANGO_DEBUG\", \"false\").lower() == \"true\"\nALLOWED_HOSTS = [\n    h.strip() for h in os.environ.get(\"DJANGO_ALLOWED_HOSTS\", \"*\").split(\",\") if h.strip()\n]\nINSTALLED_APPS = [\n    \"django.contrib.contenttypes\",\n    \"django.contrib.staticfiles\",\n    \"rest_framework\",\n    \"drf_spectacular\",",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "DEBUG = os.environ.get(\"DJANGO_DEBUG\", \"false\").lower() == \"true\"\nALLOWED_HOSTS = [\n    h.strip() for h in os.environ.get(\"DJANGO_ALLOWED_HOSTS\", \"*\").split(\",\") if h.strip()\n]\nINSTALLED_APPS = [\n    \"django.contrib.contenttypes\",\n    \"django.contrib.staticfiles\",\n    \"rest_framework\",\n    \"drf_spectacular\",\n    \"corsheaders\",",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "ALLOWED_HOSTS = [\n    h.strip() for h in os.environ.get(\"DJANGO_ALLOWED_HOSTS\", \"*\").split(\",\") if h.strip()\n]\nINSTALLED_APPS = [\n    \"django.contrib.contenttypes\",\n    \"django.contrib.staticfiles\",\n    \"rest_framework\",\n    \"drf_spectacular\",\n    \"corsheaders\",\n    \"core\",",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    \"django.contrib.contenttypes\",\n    \"django.contrib.staticfiles\",\n    \"rest_framework\",\n    \"drf_spectacular\",\n    \"corsheaders\",\n    \"core\",\n    \"genes\",\n    \"proteins\",\n    \"qtls\",",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    \"django.middleware.security.SecurityMiddleware\",\n    \"corsheaders.middleware.CorsMiddleware\",\n    \"django.middleware.common.CommonMiddleware\",\n]\nROOT_URLCONF = \"config.urls\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [],",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "ROOT_URLCONF = \"config.urls\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"context_processors\": [\n                \"django.template.context_processors.debug\",\n                \"django.template.context_processors.request\",",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"context_processors\": [\n                \"django.template.context_processors.debug\",\n                \"django.template.context_processors.request\",\n            ],",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "WSGI_APPLICATION = \"config.wsgi.application\"\nASGI_APPLICATION = \"config.asgi.application\"\n# No relational database is used: AgroLD is served entirely from the\n# Virtuoso RDF triplestore via SPARQL. Django's ORM/admin/auth are unused.\nDATABASES = {}\nUSE_TZ = True\nLANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nSTATIC_URL = \"static/\"\nSTATIC_ROOT = BASE_DIR / \"staticfiles\"",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ASGI_APPLICATION",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "ASGI_APPLICATION = \"config.asgi.application\"\n# No relational database is used: AgroLD is served entirely from the\n# Virtuoso RDF triplestore via SPARQL. Django's ORM/admin/auth are unused.\nDATABASES = {}\nUSE_TZ = True\nLANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nSTATIC_URL = \"static/\"\nSTATIC_ROOT = BASE_DIR / \"staticfiles\"\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "DATABASES = {}\nUSE_TZ = True\nLANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nSTATIC_URL = \"static/\"\nSTATIC_ROOT = BASE_DIR / \"staticfiles\"\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# --- AgroLD domain configuration -----------------------------------------\n# Mirrors agrold.config.PropertiesBean from the legacy JSP app, but sourced\n# from environment variables instead of Tomcat -D system properties.",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "USE_TZ = True\nLANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nSTATIC_URL = \"static/\"\nSTATIC_ROOT = BASE_DIR / \"staticfiles\"\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# --- AgroLD domain configuration -----------------------------------------\n# Mirrors agrold.config.PropertiesBean from the legacy JSP app, but sourced\n# from environment variables instead of Tomcat -D system properties.\nSPARQL_ENDPOINT = os.environ.get(",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "LANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nSTATIC_URL = \"static/\"\nSTATIC_ROOT = BASE_DIR / \"staticfiles\"\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# --- AgroLD domain configuration -----------------------------------------\n# Mirrors agrold.config.PropertiesBean from the legacy JSP app, but sourced\n# from environment variables instead of Tomcat -D system properties.\nSPARQL_ENDPOINT = os.environ.get(\n    \"SPARQL_ENDPOINT\", \"https://sparql.southgreen.fr/sparql/\")",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "TIME_ZONE = \"UTC\"\nSTATIC_URL = \"static/\"\nSTATIC_ROOT = BASE_DIR / \"staticfiles\"\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# --- AgroLD domain configuration -----------------------------------------\n# Mirrors agrold.config.PropertiesBean from the legacy JSP app, but sourced\n# from environment variables instead of Tomcat -D system properties.\nSPARQL_ENDPOINT = os.environ.get(\n    \"SPARQL_ENDPOINT\", \"https://sparql.southgreen.fr/sparql/\")\nFACETED_SEARCH_URL = os.environ.get(",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "STATIC_URL = \"static/\"\nSTATIC_ROOT = BASE_DIR / \"staticfiles\"\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# --- AgroLD domain configuration -----------------------------------------\n# Mirrors agrold.config.PropertiesBean from the legacy JSP app, but sourced\n# from environment variables instead of Tomcat -D system properties.\nSPARQL_ENDPOINT = os.environ.get(\n    \"SPARQL_ENDPOINT\", \"https://sparql.southgreen.fr/sparql/\")\nFACETED_SEARCH_URL = os.environ.get(\n    \"FACETED_SEARCH_URL\", \"https://sparql.southgreen.fr/fct/\")",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_ROOT",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "STATIC_ROOT = BASE_DIR / \"staticfiles\"\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# --- AgroLD domain configuration -----------------------------------------\n# Mirrors agrold.config.PropertiesBean from the legacy JSP app, but sourced\n# from environment variables instead of Tomcat -D system properties.\nSPARQL_ENDPOINT = os.environ.get(\n    \"SPARQL_ENDPOINT\", \"https://sparql.southgreen.fr/sparql/\")\nFACETED_SEARCH_URL = os.environ.get(\n    \"FACETED_SEARCH_URL\", \"https://sparql.southgreen.fr/fct/\")\nRF_LINK = os.environ.get(\"RF_LINK\", \"http://rf.southgreen.fr/\")",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_AUTO_FIELD",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# --- AgroLD domain configuration -----------------------------------------\n# Mirrors agrold.config.PropertiesBean from the legacy JSP app, but sourced\n# from environment variables instead of Tomcat -D system properties.\nSPARQL_ENDPOINT = os.environ.get(\n    \"SPARQL_ENDPOINT\", \"https://sparql.southgreen.fr/sparql/\")\nFACETED_SEARCH_URL = os.environ.get(\n    \"FACETED_SEARCH_URL\", \"https://sparql.southgreen.fr/fct/\")\nRF_LINK = os.environ.get(\"RF_LINK\", \"http://rf.southgreen.fr/\")\nAGROLD_INSTANCE = os.environ.get(\"AGROLD_INSTANCE\", \"\")",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SPARQL_ENDPOINT",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "SPARQL_ENDPOINT = os.environ.get(\n    \"SPARQL_ENDPOINT\", \"https://sparql.southgreen.fr/sparql/\")\nFACETED_SEARCH_URL = os.environ.get(\n    \"FACETED_SEARCH_URL\", \"https://sparql.southgreen.fr/fct/\")\nRF_LINK = os.environ.get(\"RF_LINK\", \"http://rf.southgreen.fr/\")\nAGROLD_INSTANCE = os.environ.get(\"AGROLD_INSTANCE\", \"\")\nAPI_VERSION = os.environ.get(\"API_VERSION\", \"3.0.0\")\nSPARQL_QUERY_TIMEOUT = int(os.environ.get(\"SPARQL_QUERY_TIMEOUT\", \"20\"))\nEUROPEPMC_SERVICE_URL = os.environ.get(\n    \"EUROPEPMC_SERVICE_URL\", \"https://www.ebi.ac.uk/europepmc/webservices/rest/search\"",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "FACETED_SEARCH_URL",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "FACETED_SEARCH_URL = os.environ.get(\n    \"FACETED_SEARCH_URL\", \"https://sparql.southgreen.fr/fct/\")\nRF_LINK = os.environ.get(\"RF_LINK\", \"http://rf.southgreen.fr/\")\nAGROLD_INSTANCE = os.environ.get(\"AGROLD_INSTANCE\", \"\")\nAPI_VERSION = os.environ.get(\"API_VERSION\", \"3.0.0\")\nSPARQL_QUERY_TIMEOUT = int(os.environ.get(\"SPARQL_QUERY_TIMEOUT\", \"20\"))\nEUROPEPMC_SERVICE_URL = os.environ.get(\n    \"EUROPEPMC_SERVICE_URL\", \"https://www.ebi.ac.uk/europepmc/webservices/rest/search\"\n)\nGRAMENE_GENES_URL = os.environ.get(",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "RF_LINK",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "RF_LINK = os.environ.get(\"RF_LINK\", \"http://rf.southgreen.fr/\")\nAGROLD_INSTANCE = os.environ.get(\"AGROLD_INSTANCE\", \"\")\nAPI_VERSION = os.environ.get(\"API_VERSION\", \"3.0.0\")\nSPARQL_QUERY_TIMEOUT = int(os.environ.get(\"SPARQL_QUERY_TIMEOUT\", \"20\"))\nEUROPEPMC_SERVICE_URL = os.environ.get(\n    \"EUROPEPMC_SERVICE_URL\", \"https://www.ebi.ac.uk/europepmc/webservices/rest/search\"\n)\nGRAMENE_GENES_URL = os.environ.get(\n    \"GRAMENE_GENES_URL\", \"http://data.gramene.org/v58/genes\")\n# --- LLM chat configuration (new /api/llm/ endpoint) ----------------------",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AGROLD_INSTANCE",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "AGROLD_INSTANCE = os.environ.get(\"AGROLD_INSTANCE\", \"\")\nAPI_VERSION = os.environ.get(\"API_VERSION\", \"3.0.0\")\nSPARQL_QUERY_TIMEOUT = int(os.environ.get(\"SPARQL_QUERY_TIMEOUT\", \"20\"))\nEUROPEPMC_SERVICE_URL = os.environ.get(\n    \"EUROPEPMC_SERVICE_URL\", \"https://www.ebi.ac.uk/europepmc/webservices/rest/search\"\n)\nGRAMENE_GENES_URL = os.environ.get(\n    \"GRAMENE_GENES_URL\", \"http://data.gramene.org/v58/genes\")\n# --- LLM chat configuration (new /api/llm/ endpoint) ----------------------\n# \"anthropic\", \"openai\", or \"none\"",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "API_VERSION",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "API_VERSION = os.environ.get(\"API_VERSION\", \"3.0.0\")\nSPARQL_QUERY_TIMEOUT = int(os.environ.get(\"SPARQL_QUERY_TIMEOUT\", \"20\"))\nEUROPEPMC_SERVICE_URL = os.environ.get(\n    \"EUROPEPMC_SERVICE_URL\", \"https://www.ebi.ac.uk/europepmc/webservices/rest/search\"\n)\nGRAMENE_GENES_URL = os.environ.get(\n    \"GRAMENE_GENES_URL\", \"http://data.gramene.org/v58/genes\")\n# --- LLM chat configuration (new /api/llm/ endpoint) ----------------------\n# \"anthropic\", \"openai\", or \"none\"\nLLM_PROVIDER = os.environ.get(\"LLM_PROVIDER\", \"none\")",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SPARQL_QUERY_TIMEOUT",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "SPARQL_QUERY_TIMEOUT = int(os.environ.get(\"SPARQL_QUERY_TIMEOUT\", \"20\"))\nEUROPEPMC_SERVICE_URL = os.environ.get(\n    \"EUROPEPMC_SERVICE_URL\", \"https://www.ebi.ac.uk/europepmc/webservices/rest/search\"\n)\nGRAMENE_GENES_URL = os.environ.get(\n    \"GRAMENE_GENES_URL\", \"http://data.gramene.org/v58/genes\")\n# --- LLM chat configuration (new /api/llm/ endpoint) ----------------------\n# \"anthropic\", \"openai\", or \"none\"\nLLM_PROVIDER = os.environ.get(\"LLM_PROVIDER\", \"none\")\nLLM_API_KEY = os.environ.get(\"LLM_API_KEY\", \"\")",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EUROPEPMC_SERVICE_URL",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "EUROPEPMC_SERVICE_URL = os.environ.get(\n    \"EUROPEPMC_SERVICE_URL\", \"https://www.ebi.ac.uk/europepmc/webservices/rest/search\"\n)\nGRAMENE_GENES_URL = os.environ.get(\n    \"GRAMENE_GENES_URL\", \"http://data.gramene.org/v58/genes\")\n# --- LLM chat configuration (new /api/llm/ endpoint) ----------------------\n# \"anthropic\", \"openai\", or \"none\"\nLLM_PROVIDER = os.environ.get(\"LLM_PROVIDER\", \"none\")\nLLM_API_KEY = os.environ.get(\"LLM_API_KEY\", \"\")\nLLM_MODEL = os.environ.get(\"LLM_MODEL\", \"claude-sonnet-5\")",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "GRAMENE_GENES_URL",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "GRAMENE_GENES_URL = os.environ.get(\n    \"GRAMENE_GENES_URL\", \"http://data.gramene.org/v58/genes\")\n# --- LLM chat configuration (new /api/llm/ endpoint) ----------------------\n# \"anthropic\", \"openai\", or \"none\"\nLLM_PROVIDER = os.environ.get(\"LLM_PROVIDER\", \"none\")\nLLM_API_KEY = os.environ.get(\"LLM_API_KEY\", \"\")\nLLM_MODEL = os.environ.get(\"LLM_MODEL\", \"claude-sonnet-5\")\nREST_FRAMEWORK = {\n    \"DEFAULT_RENDERER_CLASSES\": [\n        \"rest_framework.renderers.JSONRenderer\",",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LLM_PROVIDER",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "LLM_PROVIDER = os.environ.get(\"LLM_PROVIDER\", \"none\")\nLLM_API_KEY = os.environ.get(\"LLM_API_KEY\", \"\")\nLLM_MODEL = os.environ.get(\"LLM_MODEL\", \"claude-sonnet-5\")\nREST_FRAMEWORK = {\n    \"DEFAULT_RENDERER_CLASSES\": [\n        \"rest_framework.renderers.JSONRenderer\",\n    ],\n    \"DEFAULT_PARSER_CLASSES\": [\n        \"rest_framework.parsers.JSONParser\",\n    ],",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LLM_API_KEY",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "LLM_API_KEY = os.environ.get(\"LLM_API_KEY\", \"\")\nLLM_MODEL = os.environ.get(\"LLM_MODEL\", \"claude-sonnet-5\")\nREST_FRAMEWORK = {\n    \"DEFAULT_RENDERER_CLASSES\": [\n        \"rest_framework.renderers.JSONRenderer\",\n    ],\n    \"DEFAULT_PARSER_CLASSES\": [\n        \"rest_framework.parsers.JSONParser\",\n    ],\n    # No database/user model is configured (see DATABASES above) — the API",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LLM_MODEL",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "LLM_MODEL = os.environ.get(\"LLM_MODEL\", \"claude-sonnet-5\")\nREST_FRAMEWORK = {\n    \"DEFAULT_RENDERER_CLASSES\": [\n        \"rest_framework.renderers.JSONRenderer\",\n    ],\n    \"DEFAULT_PARSER_CLASSES\": [\n        \"rest_framework.parsers.JSONParser\",\n    ],\n    # No database/user model is configured (see DATABASES above) — the API\n    # is entirely unauthenticated, mirroring the legacy app (whose Basic-auth",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "REST_FRAMEWORK",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "REST_FRAMEWORK = {\n    \"DEFAULT_RENDERER_CLASSES\": [\n        \"rest_framework.renderers.JSONRenderer\",\n    ],\n    \"DEFAULT_PARSER_CLASSES\": [\n        \"rest_framework.parsers.JSONParser\",\n    ],\n    # No database/user model is configured (see DATABASES above) — the API\n    # is entirely unauthenticated, mirroring the legacy app (whose Basic-auth\n    # filter was registered but never wired to any endpoint).",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SPECTACULAR_SETTINGS",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "SPECTACULAR_SETTINGS = {\n    \"TITLE\": \"AgroLD API\",\n    \"DESCRIPTION\": \"REST API over the AgroLD plant genomics/agronomy knowledge graph.\",\n    \"VERSION\": API_VERSION,\n    \"SERVE_INCLUDE_SCHEMA\": False,\n}\nCORS_ALLOWED_ORIGINS = [\n    o.strip()\n    for o in os.environ.get(\n        \"CORS_ALLOWED_ORIGINS\",",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CORS_ALLOWED_ORIGINS",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    o.strip()\n    for o in os.environ.get(\n        \"CORS_ALLOWED_ORIGINS\",\n        \"http://localhost:3000,http://localhost:3001,http://localhost:5173,\"\n    ).split(\",\")\n    if o.strip()\n]\n# The Vue dev server's port varies by environment (3000 by default, but\n# whatever's free), and a frontend can also be reached through a tunnel",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CORS_ALLOW_ALL_ORIGINS",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "CORS_ALLOW_ALL_ORIGINS = os.environ.get(\n    \"CORS_ALLOW_ALL_ORIGINS\", \"true\").lower() == \"true\"",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "config.urls",
+        "description": "config.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"api/\", api_root, name=\"api-root\"),\n    path(\"api/openapi.json\", SpectacularAPIView.as_view(), name=\"openapi-schema\"),\n    path(\"api/\", include(\"graphs.urls\")),\n    path(\"api/genes/\", include(\"genes.urls\")),\n    path(\"api/proteins/\", include(\"proteins.urls\")),\n    path(\"api/qtls/\", include(\"qtls.urls\")),\n    path(\"api/pathways/\", include(\"pathways.urls\")),\n    path(\"api/ontologies/\", include(\"ontologies.urls\")),\n    path(\"api/llm/\", include(\"llm.urls\")),",
+        "detail": "config.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "config.wsgi",
+        "description": "config.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "config.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "CoreConfig",
+        "kind": 6,
+        "importPath": "core.apps",
+        "description": "core.apps",
+        "peekOfCode": "class CoreConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"core\"",
+        "detail": "core.apps",
+        "documentation": {}
+    },
+    {
+        "label": "agrold_exception_handler",
+        "kind": 2,
+        "importPath": "core.exceptions",
+        "description": "core.exceptions",
+        "peekOfCode": "def agrold_exception_handler(exc, context):\n    if isinstance(exc, SparqlQueryError):\n        return Response(\n            {\"error\": \"SPARQL query failed\", \"detail\": str(exc)},\n            status=502,\n        )\n    return exception_handler(exc, context)",
+        "detail": "core.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "get_publications_from_europepmc_by_label",
+        "kind": 2,
+        "importPath": "core.external_services",
+        "description": "core.external_services",
+        "peekOfCode": "def get_publications_from_europepmc_by_label(label: str) -> list[dict]:\n    \"\"\"Search EuropePMC for publications referencing the given label.\n    Mirrors ExternalServices.getPublicationsFromEBIEuropePMCByLabel, but\n    consumes EuropePMC's native JSON response instead of hand-parsing XML.\n    \"\"\"\n    params = {\n        \"query\": f\"{label} sort_date:y\",\n        \"pageSize\": 100,\n        \"format\": \"json\",\n    }",
+        "detail": "core.external_services",
+        "documentation": {}
+    },
+    {
+        "label": "sort_publications_by_year_desc",
+        "kind": 2,
+        "importPath": "core.external_services",
+        "description": "core.external_services",
+        "peekOfCode": "def sort_publications_by_year_desc(publications: list[dict]) -> list[dict]:\n    \"\"\"Mirrors Utils.sortJSONArray(..., \"pubYear\", false).\"\"\"\n    return sorted(publications, key=lambda pub: pub.get(\"pubYear\", \"\"), reverse=True)\ndef get_onto_terms_associated_with_gene_gramene(gene_id: str) -> list[dict]:\n    \"\"\"Fetch GO/PO/TO annotations for a gene from the Gramene REST API.\n    Mirrors ExternalServices.getOntoTermsAssociatedWithGene.\n    \"\"\"\n    url = settings.GRAMENE_GENES_URL\n    params = {\"q\": gene_id, \"bedFeature\": \"gene\", \"bedCombiner\": \"canonical\"}\n    try:",
+        "detail": "core.external_services",
+        "documentation": {}
+    },
+    {
+        "label": "get_onto_terms_associated_with_gene_gramene",
+        "kind": 2,
+        "importPath": "core.external_services",
+        "description": "core.external_services",
+        "peekOfCode": "def get_onto_terms_associated_with_gene_gramene(gene_id: str) -> list[dict]:\n    \"\"\"Fetch GO/PO/TO annotations for a gene from the Gramene REST API.\n    Mirrors ExternalServices.getOntoTermsAssociatedWithGene.\n    \"\"\"\n    url = settings.GRAMENE_GENES_URL\n    params = {\"q\": gene_id, \"bedFeature\": \"gene\", \"bedCombiner\": \"canonical\"}\n    try:\n        response = requests.get(url, params=params, timeout=REQUEST_TIMEOUT)\n        response.raise_for_status()\n    except requests.RequestException:",
+        "detail": "core.external_services",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "core.external_services",
+        "description": "core.external_services",
+        "peekOfCode": "logger = logging.getLogger(__name__)\nREQUEST_TIMEOUT = 15\ndef get_publications_from_europepmc_by_label(label: str) -> list[dict]:\n    \"\"\"Search EuropePMC for publications referencing the given label.\n    Mirrors ExternalServices.getPublicationsFromEBIEuropePMCByLabel, but\n    consumes EuropePMC's native JSON response instead of hand-parsing XML.\n    \"\"\"\n    params = {\n        \"query\": f\"{label} sort_date:y\",\n        \"pageSize\": 100,",
+        "detail": "core.external_services",
+        "documentation": {}
+    },
+    {
+        "label": "REQUEST_TIMEOUT",
+        "kind": 5,
+        "importPath": "core.external_services",
+        "description": "core.external_services",
+        "peekOfCode": "REQUEST_TIMEOUT = 15\ndef get_publications_from_europepmc_by_label(label: str) -> list[dict]:\n    \"\"\"Search EuropePMC for publications referencing the given label.\n    Mirrors ExternalServices.getPublicationsFromEBIEuropePMCByLabel, but\n    consumes EuropePMC's native JSON response instead of hand-parsing XML.\n    \"\"\"\n    params = {\n        \"query\": f\"{label} sort_date:y\",\n        \"pageSize\": 100,\n        \"format\": \"json\",",
+        "detail": "core.external_services",
+        "documentation": {}
+    },
+    {
+        "label": "get_pagination",
+        "kind": 2,
+        "importPath": "core.pagination",
+        "description": "core.pagination",
+        "peekOfCode": "def get_pagination(request) -> tuple[int, int]:\n    try:\n        page = int(request.query_params.get(\"page\", DEFAULT_PAGE))\n    except ValueError:\n        page = DEFAULT_PAGE\n    try:\n        page_size = int(request.query_params.get(\"pageSize\", DEFAULT_PAGE_SIZE))\n    except ValueError:\n        page_size = DEFAULT_PAGE_SIZE\n    return page, page_size",
+        "detail": "core.pagination",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_PAGE",
+        "kind": 5,
+        "importPath": "core.pagination",
+        "description": "core.pagination",
+        "peekOfCode": "DEFAULT_PAGE = 0\nDEFAULT_PAGE_SIZE = 10\ndef get_pagination(request) -> tuple[int, int]:\n    try:\n        page = int(request.query_params.get(\"page\", DEFAULT_PAGE))\n    except ValueError:\n        page = DEFAULT_PAGE\n    try:\n        page_size = int(request.query_params.get(\"pageSize\", DEFAULT_PAGE_SIZE))\n    except ValueError:",
+        "detail": "core.pagination",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_PAGE_SIZE",
+        "kind": 5,
+        "importPath": "core.pagination",
+        "description": "core.pagination",
+        "peekOfCode": "DEFAULT_PAGE_SIZE = 10\ndef get_pagination(request) -> tuple[int, int]:\n    try:\n        page = int(request.query_params.get(\"page\", DEFAULT_PAGE))\n    except ValueError:\n        page = DEFAULT_PAGE\n    try:\n        page_size = int(request.query_params.get(\"pageSize\", DEFAULT_PAGE_SIZE))\n    except ValueError:\n        page_size = DEFAULT_PAGE_SIZE",
+        "detail": "core.pagination",
+        "documentation": {}
+    },
+    {
+        "label": "SparqlQueryError",
+        "kind": 6,
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "peekOfCode": "class SparqlQueryError(Exception):\n    \"\"\"Raised when a query against the Virtuoso endpoint fails.\"\"\"\n# Bounds (seconds) for a client-supplied timeout override (e.g. from the\n# SPARQL Editor's \"Execution timeout\" field via the /api/sparql/ proxy).\n# Prevents an arbitrarily large value from tying up a worker indefinitely.\nMIN_QUERY_TIMEOUT = 1\nMAX_QUERY_TIMEOUT = 60\ndef clamp_timeout_ms(value: str | None, default_seconds: int) -> int:\n    \"\"\"Parse a client-supplied timeout (milliseconds) into clamped seconds.\"\"\"\n    if not value:",
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "clamp_timeout_ms",
+        "kind": 2,
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "peekOfCode": "def clamp_timeout_ms(value: str | None, default_seconds: int) -> int:\n    \"\"\"Parse a client-supplied timeout (milliseconds) into clamped seconds.\"\"\"\n    if not value:\n        return default_seconds\n    try:\n        seconds = int(value) / 1000\n    except (TypeError, ValueError):\n        return default_seconds\n    return max(MIN_QUERY_TIMEOUT, min(MAX_QUERY_TIMEOUT, round(seconds)))\ndef _client(endpoint: str | None = None, timeout: int | None = None) -> SPARQLWrapper:",
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "flatten_bindings",
+        "kind": 2,
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "peekOfCode": "def flatten_bindings(sparql_json_results: dict) -> list[dict]:\n    \"\"\"Turn a SPARQL-JSON results document into a list of flat {var: value} dicts.\"\"\"\n    bindings = sparql_json_results.get(\"results\", {}).get(\"bindings\", [])\n    return [{key: cell.get(\"value\") for key, cell in row.items()} for row in bindings]\ndef execute_select(query: str, endpoint: str | None = None, timeout: int | None = None) -> list[dict]:\n    \"\"\"Run a SPARQL SELECT query and return flattened result rows.\"\"\"\n    wrapper = _client(endpoint, timeout)\n    wrapper.setQuery(query)\n    try:\n        results = wrapper.query().convert()",
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "execute_select",
+        "kind": 2,
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "peekOfCode": "def execute_select(query: str, endpoint: str | None = None, timeout: int | None = None) -> list[dict]:\n    \"\"\"Run a SPARQL SELECT query and return flattened result rows.\"\"\"\n    wrapper = _client(endpoint, timeout)\n    wrapper.setQuery(query)\n    try:\n        results = wrapper.query().convert()\n    except Exception as exc:  # network errors, timeouts, malformed queries, ...\n        raise SparqlQueryError(str(exc)) from exc\n    return flatten_bindings(results)\ndef execute_select_raw(query: str, endpoint: str | None = None, timeout: int | None = None) -> dict:",
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "execute_select_raw",
+        "kind": 2,
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "peekOfCode": "def execute_select_raw(query: str, endpoint: str | None = None, timeout: int | None = None) -> dict:\n    \"\"\"Run a SPARQL SELECT query and return the raw SPARQL-JSON results document.\n    Used by the /api/sparql/ passthrough proxy, which mirrors the original\n    Java API's open query endpoint.\n    \"\"\"\n    wrapper = _client(endpoint, timeout)\n    wrapper.setQuery(query)\n    try:\n        return wrapper.query().convert()\n    except Exception as exc:",
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "add_limit_offset",
+        "kind": 2,
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "peekOfCode": "def add_limit_offset(query: str, page: int, page_size: int) -> str:\n    \"\"\"Append LIMIT/OFFSET clauses. Mirrors Utils.addLimitAndOffset: page is a\n    page *number*, not a raw offset — offset = page_size * page.\"\"\"\n    if page_size and page_size > 0:\n        query += f\"\\nLIMIT {page_size}\"\n        if page >= 0:\n            query += f\"\\nOFFSET {page_size * page}\"\n    return query\ndef types_union(subject: str, type_uris: Iterable[str]) -> str:\n    \"\"\"Build a `{subject a <type>} UNION {subject a <type2>} ...` block.",
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "types_union",
+        "kind": 2,
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "peekOfCode": "def types_union(subject: str, type_uris: Iterable[str]) -> str:\n    \"\"\"Build a `{subject a <type>} UNION {subject a <type2>} ...` block.\n    Mirrors Utils.getTypesOptionsAsSparql — a workaround for AgroLD entities\n    being typed under more than one URI across data sources.\n    \"\"\"\n    clauses = [f\"{{{subject} a <{uri}>}}\\n\" for uri in type_uris]\n    return \"union\\n\".join(clauses)\ndef keyword_search(keyword: str, type_uris: Iterable[str], page: int, page_size: int) -> list[dict]:\n    \"\"\"Full-text keyword search across entities restricted to the given rdf:types.\n    Mirrors Utils.getEntitiesByKeyWord: uses Virtuoso's free-text index",
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "keyword_search",
+        "kind": 2,
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "peekOfCode": "def keyword_search(keyword: str, type_uris: Iterable[str], page: int, page_size: int) -> list[dict]:\n    \"\"\"Full-text keyword search across entities restricted to the given rdf:types.\n    Mirrors Utils.getEntitiesByKeyWord: uses Virtuoso's free-text index\n    (bif:contains) with a boolean AND over whitespace-separated tokens,\n    ranked by Virtuoso's IRI rank.\n    \"\"\"\n    tokens = keyword.split()\n    keywords_query = \"'(\\\"\" + '\" AND \"'.join(t.upper() for t in tokens) + \"\\\")'\"\n    keywords_list = \"('\" + \"', '\".join(t.upper() for t in tokens) + \"')\"\n    query = (",
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "MIN_QUERY_TIMEOUT",
+        "kind": 5,
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "peekOfCode": "MIN_QUERY_TIMEOUT = 1\nMAX_QUERY_TIMEOUT = 60\ndef clamp_timeout_ms(value: str | None, default_seconds: int) -> int:\n    \"\"\"Parse a client-supplied timeout (milliseconds) into clamped seconds.\"\"\"\n    if not value:\n        return default_seconds\n    try:\n        seconds = int(value) / 1000\n    except (TypeError, ValueError):\n        return default_seconds",
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "MAX_QUERY_TIMEOUT",
+        "kind": 5,
+        "importPath": "core.sparql_client",
+        "description": "core.sparql_client",
+        "peekOfCode": "MAX_QUERY_TIMEOUT = 60\ndef clamp_timeout_ms(value: str | None, default_seconds: int) -> int:\n    \"\"\"Parse a client-supplied timeout (milliseconds) into clamped seconds.\"\"\"\n    if not value:\n        return default_seconds\n    try:\n        seconds = int(value) / 1000\n    except (TypeError, ValueError):\n        return default_seconds\n    return max(MIN_QUERY_TIMEOUT, min(MAX_QUERY_TIMEOUT, round(seconds)))",
+        "detail": "core.sparql_client",
+        "documentation": {}
+    },
+    {
+        "label": "api_root",
+        "kind": 2,
+        "importPath": "core.views",
+        "description": "core.views",
+        "peekOfCode": "def api_root(request):\n    \"\"\"API index — replaces the old `/api/` -> api-doc.jsp redirect.\"\"\"\n    return Response(\n        {\n            \"name\": \"AgroLD API\",\n            \"version\": settings.API_VERSION,\n            \"instance\": settings.AGROLD_INSTANCE,\n            \"faceted_search_url\": settings.FACETED_SEARCH_URL,\n            \"rel_finder_url\": settings.RF_LINK,\n            \"endpoints\": {",
+        "detail": "core.views",
+        "documentation": {}
+    },
+    {
+        "label": "GenesConfig",
+        "kind": 6,
+        "importPath": "genes.apps",
+        "description": "genes.apps",
+        "peekOfCode": "class GenesConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"genes\"",
+        "detail": "genes.apps",
+        "documentation": {}
+    },
+    {
+        "label": "get_genes",
+        "kind": 2,
+        "importPath": "genes.dao",
+        "description": "genes.dao",
+        "peekOfCode": "def get_genes(page: int, page_size: int) -> list[dict]:\n    query = (\n        \"prefix\tagrold:<http://purl.agrold.org/vocabulary/> \\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"SELECT distinct ?gene ?geneId ?geneName ?geneDescription\\n\"\n        \"WHERE {\\n\"\n        \"  ?gene rdfs:label ?geneName.\\n\"\n        \"  ?gene agrold:description ?geneDescription.          \\n\"\n        f\"{types_union('?gene', TYPE_URIS)}\"\n        \"  BIND(REPLACE(str(?gene), '^.*(#|/)', \\\"\\\") AS ?geneId) .\\n\"",
+        "detail": "genes.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_genes_by_keyword",
+        "kind": 2,
+        "importPath": "genes.dao",
+        "description": "genes.dao",
+        "peekOfCode": "def get_genes_by_keyword(keyword: str, page: int, page_size: int) -> list[dict]:\n    return keyword_search(keyword, TYPE_URIS, page, page_size)\ndef get_genes_by_pathway_id(pathway_id: str, page: int, page_size: int) -> list[dict]:\n    \"\"\"Genes participating in a pathway given its local name (Id).\"\"\"\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"PREFIX vocab:<vocabulary/>\\n\"\n        \"PREFIX graph:<gramene.cyc>\\n\"",
+        "detail": "genes.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_genes_by_pathway_id",
+        "kind": 2,
+        "importPath": "genes.dao",
+        "description": "genes.dao",
+        "peekOfCode": "def get_genes_by_pathway_id(pathway_id: str, page: int, page_size: int) -> list[dict]:\n    \"\"\"Genes participating in a pathway given its local name (Id).\"\"\"\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"PREFIX vocab:<vocabulary/>\\n\"\n        \"PREFIX graph:<gramene.cyc>\\n\"\n        \"PREFIX taxonGraph:<ncbitaxon>\\n\"\n        \"SELECT DISTINCT ?geneId ?gene_name ?taxon (str(?taxon_name) AS ?taxon_name) (?gene AS ?URI)\\n\"",
+        "detail": "genes.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_genes_encoding_protein",
+        "kind": 2,
+        "importPath": "genes.dao",
+        "description": "genes.dao",
+        "peekOfCode": "def get_genes_encoding_protein(protein_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX vocab: <vocabulary/>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        f\"PREFIX protein: <http://purl.uniprot.org/uniprot/{protein_id}>\\n\"\n        \"SELECT DISTINCT ?Id group_concat(distinct ?Name;separator=\\\"; \\\") as ?Names \"\n        \"group_concat(distinct ?d;separator=\\\"; \\\") as ?Description (?gene AS ?URI)\\n\"\n        \"WHERE{\\n\"\n        \"  ?gene vocab:encodes protein:.\\n\"",
+        "detail": "genes.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_cds_gene",
+        "kind": 2,
+        "importPath": "genes.dao",
+        "description": "genes.dao",
+        "peekOfCode": "def get_cds_gene(page: int, page_size: int) -> list[dict]:\n    \"\"\"Count of CDS features per mRNA. Experimental/unfinished in the\n    original app (flagged as WIP in its README); kept for parity.\"\"\"\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"PREFIX obo:<http://purl.obolibrary.org/obo/>\\n\"\n        \"PREFIX uniprot:<http://purl.uniprot.org/uniprot/>\\n\"\n        \"PREFIX vocab:<vocabulary/>\\n\"",
+        "detail": "genes.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_genes_by_locus",
+        "kind": 2,
+        "importPath": "genes.dao",
+        "description": "genes.dao",
+        "peekOfCode": "def get_genes_by_locus(\n    chromosome_num: str, chromosome_start: str, chromosome_end: str, page: int, page_size: int\n) -> list[dict]:\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"PREFIX vocab: <vocabulary/>\\n\"\n        \"PREFIX obo:<http://purl.obolibrary.org/obo/> \\n\"\n        \"PREFIX chrom: <chromosome/>\\n\"",
+        "detail": "genes.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_gene_labels",
+        "kind": 2,
+        "importPath": "genes.dao",
+        "description": "genes.dao",
+        "peekOfCode": "def get_gene_labels(gene_id: str) -> set[str]:\n    query = (\n        \"prefix\tagrold:<http://purl.agrold.org/vocabulary/> \\n\"\n        \"PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"SELECT distinct ?label\\n\"\n        \"WHERE {\\n\"\n        \"    ?gene rdfs:label ?label.\\n\"\n        f\"{types_union('?gene', TYPE_URIS)}\"\n        \"    BIND(REPLACE(str(?gene), '^.*(#|/)', \\\"\\\") AS ?id) .\\n\"",
+        "detail": "genes.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_publications_of_gene_by_id",
+        "kind": 2,
+        "importPath": "genes.dao",
+        "description": "genes.dao",
+        "peekOfCode": "def get_publications_of_gene_by_id(gene_id: str, page: int, page_size: int) -> list[dict]:\n    \"\"\"Publications referencing a gene, via a dedicated RAP-DB cross-reference query.\"\"\"\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"PREFIX graph:<rapdb>\\n\"\n        \"PREFIX vocab:<vocabulary/>\\n\"\n        \"PREFIX res:<resource/>\\n\"\n        \"\\n\"",
+        "detail": "genes.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_publications_of_gene_by_label",
+        "kind": 2,
+        "importPath": "genes.dao",
+        "description": "genes.dao",
+        "peekOfCode": "def get_publications_of_gene_by_label(gene_id: str) -> list[dict]:\n    \"\"\"Publications for a gene, fanned out across EuropePMC by each of its\n    known labels. Mirrors the (originally commented-out) label-based path\n    in GeneDAO.getPublicationsOfGeneById.\"\"\"\n    results: list[dict] = []\n    for label in get_gene_labels(gene_id):\n        results.extend(get_publications_from_europepmc_by_label(label))\n    return sort_publications_by_year_desc(results)\ndef get_see_also_by_uri(gene_uri: str, page: int, page_size: int) -> list[dict]:\n    query = (",
+        "detail": "genes.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_see_also_by_uri",
+        "kind": 2,
+        "importPath": "genes.dao",
+        "description": "genes.dao",
+        "peekOfCode": "def get_see_also_by_uri(gene_uri: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"SELECT distinct ?link\\n\"\n        \"WHERE { \\n\"\n        f\"  <{gene_uri}> rdfs:seeAlso|<vocabulary/has_dbxref> ?link .\\n\"\n        f\"{types_union(f'<{gene_uri}>', TYPE_URIS)}\"\n        \"} \"",
+        "detail": "genes.dao",
+        "documentation": {}
+    },
+    {
+        "label": "GENE_TYPE_URI",
+        "kind": 5,
+        "importPath": "genes.dao",
+        "description": "genes.dao",
+        "peekOfCode": "GENE_TYPE_URI = \"http://purl.agrold.org/resource/Gene\"\nGENE_TYPE_URI2 = \"http://purl.agrold.org/vocabulary/Gene\"\nTYPE_URIS = [GENE_TYPE_URI, GENE_TYPE_URI2]\ndef get_genes(page: int, page_size: int) -> list[dict]:\n    query = (\n        \"prefix\tagrold:<http://purl.agrold.org/vocabulary/> \\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"SELECT distinct ?gene ?geneId ?geneName ?geneDescription\\n\"\n        \"WHERE {\\n\"\n        \"  ?gene rdfs:label ?geneName.\\n\"",
+        "detail": "genes.dao",
+        "documentation": {}
+    },
+    {
+        "label": "GENE_TYPE_URI2",
+        "kind": 5,
+        "importPath": "genes.dao",
+        "description": "genes.dao",
+        "peekOfCode": "GENE_TYPE_URI2 = \"http://purl.agrold.org/vocabulary/Gene\"\nTYPE_URIS = [GENE_TYPE_URI, GENE_TYPE_URI2]\ndef get_genes(page: int, page_size: int) -> list[dict]:\n    query = (\n        \"prefix\tagrold:<http://purl.agrold.org/vocabulary/> \\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"SELECT distinct ?gene ?geneId ?geneName ?geneDescription\\n\"\n        \"WHERE {\\n\"\n        \"  ?gene rdfs:label ?geneName.\\n\"\n        \"  ?gene agrold:description ?geneDescription.          \\n\"",
+        "detail": "genes.dao",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_URIS",
+        "kind": 5,
+        "importPath": "genes.dao",
+        "description": "genes.dao",
+        "peekOfCode": "TYPE_URIS = [GENE_TYPE_URI, GENE_TYPE_URI2]\ndef get_genes(page: int, page_size: int) -> list[dict]:\n    query = (\n        \"prefix\tagrold:<http://purl.agrold.org/vocabulary/> \\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"SELECT distinct ?gene ?geneId ?geneName ?geneDescription\\n\"\n        \"WHERE {\\n\"\n        \"  ?gene rdfs:label ?geneName.\\n\"\n        \"  ?gene agrold:description ?geneDescription.          \\n\"\n        f\"{types_union('?gene', TYPE_URIS)}\"",
+        "detail": "genes.dao",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "genes.urls",
+        "description": "genes.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.list_genes, name=\"genes-list\"),\n    path(\"by-keyword/\", views.genes_by_keyword, name=\"genes-by-keyword\"),\n    path(\"encoding-protein/\", views.genes_encoding_protein, name=\"genes-encoding-protein\"),\n    path(\"by-locus/\", views.genes_by_locus, name=\"genes-by-locus\"),\n    path(\"participating-in-pathway/\", views.genes_participating_in_pathway, name=\"genes-participating-in-pathway\"),\n    path(\"number-of-cds/\", views.number_of_cds, name=\"genes-number-of-cds\"),\n    path(\"publications/\", views.publications_by_gene_id, name=\"genes-publications\"),\n    path(\"see-also/\", views.see_also, name=\"genes-see-also\"),\n]",
+        "detail": "genes.urls",
+        "documentation": {}
+    },
+    {
+        "label": "list_genes",
+        "kind": 2,
+        "importPath": "genes.views",
+        "description": "genes.views",
+        "peekOfCode": "def list_genes(request):\n    page, page_size = get_pagination(request)\n    return Response(dao.get_genes(page, page_size))\n@api_view([\"GET\"])\ndef genes_by_keyword(request):\n    page, page_size = get_pagination(request)\n    keyword = request.query_params.get(\"keyword\", \"\")\n    return Response(dao.get_genes_by_keyword(keyword, page, page_size))\n@api_view([\"GET\"])\ndef genes_encoding_protein(request):",
+        "detail": "genes.views",
+        "documentation": {}
+    },
+    {
+        "label": "genes_by_keyword",
+        "kind": 2,
+        "importPath": "genes.views",
+        "description": "genes.views",
+        "peekOfCode": "def genes_by_keyword(request):\n    page, page_size = get_pagination(request)\n    keyword = request.query_params.get(\"keyword\", \"\")\n    return Response(dao.get_genes_by_keyword(keyword, page, page_size))\n@api_view([\"GET\"])\ndef genes_encoding_protein(request):\n    page, page_size = get_pagination(request)\n    protein_id = request.query_params.get(\"proteinId\", \"\")\n    return Response(dao.get_genes_encoding_protein(protein_id, page, page_size))\n@api_view([\"GET\"])",
+        "detail": "genes.views",
+        "documentation": {}
+    },
+    {
+        "label": "genes_encoding_protein",
+        "kind": 2,
+        "importPath": "genes.views",
+        "description": "genes.views",
+        "peekOfCode": "def genes_encoding_protein(request):\n    page, page_size = get_pagination(request)\n    protein_id = request.query_params.get(\"proteinId\", \"\")\n    return Response(dao.get_genes_encoding_protein(protein_id, page, page_size))\n@api_view([\"GET\"])\ndef genes_by_locus(request):\n    page, page_size = get_pagination(request)\n    return Response(\n        dao.get_genes_by_locus(\n            request.query_params.get(\"chromosomeNum\", \"\"),",
+        "detail": "genes.views",
+        "documentation": {}
+    },
+    {
+        "label": "genes_by_locus",
+        "kind": 2,
+        "importPath": "genes.views",
+        "description": "genes.views",
+        "peekOfCode": "def genes_by_locus(request):\n    page, page_size = get_pagination(request)\n    return Response(\n        dao.get_genes_by_locus(\n            request.query_params.get(\"chromosomeNum\", \"\"),\n            request.query_params.get(\"chromosomeStart\", \"\"),\n            request.query_params.get(\"chromosomeEnd\", \"\"),\n            page,\n            page_size,\n        )",
+        "detail": "genes.views",
+        "documentation": {}
+    },
+    {
+        "label": "genes_participating_in_pathway",
+        "kind": 2,
+        "importPath": "genes.views",
+        "description": "genes.views",
+        "peekOfCode": "def genes_participating_in_pathway(request):\n    page, page_size = get_pagination(request)\n    pathway_id = request.query_params.get(\"pathwayId\", \"\")\n    return Response(dao.get_genes_by_pathway_id(pathway_id, page, page_size))\n@api_view([\"GET\"])\ndef number_of_cds(request):\n    page, page_size = get_pagination(request)\n    return Response(dao.get_cds_gene(page, page_size))\n@api_view([\"GET\"])\ndef publications_by_gene_id(request):",
+        "detail": "genes.views",
+        "documentation": {}
+    },
+    {
+        "label": "number_of_cds",
+        "kind": 2,
+        "importPath": "genes.views",
+        "description": "genes.views",
+        "peekOfCode": "def number_of_cds(request):\n    page, page_size = get_pagination(request)\n    return Response(dao.get_cds_gene(page, page_size))\n@api_view([\"GET\"])\ndef publications_by_gene_id(request):\n    page, page_size = get_pagination(request)\n    gene_id = request.query_params.get(\"geneId\", \"\")\n    return Response(dao.get_publications_of_gene_by_id(gene_id, page, page_size))\n@api_view([\"GET\"])\ndef see_also(request):",
+        "detail": "genes.views",
+        "documentation": {}
+    },
+    {
+        "label": "publications_by_gene_id",
+        "kind": 2,
+        "importPath": "genes.views",
+        "description": "genes.views",
+        "peekOfCode": "def publications_by_gene_id(request):\n    page, page_size = get_pagination(request)\n    gene_id = request.query_params.get(\"geneId\", \"\")\n    return Response(dao.get_publications_of_gene_by_id(gene_id, page, page_size))\n@api_view([\"GET\"])\ndef see_also(request):\n    page, page_size = get_pagination(request)\n    gene_uri = request.query_params.get(\"geneUri\", \"\")\n    return Response(dao.get_see_also_by_uri(gene_uri, page, page_size))",
+        "detail": "genes.views",
+        "documentation": {}
+    },
+    {
+        "label": "see_also",
+        "kind": 2,
+        "importPath": "genes.views",
+        "description": "genes.views",
+        "peekOfCode": "def see_also(request):\n    page, page_size = get_pagination(request)\n    gene_uri = request.query_params.get(\"geneUri\", \"\")\n    return Response(dao.get_see_also_by_uri(gene_uri, page, page_size))",
+        "detail": "genes.views",
+        "documentation": {}
+    },
+    {
+        "label": "GraphsConfig",
+        "kind": 6,
+        "importPath": "graphs.apps",
+        "description": "graphs.apps",
+        "peekOfCode": "class GraphsConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"graphs\"",
+        "detail": "graphs.apps",
+        "documentation": {}
+    },
+    {
+        "label": "get_iri_description",
+        "kind": 2,
+        "importPath": "graphs.dao",
+        "description": "graphs.dao",
+        "peekOfCode": "def get_iri_description(iri: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://www.southgreen.fr/agrold/>\\n\"\n        \"PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"SELECT ?graph ?property ?hasValue ?isValueOf \"\n        \"(group_concat(distinct concat(?hasValueType, ?isValueOfType) ;separator=\\\"; \\\") as ?type)\\n\"\n        \"WHERE {\\n\"\n        f\"  values (?q){{(<{iri}>)}}\\n\"\n        \"  {\\n\"",
+        "detail": "graphs.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_iri_description_for_visualization",
+        "kind": 2,
+        "importPath": "graphs.dao",
+        "description": "graphs.dao",
+        "peekOfCode": "def get_iri_description_for_visualization(iri: str, page: int, page_size: int) -> list[dict]:\n    \"\"\"Describe an IRI shaped for KnetMaps graph visualization: separate\n    has-value / is-value-of passes, concatenated.\"\"\"\n    query_has_value = (\n        \"BASE <http://www.southgreen.fr/agrold/>\\n\"\n        \"PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"SELECT ?graph ?property ?hasValue ?isValueOf (group_concat(distinct concat(?hasValueType) ;separator=\\\"; \\\") as ?type)\\n\"\n        \"WHERE {\\n\"\n        f\"values (?q){{(<{iri}>)}}\\n\"",
+        "detail": "graphs.dao",
+        "documentation": {}
+    },
+    {
+        "label": "list_graphs",
+        "kind": 2,
+        "importPath": "graphs.dao",
+        "description": "graphs.dao",
+        "peekOfCode": "def list_graphs(page: int, page_size: int) -> list[dict]:\n    # Deliberately no FILTER (the legacy Java query's namespace filter, \"\n    # http://www.southgreen.fr/agrold/\", no longer matches AgroLD's actual\n    # graph URIs under purl.agrold.org anyway) and no ORDER BY: on this\n    # Virtuoso instance, either clause makes the query planner abandon a\n    # near-instant graph-enumeration shortcut in favor of a full quad-store\n    # scan that reliably exceeds the query timeout. The graph count is small\n    # (a few dozen), so sort and paginate in Python instead.\n    query = (\n        \"SELECT distinct ?graph\\n\"",
+        "detail": "graphs.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_predicates",
+        "kind": 2,
+        "importPath": "graphs.dao",
+        "description": "graphs.dao",
+        "peekOfCode": "def get_predicates(graph_local_name: str | None, page: int, page_size: int) -> list[dict]:\n    # Projecting a BIND-computed ?LocalName alongside ?relation in the\n    # SELECT DISTINCT list (as the original did) makes Virtuoso fall back to\n    # a full quad-store scan when the query isn't scoped to one graph —\n    # 20s+, timing out. Projecting only ?relation keeps its fast built-in\n    # \"distinct predicate\" path (confirmed live, ~6s worst case across the\n    # whole store, near-instant when scoped to one graph); LocalName is then\n    # just a string op, computed in Python instead.\n    has_graph = bool(graph_local_name)\n    query = (",
+        "detail": "graphs.dao",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "graphs.urls",
+        "description": "graphs.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"graphs/\", views.list_graphs, name=\"graphs-list\"),\n    path(\"describe/\", views.describe, name=\"graphs-describe\"),\n    path(\"describe4visualization/\", views.describe4visualization, name=\"graphs-describe4visualization\"),\n    path(\"predicates/\", views.predicates, name=\"graphs-predicates\"),\n    path(\"sparql/\", views.sparql_proxy, name=\"graphs-sparql-proxy\"),\n]",
+        "detail": "graphs.urls",
+        "documentation": {}
+    },
+    {
+        "label": "list_graphs",
+        "kind": 2,
+        "importPath": "graphs.views",
+        "description": "graphs.views",
+        "peekOfCode": "def list_graphs(request):\n    page, page_size = get_pagination(request)\n    return Response(dao.list_graphs(page, page_size))\n@api_view([\"GET\"])\ndef describe(request):\n    page, page_size = get_pagination(request)\n    uri = request.query_params.get(\"uri\", \"\")\n    return Response(dao.get_iri_description(uri, page, page_size))\n@api_view([\"GET\"])\ndef describe4visualization(request):",
+        "detail": "graphs.views",
+        "documentation": {}
+    },
+    {
+        "label": "describe",
+        "kind": 2,
+        "importPath": "graphs.views",
+        "description": "graphs.views",
+        "peekOfCode": "def describe(request):\n    page, page_size = get_pagination(request)\n    uri = request.query_params.get(\"uri\", \"\")\n    return Response(dao.get_iri_description(uri, page, page_size))\n@api_view([\"GET\"])\ndef describe4visualization(request):\n    page, page_size = get_pagination(request)\n    uri = request.query_params.get(\"uri\", \"\")\n    return Response(dao.get_iri_description_for_visualization(uri, page, page_size))\n@api_view([\"GET\"])",
+        "detail": "graphs.views",
+        "documentation": {}
+    },
+    {
+        "label": "describe4visualization",
+        "kind": 2,
+        "importPath": "graphs.views",
+        "description": "graphs.views",
+        "peekOfCode": "def describe4visualization(request):\n    page, page_size = get_pagination(request)\n    uri = request.query_params.get(\"uri\", \"\")\n    return Response(dao.get_iri_description_for_visualization(uri, page, page_size))\n@api_view([\"GET\"])\ndef predicates(request):\n    page, page_size = get_pagination(request)\n    graph_local_name = request.query_params.get(\"graphLocalName\")\n    return Response(dao.get_predicates(graph_local_name, page, page_size))\n@api_view([\"GET\"])",
+        "detail": "graphs.views",
+        "documentation": {}
+    },
+    {
+        "label": "predicates",
+        "kind": 2,
+        "importPath": "graphs.views",
+        "description": "graphs.views",
+        "peekOfCode": "def predicates(request):\n    page, page_size = get_pagination(request)\n    graph_local_name = request.query_params.get(\"graphLocalName\")\n    return Response(dao.get_predicates(graph_local_name, page, page_size))\n@api_view([\"GET\"])\ndef sparql_proxy(request):\n    \"\"\"Raw SPARQL SELECT passthrough against the Virtuoso endpoint.\n    Mirrors API.sparql: an open query proxy with no validation, kept for\n    parity with the SPARQL Editor / query-pattern features in the frontend.\n    \"\"\"",
+        "detail": "graphs.views",
+        "documentation": {}
+    },
+    {
+        "label": "sparql_proxy",
+        "kind": 2,
+        "importPath": "graphs.views",
+        "description": "graphs.views",
+        "peekOfCode": "def sparql_proxy(request):\n    \"\"\"Raw SPARQL SELECT passthrough against the Virtuoso endpoint.\n    Mirrors API.sparql: an open query proxy with no validation, kept for\n    parity with the SPARQL Editor / query-pattern features in the frontend.\n    \"\"\"\n    query = request.query_params.get(\"query\", \"\")\n    if not query:\n        return Response({\"error\": \"Missing required 'query' parameter\"}, status=400)\n    timeout = clamp_timeout_ms(request.query_params.get(\"timeout\"), settings.SPARQL_QUERY_TIMEOUT)\n    return Response(execute_select_raw(query, timeout=timeout))",
+        "detail": "graphs.views",
+        "documentation": {}
+    },
+    {
+        "label": "LlmConfig",
+        "kind": 6,
+        "importPath": "llm.apps",
+        "description": "llm.apps",
+        "peekOfCode": "class LlmConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"llm\"",
+        "detail": "llm.apps",
+        "documentation": {}
+    },
+    {
+        "label": "LlmNotConfiguredError",
+        "kind": 6,
+        "importPath": "llm.services",
+        "description": "llm.services",
+        "peekOfCode": "class LlmNotConfiguredError(Exception):\n    pass\ndef generate_reply(message: str, history: list[dict] | None = None) -> str:\n    provider = settings.LLM_PROVIDER\n    if provider == \"anthropic\":\n        return _generate_anthropic(message, history or [])\n    if provider == \"openai\":\n        return _generate_openai(message, history or [])\n    raise LlmNotConfiguredError(\n        \"No LLM provider configured. Set LLM_PROVIDER=anthropic|openai and LLM_API_KEY.\"",
+        "detail": "llm.services",
+        "documentation": {}
+    },
+    {
+        "label": "generate_reply",
+        "kind": 2,
+        "importPath": "llm.services",
+        "description": "llm.services",
+        "peekOfCode": "def generate_reply(message: str, history: list[dict] | None = None) -> str:\n    provider = settings.LLM_PROVIDER\n    if provider == \"anthropic\":\n        return _generate_anthropic(message, history or [])\n    if provider == \"openai\":\n        return _generate_openai(message, history or [])\n    raise LlmNotConfiguredError(\n        \"No LLM provider configured. Set LLM_PROVIDER=anthropic|openai and LLM_API_KEY.\"\n    )\ndef _generate_anthropic(message: str, history: list[dict]) -> str:",
+        "detail": "llm.services",
+        "documentation": {}
+    },
+    {
+        "label": "SYSTEM_PROMPT",
+        "kind": 5,
+        "importPath": "llm.services",
+        "description": "llm.services",
+        "peekOfCode": "SYSTEM_PROMPT = (\n    \"You are the AgroLD assistant. AgroLD is a knowledge graph about plant \"\n    \"genomics and agronomy (genes, proteins, QTLs, pathways, ontology terms) \"\n    \"queryable via SPARQL against a Virtuoso triplestore. Help users write \"\n    \"and understand SPARQL queries and explore AgroLD data.\"\n)\nclass LlmNotConfiguredError(Exception):\n    pass\ndef generate_reply(message: str, history: list[dict] | None = None) -> str:\n    provider = settings.LLM_PROVIDER",
+        "detail": "llm.services",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "llm.urls",
+        "description": "llm.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.chat, name=\"llm-chat\"),\n]",
+        "detail": "llm.urls",
+        "documentation": {}
+    },
+    {
+        "label": "chat",
+        "kind": 2,
+        "importPath": "llm.views",
+        "description": "llm.views",
+        "peekOfCode": "def chat(request):\n    message = request.data.get(\"message\", \"\")\n    history = request.data.get(\"history\", [])\n    if not message:\n        return Response({\"error\": \"Missing required 'message' field\"}, status=400)\n    try:\n        reply = generate_reply(message, history)\n    except LlmNotConfiguredError as exc:\n        return Response({\"error\": str(exc)}, status=503)\n    except Exception as exc:  # upstream provider failure",
+        "detail": "llm.views",
+        "documentation": {}
+    },
+    {
+        "label": "OntologiesConfig",
+        "kind": 6,
+        "importPath": "ontologies.apps",
+        "description": "ontologies.apps",
+        "peekOfCode": "class OntologiesConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"ontologies\"",
+        "detail": "ontologies.apps",
+        "documentation": {}
+    },
+    {
+        "label": "get_ontology_terms_by_keyword",
+        "kind": 2,
+        "importPath": "ontologies.dao",
+        "description": "ontologies.dao",
+        "peekOfCode": "def get_ontology_terms_by_keyword(keyword: str, page: int, page_size: int) -> list[dict]:\n    \"\"\"Search ontology term ID, name, description and URI for a keyword match.\n    keyword may itself be an ID (e.g. \"EO:0007403\") or a free-text term.\n    \"\"\"\n    query = (\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"PREFIX meaning:<http://purl.obolibrary.org/obo/IAO_0000115>\\n\"\n        \"PREFIX hasExactSynonym:<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>\\n\"\n        \"SELECT distinct ?Id (str(?name) AS ?Name) (str(?description) AS ?Description) (?term as ?URI)\\n\"\n        f\"{_from_clauses()}\"",
+        "detail": "ontologies.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_id_by_onto_term",
+        "kind": 2,
+        "importPath": "ontologies.dao",
+        "description": "ontologies.dao",
+        "peekOfCode": "def get_id_by_onto_term(onto_term: str, page: int, page_size: int) -> list[dict]:\n    \"\"\"ID of the ontology class whose rdfs:label exactly matches onto_term.\"\"\"\n    query = (\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\\n\"\n        \"PREFIX owl: <http://www.w3.org/2002/07/owl#>\\n\"\n        \"\\n\"\n        \"SELECT DISTINCT ?id (?subject AS ?URI)\\n\"\n        f\"{_from_clauses()}\"\n        \"WHERE { \\n\"",
+        "detail": "ontologies.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_onto_term_by_id",
+        "kind": 2,
+        "importPath": "ontologies.dao",
+        "description": "ontologies.dao",
+        "peekOfCode": "def get_onto_term_by_id(term_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"PREFIX owl: <http://www.w3.org/2002/07/owl#>\\n\"\n        \"SELECT DISTINCT ?OntoTerm  (?subject AS ?URI)\\n\"\n        f\"{_from_clauses()}\"\n        \"WHERE { \\n\"\n        \" {\\n\"\n        \"  SELECT ?subject\\n\"\n        \"  WHERE\\n\"",
+        "detail": "ontologies.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_ancestor_by_id",
+        "kind": 2,
+        "importPath": "ontologies.dao",
+        "description": "ontologies.dao",
+        "peekOfCode": "def get_ancestor_by_id(term_id: str, level: int, page: int, page_size: int) -> list[dict]:\n    \"\"\"N-level ancestors (rdfs:subClassOf chain) of an ontology term.\"\"\"\n    i = 1\n    pattern = \"\"\n    while i < level:\n        pattern += f\"    ?ancestor{i} rdfs:subClassOf ?ancestor{i + 1}.\\n\"\n        i += 1\n    # The inner subquery resolves ?subject alone (LIMIT 1 is safe here: the\n    # id should identify exactly one term) using a throwaway anchor\n    # (?subject rdfs:subClassOf ?o — any parent at all, cheap+selective with",
+        "detail": "ontologies.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_descendants_by_id",
+        "kind": 2,
+        "importPath": "ontologies.dao",
+        "description": "ontologies.dao",
+        "peekOfCode": "def get_descendants_by_id(term_id: str, level: int, page: int, page_size: int) -> list[dict]:\n    \"\"\"N-level descendants (rdfs:subClassOf chain) of an ontology term.\"\"\"\n    i = 1\n    pattern = \"\"\n    while i < level:\n        pattern += f\"    ?descendent{i + 1} rdfs:subClassOf ?descendent{i}.\\n\"\n        i += 1\n    # Same two-phase restructuring as get_ancestor_by_id, but the throwaway\n    # anchor for resolving ?subject is \"a owl:Class\" rather than \"has a\n    # parent\": a root-level term (children but no parent of its own) is a",
+        "detail": "ontologies.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_onto_terms_associated_with_qtl",
+        "kind": 2,
+        "importPath": "ontologies.dao",
+        "description": "ontologies.dao",
+        "peekOfCode": "def get_onto_terms_associated_with_qtl(qtl_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://www.southgreen.fr/agrold/>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        f\"PREFIX qtl: <http://www.identifiers.org/gramene.qtl/{qtl_id}>\\n\"\n        \"SELECT DISTINCT ?Id (str(?Name) as ?Name) ?Association (?Concept AS ?URI)\\n\"\n        f\"{_from_clauses(ONTOLOGY_GRAPHS + ('http://purl.agrold.org/graph/qtl.annotations', 'http://purl.agrold.org/graph/gramene.qtl'))}\"\n        \"WHERE\\n\"\n        \"{\\n\"\n        \"   qtl: ?relation ?Concept.\\n\"",
+        "detail": "ontologies.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_onto_terms_associated_with_protein",
+        "kind": 2,
+        "importPath": "ontologies.dao",
+        "description": "ontologies.dao",
+        "peekOfCode": "def get_onto_terms_associated_with_protein(protein_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://www.southgreen.fr/agrold/>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        f\"PREFIX protein: <http://purl.uniprot.org/uniprot/{protein_id}>\\n\"\n        \"SELECT DISTINCT ?Id (str(?Name) as ?Name) ?Association (?Concept AS ?URI)\\n\"\n        f\"{_from_clauses()}\"\n        \"WHERE\\n\"\n        \"{\\n\"\n        \"   protein: ?relation ?Concept.\\n\"",
+        "detail": "ontologies.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_onto_terms_associated_with_gene",
+        "kind": 2,
+        "importPath": "ontologies.dao",
+        "description": "ontologies.dao",
+        "peekOfCode": "def get_onto_terms_associated_with_gene(gene_id: str) -> list[dict]:\n    \"\"\"Merge Gramene's GO/PO/TO annotations for a gene with AgroLD's own\n    local SPARQL annotations, de-duplicated by term id.\n    Mirrors OntologyDAO.getOntoTermsAssociatedWithGene.\n    \"\"\"\n    results = list(get_onto_terms_associated_with_gene_gramene(gene_id))\n    seen_ids = {term.get(\"id\") for term in results if term.get(\"id\") is not None}\n    for term in _get_onto_terms_associated_with_gene_sparql(gene_id):\n        if term.get(\"id\") not in seen_ids:\n            results.append(term)",
+        "detail": "ontologies.dao",
+        "documentation": {}
+    },
+    {
+        "label": "ONTOLOGY_GRAPHS",
+        "kind": 5,
+        "importPath": "ontologies.dao",
+        "description": "ontologies.dao",
+        "peekOfCode": "ONTOLOGY_GRAPHS = (\"http://purl.agrold.org/graph/obo.ontologies\",)\ndef _from_clauses(graphs=ONTOLOGY_GRAPHS) -> str:\n    return \"\".join(f\"    FROM <{g}>\\n\" for g in graphs)\ndef get_ontology_terms_by_keyword(keyword: str, page: int, page_size: int) -> list[dict]:\n    \"\"\"Search ontology term ID, name, description and URI for a keyword match.\n    keyword may itself be an ID (e.g. \"EO:0007403\") or a free-text term.\n    \"\"\"\n    query = (\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"PREFIX meaning:<http://purl.obolibrary.org/obo/IAO_0000115>\\n\"",
+        "detail": "ontologies.dao",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "ontologies.urls",
+        "description": "ontologies.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"terms/by-keyword/\", views.ontology_terms_by_keyword, name=\"ontologies-terms-by-keyword\"),\n    path(\"terms/ancestors/\", views.ancestors_by_id, name=\"ontologies-terms-ancestors\"),\n    path(\"terms/parents/\", views.parent_by_id, name=\"ontologies-terms-parents\"),\n    path(\"terms/descendants/\", views.descendants_by_id, name=\"ontologies-terms-descendants\"),\n    path(\"terms/children/\", views.children_by_id, name=\"ontologies-terms-children\"),\n    path(\"ids/by-term/\", views.id_by_term, name=\"ontologies-ids-by-term\"),\n    path(\"terms/by-id/\", views.term_by_id, name=\"ontologies-terms-by-id\"),\n    path(\"terms/associated-with-qtl/\", views.terms_associated_with_qtl, name=\"ontologies-terms-associated-with-qtl\"),\n    path(\"terms/associated-with-protein/\", views.terms_associated_with_protein, name=\"ontologies-terms-associated-with-protein\"),",
+        "detail": "ontologies.urls",
+        "documentation": {}
+    },
+    {
+        "label": "ontology_terms_by_keyword",
+        "kind": 2,
+        "importPath": "ontologies.views",
+        "description": "ontologies.views",
+        "peekOfCode": "def ontology_terms_by_keyword(request):\n    page, page_size = get_pagination(request)\n    keyword = request.query_params.get(\"keyword\", \"\")\n    return Response(dao.get_ontology_terms_by_keyword(keyword, page, page_size))\n@api_view([\"GET\"])\ndef ancestors_by_id(request):\n    page, page_size = get_pagination(request)\n    term_id = request.query_params.get(\"id\", \"\")\n    level = int(request.query_params.get(\"level\", 1))\n    return Response(dao.get_ancestor_by_id(term_id, level, page, page_size))",
+        "detail": "ontologies.views",
+        "documentation": {}
+    },
+    {
+        "label": "ancestors_by_id",
+        "kind": 2,
+        "importPath": "ontologies.views",
+        "description": "ontologies.views",
+        "peekOfCode": "def ancestors_by_id(request):\n    page, page_size = get_pagination(request)\n    term_id = request.query_params.get(\"id\", \"\")\n    level = int(request.query_params.get(\"level\", 1))\n    return Response(dao.get_ancestor_by_id(term_id, level, page, page_size))\n@api_view([\"GET\"])\ndef parent_by_id(request):\n    page, page_size = get_pagination(request)\n    term_id = request.query_params.get(\"id\", \"\")\n    return Response(dao.get_ancestor_by_id(term_id, 1, page, page_size))",
+        "detail": "ontologies.views",
+        "documentation": {}
+    },
+    {
+        "label": "parent_by_id",
+        "kind": 2,
+        "importPath": "ontologies.views",
+        "description": "ontologies.views",
+        "peekOfCode": "def parent_by_id(request):\n    page, page_size = get_pagination(request)\n    term_id = request.query_params.get(\"id\", \"\")\n    return Response(dao.get_ancestor_by_id(term_id, 1, page, page_size))\n@api_view([\"GET\"])\ndef descendants_by_id(request):\n    page, page_size = get_pagination(request)\n    term_id = request.query_params.get(\"id\", \"\")\n    level = int(request.query_params.get(\"level\", 1))\n    return Response(dao.get_descendants_by_id(term_id, level, page, page_size))",
+        "detail": "ontologies.views",
+        "documentation": {}
+    },
+    {
+        "label": "descendants_by_id",
+        "kind": 2,
+        "importPath": "ontologies.views",
+        "description": "ontologies.views",
+        "peekOfCode": "def descendants_by_id(request):\n    page, page_size = get_pagination(request)\n    term_id = request.query_params.get(\"id\", \"\")\n    level = int(request.query_params.get(\"level\", 1))\n    return Response(dao.get_descendants_by_id(term_id, level, page, page_size))\n@api_view([\"GET\"])\ndef children_by_id(request):\n    page, page_size = get_pagination(request)\n    term_id = request.query_params.get(\"id\", \"\")\n    return Response(dao.get_descendants_by_id(term_id, 1, page, page_size))",
+        "detail": "ontologies.views",
+        "documentation": {}
+    },
+    {
+        "label": "children_by_id",
+        "kind": 2,
+        "importPath": "ontologies.views",
+        "description": "ontologies.views",
+        "peekOfCode": "def children_by_id(request):\n    page, page_size = get_pagination(request)\n    term_id = request.query_params.get(\"id\", \"\")\n    return Response(dao.get_descendants_by_id(term_id, 1, page, page_size))\n@api_view([\"GET\"])\ndef id_by_term(request):\n    page, page_size = get_pagination(request)\n    onto_term = request.query_params.get(\"ontoTerm\", \"\")\n    return Response(dao.get_id_by_onto_term(onto_term, page, page_size))\n@api_view([\"GET\"])",
+        "detail": "ontologies.views",
+        "documentation": {}
+    },
+    {
+        "label": "id_by_term",
+        "kind": 2,
+        "importPath": "ontologies.views",
+        "description": "ontologies.views",
+        "peekOfCode": "def id_by_term(request):\n    page, page_size = get_pagination(request)\n    onto_term = request.query_params.get(\"ontoTerm\", \"\")\n    return Response(dao.get_id_by_onto_term(onto_term, page, page_size))\n@api_view([\"GET\"])\ndef term_by_id(request):\n    page, page_size = get_pagination(request)\n    term_id = request.query_params.get(\"id\", \"\")\n    return Response(dao.get_onto_term_by_id(term_id, page, page_size))\n@api_view([\"GET\"])",
+        "detail": "ontologies.views",
+        "documentation": {}
+    },
+    {
+        "label": "term_by_id",
+        "kind": 2,
+        "importPath": "ontologies.views",
+        "description": "ontologies.views",
+        "peekOfCode": "def term_by_id(request):\n    page, page_size = get_pagination(request)\n    term_id = request.query_params.get(\"id\", \"\")\n    return Response(dao.get_onto_term_by_id(term_id, page, page_size))\n@api_view([\"GET\"])\ndef terms_associated_with_qtl(request):\n    page, page_size = get_pagination(request)\n    qtl_id = request.query_params.get(\"qtlId\", \"\")\n    return Response(dao.get_onto_terms_associated_with_qtl(qtl_id, page, page_size))\n@api_view([\"GET\"])",
+        "detail": "ontologies.views",
+        "documentation": {}
+    },
+    {
+        "label": "terms_associated_with_qtl",
+        "kind": 2,
+        "importPath": "ontologies.views",
+        "description": "ontologies.views",
+        "peekOfCode": "def terms_associated_with_qtl(request):\n    page, page_size = get_pagination(request)\n    qtl_id = request.query_params.get(\"qtlId\", \"\")\n    return Response(dao.get_onto_terms_associated_with_qtl(qtl_id, page, page_size))\n@api_view([\"GET\"])\ndef terms_associated_with_protein(request):\n    page, page_size = get_pagination(request)\n    protein_id = request.query_params.get(\"proteinId\", \"\")\n    return Response(dao.get_onto_terms_associated_with_protein(protein_id, page, page_size))\n@api_view([\"GET\"])",
+        "detail": "ontologies.views",
+        "documentation": {}
+    },
+    {
+        "label": "terms_associated_with_protein",
+        "kind": 2,
+        "importPath": "ontologies.views",
+        "description": "ontologies.views",
+        "peekOfCode": "def terms_associated_with_protein(request):\n    page, page_size = get_pagination(request)\n    protein_id = request.query_params.get(\"proteinId\", \"\")\n    return Response(dao.get_onto_terms_associated_with_protein(protein_id, page, page_size))\n@api_view([\"GET\"])\ndef terms_associated_with_gene(request):\n    gene_id = request.query_params.get(\"geneId\", \"\")\n    return Response(dao.get_onto_terms_associated_with_gene(gene_id))",
+        "detail": "ontologies.views",
+        "documentation": {}
+    },
+    {
+        "label": "terms_associated_with_gene",
+        "kind": 2,
+        "importPath": "ontologies.views",
+        "description": "ontologies.views",
+        "peekOfCode": "def terms_associated_with_gene(request):\n    gene_id = request.query_params.get(\"geneId\", \"\")\n    return Response(dao.get_onto_terms_associated_with_gene(gene_id))",
+        "detail": "ontologies.views",
+        "documentation": {}
+    },
+    {
+        "label": "PathwaysConfig",
+        "kind": 6,
+        "importPath": "pathways.apps",
+        "description": "pathways.apps",
+        "peekOfCode": "class PathwaysConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"pathways\"",
+        "detail": "pathways.apps",
+        "documentation": {}
+    },
+    {
+        "label": "get_pathways_by_keyword",
+        "kind": 2,
+        "importPath": "pathways.dao",
+        "description": "pathways.dao",
+        "peekOfCode": "def get_pathways_by_keyword(keyword: str, page: int, page_size: int) -> list[dict]:\n    return keyword_search(keyword, TYPE_URIS, page, page_size)\ndef get_pathways_in_which_participates_gene(gene_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX vocab:<vocabulary/>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"\\n\"\n        \"SELECT DISTINCT ?pathwayId ?Name (?pathway AS ?IRI)\\n\"\n        \"WHERE {\\n\"",
+        "detail": "pathways.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_pathways_in_which_participates_gene",
+        "kind": 2,
+        "importPath": "pathways.dao",
+        "description": "pathways.dao",
+        "peekOfCode": "def get_pathways_in_which_participates_gene(gene_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX vocab:<vocabulary/>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"\\n\"\n        \"SELECT DISTINCT ?pathwayId ?Name (?pathway AS ?IRI)\\n\"\n        \"WHERE {\\n\"\n        \"  ?gene vocab:is_agent_in ?pathway. \\n\"\n        \"  ?pathway rdfs:label ?Name. \\n\"",
+        "detail": "pathways.dao",
+        "documentation": {}
+    },
+    {
+        "label": "PATHWAY_TYPE1",
+        "kind": 5,
+        "importPath": "pathways.dao",
+        "description": "pathways.dao",
+        "peekOfCode": "PATHWAY_TYPE1 = \"http://semanticscience.org/resource/SIO_010532\"\nPATHWAY_IDENTIFIER = \"http://purl.agrold.org/vocabulary/Pathway_Identifier\"\nMETABOLIC_PATHWAY = \"http://purl.agrold.org/vocabulary/Metabolic_Pathway\"\nTYPE_URIS = [METABOLIC_PATHWAY, PATHWAY_IDENTIFIER, PATHWAY_TYPE1]\ndef get_pathways_by_keyword(keyword: str, page: int, page_size: int) -> list[dict]:\n    return keyword_search(keyword, TYPE_URIS, page, page_size)\ndef get_pathways_in_which_participates_gene(gene_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX vocab:<vocabulary/>\\n\"",
+        "detail": "pathways.dao",
+        "documentation": {}
+    },
+    {
+        "label": "PATHWAY_IDENTIFIER",
+        "kind": 5,
+        "importPath": "pathways.dao",
+        "description": "pathways.dao",
+        "peekOfCode": "PATHWAY_IDENTIFIER = \"http://purl.agrold.org/vocabulary/Pathway_Identifier\"\nMETABOLIC_PATHWAY = \"http://purl.agrold.org/vocabulary/Metabolic_Pathway\"\nTYPE_URIS = [METABOLIC_PATHWAY, PATHWAY_IDENTIFIER, PATHWAY_TYPE1]\ndef get_pathways_by_keyword(keyword: str, page: int, page_size: int) -> list[dict]:\n    return keyword_search(keyword, TYPE_URIS, page, page_size)\ndef get_pathways_in_which_participates_gene(gene_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX vocab:<vocabulary/>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"",
+        "detail": "pathways.dao",
+        "documentation": {}
+    },
+    {
+        "label": "METABOLIC_PATHWAY",
+        "kind": 5,
+        "importPath": "pathways.dao",
+        "description": "pathways.dao",
+        "peekOfCode": "METABOLIC_PATHWAY = \"http://purl.agrold.org/vocabulary/Metabolic_Pathway\"\nTYPE_URIS = [METABOLIC_PATHWAY, PATHWAY_IDENTIFIER, PATHWAY_TYPE1]\ndef get_pathways_by_keyword(keyword: str, page: int, page_size: int) -> list[dict]:\n    return keyword_search(keyword, TYPE_URIS, page, page_size)\ndef get_pathways_in_which_participates_gene(gene_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX vocab:<vocabulary/>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"\\n\"",
+        "detail": "pathways.dao",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_URIS",
+        "kind": 5,
+        "importPath": "pathways.dao",
+        "description": "pathways.dao",
+        "peekOfCode": "TYPE_URIS = [METABOLIC_PATHWAY, PATHWAY_IDENTIFIER, PATHWAY_TYPE1]\ndef get_pathways_by_keyword(keyword: str, page: int, page_size: int) -> list[dict]:\n    return keyword_search(keyword, TYPE_URIS, page, page_size)\ndef get_pathways_in_which_participates_gene(gene_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX vocab:<vocabulary/>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"\\n\"\n        \"SELECT DISTINCT ?pathwayId ?Name (?pathway AS ?IRI)\\n\"",
+        "detail": "pathways.dao",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "pathways.urls",
+        "description": "pathways.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"by-keyword/\", views.pathways_by_keyword, name=\"pathways-by-keyword\"),\n    path(\"participating-gene/\", views.pathways_participating_gene, name=\"pathways-participating-gene\"),\n]",
+        "detail": "pathways.urls",
+        "documentation": {}
+    },
+    {
+        "label": "pathways_by_keyword",
+        "kind": 2,
+        "importPath": "pathways.views",
+        "description": "pathways.views",
+        "peekOfCode": "def pathways_by_keyword(request):\n    page, page_size = get_pagination(request)\n    keyword = request.query_params.get(\"keyword\", \"\")\n    return Response(dao.get_pathways_by_keyword(keyword, page, page_size))\n@api_view([\"GET\"])\ndef pathways_participating_gene(request):\n    page, page_size = get_pagination(request)\n    gene_id = request.query_params.get(\"geneId\", \"\")\n    return Response(dao.get_pathways_in_which_participates_gene(gene_id, page, page_size))",
+        "detail": "pathways.views",
+        "documentation": {}
+    },
+    {
+        "label": "pathways_participating_gene",
+        "kind": 2,
+        "importPath": "pathways.views",
+        "description": "pathways.views",
+        "peekOfCode": "def pathways_participating_gene(request):\n    page, page_size = get_pagination(request)\n    gene_id = request.query_params.get(\"geneId\", \"\")\n    return Response(dao.get_pathways_in_which_participates_gene(gene_id, page, page_size))",
+        "detail": "pathways.views",
+        "documentation": {}
+    },
+    {
+        "label": "ProteinsConfig",
+        "kind": 6,
+        "importPath": "proteins.apps",
+        "description": "proteins.apps",
+        "peekOfCode": "class ProteinsConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"proteins\"",
+        "detail": "proteins.apps",
+        "documentation": {}
+    },
+    {
+        "label": "get_proteins",
+        "kind": 2,
+        "importPath": "proteins.dao",
+        "description": "proteins.dao",
+        "peekOfCode": "def get_proteins(page: int, page_size: int) -> list[dict]:\n    # Restructured like qtls.dao.get_qtls: the original flat query (a\n    # property-path type filter + group_concat over an OPTIONAL description)\n    # took 5+ seconds and got worse under load, for the same reasons —\n    # group_concat/DISTINCT forces full materialization before LIMIT, and\n    # rdf:type|rdfs:subClassOf + FILTER(?type IN (...)) is a slow combo once\n    # joined with other patterns. Paginate first (fast, UNION-based type\n    # match), then aggregate description only for that page's proteins.\n    query = (\n        \"prefix\tagrold:<http://purl.agrold.org/vocabulary/> \\n\"",
+        "detail": "proteins.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_proteins_by_keyword",
+        "kind": 2,
+        "importPath": "proteins.dao",
+        "description": "proteins.dao",
+        "peekOfCode": "def get_proteins_by_keyword(keyword: str, page: int, page_size: int) -> list[dict]:\n    return keyword_search(keyword, TYPE_URIS, page, page_size)\ndef get_proteins_id_associated_with_onto_id(onto_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \" BASE <http://purl.agrold.org/> \\n\"\n        \"PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\n\"\n        \" PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"SELECT DISTINCT ?proteinId (REPLACE(str(?predicate), '^.*(#|/)', \\\"\\\") AS ?Association) (?protein AS ?URI) \\n\"\n        \" WHERE \\n\"\n        \"{ \\n\"",
+        "detail": "proteins.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_proteins_id_associated_with_onto_id",
+        "kind": 2,
+        "importPath": "proteins.dao",
+        "description": "proteins.dao",
+        "peekOfCode": "def get_proteins_id_associated_with_onto_id(onto_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \" BASE <http://purl.agrold.org/> \\n\"\n        \"PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\n\"\n        \" PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"SELECT DISTINCT ?proteinId (REPLACE(str(?predicate), '^.*(#|/)', \\\"\\\") AS ?Association) (?protein AS ?URI) \\n\"\n        \" WHERE \\n\"\n        \"{ \\n\"\n        \"    {  \\n\"\n        \"SELECT ?ontoElt \\n\"",
+        "detail": "proteins.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_proteins_associated_with_qtl",
+        "kind": 2,
+        "importPath": "proteins.dao",
+        "description": "proteins.dao",
+        "peekOfCode": "def get_proteins_associated_with_qtl(qtl_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"PREFIX vocab:<vocabulary/>\\n\"\n        \"PREFIX graph1:<protein.annotations>\\n\"\n        \"PREFIX graph2:<qtl.annotations>\\n\"\n        f\"PREFIX qtl: <http://www.identifiers.org/gramene.qtl/{qtl_id}>\\n\"\n        \"\\n\"\n        \"SELECT distinct ?Id ?Name (?protein AS ?URI) \\n\"",
+        "detail": "proteins.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_proteins_encoded_by_gene",
+        "kind": 2,
+        "importPath": "proteins.dao",
+        "description": "proteins.dao",
+        "peekOfCode": "def get_proteins_encoded_by_gene(gene_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX vocab: <vocabulary/>\\n\"\n        f\"PREFIX gene: <http://purl.agrold.org/resource/{gene_id}>\\n\"\n        \"SELECT DISTINCT ?Id ?Name group_concat(distinct ?d;separator=\\\"; \\\") as ?Description (?protein AS ?URI)\\n\"\n        \"WHERE{\\n\"\n        \"  gene: vocab:encodes ?protein.\\n\"\n        \"  ?protein rdfs:label ?Name.\\n\"\n        \"  OPTIONAL {?protein vocab:description ?d}\\n\"",
+        "detail": "proteins.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_protein_labels",
+        "kind": 2,
+        "importPath": "proteins.dao",
+        "description": "proteins.dao",
+        "peekOfCode": "def get_protein_labels(protein_id: str) -> set[str]:\n    query = (\n        \"prefix\tagrold:<http://purl.agrold.org/vocabulary/> \\n\"\n        \"PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"SELECT distinct ?label\\n\"\n        \"WHERE {\\n\"\n        \"  ?protein rdf:type|rdfs:subClassOf ?type.\\n\"\n        \"  ?protein rdfs:label ?label . \\n\"\n        f\"  FILTER(?type IN (<{PROTEIN_TYPE_URI}>,<{PROTEIN_TYPE_URI2}>))\\n\"",
+        "detail": "proteins.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_publications_of_protein_by_id",
+        "kind": 2,
+        "importPath": "proteins.dao",
+        "description": "proteins.dao",
+        "peekOfCode": "def get_publications_of_protein_by_id(protein_id: str) -> list[dict]:\n    results: list[dict] = []\n    for label in get_protein_labels(protein_id):\n        results.extend(get_publications_from_europepmc_by_label(label))\n    return sort_publications_by_year_desc(results)",
+        "detail": "proteins.dao",
+        "documentation": {}
+    },
+    {
+        "label": "PROTEIN_TYPE_URI",
+        "kind": 5,
+        "importPath": "proteins.dao",
+        "description": "proteins.dao",
+        "peekOfCode": "PROTEIN_TYPE_URI = \"http://purl.obolibrary.org/obo/SO_0000104\"\nPROTEIN_TYPE_URI2 = \"http://purl.agrold.org/vocabulary/Protein\"\nTYPE_URIS = [PROTEIN_TYPE_URI, PROTEIN_TYPE_URI2]\ndef get_proteins(page: int, page_size: int) -> list[dict]:\n    # Restructured like qtls.dao.get_qtls: the original flat query (a\n    # property-path type filter + group_concat over an OPTIONAL description)\n    # took 5+ seconds and got worse under load, for the same reasons —\n    # group_concat/DISTINCT forces full materialization before LIMIT, and\n    # rdf:type|rdfs:subClassOf + FILTER(?type IN (...)) is a slow combo once\n    # joined with other patterns. Paginate first (fast, UNION-based type",
+        "detail": "proteins.dao",
+        "documentation": {}
+    },
+    {
+        "label": "PROTEIN_TYPE_URI2",
+        "kind": 5,
+        "importPath": "proteins.dao",
+        "description": "proteins.dao",
+        "peekOfCode": "PROTEIN_TYPE_URI2 = \"http://purl.agrold.org/vocabulary/Protein\"\nTYPE_URIS = [PROTEIN_TYPE_URI, PROTEIN_TYPE_URI2]\ndef get_proteins(page: int, page_size: int) -> list[dict]:\n    # Restructured like qtls.dao.get_qtls: the original flat query (a\n    # property-path type filter + group_concat over an OPTIONAL description)\n    # took 5+ seconds and got worse under load, for the same reasons —\n    # group_concat/DISTINCT forces full materialization before LIMIT, and\n    # rdf:type|rdfs:subClassOf + FILTER(?type IN (...)) is a slow combo once\n    # joined with other patterns. Paginate first (fast, UNION-based type\n    # match), then aggregate description only for that page's proteins.",
+        "detail": "proteins.dao",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_URIS",
+        "kind": 5,
+        "importPath": "proteins.dao",
+        "description": "proteins.dao",
+        "peekOfCode": "TYPE_URIS = [PROTEIN_TYPE_URI, PROTEIN_TYPE_URI2]\ndef get_proteins(page: int, page_size: int) -> list[dict]:\n    # Restructured like qtls.dao.get_qtls: the original flat query (a\n    # property-path type filter + group_concat over an OPTIONAL description)\n    # took 5+ seconds and got worse under load, for the same reasons —\n    # group_concat/DISTINCT forces full materialization before LIMIT, and\n    # rdf:type|rdfs:subClassOf + FILTER(?type IN (...)) is a slow combo once\n    # joined with other patterns. Paginate first (fast, UNION-based type\n    # match), then aggregate description only for that page's proteins.\n    query = (",
+        "detail": "proteins.dao",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "proteins.urls",
+        "description": "proteins.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.list_proteins, name=\"proteins-list\"),\n    path(\"by-keyword/\", views.proteins_by_keyword, name=\"proteins-by-keyword\"),\n    path(\"associated-with-onto-id/\", views.proteins_associated_with_onto_id, name=\"proteins-associated-with-onto-id\"),\n    path(\"associated-with-qtl/\", views.proteins_associated_with_qtl, name=\"proteins-associated-with-qtl\"),\n    path(\"encoded-by-gene/\", views.proteins_encoded_by_gene, name=\"proteins-encoded-by-gene\"),\n    path(\"publications/\", views.publications_by_protein_id, name=\"proteins-publications\"),\n]",
+        "detail": "proteins.urls",
+        "documentation": {}
+    },
+    {
+        "label": "list_proteins",
+        "kind": 2,
+        "importPath": "proteins.views",
+        "description": "proteins.views",
+        "peekOfCode": "def list_proteins(request):\n    page, page_size = get_pagination(request)\n    return Response(dao.get_proteins(page, page_size))\n@api_view([\"GET\"])\ndef proteins_by_keyword(request):\n    page, page_size = get_pagination(request)\n    keyword = request.query_params.get(\"keyword\", \"\")\n    return Response(dao.get_proteins_by_keyword(keyword, page, page_size))\n@api_view([\"GET\"])\ndef proteins_associated_with_onto_id(request):",
+        "detail": "proteins.views",
+        "documentation": {}
+    },
+    {
+        "label": "proteins_by_keyword",
+        "kind": 2,
+        "importPath": "proteins.views",
+        "description": "proteins.views",
+        "peekOfCode": "def proteins_by_keyword(request):\n    page, page_size = get_pagination(request)\n    keyword = request.query_params.get(\"keyword\", \"\")\n    return Response(dao.get_proteins_by_keyword(keyword, page, page_size))\n@api_view([\"GET\"])\ndef proteins_associated_with_onto_id(request):\n    page, page_size = get_pagination(request)\n    onto_id = request.query_params.get(\"ontoId\", \"\")\n    return Response(dao.get_proteins_id_associated_with_onto_id(onto_id, page, page_size))\n@api_view([\"GET\"])",
+        "detail": "proteins.views",
+        "documentation": {}
+    },
+    {
+        "label": "proteins_associated_with_onto_id",
+        "kind": 2,
+        "importPath": "proteins.views",
+        "description": "proteins.views",
+        "peekOfCode": "def proteins_associated_with_onto_id(request):\n    page, page_size = get_pagination(request)\n    onto_id = request.query_params.get(\"ontoId\", \"\")\n    return Response(dao.get_proteins_id_associated_with_onto_id(onto_id, page, page_size))\n@api_view([\"GET\"])\ndef proteins_associated_with_qtl(request):\n    page, page_size = get_pagination(request)\n    qtl_id = request.query_params.get(\"qtlId\", \"\")\n    return Response(dao.get_proteins_associated_with_qtl(qtl_id, page, page_size))\n@api_view([\"GET\"])",
+        "detail": "proteins.views",
+        "documentation": {}
+    },
+    {
+        "label": "proteins_associated_with_qtl",
+        "kind": 2,
+        "importPath": "proteins.views",
+        "description": "proteins.views",
+        "peekOfCode": "def proteins_associated_with_qtl(request):\n    page, page_size = get_pagination(request)\n    qtl_id = request.query_params.get(\"qtlId\", \"\")\n    return Response(dao.get_proteins_associated_with_qtl(qtl_id, page, page_size))\n@api_view([\"GET\"])\ndef proteins_encoded_by_gene(request):\n    page, page_size = get_pagination(request)\n    gene_id = request.query_params.get(\"geneId\", \"\")\n    return Response(dao.get_proteins_encoded_by_gene(gene_id, page, page_size))\n@api_view([\"GET\"])",
+        "detail": "proteins.views",
+        "documentation": {}
+    },
+    {
+        "label": "proteins_encoded_by_gene",
+        "kind": 2,
+        "importPath": "proteins.views",
+        "description": "proteins.views",
+        "peekOfCode": "def proteins_encoded_by_gene(request):\n    page, page_size = get_pagination(request)\n    gene_id = request.query_params.get(\"geneId\", \"\")\n    return Response(dao.get_proteins_encoded_by_gene(gene_id, page, page_size))\n@api_view([\"GET\"])\ndef publications_by_protein_id(request):\n    protein_id = request.query_params.get(\"proteinId\", \"\")\n    return Response(dao.get_publications_of_protein_by_id(protein_id))",
+        "detail": "proteins.views",
+        "documentation": {}
+    },
+    {
+        "label": "publications_by_protein_id",
+        "kind": 2,
+        "importPath": "proteins.views",
+        "description": "proteins.views",
+        "peekOfCode": "def publications_by_protein_id(request):\n    protein_id = request.query_params.get(\"proteinId\", \"\")\n    return Response(dao.get_publications_of_protein_by_id(protein_id))",
+        "detail": "proteins.views",
+        "documentation": {}
+    },
+    {
+        "label": "QtlsConfig",
+        "kind": 6,
+        "importPath": "qtls.apps",
+        "description": "qtls.apps",
+        "peekOfCode": "class QtlsConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"qtls\"",
+        "detail": "qtls.apps",
+        "documentation": {}
+    },
+    {
+        "label": "get_qtls",
+        "kind": 2,
+        "importPath": "qtls.dao",
+        "description": "qtls.dao",
+        "peekOfCode": "def get_qtls(page: int, page_size: int) -> list[dict]:\n    # Restructured from the original DAO's single flat query (a property-path\n    # type filter joined with two OPTIONALs feeding a group_concat) which\n    # reliably timed out against the live dataset: group_concat + DISTINCT\n    # forces Virtuoso to materialize *every* matching QTL before it can\n    # apply LIMIT, and the rdf:type|rdfs:subClassOf + FILTER(?type IN (...))\n    # combo makes the planner drop a fast join plan once combined with the\n    # label OPTIONAL. Paginating first via UNION-based type matching (fast,\n    # confirmed live), then aggregating has_trait only for that page's QTLs,\n    # avoids both problems. ORDER BY DESC(?URI) is likewise dropped from the",
+        "detail": "qtls.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_qtls_by_keyword",
+        "kind": 2,
+        "importPath": "qtls.dao",
+        "description": "qtls.dao",
+        "peekOfCode": "def get_qtls_by_keyword(keyword: str, page: int, page_size: int) -> list[dict]:\n    return keyword_search(keyword, TYPE_URIS, page, page_size)\ndef get_qtl_id_associated_with_onto_id(onto_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"SELECT DISTINCT ?qtlId (?qtl AS ?URI) ?qtlLabel (REPLACE(str(?predicate), '^.*(#|/)', \\\"\\\") AS ?Association) \"\n        \"?ontoElt ?ontoLabel\\n\"\n        \"WHERE\\n\"",
+        "detail": "qtls.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_qtl_id_associated_with_onto_id",
+        "kind": 2,
+        "importPath": "qtls.dao",
+        "description": "qtls.dao",
+        "peekOfCode": "def get_qtl_id_associated_with_onto_id(onto_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"SELECT DISTINCT ?qtlId (?qtl AS ?URI) ?qtlLabel (REPLACE(str(?predicate), '^.*(#|/)', \\\"\\\") AS ?Association) \"\n        \"?ontoElt ?ontoLabel\\n\"\n        \"WHERE\\n\"\n        \"{\\n\"\n        \"  {\\n\"",
+        "detail": "qtls.dao",
+        "documentation": {}
+    },
+    {
+        "label": "get_qtls_associated_with_protein_id",
+        "kind": 2,
+        "importPath": "qtls.dao",
+        "description": "qtls.dao",
+        "peekOfCode": "def get_qtls_associated_with_protein_id(protein_id: str, page: int, page_size: int) -> list[dict]:\n    query = (\n        \"BASE <http://purl.agrold.org/>\\n\"\n        \"PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\\n\"\n        \"PREFIX vocab:<vocabulary/>\\n\"\n        \"PREFIX graph1:<protein.annotations>\\n\"\n        \"PREFIX graph2:<qtl.annotations>\\n\"\n        f\"PREFIX protein: <http://purl.uniprot.org/uniprot/{protein_id}>\\n\"\n        \"\\n\"\n        \"SELECT distinct ?Id ?Name (?qtl AS ?URI) \\n\"",
+        "detail": "qtls.dao",
+        "documentation": {}
+    },
+    {
+        "label": "QTL_TYPE_URI",
+        "kind": 5,
+        "importPath": "qtls.dao",
+        "description": "qtls.dao",
+        "peekOfCode": "QTL_TYPE_URI = \"http://purl.agrold.org/vocabulary/QTL\"\nQTL_TYPE_URI2 = \"http://purl.obolibrary.org/obo/SO_0000771\"\nTYPE_URIS = [QTL_TYPE_URI, QTL_TYPE_URI2]\ndef get_qtls(page: int, page_size: int) -> list[dict]:\n    # Restructured from the original DAO's single flat query (a property-path\n    # type filter joined with two OPTIONALs feeding a group_concat) which\n    # reliably timed out against the live dataset: group_concat + DISTINCT\n    # forces Virtuoso to materialize *every* matching QTL before it can\n    # apply LIMIT, and the rdf:type|rdfs:subClassOf + FILTER(?type IN (...))\n    # combo makes the planner drop a fast join plan once combined with the",
+        "detail": "qtls.dao",
+        "documentation": {}
+    },
+    {
+        "label": "QTL_TYPE_URI2",
+        "kind": 5,
+        "importPath": "qtls.dao",
+        "description": "qtls.dao",
+        "peekOfCode": "QTL_TYPE_URI2 = \"http://purl.obolibrary.org/obo/SO_0000771\"\nTYPE_URIS = [QTL_TYPE_URI, QTL_TYPE_URI2]\ndef get_qtls(page: int, page_size: int) -> list[dict]:\n    # Restructured from the original DAO's single flat query (a property-path\n    # type filter joined with two OPTIONALs feeding a group_concat) which\n    # reliably timed out against the live dataset: group_concat + DISTINCT\n    # forces Virtuoso to materialize *every* matching QTL before it can\n    # apply LIMIT, and the rdf:type|rdfs:subClassOf + FILTER(?type IN (...))\n    # combo makes the planner drop a fast join plan once combined with the\n    # label OPTIONAL. Paginating first via UNION-based type matching (fast,",
+        "detail": "qtls.dao",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_URIS",
+        "kind": 5,
+        "importPath": "qtls.dao",
+        "description": "qtls.dao",
+        "peekOfCode": "TYPE_URIS = [QTL_TYPE_URI, QTL_TYPE_URI2]\ndef get_qtls(page: int, page_size: int) -> list[dict]:\n    # Restructured from the original DAO's single flat query (a property-path\n    # type filter joined with two OPTIONALs feeding a group_concat) which\n    # reliably timed out against the live dataset: group_concat + DISTINCT\n    # forces Virtuoso to materialize *every* matching QTL before it can\n    # apply LIMIT, and the rdf:type|rdfs:subClassOf + FILTER(?type IN (...))\n    # combo makes the planner drop a fast join plan once combined with the\n    # label OPTIONAL. Paginating first via UNION-based type matching (fast,\n    # confirmed live), then aggregating has_trait only for that page's QTLs,",
+        "detail": "qtls.dao",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "qtls.urls",
+        "description": "qtls.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.list_qtls, name=\"qtls-list\"),\n    path(\"by-keyword/\", views.qtls_by_keyword, name=\"qtls-by-keyword\"),\n    path(\"id-associated-with-onto-id/\", views.qtl_ids_associated_with_onto_id, name=\"qtls-id-associated-with-onto-id\"),\n    path(\"associated-with-protein-id/\", views.qtls_associated_with_protein_id, name=\"qtls-associated-with-protein-id\"),\n]",
+        "detail": "qtls.urls",
+        "documentation": {}
+    },
+    {
+        "label": "list_qtls",
+        "kind": 2,
+        "importPath": "qtls.views",
+        "description": "qtls.views",
+        "peekOfCode": "def list_qtls(request):\n    page, page_size = get_pagination(request)\n    return Response(dao.get_qtls(page, page_size))\n@api_view([\"GET\"])\ndef qtls_by_keyword(request):\n    page, page_size = get_pagination(request)\n    keyword = request.query_params.get(\"keyword\", \"\")\n    return Response(dao.get_qtls_by_keyword(keyword, page, page_size))\n@api_view([\"GET\"])\ndef qtl_ids_associated_with_onto_id(request):",
+        "detail": "qtls.views",
+        "documentation": {}
+    },
+    {
+        "label": "qtls_by_keyword",
+        "kind": 2,
+        "importPath": "qtls.views",
+        "description": "qtls.views",
+        "peekOfCode": "def qtls_by_keyword(request):\n    page, page_size = get_pagination(request)\n    keyword = request.query_params.get(\"keyword\", \"\")\n    return Response(dao.get_qtls_by_keyword(keyword, page, page_size))\n@api_view([\"GET\"])\ndef qtl_ids_associated_with_onto_id(request):\n    page, page_size = get_pagination(request)\n    onto_id = request.query_params.get(\"ontoId\", \"\")\n    return Response(dao.get_qtl_id_associated_with_onto_id(onto_id, page, page_size))\n@api_view([\"GET\"])",
+        "detail": "qtls.views",
+        "documentation": {}
+    },
+    {
+        "label": "qtl_ids_associated_with_onto_id",
+        "kind": 2,
+        "importPath": "qtls.views",
+        "description": "qtls.views",
+        "peekOfCode": "def qtl_ids_associated_with_onto_id(request):\n    page, page_size = get_pagination(request)\n    onto_id = request.query_params.get(\"ontoId\", \"\")\n    return Response(dao.get_qtl_id_associated_with_onto_id(onto_id, page, page_size))\n@api_view([\"GET\"])\ndef qtls_associated_with_protein_id(request):\n    page, page_size = get_pagination(request)\n    protein_id = request.query_params.get(\"proteinId\", \"\")\n    return Response(dao.get_qtls_associated_with_protein_id(protein_id, page, page_size))",
+        "detail": "qtls.views",
+        "documentation": {}
+    },
+    {
+        "label": "qtls_associated_with_protein_id",
+        "kind": 2,
+        "importPath": "qtls.views",
+        "description": "qtls.views",
+        "peekOfCode": "def qtls_associated_with_protein_id(request):\n    page, page_size = get_pagination(request)\n    protein_id = request.query_params.get(\"proteinId\", \"\")\n    return Response(dao.get_qtls_associated_with_protein_id(protein_id, page, page_size))",
+        "detail": "qtls.views",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "manage",
+        "description": "manage",
+        "peekOfCode": "def main():\n    os.environ.setdefault(\"DJANGO_SETTINGS_MODULE\", \"config.settings\")\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"\n        ) from exc",
+        "detail": "manage",
+        "documentation": {}
+    }
+]
